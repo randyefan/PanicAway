@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		611B872526A9B6C500ECA8AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B872426A9B6C500ECA8AD /* Colors.xcassets */; };
 		611B872A26A9BAEE00ECA8AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B872826A9BAEE00ECA8AD /* ViewController.swift */; };
 		611B872B26A9BAEE00ECA8AD /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 611B872926A9BAEE00ECA8AD /* ViewController.xib */; };
+		61B5B9AA26A9BEE700FE700B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 61B5B9A926A9BEE700FE700B /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B5B9AA26A9BEE700FE700B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +234,9 @@
 				611B86F426A9AFD300ECA8AD /* PBXTargetDependency */,
 			);
 			name = PanicAway;
+			packageProductDependencies = (
+				61B5B9A926A9BEE700FE700B /* Lottie */,
+			);
 			productName = PanicAway;
 			productReference = 611B86DD26A9AFD300ECA8AD /* PanicAway.app */;
 			productType = "com.apple.product-type.application";
@@ -299,6 +304,9 @@
 				Base,
 			);
 			mainGroup = 611B86D426A9AFD200ECA8AD;
+			packageReferences = (
+				61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 611B86DE26A9AFD300ECA8AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -678,6 +686,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61B5B9A926A9BEE700FE700B /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 611B86D526A9AFD200ECA8AD /* Project object */;
 }
