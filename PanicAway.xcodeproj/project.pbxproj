@@ -113,6 +113,7 @@
 		611B86D426A9AFD200ECA8AD = {
 			isa = PBXGroup;
 			children = (
+				6173291326AAA0B2009991DD /* Shared */,
 				611B86DF26A9AFD300ECA8AD /* PanicAway */,
 				611B86F526A9AFD300ECA8AD /* PanicAway WatchKit App */,
 				611B870426A9AFD400ECA8AD /* PanicAway WatchKit Extension */,
@@ -214,6 +215,13 @@
 				611B872426A9B6C500ECA8AD /* Colors.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6173291326AAA0B2009991DD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
