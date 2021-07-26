@@ -21,21 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        
+
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
-    
+
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        
+
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        
+
     }
-    
+
     func rootModule(scene: UIScene) {
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let windowScene = (scene as? UIWindowScene) else { return }
