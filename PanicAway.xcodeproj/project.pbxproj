@@ -97,11 +97,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
-		3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = SOURCE_ROOT; };
-		3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductShowcaseViewController.swift; sourceTree = SOURCE_ROOT; };
-		3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductShowcaseViewController.xib; sourceTree = SOURCE_ROOT; };
-		3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductShowcaseSlide.swift; sourceTree = SOURCE_ROOT; };
+		3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = "PanicAway/Module/Onboarding/Onboarding-6/OnboardingViewController.swift"; sourceTree = SOURCE_ROOT; };
+		3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OnboardingViewController.xib; path = "PanicAway/Module/Onboarding/Onboarding-6/OnboardingViewController.xib"; sourceTree = SOURCE_ROOT; };
+		3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductShowcaseViewController.swift; path = PanicAway/Module/Onboarding/ProductShowcase/ProductShowcaseViewController.swift; sourceTree = SOURCE_ROOT; };
+		3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductShowcaseViewController.xib; path = PanicAway/Module/Onboarding/ProductShowcase/ProductShowcaseViewController.xib; sourceTree = SOURCE_ROOT; };
+		3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductShowcaseSlide.swift; path = PanicAway/Module/Onboarding/ProductShowcase/ProductShowcaseSlide.swift; sourceTree = SOURCE_ROOT; };
 		3B55DE7726AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductShowcaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B55DE7826AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductShowcaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		611B86DD26A9AFD300ECA8AD /* PanicAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,15 +152,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B55DE6B26AE89DC005B0267 /* Onboarding */ = {
+		3B47CC6F26AF2DBA00453756 /* ProductShowcase */ = {
 			isa = PBXGroup;
 			children = (
-				3B55DE7626AEAA3D005B0267 /* ProductShowcaseCell */,
-				3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */,
-				3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */,
 				3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */,
 				3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */,
 				3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */,
+				3B55DE7626AEAA3D005B0267 /* ProductShowcaseCell */,
+			);
+			path = ProductShowcase;
+			sourceTree = "<group>";
+		};
+		3B47CC7026AF2DCD00453756 /* Onboarding-6 */ = {
+			isa = PBXGroup;
+			children = (
+				3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */,
+				3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */,
+			);
+			path = "Onboarding-6";
+			sourceTree = "<group>";
+		};
+		3B55DE6B26AE89DC005B0267 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3B47CC7026AF2DCD00453756 /* Onboarding-6 */,
+				3B47CC6F26AF2DBA00453756 /* ProductShowcase */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
