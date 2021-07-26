@@ -23,6 +23,27 @@
 		611B872526A9B6C500ECA8AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B872426A9B6C500ECA8AD /* Colors.xcassets */; };
 		611B872A26A9BAEE00ECA8AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B872826A9BAEE00ECA8AD /* ViewController.swift */; };
 		611B872B26A9BAEE00ECA8AD /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 611B872926A9BAEE00ECA8AD /* ViewController.xib */; };
+		619F17E726AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */; };
+		619F17E826AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */; };
+		619F17E926AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */; };
+		619F17EA26AE87EA006F8067 /* MPLUSRounded1c-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E126AE87E8006F8067 /* MPLUSRounded1c-Black.ttf */; };
+		619F17EB26AE87EA006F8067 /* MPLUSRounded1c-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E126AE87E8006F8067 /* MPLUSRounded1c-Black.ttf */; };
+		619F17EC26AE87EA006F8067 /* MPLUSRounded1c-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E126AE87E8006F8067 /* MPLUSRounded1c-Black.ttf */; };
+		619F17ED26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E226AE87E9006F8067 /* MPLUSRounded1c-ExtraBold.ttf */; };
+		619F17EE26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E226AE87E9006F8067 /* MPLUSRounded1c-ExtraBold.ttf */; };
+		619F17EF26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E226AE87E9006F8067 /* MPLUSRounded1c-ExtraBold.ttf */; };
+		619F17F026AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E326AE87E9006F8067 /* MPLUSRounded1c-Bold.ttf */; };
+		619F17F126AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E326AE87E9006F8067 /* MPLUSRounded1c-Bold.ttf */; };
+		619F17F226AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E326AE87E9006F8067 /* MPLUSRounded1c-Bold.ttf */; };
+		619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E426AE87E9006F8067 /* MPLUSRounded1c-Medium.ttf */; };
+		619F17F426AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E426AE87E9006F8067 /* MPLUSRounded1c-Medium.ttf */; };
+		619F17F526AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E426AE87E9006F8067 /* MPLUSRounded1c-Medium.ttf */; };
+		619F17F626AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E526AE87E9006F8067 /* MPLUSRounded1c-Regular.ttf */; };
+		619F17F726AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E526AE87E9006F8067 /* MPLUSRounded1c-Regular.ttf */; };
+		619F17F826AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E526AE87E9006F8067 /* MPLUSRounded1c-Regular.ttf */; };
+		619F17F926AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E626AE87E9006F8067 /* MPLUSRounded1c-Thin.ttf */; };
+		619F17FA26AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E626AE87E9006F8067 /* MPLUSRounded1c-Thin.ttf */; };
+		619F17FB26AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E626AE87E9006F8067 /* MPLUSRounded1c-Thin.ttf */; };
 		61B5B9AA26A9BEE700FE700B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 61B5B9A926A9BEE700FE700B /* Lottie */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +110,13 @@
 		611B872426A9B6C500ECA8AD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		611B872826A9BAEE00ECA8AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		611B872926A9BAEE00ECA8AD /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Light.ttf"; sourceTree = "<group>"; };
+		619F17E126AE87E8006F8067 /* MPLUSRounded1c-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Black.ttf"; sourceTree = "<group>"; };
+		619F17E226AE87E9006F8067 /* MPLUSRounded1c-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-ExtraBold.ttf"; sourceTree = "<group>"; };
+		619F17E326AE87E9006F8067 /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; };
+		619F17E426AE87E9006F8067 /* MPLUSRounded1c-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Medium.ttf"; sourceTree = "<group>"; };
+		619F17E526AE87E9006F8067 /* MPLUSRounded1c-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Regular.ttf"; sourceTree = "<group>"; };
+		619F17E626AE87E9006F8067 /* MPLUSRounded1c-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Thin.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +238,7 @@
 		611B872026A9B4D000ECA8AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				619F17DF26AE873C006F8067 /* Fonts */,
 				611B86EB26A9AFD300ECA8AD /* LaunchScreen.storyboard */,
 				611B86E926A9AFD300ECA8AD /* Assets.xcassets */,
 				611B872426A9B6C500ECA8AD /* Colors.xcassets */,
@@ -222,6 +251,20 @@
 			children = (
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		619F17DF26AE873C006F8067 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				619F17E126AE87E8006F8067 /* MPLUSRounded1c-Black.ttf */,
+				619F17E326AE87E9006F8067 /* MPLUSRounded1c-Bold.ttf */,
+				619F17E226AE87E9006F8067 /* MPLUSRounded1c-ExtraBold.ttf */,
+				619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */,
+				619F17E426AE87E9006F8067 /* MPLUSRounded1c-Medium.ttf */,
+				619F17E526AE87E9006F8067 /* MPLUSRounded1c-Regular.ttf */,
+				619F17E626AE87E9006F8067 /* MPLUSRounded1c-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,10 +374,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				619F17EA26AE87EA006F8067 /* MPLUSRounded1c-Black.ttf in Resources */,
 				611B872526A9B6C500ECA8AD /* Colors.xcassets in Resources */,
 				611B86ED26A9AFD300ECA8AD /* LaunchScreen.storyboard in Resources */,
 				611B872B26A9BAEE00ECA8AD /* ViewController.xib in Resources */,
+				619F17F926AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
+				619F17E726AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
+				619F17F626AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
+				619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
+				619F17ED26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
+				619F17F026AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,8 +392,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				619F17EB26AE87EA006F8067 /* MPLUSRounded1c-Black.ttf in Resources */,
+				619F17F426AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
+				619F17EE26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
+				619F17F726AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				611B86FA26A9AFD400ECA8AD /* Assets.xcassets in Resources */,
 				611B86F826A9AFD300ECA8AD /* Interface.storyboard in Resources */,
+				619F17E826AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
+				619F17F126AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */,
+				619F17FA26AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +408,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				619F17EF26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
+				619F17FB26AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
+				619F17F226AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */,
+				619F17EC26AE87EA006F8067 /* MPLUSRounded1c-Black.ttf in Resources */,
+				619F17F526AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
+				619F17F826AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				611B870C26A9AFD500ECA8AD /* Assets.xcassets in Resources */,
+				619F17E926AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
