@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B55DE6E26AE8A3C005B0267 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */; };
+		3B55DE6F26AE8A3C005B0267 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */; };
+		3B55DE7226AE9634005B0267 /* ProductShowcaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */; };
+		3B55DE7326AE9634005B0267 /* ProductShowcaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */; };
+		3B55DE7526AEA4D7005B0267 /* ProductShowcaseSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */; };
+		3B55DE7926AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE7726AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift */; };
+		3B55DE7A26AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55DE7826AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib */; };
 		611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B86E026A9AFD300ECA8AD /* AppDelegate.swift */; };
 		611B86E326A9AFD300ECA8AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B86E226A9AFD300ECA8AD /* SceneDelegate.swift */; };
 		611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B86E926A9AFD300ECA8AD /* Assets.xcassets */; };
@@ -90,6 +97,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
+		3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = SOURCE_ROOT; };
+		3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductShowcaseViewController.swift; sourceTree = SOURCE_ROOT; };
+		3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductShowcaseViewController.xib; sourceTree = SOURCE_ROOT; };
+		3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductShowcaseSlide.swift; sourceTree = SOURCE_ROOT; };
+		3B55DE7726AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductShowcaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		3B55DE7826AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductShowcaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		611B86DD26A9AFD300ECA8AD /* PanicAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		611B86E026A9AFD300ECA8AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		611B86E226A9AFD300ECA8AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +152,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B55DE6B26AE89DC005B0267 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3B55DE7626AEAA3D005B0267 /* ProductShowcaseCell */,
+				3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */,
+				3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */,
+				3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */,
+				3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */,
+				3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3B55DE7626AEAA3D005B0267 /* ProductShowcaseCell */ = {
+			isa = PBXGroup;
+			children = (
+				3B55DE7726AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift */,
+				3B55DE7826AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib */,
+			);
+			path = ProductShowcaseCell;
+			sourceTree = "<group>";
+		};
 		611B86D426A9AFD200ECA8AD = {
 			isa = PBXGroup;
 			children = (
@@ -221,18 +257,11 @@
 		611B871E26A9B20900ECA8AD /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				611B871F26A9B4B900ECA8AD /* OnBoarding */,
+				3B55DE6B26AE89DC005B0267 /* Onboarding */,
 				611B872826A9BAEE00ECA8AD /* ViewController.swift */,
 				611B872926A9BAEE00ECA8AD /* ViewController.xib */,
 			);
 			path = Module;
-			sourceTree = "<group>";
-		};
-		611B871F26A9B4B900ECA8AD /* OnBoarding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		611B872026A9B4D000ECA8AD /* Resources */ = {
@@ -378,13 +407,16 @@
 				611B872526A9B6C500ECA8AD /* Colors.xcassets in Resources */,
 				611B86ED26A9AFD300ECA8AD /* LaunchScreen.storyboard in Resources */,
 				611B872B26A9BAEE00ECA8AD /* ViewController.xib in Resources */,
+				3B55DE7326AE9634005B0267 /* ProductShowcaseViewController.xib in Resources */,
 				619F17F926AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
 				619F17E726AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
 				619F17F626AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
 				619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
 				619F17ED26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
+				3B55DE7A26AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib in Resources */,
 				619F17F026AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */,
+				3B55DE6F26AE8A3C005B0267 /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,8 +460,12 @@
 			files = (
 				611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
+				3B55DE6E26AE8A3C005B0267 /* OnboardingViewController.swift in Sources */,
 				611B872A26A9BAEE00ECA8AD /* ViewController.swift in Sources */,
 				611B86E326A9AFD300ECA8AD /* SceneDelegate.swift in Sources */,
+				3B55DE7526AEA4D7005B0267 /* ProductShowcaseSlide.swift in Sources */,
+				3B55DE7226AE9634005B0267 /* ProductShowcaseViewController.swift in Sources */,
+				3B55DE7926AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,7 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -641,7 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway.watchkitapp;
@@ -661,7 +697,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway.watchkitapp;
@@ -681,7 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -702,7 +738,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
