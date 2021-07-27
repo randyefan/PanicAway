@@ -56,6 +56,13 @@
 		6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E73C16526AE8B450057142A /* SettingsViewController.xib */; };
 		6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */; };
 		6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */; };
+		B749668F26B0858A0062954C /* ContactDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749668E26B0858A0062954C /* ContactDataModel.swift */; };
+		B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */; };
+		B7DC15B426AE960800259CB0 /* EmergencyContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */; };
+		B7DC15B726AEA81A00259CB0 /* AddContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B526AEA81A00259CB0 /* AddContactCollectionViewCell.swift */; };
+		B7DC15B826AEA81A00259CB0 /* AddContactCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15B626AEA81A00259CB0 /* AddContactCollectionViewCell.xib */; };
+		B7DC15BB26AEA83000259CB0 /* ContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B926AEA83000259CB0 /* ContactCollectionViewCell.swift */; };
+		B7DC15BC26AEA83000259CB0 /* ContactCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15BA26AEA83000259CB0 /* ContactCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +146,13 @@
 		6E73C16526AE8B450057142A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyMessageSettingViewController.swift; sourceTree = "<group>"; };
 		6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyMessageSettingViewController.xib; sourceTree = "<group>"; };
+		B749668E26B0858A0062954C /* ContactDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataModel.swift; sourceTree = "<group>"; };
+		B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
+		B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyContactViewController.xib; sourceTree = "<group>"; };
+		B7DC15B526AEA81A00259CB0 /* AddContactCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7DC15B626AEA81A00259CB0 /* AddContactCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddContactCollectionViewCell.xib; sourceTree = "<group>"; };
+		B7DC15B926AEA83000259CB0 /* ContactCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7DC15BA26AEA83000259CB0 /* ContactCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,9 +258,9 @@
 		611B871E26A9B20900ECA8AD /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				B7DC15B026AE94DB00259CB0 /* Emergency Contact */,
 				6190F8D926AFC18000C48744 /* BreathingChoice */,
 				615CCA5626AEAA5A005EC6A4 /* Breathing */,
-				611B871F26A9B4B900ECA8AD /* OnBoarding */,
 				6E73C16326AE8B0E0057142A /* Settings */,
 				611B872826A9BAEE00ECA8AD /* ViewController.swift */,
 				611B872926A9BAEE00ECA8AD /* ViewController.xib */,
@@ -339,6 +353,28 @@
 				6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */,
 			);
 			path = "Emergency Message Setting";
+			sourceTree = "<group>";
+		};
+		B749668D26AFFE160062954C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B7DC15B526AEA81A00259CB0 /* AddContactCollectionViewCell.swift */,
+				B7DC15B626AEA81A00259CB0 /* AddContactCollectionViewCell.xib */,
+				B7DC15B926AEA83000259CB0 /* ContactCollectionViewCell.swift */,
+				B7DC15BA26AEA83000259CB0 /* ContactCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B7DC15B026AE94DB00259CB0 /* Emergency Contact */ = {
+			isa = PBXGroup;
+			children = (
+				B749668E26B0858A0062954C /* ContactDataModel.swift */,
+				B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */,
+				B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */,
+				B749668D26AFFE160062954C /* Cell */,
+			);
+			path = "Emergency Contact";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,7 +489,10 @@
 				611B86ED26A9AFD300ECA8AD /* LaunchScreen.storyboard in Resources */,
 				611B872B26A9BAEE00ECA8AD /* ViewController.xib in Resources */,
 				619F17F926AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
+				B7DC15B426AE960800259CB0 /* EmergencyContactViewController.xib in Resources */,
 				619F17E726AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
+				B7DC15BC26AEA83000259CB0 /* ContactCollectionViewCell.xib in Resources */,
+				B7DC15B826AEA81A00259CB0 /* AddContactCollectionViewCell.xib in Resources */,
 				619F17F626AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */,
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
@@ -513,6 +552,10 @@
 				611B872A26A9BAEE00ECA8AD /* ViewController.swift in Sources */,
 				6E73C16626AE8B450057142A /* SettingsViewController.swift in Sources */,
 				611B86E326A9AFD300ECA8AD /* SceneDelegate.swift in Sources */,
+				B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */,
+				B7DC15BB26AEA83000259CB0 /* ContactCollectionViewCell.swift in Sources */,
+				B749668F26B0858A0062954C /* ContactDataModel.swift in Sources */,
+				B7DC15B726AEA81A00259CB0 /* AddContactCollectionViewCell.swift in Sources */,
 				61908DB226AF290A00E927AC /* CircularProgressBar.swift in Sources */,
 				6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */,
 			);
