@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MPLUSRounded1c-Medium.ttf">
+            <string>RoundedMplus1c-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BreathingTechniqueCell" rowHeight="156" id="KGk-i7-Jjw" customClass="BreathingTechniqueCell" customModule="PanicAway" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKt-tU-iJv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_breathing_unselected_top" translatesAutoresizingMaskIntoConstraints="NO" id="Ba3-Az-8Gs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HIH-Wk-WZD">
+                                <rect key="frame" x="8" y="8" width="304" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-4-4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhv-nk-KMF">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="XCR-S0-ct9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOy-co-RLy">
+                                        <rect key="frame" x="0.0" y="24" width="304" height="72"/>
+                                        <string key="text">Inhale for 4s, hold for 4s, then exhale for 4s
+and hold 4s before the next cycle; Aim to clear your head from distractions and reduce stress.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HIH-Wk-WZD" secondAttribute="trailing" constant="8" id="KzX-bb-5qn"/>
+                            <constraint firstAttribute="bottom" secondItem="Ba3-Az-8Gs" secondAttribute="bottom" id="f9u-kB-st4"/>
+                            <constraint firstAttribute="height" constant="112" id="fXH-te-T9y"/>
+                            <constraint firstAttribute="trailing" secondItem="Ba3-Az-8Gs" secondAttribute="trailing" id="fhn-F4-A1P"/>
+                            <constraint firstItem="HIH-Wk-WZD" firstAttribute="top" secondItem="BKt-tU-iJv" secondAttribute="top" constant="8" id="fxc-LJ-JEy"/>
+                            <constraint firstItem="Ba3-Az-8Gs" firstAttribute="top" secondItem="BKt-tU-iJv" secondAttribute="top" id="nLc-ru-oQx"/>
+                            <constraint firstItem="HIH-Wk-WZD" firstAttribute="leading" secondItem="BKt-tU-iJv" secondAttribute="leading" constant="8" id="oCo-Cv-8Yc"/>
+                            <constraint firstItem="Ba3-Az-8Gs" firstAttribute="leading" secondItem="BKt-tU-iJv" secondAttribute="leading" id="qHd-y5-gKh"/>
+                            <constraint firstAttribute="bottom" secondItem="HIH-Wk-WZD" secondAttribute="bottom" constant="8" id="yaQ-LQ-fIN"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="Main"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="BKt-tU-iJv" secondAttribute="bottom" constant="24" id="Ort-lO-jly"/>
+                    <constraint firstItem="BKt-tU-iJv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RrD-0e-hT2"/>
+                    <constraint firstItem="BKt-tU-iJv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hrd-rX-ov4"/>
+                    <constraint firstAttribute="trailing" secondItem="BKt-tU-iJv" secondAttribute="trailing" id="lzc-oj-e6P"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="background" destination="Ba3-Az-8Gs" id="BTD-5K-iGk"/>
+                <outlet property="captionLabel" destination="lOy-co-RLy" id="HXf-34-mA6"/>
+                <outlet property="titleLabel" destination="Mhv-nk-KMF" id="T1G-pk-wTm"/>
+            </connections>
+            <point key="canvasLocation" x="-13.043478260869566" y="178.125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bg_breathing_unselected_top" width="327" height="112"/>
+        <namedColor name="Main">
+            <color red="0.94499999284744263" green="0.6119999885559082" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
