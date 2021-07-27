@@ -335,6 +335,7 @@
 		611B871E26A9B20900ECA8AD /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				B7DC15B026AE94DB00259CB0 /* Emergency Contact */,
 				3B55DE6B26AE89DC005B0267 /* Onboarding */,
 				B7DC15B026AE94DB00259CB0 /* Emergency Contact */,
 				6190F8D926AFC18000C48744 /* BreathingChoice */,
@@ -635,6 +636,10 @@
 				611B872A26A9BAEE00ECA8AD /* ViewController.swift in Sources */,
 				6E73C16626AE8B450057142A /* SettingsViewController.swift in Sources */,
 				611B86E326A9AFD300ECA8AD /* SceneDelegate.swift in Sources */,
+				B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */,
+				B7DC15BB26AEA83000259CB0 /* ContactCollectionViewCell.swift in Sources */,
+				B749668F26B0858A0062954C /* ContactDataModel.swift in Sources */,
+				B7DC15B726AEA81A00259CB0 /* AddContactCollectionViewCell.swift in Sources */,
 				3B55DE7526AEA4D7005B0267 /* ProductShowcaseSlide.swift in Sources */,
 				3B55DE7226AE9634005B0267 /* ProductShowcaseViewController.swift in Sources */,
 				3B55DE7926AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift in Sources */,

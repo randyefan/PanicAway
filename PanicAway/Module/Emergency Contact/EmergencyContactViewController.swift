@@ -11,23 +11,17 @@ import ContactsUI
 
 class EmergencyContactViewController: UIViewController{
     
-    @IBOutlet weak var mainTitle: UILabel!
-    @IBOutlet weak var stackButton: UIStackView!
-    
     @IBOutlet weak var addContactCollectionView: UICollectionView!
     var emergencyContact: [CNContact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-
         addContactCollectionView.register(ContactCollectionViewCell.nib(), forCellWithReuseIdentifier: ContactCollectionViewCell.reuseID)
         addContactCollectionView.register(AddContactCollectionViewCell.nib(), forCellWithReuseIdentifier: AddContactCollectionViewCell.reuseID)
     }
     @IBAction func saveButtonAction(_ sender: UIButton) {
     }
-    
-    
     @IBAction func skipButtonAction(_ sender: UIButton) {
     }
 }
@@ -52,7 +46,7 @@ extension EmergencyContactViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         if indexPath.row == emergencyContact.count {
             let cell = addContactCollectionView.dequeueReusableCell(withReuseIdentifier: AddContactCollectionViewCell.reuseID, for: indexPath) as! AddContactCollectionViewCell
             
@@ -77,6 +71,7 @@ extension EmergencyContactViewController: UICollectionViewDelegate, UICollection
     
     //handle contact selectionHow to fetch contacts and store in array on iOS?
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+//        let selectedContact = ContactModel(name: contact.givenName, number: "asdasd")
         emergencyContact.append(contact)
         addContactCollectionView.reloadData()
     }
