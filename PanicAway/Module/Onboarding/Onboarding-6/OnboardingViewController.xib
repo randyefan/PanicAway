@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-pt-uV2">
-                    <rect key="frame" x="30" y="700" width="330" height="88"/>
+                    <rect key="frame" x="30" y="736" width="330" height="88"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5G-Qw-0FB">
                             <rect key="frame" x="0.0" y="0.0" width="330" height="48"/>
@@ -77,7 +77,7 @@
                 <constraint firstItem="csR-hr-av1" firstAttribute="top" secondItem="E9l-bU-dbb" secondAttribute="bottom" constant="20" id="dzQ-XW-PtA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vI8-pt-uV2" secondAttribute="trailing" constant="30" id="gTO-KR-Mrb"/>
                 <constraint firstItem="csR-hr-av1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iCx-3C-gJx"/>
-                <constraint firstAttribute="bottom" secondItem="vI8-pt-uV2" secondAttribute="bottom" constant="56" id="wyD-GK-UBC"/>
+                <constraint firstAttribute="bottom" secondItem="vI8-pt-uV2" secondAttribute="bottom" constant="20" id="wyD-GK-UBC"/>
             </constraints>
             <point key="canvasLocation" x="175.38461538461539" y="114.45497630331754"/>
         </view>

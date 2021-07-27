@@ -51,12 +51,13 @@ class ProductShowcaseViewController: UIViewController{
 
     @IBAction func nextButtonClick(_ sender: Any) {
         if currentPage == slides.count - 1 {
-            print("Get Started")
+            
         }else{
             currentPage += 1
             let index = IndexPath(item: currentPage, section: 0)
-            productShowcaseCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-            
+            self.productShowcaseCollectionView.isPagingEnabled = false
+            self.productShowcaseCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            self.productShowcaseCollectionView.isPagingEnabled = true
         }
     
         
@@ -84,6 +85,10 @@ extension ProductShowcaseViewController: UICollectionViewDelegate, UICollectionV
         let width = scrollView.frame.width
         currentPage = Int(scrollView.contentOffset.x / width)
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
 }
