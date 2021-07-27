@@ -52,33 +52,13 @@ class BreathingViewController: UIViewController {
     private func setupView() {
         switch state {
         case .beforeBreathing:
-            topView.isHidden = false
-            titleLabel.isHidden = false
-            captionLabel.isHidden = true
-            breathingMethodStackView.isHidden = false
-            safeAreaView.isHidden = true
-            circularProgressBar.isHidden = true
+            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true)
         case .breathingOn:
-            topView.isHidden = true
-            titleLabel.isHidden = false
-            captionLabel.isHidden = true
-            breathingMethodStackView.isHidden = true
-            safeAreaView.isHidden = false
-            circularProgressBar.isHidden = false
+            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false)
         case .pause:
-            topView.isHidden = true
-            titleLabel.isHidden = false
-            captionLabel.isHidden = true
-            breathingMethodStackView.isHidden = true
-            safeAreaView.isHidden = false
-            circularProgressBar.isHidden = false
+            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false)
         case .finish:
-            topView.isHidden = false
-            titleLabel.isHidden = false
-            captionLabel.isHidden = false
-            breathingMethodStackView.isHidden = false
-            safeAreaView.isHidden = true
-            circularProgressBar.isHidden = true
+            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true)
         }
     }
     
@@ -98,6 +78,15 @@ class BreathingViewController: UIViewController {
 
     
     // MARK: - Functionality
+    
+    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, safeAreaView: Bool, circularProgressBar: Bool) {
+        self.topView.isHidden = topView
+        self.titleLabel.isHidden = titleLabel
+        self.captionLabel.isHidden = captionLabel
+        self.breathingMethodStackView.isHidden = breathingMethodeStackView
+        self.safeAreaView.isHidden = safeAreaView
+        self.circularProgressBar.isHidden = circularProgressBar
+    }
     
     func startBreathing() {
         if state == .breathingOn {
