@@ -38,12 +38,6 @@ class CircularProgressBar: UIView {
         layer.mask = backgroundMask
 
         progressLayer.lineWidth = ringWidth
-        progressLayer.fillColor = nil
-
-        layer.addSublayer(gradientLayer)
-
-        gradientLayer.mask = progressLayer
-        gradientLayer.locations = [0.35, 0.5, 0.65]
     }
 
     private func createAnimation() {
@@ -59,8 +53,8 @@ class CircularProgressBar: UIView {
         endPointAnimation.repeatCount = Float.infinity
         endPointAnimation.duration = 1
 
-        gradientLayer.add(startPointAnimation, forKey: "startPointAnimation")
-        gradientLayer.add(endPointAnimation, forKey: "endPointAnimation")
+        progressLayer.add(startPointAnimation, forKey: "startPointAnimation")
+        progressLayer.add(endPointAnimation, forKey: "endPointAnimation")
     }
 
     override func draw(_ rect: CGRect) {
@@ -73,11 +67,10 @@ class CircularProgressBar: UIView {
         progressLayer.path = circlePath.cgPath
         progressLayer.lineCap = .round
         progressLayer.strokeStart = 0
-        progressLayer.fillColor = UIColor.green.cgColor
+        progressLayer.fillColor = UIColor.clear.cgColor
         progressLayer.strokeEnd = progress
-        progressLayer.strokeColor = UIColor.yellow.cgColor
-
-        gradientLayer.frame = rect
-        gradientLayer.backgroundColor = UIColor(named: "MainSoftest")?.cgColor
+        progressLayer.strokeColor = UIColor(named: "Main")?.cgColor
+        
+        layer.addSublayer(progressLayer)
     }
 }
