@@ -1,15 +1,170 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="18122" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="18022"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller fullBounds="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PanicAway_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" height="75" alignment="center" text="We've detected a high heart rate " textAlignment="center" numberOfLines="0" id="SFX-GF-mFW"/>
+                        <group width="1" alignment="center" layout="vertical" radius="22" id="qkF-kJ-C6y">
+                            <items>
+                                <button width="1" alignment="center" title="Help Me Calm Down" id="PEH-Ck-Tzp">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="Main"/>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" layout="vertical" radius="22" id="fhe-xX-jtd">
+                            <items>
+                                <button width="1" alignment="center" title="I'm OK" id="zQU-mg-tc6"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="SOu-YT-M7n" kind="relationship" relationship="nextPage" id="mbJ-Fl-foz"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="-95" y="-98"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="FEJ-47-2kX">
+            <objects>
+                <controller fullBounds="YES" id="SOu-YT-M7n">
+                    <items>
+                        <label alignment="center" text="Breathing Methods" id="a3n-0p-thI"/>
+                        <group width="1" alignment="left" layout="vertical" radius="22" id="awO-ZS-L6w">
+                            <items>
+                                <button width="1" alignment="center" title="4-4-4" id="Pne-Jh-EUs">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="Main"/>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" name="Main"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" radius="22" id="Zz4-7o-0up">
+                            <items>
+                                <button width="1" alignment="center" title="4-7-8" id="5x3-LH-XSm">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="Main"/>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" name="Main"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" radius="22" id="xfB-1W-kJS">
+                            <items>
+                                <button width="1" alignment="center" title="7-11" id="QLc-zA-dMs">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="Main"/>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" name="Main"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="5FM-Fo-DQq" kind="relationship" relationship="nextPage" id="TiP-Xm-qGP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="188" y="-83"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="lQt-VU-gSd">
+            <objects>
+                <controller fullBounds="YES" id="5FM-Fo-DQq">
+                    <items>
+                        <label width="1" height="75" alignment="center" text="Are you feeling better ?" textAlignment="center" numberOfLines="0" id="EXZ-W0-L4i">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <group width="1" alignment="left" layout="vertical" radius="22" id="fpO-7l-Tal">
+                            <items>
+                                <button width="1" alignment="center" title="Yes" id="TEA-rJ-a73">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" name="Main"/>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" name="Main"/>
+                        </group>
+                        <group width="1" alignment="center" layout="vertical" radius="22" id="9El-kA-eaA">
+                            <items>
+                                <button width="1" alignment="center" title="Continue breathing" id="aJb-OO-cvH"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="klQ-kp-x1X" kind="relationship" relationship="nextPage" id="cw0-9l-nXh"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-51" y="246"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="cDC-Se-wtd">
+            <objects>
+                <controller fullBounds="YES" id="klQ-kp-x1X">
+                    <items>
+                        <label alignment="center" text="Tap to start" id="eKx-IJ-Nrz"/>
+                        <imageView height="130" alignment="left" id="6cx-kw-RWN"/>
+                        <group width="1" alignment="center" id="cDA-IP-s18">
+                            <items>
+                                <label alignment="center" text="􀊵 " id="jT9-xt-vtU">
+                                    <color key="textColor" red="0.99354439969999997" green="0.45648401979999997" blue="0.38428288700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <label alignment="center" text="128 BPM" id="03X-jK-PXv">
+                                    <color key="textColor" red="0.99354439969999997" green="0.45648401979999997" blue="0.38428288700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="7g6-uX-Mn7" kind="relationship" relationship="nextPage" id="ENs-4I-7oP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="169" y="246"/>
+        </scene>
+        <!--Notify Friend Interface Controller-->
+        <scene sceneID="Od3-CB-rtj">
+            <objects>
+                <controller fullBounds="YES" id="7g6-uX-Mn7" customClass="NotifyFriendInterfaceController" customModule="PanicAway_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Notify My Friend" id="hwd-sD-rSc"/>
+                        <table alignment="left" id="d3A-1F-aSj">
+                            <items>
+                                <tableRow identifier="ContactRowController" id="Fdc-J6-gTk" customClass="ContactRowController" customModule="PanicAway_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" radius="22" id="ROg-Dn-1M6">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" id="Gx9-Ee-rge">
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" name="Main"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="friendNameLabel" destination="Gx9-Ee-rge" id="ffo-oK-V3c"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="contactsTable" destination="d3A-1F-aSj" id="yP5-eM-tPf"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="397" y="246"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Main">
+            <color red="0.94499999284744263" green="0.6119999885559082" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
