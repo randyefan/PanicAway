@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */; };
+		3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BF26B1236A0032FA06 /* ContactRowController.swift */; };
+		3B529E6E26B00FA800D4D301 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B529E6D26B00FA800D4D301 /* Colors.xcassets */; };
 		3B55DE6E26AE8A3C005B0267 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */; };
 		3B55DE6F26AE8A3C005B0267 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */; };
 		3B55DE7226AE9634005B0267 /* ProductShowcaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */; };
@@ -97,6 +100,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyFriendInterfaceController.swift; sourceTree = "<group>"; };
+		3B2048BF26B1236A0032FA06 /* ContactRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowController.swift; sourceTree = "<group>"; };
+		3B529E6D26B00FA800D4D301 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = "PanicAway/Module/Onboarding/Onboarding-6/OnboardingViewController.swift"; sourceTree = SOURCE_ROOT; };
 		3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OnboardingViewController.xib; path = "PanicAway/Module/Onboarding/Onboarding-6/OnboardingViewController.xib"; sourceTree = SOURCE_ROOT; };
 		3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductShowcaseViewController.swift; path = PanicAway/Module/Onboarding/ProductShowcase/ProductShowcaseViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -240,6 +246,9 @@
 				611B870926A9AFD400ECA8AD /* ComplicationController.swift */,
 				611B870B26A9AFD500ECA8AD /* Assets.xcassets */,
 				611B870D26A9AFD500ECA8AD /* Info.plist */,
+				3B529E6D26B00FA800D4D301 /* Colors.xcassets */,
+				3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */,
+				3B2048BF26B1236A0032FA06 /* ContactRowController.swift */,
 			);
 			path = "PanicAway WatchKit Extension";
 			sourceTree = "<group>";
@@ -456,6 +465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B529E6E26B00FA800D4D301 /* Colors.xcassets in Resources */,
 				619F17EF26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
 				619F17FB26AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
 				619F17F226AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */,
@@ -491,6 +501,8 @@
 			files = (
 				611B870826A9AFD400ECA8AD /* ExtensionDelegate.swift in Sources */,
 				611B870626A9AFD400ECA8AD /* InterfaceController.swift in Sources */,
+				3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */,
+				3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */,
 				611B870A26A9AFD400ECA8AD /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

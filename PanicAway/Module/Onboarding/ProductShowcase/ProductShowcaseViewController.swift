@@ -36,7 +36,7 @@ class ProductShowcaseViewController: UIViewController{
         super.viewDidLoad()
         
         slides = [
-        ProductShowcaseSlide(title: "Cope with panic attack", description:"Guided breathing to relieve your panic attack, and a one-touch emergency contact to notify your loved ones", image: #imageLiteral(resourceName: "OnboardingWatch")),
+        ProductShowcaseSlide(title: "Cope with panic attack", description:"Guided breathing to relieve your panic attack, and a one-touch emergency contact to notify your loved ones", image: #imageLiteral(resourceName: "OnboardingStress")),
         ProductShowcaseSlide(title: "Connect to apple watch", description: "Immediately get help anytime anywhere when you are experiencing panic attack", image: #imageLiteral(resourceName: "OnboardingWatch"))
         
         ]
