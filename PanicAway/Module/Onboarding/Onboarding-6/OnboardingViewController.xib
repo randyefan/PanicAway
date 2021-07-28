@@ -23,6 +23,13 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppleHealth" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-Nv-lO0">
+                    <rect key="frame" x="145" y="212.33333333333337" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="8hs-OT-Jz4"/>
+                        <constraint firstAttribute="height" constant="100" id="dGE-Dl-dPF"/>
+                    </constraints>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9l-bU-dbb">
                     <rect key="frame" x="107.00000000000001" y="332.33333333333331" width="176.33333333333337" height="39.333333333333314"/>
                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
@@ -68,7 +75,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Background"/>
             <constraints>
+                <constraint firstItem="Ukk-Nv-lO0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8BZ-34-ovF"/>
                 <constraint firstItem="vI8-pt-uV2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Bfd-AK-EPW"/>
+                <constraint firstItem="E9l-bU-dbb" firstAttribute="top" secondItem="Ukk-Nv-lO0" secondAttribute="bottom" constant="20" id="GPg-DG-COl"/>
                 <constraint firstItem="E9l-bU-dbb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MQ5-XE-4eA"/>
                 <constraint firstItem="csR-hr-av1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="37" id="PCq-CC-fU0"/>
                 <constraint firstAttribute="trailing" secondItem="csR-hr-av1" secondAttribute="trailing" constant="37" id="Rum-zZ-AiG"/>
@@ -83,6 +92,7 @@
         </view>
     </objects>
     <resources>
+        <image name="AppleHealth" width="100" height="100"/>
         <namedColor name="Background">
             <color red="0.99599999189376831" green="0.98400002717971802" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
