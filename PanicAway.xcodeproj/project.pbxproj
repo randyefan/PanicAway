@@ -345,7 +345,6 @@
 		611B871E26A9B20900ECA8AD /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				B7DC15B026AE94DB00259CB0 /* Emergency Contact */,
 				3B55DE6B26AE89DC005B0267 /* Onboarding */,
 				B7DC15B026AE94DB00259CB0 /* Emergency Contact */,
 				6190F8D926AFC18000C48744 /* BreathingChoice */,
