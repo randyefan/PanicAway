@@ -13,16 +13,18 @@ class EmergencyContactViewController: UIViewController{
     
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var stackButton: UIStackView!
+    @IBOutlet weak var contactTableView: UITableView!
     
-    @IBOutlet weak var addContactCollectionView: UICollectionView!
-    var emergencyContact: [CNContact] = []
+    private var emergencyContact: [CNContact] = []
+    private var isEdit: Bool = false
+    private var editIndex: Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-
-        addContactCollectionView.register(ContactCollectionViewCell.nib(), forCellWithReuseIdentifier: ContactCollectionViewCell.reuseID)
-        addContactCollectionView.register(AddContactCollectionViewCell.nib(), forCellWithReuseIdentifier: AddContactCollectionViewCell.reuseID)
+        
+        contactTableView.register(ContactTableViewCell.nib(), forCellReuseIdentifier: ContactTableViewCell.reuseID)
+        contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
     }
     @IBAction func saveButtonAction(_ sender: UIButton) {
     }
@@ -45,49 +47,84 @@ fileprivate extension EmergencyContactViewController {
 }
 
 //MARK: CollectionView Configuration
-extension EmergencyContactViewController: UICollectionViewDelegate, UICollectionViewDataSource, CNContactPickerDelegate{
+extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDelegate, UITableViewDataSource{
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return emergencyContact.count + 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if emergencyContact.count < 3 {
+            return emergencyContact.count + 1
+        } else {
+            return emergencyContact.count
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if indexPath.row == emergencyContact.count {
-            let cell = addContactCollectionView.dequeueReusableCell(withReuseIdentifier: AddContactCollectionViewCell.reuseID, for: indexPath) as! AddContactCollectionViewCell
-            
-            return cell
-        }else {
-            let cell = addContactCollectionView.dequeueReusableCell(withReuseIdentifier: ContactCollectionViewCell.reuseID, for: indexPath) as! ContactCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if emergencyContact.count < 3 {
+            if indexPath.row == emergencyContact.count {
+                let cell = contactTableView.dequeueReusableCell(withIdentifier: AddToContactTableViewCell.reuseID, for: indexPath) as! AddToContactTableViewCell
+                
+                cell.selectionStyle = .none
+                
+                return cell
+            }else {
+                let cell = contactTableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.reuseID, for: indexPath) as! ContactTableViewCell
+                
+                cell.contactInformation = emergencyContact[indexPath.row]
+                cell.selectionStyle = .none
+                
+                return cell
+            }
+        } else {
+            let cell = contactTableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.reuseID, for: indexPath) as! ContactTableViewCell
             
             cell.contactInformation = emergencyContact[indexPath.row]
+            cell.selectionStyle = .none
+            
             return cell
         }
     }
     
     //handle button AddContact Action
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == emergencyContact.count{
-            //contact Picker
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if emergencyContact.count < 3 {
+            if indexPath.row == emergencyContact.count{
+                //contact Picker
+                let contactPickerVC = CNContactPickerViewController()
+                contactPickerVC.delegate = self
+                present(contactPickerVC, animated: true)
+            } else {
+                isEdit = true
+                editIndex = indexPath.row
+                
+                let contactPickerVC = CNContactPickerViewController()
+                contactPickerVC.delegate = self
+                present(contactPickerVC, animated: true)
+            }
+        } else {
+            isEdit = true
+            editIndex = indexPath.row
+            
             let contactPickerVC = CNContactPickerViewController()
             contactPickerVC.delegate = self
             present(contactPickerVC, animated: true)
         }
+        
+        
     }
-    
-    //handle contact selectionHow to fetch contacts and store in array on iOS?
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-        emergencyContact.append(contact)
-        addContactCollectionView.reloadData()
-    }
-    
-}
 
-//MARK: Cell Size Configuration
-extension EmergencyContactViewController: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionViewSize: CGRect = addContactCollectionView.bounds
-        return CGSize(width: collectionViewSize.width, height: 48)
+    //handle contact selection
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        if isEdit {
+            guard let index = editIndex else { return }
+            emergencyContact[index] = contact
+            isEdit = false
+        } else {
+            emergencyContact.append(contact)
+        }
+        
+        contactTableView.reloadData()
     }
+    
 }
 

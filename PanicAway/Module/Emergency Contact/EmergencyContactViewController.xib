@@ -15,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmergencyContactViewController" customModule="PanicAway" customModuleProvider="target">
             <connections>
-                <outlet property="addContactCollectionView" destination="hP9-nv-GjT" id="HZp-3v-8PW"/>
+                <outlet property="contactTableView" destination="q0U-hx-CZR" id="TNs-l7-LUu"/>
                 <outlet property="mainTitle" destination="RLR-sn-WBb" id="kxo-45-xqN"/>
                 <outlet property="stackButton" destination="7sY-02-ley" id="nyr-Nu-whD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,7 +26,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rFi-DE-V74">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rFi-DE-V74" userLabel="Top Title Stack">
                     <rect key="frame" x="24" y="76" width="366" height="122.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your emergency contact." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLR-sn-WBb">
@@ -43,21 +43,7 @@
                         </label>
                     </subviews>
                 </stackView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hP9-nv-GjT">
-                    <rect key="frame" x="24" y="238.5" width="366" height="490.5"/>
-                    <color key="backgroundColor" name="Background"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="1iZ-dW-chI">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="bFb-rh-jIe"/>
-                        <outlet property="delegate" destination="-1" id="wQ8-hV-xk2"/>
-                    </connections>
-                </collectionView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7sY-02-ley">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7sY-02-ley" userLabel="Bottom Button Stack">
                     <rect key="frame" x="24" y="729" width="366" height="111"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-k9-cZR">
@@ -93,20 +79,28 @@
                         </button>
                     </subviews>
                 </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q0U-hx-CZR">
+                    <rect key="frame" x="24" y="238.5" width="366" height="450.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="s2r-88-9bs"/>
+                        <outlet property="delegate" destination="-1" id="bjN-mR-Ads"/>
+                    </connections>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Background"/>
             <constraints>
-                <constraint firstItem="hP9-nv-GjT" firstAttribute="leading" secondItem="rFi-DE-V74" secondAttribute="leading" id="5On-Lb-Mmm"/>
-                <constraint firstItem="hP9-nv-GjT" firstAttribute="trailing" secondItem="rFi-DE-V74" secondAttribute="trailing" id="8cQ-w3-SvP"/>
                 <constraint firstItem="7sY-02-ley" firstAttribute="leading" secondItem="rFi-DE-V74" secondAttribute="leading" id="GW3-cn-HQ2"/>
-                <constraint firstItem="hP9-nv-GjT" firstAttribute="top" secondItem="rFi-DE-V74" secondAttribute="bottom" constant="40" id="PFk-j4-PD7"/>
+                <constraint firstItem="q0U-hx-CZR" firstAttribute="trailing" secondItem="rFi-DE-V74" secondAttribute="trailing" id="JD4-XR-5Kb"/>
                 <constraint firstItem="7sY-02-ley" firstAttribute="trailing" secondItem="rFi-DE-V74" secondAttribute="trailing" id="R1Y-ph-IFH"/>
                 <constraint firstItem="rFi-DE-V74" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="Sr2-bK-48L"/>
                 <constraint firstItem="rFi-DE-V74" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="We1-ZR-L9q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7sY-02-ley" secondAttribute="bottom" constant="22" id="hFX-WJ-RcB"/>
+                <constraint firstItem="q0U-hx-CZR" firstAttribute="top" secondItem="rFi-DE-V74" secondAttribute="bottom" constant="40" id="hPx-4C-hKV"/>
                 <constraint firstAttribute="trailing" secondItem="rFi-DE-V74" secondAttribute="trailing" constant="24" id="mbx-bq-y1O"/>
-                <constraint firstItem="7sY-02-ley" firstAttribute="top" secondItem="hP9-nv-GjT" secondAttribute="bottom" id="qdI-ul-vGu"/>
+                <constraint firstItem="7sY-02-ley" firstAttribute="top" secondItem="q0U-hx-CZR" secondAttribute="bottom" constant="40" id="uGj-Wu-A3m"/>
+                <constraint firstItem="q0U-hx-CZR" firstAttribute="leading" secondItem="rFi-DE-V74" secondAttribute="leading" id="ztj-X8-YmO"/>
             </constraints>
             <point key="canvasLocation" x="132" y="130"/>
         </view>
