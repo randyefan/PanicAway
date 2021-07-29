@@ -232,6 +232,25 @@
 			path = ProductShowcaseCell;
 			sourceTree = "<group>";
 		};
+		3BBF6CBE26B27C19003A73F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				611B870526A9AFD400ECA8AD /* InterfaceController.swift */,
+				611B870926A9AFD400ECA8AD /* ComplicationController.swift */,
+				3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */,
+				3B2048BF26B1236A0032FA06 /* ContactRowController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3BBF6CBF26B27C50003A73F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				611B86F626A9AFD300ECA8AD /* Interface.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		611B86D426A9AFD200ECA8AD = {
 			isa = PBXGroup;
 			children = (
@@ -267,7 +286,7 @@
 		611B86F526A9AFD300ECA8AD /* PanicAway WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				611B86F626A9AFD300ECA8AD /* Interface.storyboard */,
+				3BBF6CBF26B27C50003A73F0 /* View */,
 				611B86F926A9AFD400ECA8AD /* Assets.xcassets */,
 				611B86FB26A9AFD400ECA8AD /* Info.plist */,
 			);
@@ -277,14 +296,11 @@
 		611B870426A9AFD400ECA8AD /* PanicAway WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				611B870526A9AFD400ECA8AD /* InterfaceController.swift */,
+				3BBF6CBE26B27C19003A73F0 /* Controller */,
 				611B870726A9AFD400ECA8AD /* ExtensionDelegate.swift */,
-				611B870926A9AFD400ECA8AD /* ComplicationController.swift */,
 				611B870B26A9AFD500ECA8AD /* Assets.xcassets */,
 				611B870D26A9AFD500ECA8AD /* Info.plist */,
 				3B529E6D26B00FA800D4D301 /* Colors.xcassets */,
-				3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */,
-				3B2048BF26B1236A0032FA06 /* ContactRowController.swift */,
 			);
 			path = "PanicAway WatchKit Extension";
 			sourceTree = "<group>";

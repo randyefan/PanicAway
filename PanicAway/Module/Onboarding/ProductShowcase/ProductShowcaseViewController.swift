@@ -35,32 +35,49 @@ class ProductShowcaseViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Onboarding Data
         slides = [
         ProductShowcaseSlide(title: "Cope with panic attack", description:"Guided breathing to relieve your panic attack, and a one-touch emergency contact to notify your loved ones", image: #imageLiteral(resourceName: "OnboardingStress")),
-        ProductShowcaseSlide(title: "Connect to apple watch", description: "Immediately get help anytime anywhere when you are experiencing panic attack", image: #imageLiteral(resourceName: "OnboardingWatch"))
+        ProductShowcaseSlide(title: "Connect to apple watch", description: "Immediately get help anytime anywhere when you are experiencing panic attack", image: #imageLiteral(resourceName: "OnboardingWatch")),
         
         ]
         
         productShowcaseCollectionView.backgroundColor = UIColor(named: "Background")
         
-        self.productShowcaseCollectionView.register(ProductShowcaseCollectionViewCell.nib(), forCellWithReuseIdentifier: ProductShowcaseCollectionViewCell.identifier)
-        self.productShowcaseCollectionView.delegate = self
-        self.productShowcaseCollectionView.dataSource = self
+        productShowcasePageControl.numberOfPages = slides.count
+        
+        productShowcaseCollectionView.register(ProductShowcaseCollectionViewCell.nib(), forCellWithReuseIdentifier: ProductShowcaseCollectionViewCell.identifier)
+        productShowcaseCollectionView.delegate = self
+        productShowcaseCollectionView.dataSource = self
+        
+        navigationController?.isNavigationBarHidden = true
         
     }
 
+    @IBAction func pageControlSwiped(_ sender: Any) {
+            currentPage = productShowcasePageControl.currentPage
+
+            swipeTo(page: currentPage)
+
+        
+    }
     @IBAction func nextButtonClick(_ sender: Any) {
         if currentPage == slides.count - 1 {
             
         }else{
             currentPage += 1
-            let index = IndexPath(item: currentPage, section: 0)
-            self.productShowcaseCollectionView.isPagingEnabled = false
-            self.productShowcaseCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-            self.productShowcaseCollectionView.isPagingEnabled = true
+           swipeTo(page: currentPage)
+           
         }
     
         
+    }
+    
+    func swipeTo(page current:Int){
+        let index = IndexPath(item: current, section: 0)
+        productShowcaseCollectionView.isPagingEnabled = false
+        productShowcaseCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        productShowcaseCollectionView.isPagingEnabled = true
     }
     
 }
