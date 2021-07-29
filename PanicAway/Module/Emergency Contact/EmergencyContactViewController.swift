@@ -21,6 +21,7 @@ class EmergencyContactViewController: UIViewController{
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var contactTableView: UITableView!
+    @IBOutlet weak var saveButton: UIButton!
     
     private var emergencyContact: [CNContact] = []
     private var isEdit: Bool = false
@@ -53,7 +54,7 @@ class EmergencyContactViewController: UIViewController{
 
 fileprivate extension EmergencyContactViewController {
     func initialSetup(){
-        
+        checkContact()
         switch entryPoint {
         case .settings:
             title = "Emergency Contact"
@@ -70,10 +71,12 @@ fileprivate extension EmergencyContactViewController {
         if isEditTableView {
             contactTableView.isEditing = false
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+            
             isEditTableView = false
         } else {
             contactTableView.isEditing = true
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(edit))
+            
             isEditTableView = true
         }
         
@@ -83,6 +86,15 @@ fileprivate extension EmergencyContactViewController {
 //MARK: CollectionView Configuration
 extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDelegate, UITableViewDataSource{
     
+    //check if emergency contact data is exist to set save button state
+    private func checkContact () {
+        if emergencyContact.count == 0 {
+            saveButton.isEnabled = false
+        } else {
+            saveButton.isEnabled = true
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emergencyContact.count + 1
     }
@@ -90,7 +102,6 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row <= emergencyContact.count - 1 {
             let cell = contactTableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.reuseID, for: indexPath) as! ContactTableViewCell
-            
             cell.contactInformation = emergencyContact[indexPath.row]
             cell.selectionStyle = .none
             
@@ -101,8 +112,9 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             
             if emergencyContact.count == 3 {
                 cell.setInactive()
+            }else{
+                cell.setActive()
             }
-            
             cell.selectionStyle = .none
             
             return cell
@@ -114,7 +126,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
         if indexPath.row <= emergencyContact.count - 1 {
             isEdit = true
             editIndex = indexPath.row
-            
+            //present contact picker VC
             let contactPickerVC = CNContactPickerViewController()
             contactPickerVC.delegate = self
             present(contactPickerVC, animated: true)
@@ -123,13 +135,12 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             if emergencyContact.count == 3 {
                 return
             }
-            
             let contactPickerVC = CNContactPickerViewController()
             contactPickerVC.delegate = self
             present(contactPickerVC, animated: true)
         }
     }
-
+    
     //handle contact selection
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         if isEdit {
@@ -138,8 +149,8 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             isEdit = false
         } else {
             emergencyContact.append(contact)
+            checkContact()
         }
-        
         contactTableView.reloadData()
     }
     
@@ -163,8 +174,11 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
         if editingStyle == .delete{
             contactTableView.beginUpdates()
             emergencyContact.remove(at: indexPath.row)
-            contactTableView.deleteRows(at: [indexPath], with: .fade)
+            contactTableView.deleteRows(at: [indexPath], with: .none)
+            checkContact()
             contactTableView.endUpdates()
+            //reload cell button heheh
+            contactTableView.reloadRows(at: [IndexPath(row: emergencyContact.count, section: 0)], with: .none)
         }
     }
     

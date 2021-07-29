@@ -25,8 +25,13 @@ class AddToContactTableViewCell: UITableViewCell {
         content.borderWidth = 0
         iconImage.tintColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.9998808503, alpha: 1)
         label.textColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.9998808503, alpha: 1)
-
-        
+    }
+    
+    func setActive() {
+        content.backgroundColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.9998808503, alpha: 1)
+        content.borderWidth = 1
+        iconImage.tintColor = #colorLiteral(red: 0.9438729286, green: 0.6096045375, blue: 0.5635720491, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.9438729286, green: 0.6096045375, blue: 0.5635720491, alpha: 1)
     }
 
     override func awakeFromNib() {
