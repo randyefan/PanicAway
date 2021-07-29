@@ -50,34 +50,25 @@ fileprivate extension EmergencyContactViewController {
 extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if emergencyContact.count < 3 {
-            return emergencyContact.count + 1
-        } else {
-            return emergencyContact.count
-        }
+        return emergencyContact.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if emergencyContact.count < 3 {
-            if indexPath.row == emergencyContact.count {
-                let cell = contactTableView.dequeueReusableCell(withIdentifier: AddToContactTableViewCell.reuseID, for: indexPath) as! AddToContactTableViewCell
-                
-                cell.selectionStyle = .none
-                
-                return cell
-            }else {
-                let cell = contactTableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.reuseID, for: indexPath) as! ContactTableViewCell
-                
-                cell.contactInformation = emergencyContact[indexPath.row]
-                cell.selectionStyle = .none
-                
-                return cell
-            }
-        } else {
+        if indexPath.row <= emergencyContact.count - 1 {
             let cell = contactTableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.reuseID, for: indexPath) as! ContactTableViewCell
             
             cell.contactInformation = emergencyContact[indexPath.row]
+            cell.selectionStyle = .none
+            
+            return cell
+            
+        } else {
+            let cell = contactTableView.dequeueReusableCell(withIdentifier: AddToContactTableViewCell.reuseID, for: indexPath) as! AddToContactTableViewCell
+            
+            if emergencyContact.count == 3 {
+                cell.setInactive()
+            }
+            
             cell.selectionStyle = .none
             
             return cell
@@ -86,23 +77,18 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
     
     //handle button AddContact Action
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if emergencyContact.count < 3 {
-            if indexPath.row == emergencyContact.count{
-                //contact Picker
-                let contactPickerVC = CNContactPickerViewController()
-                contactPickerVC.delegate = self
-                present(contactPickerVC, animated: true)
-            } else {
-                isEdit = true
-                editIndex = indexPath.row
-                
-                let contactPickerVC = CNContactPickerViewController()
-                contactPickerVC.delegate = self
-                present(contactPickerVC, animated: true)
-            }
-        } else {
+        if indexPath.row <= emergencyContact.count - 1 {
             isEdit = true
             editIndex = indexPath.row
+            
+            let contactPickerVC = CNContactPickerViewController()
+            contactPickerVC.delegate = self
+            present(contactPickerVC, animated: true)
+            
+        } else {
+            if emergencyContact.count == 3 {
+                return
+            }
             
             let contactPickerVC = CNContactPickerViewController()
             contactPickerVC.delegate = self
@@ -124,26 +110,18 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if emergencyContact.count < 3 {
-            if indexPath.row == emergencyContact.count - 1 {
-                return true
-            } else {
-                return false
-            }
-        } else {
+        if indexPath.row <= emergencyContact.count - 1 {
             return true
+        } else {
+            return false
         }
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if emergencyContact.count < 3 {
-            if indexPath.row == emergencyContact.count - 1 {
-                return .delete
-            } else {
-                return .none
-            }
-        } else {
+        if indexPath.row <= emergencyContact.count - 1 {
             return .delete
+        } else {
+            return .none
         }
     }
     

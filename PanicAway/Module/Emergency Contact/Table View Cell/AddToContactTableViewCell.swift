@@ -8,12 +8,17 @@
 import UIKit
 
 class AddToContactTableViewCell: UITableViewCell {
+    @IBOutlet weak var content: UIView!
     
     static let reuseID = "AddContactCell"
     static let identifier = "AddToContactTableViewCell"
     
     static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
+    }
+    
+    func setInactive() {
+        content.backgroundColor = .darkGray
     }
 
     override func awakeFromNib() {
