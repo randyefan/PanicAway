@@ -23,6 +23,8 @@ class EmergencyContactViewController: UIViewController{
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     private var emergencyContact: [CNContact] = []
     private var isEdit: Bool = false
     private var editIndex: Int? = nil
@@ -45,10 +47,12 @@ class EmergencyContactViewController: UIViewController{
         contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
     }
     @IBAction func saveButtonAction(_ sender: UIButton) {
+        appDelegate.rootBreathingPage()
     }
     
     
     @IBAction func skipButtonAction(_ sender: UIButton) {
+        appDelegate.rootBreathingPage()
     }
 }
 

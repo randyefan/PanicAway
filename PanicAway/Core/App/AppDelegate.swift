@@ -10,26 +10,31 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupDefaultNavbar()
+        rootOnBoarding()
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-
+    
+    func rootBreathingPage() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.clear
+        let viewController = BreathingViewController()
+        let navigationBar = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationBar
+        window?.makeKeyAndVisible()
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-
+    
+    func rootOnBoarding() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.clear
+        let viewController = ProductShowcaseViewController()
+        let navigationBar = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationBar
+        window?.makeKeyAndVisible()
     }
-
-
 }
 
 fileprivate extension AppDelegate {

@@ -68,11 +68,15 @@ class BreathingChoiceViewController: UIViewController {
     // MARK: - Action Triggered
     
     @IBAction func selectAction(_ sender: Any) {
-        
+        navigateToEmergencyContact()
     }
     
     // MARK: - Functionality
     
+    private func navigateToEmergencyContact() {
+        let vc = EmergencyContactViewController(entryPoint: .onBoarding)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 
