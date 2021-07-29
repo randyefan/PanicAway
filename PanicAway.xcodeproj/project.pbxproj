@@ -77,6 +77,7 @@
 		B7DC15B826AEA81A00259CB0 /* AddContactCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15B626AEA81A00259CB0 /* AddContactCollectionViewCell.xib */; };
 		B7DC15BB26AEA83000259CB0 /* ContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B926AEA83000259CB0 /* ContactCollectionViewCell.swift */; };
 		B7DC15BC26AEA83000259CB0 /* ContactCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15BA26AEA83000259CB0 /* ContactCollectionViewCell.xib */; };
+		B7EACD5626B31FF800D32C2D /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EACD5526B31FF800D32C2D /* SaveButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		B7DC15B626AEA81A00259CB0 /* AddContactCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddContactCollectionViewCell.xib; sourceTree = "<group>"; };
 		B7DC15B926AEA83000259CB0 /* ContactCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCollectionViewCell.swift; sourceTree = "<group>"; };
 		B7DC15BA26AEA83000259CB0 /* ContactCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCollectionViewCell.xib; sourceTree = "<group>"; };
+		B7EACD5526B31FF800D32C2D /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,6 +474,7 @@
 				B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */,
 				B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */,
 				B749668D26AFFE160062954C /* Cell */,
+				B7EACD5526B31FF800D32C2D /* SaveButton.swift */,
 			);
 			path = "Emergency Contact";
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				6E73C16626AE8B450057142A /* SettingsViewController.swift in Sources */,
 				611B86E326A9AFD300ECA8AD /* SceneDelegate.swift in Sources */,
 				B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */,
+				B7EACD5626B31FF800D32C2D /* SaveButton.swift in Sources */,
 				B7DC15BB26AEA83000259CB0 /* ContactCollectionViewCell.swift in Sources */,
 				B749668F26B0858A0062954C /* ContactDataModel.swift in Sources */,
 				B7DC15B726AEA81A00259CB0 /* AddContactCollectionViewCell.swift in Sources */,
