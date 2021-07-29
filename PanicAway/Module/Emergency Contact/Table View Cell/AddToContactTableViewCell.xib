@@ -67,6 +67,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="content" destination="zhj-Rf-te6" id="3cz-Oy-pqz"/>
+                <outlet property="iconImage" destination="PFf-jt-wOA" id="CUe-me-3ug"/>
+                <outlet property="label" destination="3Wp-5L-dnb" id="ieS-Gm-fQt"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="98.4375"/>
         </tableViewCell>

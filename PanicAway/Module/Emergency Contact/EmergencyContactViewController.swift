@@ -9,6 +9,13 @@ import UIKit
 import Contacts
 import ContactsUI
 
+// MARK: - ENUM For Entry Point
+
+enum EmergencyContactEntryPoint {
+    case onBoarding
+    case settings
+}
+
 class EmergencyContactViewController: UIViewController{
     
     @IBOutlet weak var mainTitle: UILabel!
@@ -18,11 +25,21 @@ class EmergencyContactViewController: UIViewController{
     private var emergencyContact: [CNContact] = []
     private var isEdit: Bool = false
     private var editIndex: Int? = nil
+    private var isEditTableView: Bool = false
+    private var entryPoint: EmergencyContactEntryPoint?
+    
+    init(entryPoint: EmergencyContactEntryPoint) {
+        super.init(nibName: "EmergencyContactViewController", bundle: nil)
+        self.entryPoint = entryPoint
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-        
         contactTableView.register(ContactTableViewCell.nib(), forCellReuseIdentifier: ContactTableViewCell.reuseID)
         contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
     }
@@ -36,12 +53,29 @@ class EmergencyContactViewController: UIViewController{
 
 fileprivate extension EmergencyContactViewController {
     func initialSetup(){
-        title = "Emergency Contact"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
+        switch entryPoint {
+        case .settings:
+            title = "Emergency Contact"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+            mainTitle.isHidden = true
+            stackButton.isHidden = true
+        default:
+            self.navigationController?.navigationBar.isHidden = true
+        }
     }
     
-    @objc func save() { //insert logic save here
+    @objc func edit() { //insert logic save here
+        
+        if isEditTableView {
+            contactTableView.isEditing = false
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+            isEditTableView = false
+        } else {
+            contactTableView.isEditing = true
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(edit))
+            isEditTableView = true
+        }
         
     }
 }
@@ -134,5 +168,14 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
         }
     }
     
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        if destinationIndexPath.row > emergencyContact.count - 1 {
+            contactTableView.reloadData()
+            return
+        }
+        let movedContact = emergencyContact[sourceIndexPath.row]
+        emergencyContact.remove(at: sourceIndexPath.row)
+        emergencyContact.insert(movedContact, at: destinationIndexPath.row)
+    }
 }
 
