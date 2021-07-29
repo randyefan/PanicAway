@@ -13,6 +13,7 @@ import Contacts
 class ContactCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var labelContactName: UILabel!
+    
     static let identifier = "ContactCollectionViewCell"
     static let reuseID = "ContactCell"
     
