@@ -86,7 +86,6 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
     
     //handle button AddContact Action
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if emergencyContact.count < 3 {
             if indexPath.row == emergencyContact.count{
                 //contact Picker
@@ -109,8 +108,6 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             contactPickerVC.delegate = self
             present(contactPickerVC, animated: true)
         }
-        
-        
     }
 
     //handle contact selection
@@ -124,6 +121,39 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
         }
         
         contactTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if emergencyContact.count < 3 {
+            if indexPath.row == emergencyContact.count - 1 {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if emergencyContact.count < 3 {
+            if indexPath.row == emergencyContact.count - 1 {
+                return .delete
+            } else {
+                return .none
+            }
+        } else {
+            return .delete
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            contactTableView.beginUpdates()
+            emergencyContact.remove(at: indexPath.row)
+            contactTableView.deleteRows(at: [indexPath], with: .fade)
+            contactTableView.endUpdates()
+        }
     }
     
 }
