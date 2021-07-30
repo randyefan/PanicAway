@@ -30,7 +30,7 @@ class BreathingViewController: UIViewController {
     
     // MARK: - Variable
     
-    var state: BreathingState = .breathingOn
+    var state: BreathingState = .beforeBreathing
     var countdownTime = 3
     var breatheTime = 0 // Handle With data from model later! (REQUIRED)
     
@@ -45,6 +45,7 @@ class BreathingViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupObserveAction()
+        setupNavigationBar()
     }
     
     // MARK: - Setup View for ViewController
@@ -62,9 +63,13 @@ class BreathingViewController: UIViewController {
         }
     }
     
+    func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     private func setupObserveAction() {
         settingsView.onTap {
-            // Handle to go to settings
+            self.navigateToSettings()
         }
         
         leftChevronView.onTap {
@@ -86,6 +91,11 @@ class BreathingViewController: UIViewController {
         self.breathingMethodStackView.isHidden = breathingMethodeStackView
         self.safeAreaView.isHidden = safeAreaView
         self.circularProgressBar.isHidden = circularProgressBar
+    }
+    
+    func navigateToSettings() {
+        let vc = SettingsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func startBreathing() {
