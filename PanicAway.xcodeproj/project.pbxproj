@@ -201,8 +201,6 @@
 		3B47CC6F26AF2DBA00453756 /* ProductShowcase */ = {
 			isa = PBXGroup;
 			children = (
-				3B86DE9226B3D68800BC28E7 /* OnboardingViewController.swift */,
-				3B86DE9326B3D68800BC28E7 /* OnboardingViewController.xib */,
 				61EB9B3026B29F90000100B3 /* Model */,
 				61EB9B3126B29FA3000100B3 /* Cell */,
 				3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */,
@@ -214,24 +212,9 @@
 		3B55DE6B26AE89DC005B0267 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3B86DEAE26B3DA6C00BC28E7 /* Onboarding-6 */,
 				3B47CC6F26AF2DBA00453756 /* ProductShowcase */,
 			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		3B86DE9026B3D64700BC28E7 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-			);
 			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		3B86DEAE26B3DA6C00BC28E7 /* Onboarding-6 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Onboarding-6";
 			sourceTree = "<group>";
 		};
 		3BBF6CBE26B27C19003A73F0 /* Controller */ = {
