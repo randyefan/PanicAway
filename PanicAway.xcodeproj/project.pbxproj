@@ -26,6 +26,7 @@
 		611B870C26A9AFD500ECA8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B870B26A9AFD500ECA8AD /* Assets.xcassets */; };
 		611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B872226A9B50A00ECA8AD /* Extension+UIView.swift */; };
 		611B872526A9B6C500ECA8AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B872426A9B6C500ECA8AD /* Colors.xcassets */; };
+		612CA53426B40151009A11B3 /* BreathingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CA53326B40151009A11B3 /* BreathingModel.swift */; };
 		615C162726B3F21000C11249 /* ProductShowcaseSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C162626B3F21000C11249 /* ProductShowcaseSlide.swift */; };
 		615CCA5926AEAA97005EC6A4 /* BreathingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615CCA5726AEAA97005EC6A4 /* BreathingViewController.swift */; };
 		615CCA5A26AEAA97005EC6A4 /* BreathingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615CCA5826AEAA97005EC6A4 /* BreathingViewController.xib */; };
@@ -143,6 +144,7 @@
 		611B870D26A9AFD500ECA8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611B872226A9B50A00ECA8AD /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		611B872426A9B6C500ECA8AD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		612CA53326B40151009A11B3 /* BreathingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingModel.swift; sourceTree = "<group>"; };
 		615C162626B3F21000C11249 /* ProductShowcaseSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductShowcaseSlide.swift; sourceTree = "<group>"; };
 		615CCA5726AEAA97005EC6A4 /* BreathingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingViewController.swift; sourceTree = "<group>"; };
 		615CCA5826AEAA97005EC6A4 /* BreathingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreathingViewController.xib; sourceTree = "<group>"; };
@@ -333,6 +335,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		612CA53226B40143009A11B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				612CA53326B40151009A11B3 /* BreathingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		615C162526B3F21000C11249 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +363,7 @@
 		6173291326AAA0B2009991DD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				612CA53226B40143009A11B3 /* Model */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -656,6 +667,7 @@
 				61908DB226AF290A00E927AC /* CircularProgressBar.swift in Sources */,
 				3B86DEB226B3DB9A00BC28E7 /* HealthKitManager.swift in Sources */,
 				615C162726B3F21000C11249 /* ProductShowcaseSlide.swift in Sources */,
+				612CA53426B40151009A11B3 /* BreathingModel.swift in Sources */,
 				6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
