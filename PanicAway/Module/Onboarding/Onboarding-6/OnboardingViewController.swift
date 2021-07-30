@@ -6,16 +6,34 @@
 //
 
 import UIKit
+import HealthKit
 
 class OnboardingViewController: UIViewController {
-
+    
+    var healthKitManager = HealthKitManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func requestAccess(_ sender: Any) {
+        healthKitManager.authorizeHealthKit {
+            // langsung pindah ke next view regardless setelah hal ini
+            nextView()
+        }
+    }
+    
 
-
+    @IBAction func skipAppleHealthSetup(_ sender: Any) {
+        nextView()
+    }
+    
+    func nextView(){
+        
+    }
+    
     /*
     // MARK: - Navigation
 

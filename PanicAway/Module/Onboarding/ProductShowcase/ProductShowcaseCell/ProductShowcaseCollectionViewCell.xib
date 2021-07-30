@@ -33,13 +33,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itf-2e-dtf">
-                                <rect key="frame" x="161" y="314" width="68.5" height="33"/>
+                                <rect key="frame" x="158" y="314" width="74.5" height="39.5"/>
                                 <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrF-IT-aNY">
-                                <rect key="frame" x="30" y="387" width="330" height="66"/>
+                                <rect key="frame" x="30" y="393.5" width="330" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="UxF-Fl-yQm"/>
                                 </constraints>

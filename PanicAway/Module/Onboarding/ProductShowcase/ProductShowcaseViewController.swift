@@ -63,13 +63,17 @@ class ProductShowcaseViewController: UIViewController{
     }
     @IBAction func nextButtonClick(_ sender: Any) {
         if currentPage == slides.count - 1 {
-            
+            nextView()
         }else{
-            currentPage += 1
-           swipeTo(page: currentPage)
+        currentPage += 1
+        swipeTo(page: currentPage)
            
         }
     
+        
+    }
+    
+    func nextView(){
         
     }
     

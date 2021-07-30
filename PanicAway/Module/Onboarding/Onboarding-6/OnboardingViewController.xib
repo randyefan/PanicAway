@@ -53,12 +53,18 @@
                                     <real key="value" value="14"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="requestAccess:" destination="-1" eventType="touchUpInside" id="Dee-8J-Nro"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-RG-MyE">
                             <rect key="frame" x="0.0" y="58" width="330" height="30"/>
                             <state key="normal" title="Skip">
                                 <color key="titleColor" name="Main"/>
                             </state>
+                            <connections>
+                                <action selector="skipAppleHealthSetup:" destination="-1" eventType="touchUpInside" id="lB1-K8-LL2"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
