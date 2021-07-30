@@ -10,18 +10,17 @@
 		3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */; };
 		3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BF26B1236A0032FA06 /* ContactRowController.swift */; };
 		3B529E6E26B00FA800D4D301 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B529E6D26B00FA800D4D301 /* Colors.xcassets */; };
-		3B55DE6E26AE8A3C005B0267 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */; };
-		3B55DE6F26AE8A3C005B0267 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */; };
 		3B55DE7226AE9634005B0267 /* ProductShowcaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */; };
 		3B55DE7326AE9634005B0267 /* ProductShowcaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */; };
 		3B55DE7526AEA4D7005B0267 /* ProductShowcaseSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */; };
 		3B55DE7926AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55DE7726AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift */; };
 		3B55DE7A26AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B55DE7826AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib */; };
+		3B86DE9526B3D68800BC28E7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86DE9226B3D68800BC28E7 /* OnboardingViewController.swift */; };
+		3B86DE9626B3D68800BC28E7 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B86DE9326B3D68800BC28E7 /* OnboardingViewController.xib */; };
+		3B86DEB226B3DB9A00BC28E7 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */; };
 		3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D526B394B700380825 /* HealthKit.framework */; };
 		3BFA29D926B39A1200380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D826B39A1200380825 /* HealthKit.framework */; };
-		3BFA29DC26B39CCB00380825 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFA29DB26B39CCB00380825 /* HealthKitManager.swift */; };
 		611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B86E026A9AFD300ECA8AD /* AppDelegate.swift */; };
-		611B86E326A9AFD300ECA8AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B86E226A9AFD300ECA8AD /* SceneDelegate.swift */; };
 		611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B86E926A9AFD300ECA8AD /* Assets.xcassets */; };
 		611B86ED26A9AFD300ECA8AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611B86EB26A9AFD300ECA8AD /* LaunchScreen.storyboard */; };
 		611B86F226A9AFD300ECA8AD /* PanicAway WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 611B86F126A9AFD300ECA8AD /* PanicAway WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -34,8 +33,6 @@
 		611B870C26A9AFD500ECA8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B870B26A9AFD500ECA8AD /* Assets.xcassets */; };
 		611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B872226A9B50A00ECA8AD /* Extension+UIView.swift */; };
 		611B872526A9B6C500ECA8AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B872426A9B6C500ECA8AD /* Colors.xcassets */; };
-		611B872A26A9BAEE00ECA8AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B872826A9BAEE00ECA8AD /* ViewController.swift */; };
-		611B872B26A9BAEE00ECA8AD /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 611B872926A9BAEE00ECA8AD /* ViewController.xib */; };
 		615CCA5926AEAA97005EC6A4 /* BreathingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615CCA5726AEAA97005EC6A4 /* BreathingViewController.swift */; };
 		615CCA5A26AEAA97005EC6A4 /* BreathingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615CCA5826AEAA97005EC6A4 /* BreathingViewController.xib */; };
 		61908DB226AF290A00E927AC /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61908DB126AF290A00E927AC /* CircularProgressBar.swift */; };
@@ -69,13 +66,13 @@
 		6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E73C16526AE8B450057142A /* SettingsViewController.xib */; };
 		6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */; };
 		6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */; };
-		B749668F26B0858A0062954C /* ContactDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749668E26B0858A0062954C /* ContactDataModel.swift */; };
+		B741993826B29BE4006B888D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993626B29BE4006B888D /* ContactTableViewCell.swift */; };
+		B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993726B29BE4006B888D /* ContactTableViewCell.xib */; };
+		B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */; };
+		B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993D26B29C08006B888D /* AddToContactTableViewCell.xib */; };
 		B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */; };
 		B7DC15B426AE960800259CB0 /* EmergencyContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */; };
-		B7DC15B726AEA81A00259CB0 /* AddContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B526AEA81A00259CB0 /* AddContactCollectionViewCell.swift */; };
-		B7DC15B826AEA81A00259CB0 /* AddContactCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15B626AEA81A00259CB0 /* AddContactCollectionViewCell.xib */; };
-		B7DC15BB26AEA83000259CB0 /* ContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B926AEA83000259CB0 /* ContactCollectionViewCell.swift */; };
-		B7DC15BC26AEA83000259CB0 /* ContactCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15BA26AEA83000259CB0 /* ContactCollectionViewCell.xib */; };
+		B7EACD5626B31FF800D32C2D /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EACD5526B31FF800D32C2D /* SaveButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,21 +121,20 @@
 		3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyFriendInterfaceController.swift; sourceTree = "<group>"; };
 		3B2048BF26B1236A0032FA06 /* ContactRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowController.swift; sourceTree = "<group>"; };
 		3B529E6D26B00FA800D4D301 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = "PanicAway/Module/Onboarding/Onboarding-6/OnboardingViewController.swift"; sourceTree = SOURCE_ROOT; };
-		3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OnboardingViewController.xib; path = "PanicAway/Module/Onboarding/Onboarding-6/OnboardingViewController.xib"; sourceTree = SOURCE_ROOT; };
 		3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductShowcaseViewController.swift; path = PanicAway/Module/Onboarding/ProductShowcase/ProductShowcaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductShowcaseViewController.xib; path = PanicAway/Module/Onboarding/ProductShowcase/ProductShowcaseViewController.xib; sourceTree = SOURCE_ROOT; };
-		3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductShowcaseSlide.swift; path = PanicAway/Module/Onboarding/ProductShowcase/ProductShowcaseSlide.swift; sourceTree = SOURCE_ROOT; };
+		3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductShowcaseSlide.swift; path = PanicAway/Module/Onboarding/ProductShowcase/Model/ProductShowcaseSlide.swift; sourceTree = SOURCE_ROOT; };
 		3B55DE7726AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductShowcaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B55DE7826AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductShowcaseCollectionViewCell.xib; sourceTree = "<group>"; };
+		3B86DE9226B3D68800BC28E7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		3B86DE9326B3D68800BC28E7 /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		3BFA29D326B394B700380825 /* PanicAway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PanicAway.entitlements; sourceTree = "<group>"; };
 		3BFA29D526B394B700380825 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		3BFA29D726B39A1200380825 /* PanicAway WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PanicAway WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		3BFA29D826B39A1200380825 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		3BFA29DB26B39CCB00380825 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		611B86DD26A9AFD300ECA8AD /* PanicAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		611B86E026A9AFD300ECA8AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		611B86E226A9AFD300ECA8AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		611B86E926A9AFD300ECA8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		611B86EC26A9AFD300ECA8AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		611B86EE26A9AFD300ECA8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,8 +150,6 @@
 		611B870D26A9AFD500ECA8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611B872226A9B50A00ECA8AD /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		611B872426A9B6C500ECA8AD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		611B872826A9BAEE00ECA8AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		611B872926A9BAEE00ECA8AD /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		615CCA5726AEAA97005EC6A4 /* BreathingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingViewController.swift; sourceTree = "<group>"; };
 		615CCA5826AEAA97005EC6A4 /* BreathingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreathingViewController.xib; sourceTree = "<group>"; };
 		61908DB126AF290A00E927AC /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
@@ -174,13 +168,13 @@
 		6E73C16526AE8B450057142A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyMessageSettingViewController.swift; sourceTree = "<group>"; };
 		6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyMessageSettingViewController.xib; sourceTree = "<group>"; };
-		B749668E26B0858A0062954C /* ContactDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataModel.swift; sourceTree = "<group>"; };
+		B741993626B29BE4006B888D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		B741993726B29BE4006B888D /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToContactTableViewCell.swift; sourceTree = "<group>"; };
+		B741993D26B29C08006B888D /* AddToContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToContactTableViewCell.xib; sourceTree = "<group>"; };
 		B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyContactViewController.xib; sourceTree = "<group>"; };
-		B7DC15B526AEA81A00259CB0 /* AddContactCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactCollectionViewCell.swift; sourceTree = "<group>"; };
-		B7DC15B626AEA81A00259CB0 /* AddContactCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddContactCollectionViewCell.xib; sourceTree = "<group>"; };
-		B7DC15B926AEA83000259CB0 /* ContactCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCollectionViewCell.swift; sourceTree = "<group>"; };
-		B7DC15BA26AEA83000259CB0 /* ContactCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCollectionViewCell.xib; sourceTree = "<group>"; };
+		B7EACD5526B31FF800D32C2D /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,40 +201,37 @@
 		3B47CC6F26AF2DBA00453756 /* ProductShowcase */ = {
 			isa = PBXGroup;
 			children = (
+				3B86DE9226B3D68800BC28E7 /* OnboardingViewController.swift */,
+				3B86DE9326B3D68800BC28E7 /* OnboardingViewController.xib */,
+				61EB9B3026B29F90000100B3 /* Model */,
+				61EB9B3126B29FA3000100B3 /* Cell */,
 				3B55DE7026AE9634005B0267 /* ProductShowcaseViewController.swift */,
 				3B55DE7126AE9634005B0267 /* ProductShowcaseViewController.xib */,
-				3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */,
-				3B55DE7626AEAA3D005B0267 /* ProductShowcaseCell */,
 			);
 			path = ProductShowcase;
-			sourceTree = "<group>";
-		};
-		3B47CC7026AF2DCD00453756 /* Onboarding-6 */ = {
-			isa = PBXGroup;
-			children = (
-				3B55DE6C26AE8A3C005B0267 /* OnboardingViewController.swift */,
-				3B55DE6D26AE8A3C005B0267 /* OnboardingViewController.xib */,
-				3BFA29DB26B39CCB00380825 /* HealthKitManager.swift */,
-			);
-			path = "Onboarding-6";
 			sourceTree = "<group>";
 		};
 		3B55DE6B26AE89DC005B0267 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3B47CC7026AF2DCD00453756 /* Onboarding-6 */,
+				3B86DEAE26B3DA6C00BC28E7 /* Onboarding-6 */,
 				3B47CC6F26AF2DBA00453756 /* ProductShowcase */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		3B55DE7626AEAA3D005B0267 /* ProductShowcaseCell */ = {
+		3B86DE9026B3D64700BC28E7 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				3B55DE7726AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift */,
-				3B55DE7826AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib */,
 			);
-			path = ProductShowcaseCell;
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		3B86DEAE26B3DA6C00BC28E7 /* Onboarding-6 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Onboarding-6";
 			sourceTree = "<group>";
 		};
 		3BBF6CBE26B27C19003A73F0 /* Controller */ = {
@@ -280,6 +271,7 @@
 				611B870426A9AFD400ECA8AD /* PanicAway WatchKit Extension */,
 				611B86DE26A9AFD300ECA8AD /* Products */,
 				3BFA29D426B394B700380825 /* Frameworks */,
+				3B86DE9026B3D64700BC28E7 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,6 +293,7 @@
 				611B871E26A9B20900ECA8AD /* Module */,
 				611B871B26A9B0C600ECA8AD /* Core */,
 				611B86EE26A9AFD300ECA8AD /* Info.plist */,
+				3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */,
 			);
 			path = PanicAway;
 			sourceTree = "<group>";
@@ -350,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				611B86E026A9AFD300ECA8AD /* AppDelegate.swift */,
-				611B86E226A9AFD300ECA8AD /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -363,8 +355,6 @@
 				6190F8D926AFC18000C48744 /* BreathingChoice */,
 				615CCA5626AEAA5A005EC6A4 /* Breathing */,
 				6E73C16326AE8B0E0057142A /* Settings */,
-				611B872826A9BAEE00ECA8AD /* ViewController.swift */,
-				611B872926A9BAEE00ECA8AD /* ViewController.xib */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -399,6 +389,7 @@
 		61908DB026AF28ED00E927AC /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B7EACD5526B31FF800D32C2D /* SaveButton.swift */,
 				61908DB126AF290A00E927AC /* CircularProgressBar.swift */,
 			);
 			path = CustomView;
@@ -437,32 +428,49 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		61EB9B3026B29F90000100B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B55DE7426AEA4D7005B0267 /* ProductShowcaseSlide.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		61EB9B3126B29FA3000100B3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3B55DE7726AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift */,
+				3B55DE7826AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		6E73C16326AE8B0E0057142A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				6EB3103026AEF1080051191A /* Emergency Message Setting */,
+				6EB3103026AEF1080051191A /* EmergencyMessage  */,
 				6E73C16426AE8B450057142A /* SettingsViewController.swift */,
 				6E73C16526AE8B450057142A /* SettingsViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		6EB3103026AEF1080051191A /* Emergency Message Setting */ = {
+		6EB3103026AEF1080051191A /* EmergencyMessage  */ = {
 			isa = PBXGroup;
 			children = (
 				6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */,
 				6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */,
 			);
-			path = "Emergency Message Setting";
+			path = "EmergencyMessage ";
 			sourceTree = "<group>";
 		};
-		B749668D26AFFE160062954C /* Cell */ = {
+		B741993526B29BC3006B888D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B7DC15B526AEA81A00259CB0 /* AddContactCollectionViewCell.swift */,
-				B7DC15B626AEA81A00259CB0 /* AddContactCollectionViewCell.xib */,
-				B7DC15B926AEA83000259CB0 /* ContactCollectionViewCell.swift */,
-				B7DC15BA26AEA83000259CB0 /* ContactCollectionViewCell.xib */,
+				B741993626B29BE4006B888D /* ContactTableViewCell.swift */,
+				B741993726B29BE4006B888D /* ContactTableViewCell.xib */,
+				B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */,
+				B741993D26B29C08006B888D /* AddToContactTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -470,10 +478,9 @@
 		B7DC15B026AE94DB00259CB0 /* Emergency Contact */ = {
 			isa = PBXGroup;
 			children = (
-				B749668E26B0858A0062954C /* ContactDataModel.swift */,
+				B741993526B29BC3006B888D /* Cell */,
 				B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */,
 				B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */,
-				B749668D26AFFE160062954C /* Cell */,
 			);
 			path = "Emergency Contact";
 			sourceTree = "<group>";
@@ -588,23 +595,22 @@
 				619F17EA26AE87EA006F8067 /* MPLUSRounded1c-Black.ttf in Resources */,
 				611B872526A9B6C500ECA8AD /* Colors.xcassets in Resources */,
 				611B86ED26A9AFD300ECA8AD /* LaunchScreen.storyboard in Resources */,
-				611B872B26A9BAEE00ECA8AD /* ViewController.xib in Resources */,
 				3B55DE7326AE9634005B0267 /* ProductShowcaseViewController.xib in Resources */,
 				619F17F926AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
 				B7DC15B426AE960800259CB0 /* EmergencyContactViewController.xib in Resources */,
 				619F17E726AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
-				B7DC15BC26AEA83000259CB0 /* ContactCollectionViewCell.xib in Resources */,
-				B7DC15B826AEA81A00259CB0 /* AddContactCollectionViewCell.xib in Resources */,
+				B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */,
 				619F17F626AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */,
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
 				619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
+				B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */,
 				6190F8E226AFC47900C48744 /* BreathingTechniqueCell.xib in Resources */,
 				6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */,
 				619F17ED26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
 				3B55DE7A26AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.xib in Resources */,
+				3B86DE9626B3D68800BC28E7 /* OnboardingViewController.xib in Resources */,
 				619F17F026AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */,
-				3B55DE6F26AE8A3C005B0267 /* OnboardingViewController.xib in Resources */,
 				615CCA5A26AEAA97005EC6A4 /* BreathingViewController.xib in Resources */,
 				6190F8DD26AFC1D100C48744 /* BreathingChoiceViewController.xib in Resources */,
 			);
@@ -652,21 +658,20 @@
 				6190F8DC26AFC1D100C48744 /* BreathingChoiceViewController.swift in Sources */,
 				6190F8E126AFC47900C48744 /* BreathingTechniqueCell.swift in Sources */,
 				611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */,
-				3BFA29DC26B39CCB00380825 /* HealthKitManager.swift in Sources */,
+				3B86DE9526B3D68800BC28E7 /* OnboardingViewController.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
-				3B55DE6E26AE8A3C005B0267 /* OnboardingViewController.swift in Sources */,
 				615CCA5926AEAA97005EC6A4 /* BreathingViewController.swift in Sources */,
-				611B872A26A9BAEE00ECA8AD /* ViewController.swift in Sources */,
+				B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */,
+				B741993826B29BE4006B888D /* ContactTableViewCell.swift in Sources */,
 				6E73C16626AE8B450057142A /* SettingsViewController.swift in Sources */,
-				611B86E326A9AFD300ECA8AD /* SceneDelegate.swift in Sources */,
+				B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */,
+				B7EACD5626B31FF800D32C2D /* SaveButton.swift in Sources */,
 				3B55DE7526AEA4D7005B0267 /* ProductShowcaseSlide.swift in Sources */,
 				3B55DE7226AE9634005B0267 /* ProductShowcaseViewController.swift in Sources */,
 				3B55DE7926AEAA6C005B0267 /* ProductShowcaseCollectionViewCell.swift in Sources */,
 				B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */,
-				B7DC15BB26AEA83000259CB0 /* ContactCollectionViewCell.swift in Sources */,
-				B749668F26B0858A0062954C /* ContactDataModel.swift in Sources */,
-				B7DC15B726AEA81A00259CB0 /* AddContactCollectionViewCell.swift in Sources */,
 				61908DB226AF290A00E927AC /* CircularProgressBar.swift in Sources */,
+				3B86DEB226B3DB9A00BC28E7 /* HealthKitManager.swift in Sources */,
 				6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
