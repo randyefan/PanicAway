@@ -14,8 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupDefaultNavbar()
-        rootOnBoarding()
+        checkUserFirstLaunch()
         return true
+    }
+    
+    func checkUserFirstLaunch() {
+        if UserDefaults.standard.bool(forKey: "isNotFirstLaunch") {
+            rootBreathingPage()
+            return
+        }
+        
+        rootOnBoarding()
     }
     
     func rootBreathingPage() {
