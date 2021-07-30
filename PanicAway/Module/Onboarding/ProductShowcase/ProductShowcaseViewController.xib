@@ -67,6 +67,9 @@
                             <state key="normal" title="Skip">
                                 <color key="titleColor" name="Main"/>
                             </state>
+                            <connections>
+                                <action selector="skipButtonPressed:" destination="-1" eventType="touchUpInside" id="VJq-tv-TQV"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

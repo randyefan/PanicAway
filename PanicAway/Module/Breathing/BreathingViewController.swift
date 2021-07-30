@@ -45,6 +45,9 @@ class BreathingViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupObserveAction()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar()
     }
     
