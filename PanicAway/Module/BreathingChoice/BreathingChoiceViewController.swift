@@ -85,7 +85,7 @@ class BreathingChoiceViewController: UIViewController {
     
     private func setSelectedBreathingTechnique() {
         if let selected = selected {
-            UserDefaults.standard.setValue(selected.id, forKey: "defaultBreathId")
+            UserDefaults.standard.setValue(selected.id, forKey: "defaultBreatheId")
         }
     }
     

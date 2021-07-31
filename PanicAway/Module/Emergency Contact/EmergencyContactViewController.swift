@@ -92,7 +92,7 @@ fileprivate extension EmergencyContactViewController {
                 contact[contactData.givenName] = contactData.phoneNumbers[0].value.value(forKey: "digits") as? String
             }
             
-            UserDefaults.standard.setValue(contact, forKey: "emergencyContact")
+            UserDefaults.standard.setValue(contact, forKey: "defaultEmergencyContact")
         }
     }
     

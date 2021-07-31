@@ -22,8 +22,8 @@
                 <outlet property="breathingMethodStackView" destination="6vB-on-3Z9" id="9O0-VV-RSX"/>
                 <outlet property="captionLabel" destination="luj-5t-OHN" id="dr2-F4-EaR"/>
                 <outlet property="circularProgressBar" destination="zAu-1l-mK1" id="WdH-sj-AYz"/>
-                <outlet property="leftChevronView" destination="T1I-p5-CxJ" id="yLT-qa-CxA"/>
-                <outlet property="rightChevronView" destination="b96-cZ-V24" id="g9I-Iy-pIa"/>
+                <outlet property="leftChevronImageView" destination="DrJ-tZ-OxA" id="I9h-pJ-UBk"/>
+                <outlet property="rightChevronImageView" destination="5Zf-QJ-Yc5" id="1E8-P8-UhF"/>
                 <outlet property="safeAreaView" destination="MVA-gi-6zO" id="ac0-8p-FAT"/>
                 <outlet property="settingsView" destination="KIp-Yu-JMY" id="iJp-tI-HaY"/>
                 <outlet property="titleLabel" destination="BJB-d9-kFK" id="qoe-r9-jsI"/>
@@ -74,13 +74,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay, you’ve finished your breathing exercise!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-5t-OHN">
-                                            <rect key="frame" x="0.0" y="51" width="306" height="39.666666666666657"/>
+                                            <rect key="frame" x="0.0" y="51" width="306" height="47.666666666666657"/>
                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEe-Oa-3Jr" userLabel="Pemenuh">
-                                            <rect key="frame" x="0.0" y="90.666666666666657" width="306" height="23.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="98.666666666666657" width="306" height="15.333333333333329"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
@@ -138,7 +138,7 @@
                                                     <rect key="frame" x="30" y="0.0" width="246" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-4-4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC4-hA-62X">
-                                                            <rect key="frame" x="88.666666666666657" y="12.333333333333371" width="68.666666666666657" height="32.666666666666664"/>
+                                                            <rect key="frame" x="82.666666666666657" y="9" width="81" height="39.333333333333336"/>
                                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

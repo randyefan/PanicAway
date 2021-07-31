@@ -14,6 +14,12 @@ enum BreathingState {
     case finish
 }
 
+enum BreathingTechnique: Int {
+    case one = 0
+    case two = 1
+    case three = 2
+}
+
 class BreathingViewController: UIViewController {
     // MARK: - IBOutlet
     
@@ -22,17 +28,26 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var settingsView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-    @IBOutlet weak var leftChevronView: UIView!
     @IBOutlet weak var breathingLabel: UILabel!
-    @IBOutlet weak var rightChevronView: UIView!
     @IBOutlet weak var safeAreaView: UIView!
     @IBOutlet weak var breathingMethodStackView: UIStackView!
+    @IBOutlet weak var leftChevronImageView: UIImageView!
+    @IBOutlet weak var rightChevronImageView: UIImageView!
     
     // MARK: - Variable
-    
+    var data = BreathingLoader()
     var state: BreathingState = .beforeBreathing
     var countdownTime = 3
     var breatheTime = 0 // Handle With data from model later! (REQUIRED)
+    
+    // MARK: - Computed Properties
+    var technique: BreathingModel? {
+        didSet {
+            guard let technique = technique else { return }
+            breathingLabel.text = technique.breathingName
+            setupChevronByPosition(position: BreathingTechnique(rawValue: technique.id)!)
+        }
+    }
     
     // MARK: - Variable DisplayLink (For working with timer)
     
@@ -43,8 +58,10 @@ class BreathingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        data.loadDataBreath()
         setupView()
         setupObserveAction()
+        setupToDefaultBreathingTechnique()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +83,11 @@ class BreathingViewController: UIViewController {
         }
     }
     
+    func setupToDefaultBreathingTechnique() {
+        let idBreath = UserDefaults.standard.integer(forKey: "defaultBreatheId")
+        technique = data.entries[idBreath]
+    }
+    
     func setupNavigationBar() {
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -75,12 +97,26 @@ class BreathingViewController: UIViewController {
             self.navigateToSettings()
         }
         
-        leftChevronView.onTap {
+        leftChevronImageView.onTap {
             // Handle change breathing method
         }
         
-        rightChevronView.onTap {
+        rightChevronImageView.onTap {
             // Handle change breathing method
+        }
+    }
+    
+    func setupChevronByPosition(position: BreathingTechnique) {
+        switch position {
+        case .one:
+            leftChevronImageView.isHidden = true
+            rightChevronImageView.isHidden = false
+        case .two:
+            leftChevronImageView.isHidden = false
+            rightChevronImageView.isHidden = false
+        default:
+            leftChevronImageView.isHidden = false
+            rightChevronImageView.isHidden = true
         }
     }
 
