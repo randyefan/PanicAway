@@ -16,15 +16,45 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var hapticToggle: UISwitch!
     @IBOutlet weak var appleHealthToggle: UISwitch!
 
+    let data = BreathingLoader()
+    var emergencyContact: [EmergencyContactModel]?
+    
+    var breathingTechnique: BreathingModel? {
+        didSet {
+            guard let breathing = breathingTechnique else { return }
+            breathingMethodValue.text = breathing.breathingName
+        }
+    }
+    
+    
     private let cycleOption = Array(4...100)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        data.loadDataBreath()
         initialSetup()
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    func setupViewWithData() {
+        getEmergencyContacts()
+        let defaultBreathingId = UserDefaults.standard.integer(forKey: "defaultBreatheId")
+        let defaultBreathingCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle")
+        breathingCycleValue.text = "\(defaultBreathingCycle)"
+        breathingTechnique = data.entries[defaultBreathingId]
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        setupViewWithData()
         breathingCyclePickerView.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.setValue(Int(breathingCycleValue.text ?? "4"), forKey: "defaultBreathingCycle")
     }
 
     @IBAction func showHidePickerView(_ sender: Any) {
@@ -36,9 +66,11 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func breathingMethodButton(_ sender: UITapGestureRecognizer) {
+        navigateToBreathingChoice()
     }
 
     @IBAction func emergencyContactButon(_ sender: UITapGestureRecognizer) {
+        navigateToEmergencyContact()
     }
 
     @IBAction func emergencyMessageButton(_ sender: UITapGestureRecognizer) {
@@ -50,6 +82,34 @@ class SettingsViewController: UIViewController {
 fileprivate extension SettingsViewController {
     func initialSetup() {
         title = "Preferences"
+    }
+    
+    func getEmergencyContacts() {
+        if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
+            do {
+                let decoder = JSONDecoder()
+                let emergencyContact = try decoder.decode([EmergencyContactModel].self, from: data)
+                self.emergencyContact = emergencyContact
+                } catch {
+                    print("Unable to Decode (\(error))")
+                }
+        }
+    }
+    
+    func setDefaultBreathingCycle() {
+        
+    }
+    
+    func navigateToBreathingChoice() {
+        let vc = BreathingChoiceViewController(entryPoint: .settings)
+        vc.selected = breathingTechnique
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToEmergencyContact() {
+        let vc = EmergencyContactViewController(entryPoint: .settings)
+        vc.emergencyContact = emergencyContact ?? []
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -71,8 +71,12 @@ class ProductShowcaseViewController: UIViewController{
         }
     }
     
+    @IBAction func skipButtonPressed(_ sender: Any) {
+        navigateToChooseBreathingTechnique()
+    }
+    
     func nextView(){
-        
+        navigateToChooseBreathingTechnique()
     }
     
     
