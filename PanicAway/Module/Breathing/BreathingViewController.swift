@@ -31,10 +31,13 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var breathingLabel: UILabel!
     @IBOutlet weak var safeAreaView: UIView!
     @IBOutlet weak var breathingMethodStackView: UIStackView!
+    @IBOutlet weak var leftChevronView: UIView!
     @IBOutlet weak var leftChevronImageView: UIImageView!
+    @IBOutlet weak var rightChevronView: UIView!
     @IBOutlet weak var rightChevronImageView: UIImageView!
     
     // MARK: - Variable
+    var breathingId: Int = 0
     var data = BreathingLoader()
     var state: BreathingState = .beforeBreathing
     var countdownTime = 3
@@ -85,6 +88,7 @@ class BreathingViewController: UIViewController {
     
     func setupToDefaultBreathingTechnique() {
         let idBreath = UserDefaults.standard.integer(forKey: "defaultBreatheId")
+        breathingId = idBreath
         technique = data.entries[idBreath]
     }
     
@@ -97,12 +101,18 @@ class BreathingViewController: UIViewController {
             self.navigateToSettings()
         }
         
-        leftChevronImageView.onTap {
-            // Handle change breathing method
+        leftChevronView.onTap {
+            if !self.leftChevronImageView.isHidden {
+                self.breathingId -= 1
+                self.technique = self.data.entries[self.breathingId]
+            }
         }
         
-        rightChevronImageView.onTap {
-            // Handle change breathing method
+        rightChevronView.onTap {
+            if !self.rightChevronImageView.isHidden {
+                self.breathingId += 1
+                self.technique = self.data.entries[self.breathingId]
+            }
         }
     }
     

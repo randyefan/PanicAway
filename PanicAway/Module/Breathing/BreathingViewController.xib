@@ -23,7 +23,9 @@
                 <outlet property="captionLabel" destination="luj-5t-OHN" id="dr2-F4-EaR"/>
                 <outlet property="circularProgressBar" destination="zAu-1l-mK1" id="WdH-sj-AYz"/>
                 <outlet property="leftChevronImageView" destination="DrJ-tZ-OxA" id="I9h-pJ-UBk"/>
+                <outlet property="leftChevronView" destination="T1I-p5-CxJ" id="hQv-z2-aNp"/>
                 <outlet property="rightChevronImageView" destination="5Zf-QJ-Yc5" id="1E8-P8-UhF"/>
+                <outlet property="rightChevronView" destination="b96-cZ-V24" id="adg-Pq-rk4"/>
                 <outlet property="safeAreaView" destination="MVA-gi-6zO" id="ac0-8p-FAT"/>
                 <outlet property="settingsView" destination="KIp-Yu-JMY" id="iJp-tI-HaY"/>
                 <outlet property="titleLabel" destination="BJB-d9-kFK" id="qoe-r9-jsI"/>
