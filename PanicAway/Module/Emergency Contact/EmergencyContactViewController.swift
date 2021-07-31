@@ -45,6 +45,7 @@ class EmergencyContactViewController: UIViewController{
         contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
     }
     @IBAction func saveButtonAction(_ sender: UIButton) {
+        setSaveEmergencyContact()
         navigateToAuthorizeHealthKit()
     }
     
@@ -82,6 +83,17 @@ fileprivate extension EmergencyContactViewController {
             isEditTableView = true
         }
         
+    }
+    
+    func setSaveEmergencyContact() {
+        if emergencyContact.count != 0 {
+            var contact: [String:String] = [:]
+            let _ = emergencyContact.map { contactData in
+                contact[contactData.givenName] = contactData.phoneNumbers[0].value.value(forKey: "digits") as? String
+            }
+            
+            UserDefaults.standard.setValue(contact, forKey: "emergencyContact")
+        }
     }
     
     func navigateToAuthorizeHealthKit() {
