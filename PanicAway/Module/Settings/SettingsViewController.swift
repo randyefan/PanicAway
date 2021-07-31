@@ -16,19 +16,39 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var hapticToggle: UISwitch!
     @IBOutlet weak var appleHealthToggle: UISwitch!
 
+    let data = BreathingLoader()
+    
+    var breathingTechnique: BreathingModel? {
+        didSet {
+            guard let breathing = breathingTechnique else { return }
+            breathingMethodValue.text = breathing.breathingName
+        }
+    }
+    
+    
     private let cycleOption = Array(4...100)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        data.loadDataBreath()
         initialSetup()
         setupNavigationBar()
+        setupViewWithData()
     }
     
     func setupNavigationBar() {
         self.navigationController?.navigationBar.isHidden = false
     }
+    
+    func setupViewWithData() {
+        let defaultBreathingId = UserDefaults.standard.integer(forKey: "defaultBreatheId")
+        let defaultBreathingCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle")
+        breathingCycleValue.text = "\(defaultBreathingCycle)"
+        breathingTechnique = data.entries[defaultBreathingId]
+    }
 
     override func viewWillAppear(_ animated: Bool) {
+        setupViewWithData()
         breathingCyclePickerView.isHidden = true
     }
 
@@ -41,9 +61,11 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func breathingMethodButton(_ sender: UITapGestureRecognizer) {
+        navigateToBreathingChoice()
     }
 
     @IBAction func emergencyContactButon(_ sender: UITapGestureRecognizer) {
+        navigateToEmergencyContact()
     }
 
     @IBAction func emergencyMessageButton(_ sender: UITapGestureRecognizer) {
@@ -55,6 +77,17 @@ class SettingsViewController: UIViewController {
 fileprivate extension SettingsViewController {
     func initialSetup() {
         title = "Preferences"
+    }
+    
+    func navigateToBreathingChoice() {
+        let vc = BreathingChoiceViewController(entryPoint: .settings)
+        vc.selected = breathingTechnique
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToEmergencyContact() {
+        let vc = EmergencyContactViewController(entryPoint: .settings)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -64,11 +64,11 @@ class BreathingViewController: UIViewController {
         data.loadDataBreath()
         setupView()
         setupObserveAction()
-        setupToDefaultBreathingTechnique()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar()
+        setupToDefaultBreathingTechnique()
     }
     
     // MARK: - Setup View for ViewController

@@ -17,7 +17,8 @@ enum BreathingChoiceEntryPoint {
 class BreathingChoiceViewController: UIViewController {
     // MARK: - IBOutlet
     
-    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonSelect: UIButton!
     @IBOutlet weak var buttonView: UIView!
@@ -25,7 +26,7 @@ class BreathingChoiceViewController: UIViewController {
     // MARK: - Variable
     private var data = BreathingLoader()
     private var entryPoint: BreathingChoiceEntryPoint?
-    private var selected: BreathingModel?
+    var selected: BreathingModel?
     
     // MARK: - Initializer (Required)
     init(entryPoint: BreathingChoiceEntryPoint) {
@@ -44,9 +45,16 @@ class BreathingChoiceViewController: UIViewController {
         data.loadDataBreath()
         setupTableView()
         setupView()
+        setupSelectedCell()
     }
     
     // MARK: - Setup Function for ViewController
+    
+    func setupSelectedCell() {
+        if let selected = selected {
+            tableView.selectRow(at: IndexPath(row: selected.id, section: 0), animated: true, scrollPosition: .none)
+        }
+    }
     
     func setupTableView() {
         tableView.dataSource = self
@@ -58,12 +66,15 @@ class BreathingChoiceViewController: UIViewController {
     }
     
     func setupView() {
-        
         switch entryPoint {
         case .settings:
-            titleLabel.isHidden = true
+            title = "Breathing Method"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveChanges))
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            titleView.isHidden = true
             buttonView.isHidden = true
         default:
+            buttonSelect.isEnabled = false
             self.navigationController?.navigationBar.isHidden = true
         }
     }
@@ -73,6 +84,7 @@ class BreathingChoiceViewController: UIViewController {
     @IBAction func selectAction(_ sender: Any) {
         guard let _ = selected else { return }
         setSelectedBreathingTechnique()
+        setDefaultBreathingCycle()
         navigateToEmergencyContact()
     }
     
@@ -89,6 +101,15 @@ class BreathingChoiceViewController: UIViewController {
         }
     }
     
+    private func setDefaultBreathingCycle() {
+        UserDefaults.standard.setValue(4, forKey: "defaultBreathingCycle")
+    }
+    
+    @objc func saveChanges() {
+        setSelectedBreathingTechnique()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 // MARK: - UITABLEVIEW DATA SOURCE & UITABLEVIEW DELEGATE
@@ -101,13 +122,10 @@ extension BreathingChoiceViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "BreathingTechniqueCell", for: indexPath) as? BreathingTechniqueCell {
             
-            if let selected = selected, indexPath.row == selected.id {
-                cell.setSelected(true, animated: true)
-            }
-            
             cell.indexPath = indexPath
             cell.model = data.entries[indexPath.row]
             cell.selectionStyle = .none
+            
             return cell
             
         }
@@ -115,6 +133,13 @@ extension BreathingChoiceViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if entryPoint == .settings {
+            if selected?.id != indexPath.row {
+                navigationItem.rightBarButtonItem?.isEnabled = true
+            }
+        }
+        
+        buttonSelect.isEnabled = true
         selected = data.entries[indexPath.row]
     }
 }

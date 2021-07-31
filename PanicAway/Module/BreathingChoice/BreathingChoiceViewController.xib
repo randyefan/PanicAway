@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -19,23 +19,23 @@
                 <outlet property="buttonSelect" destination="2EE-nU-4sl" id="fl4-HY-MT2"/>
                 <outlet property="buttonView" destination="0FY-Yw-ero" id="YSJ-en-HG6"/>
                 <outlet property="tableView" destination="cSu-Y7-TbJ" id="hZF-ng-aEd"/>
-                <outlet property="titleLabel" destination="FaK-Q6-liA" id="Ag5-G3-lDE"/>
+                <outlet property="titleView" destination="kUT-0W-xaX" id="Edy-qh-WYg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-C3-RTh" userLabel="Main View">
-                    <rect key="frame" x="25" y="76" width="364" height="754"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-aX-NoA" userLabel="Top Label View">
+                    <rect key="frame" x="25" y="25" width="364" height="112"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-aX-NoA" userLabel="Top Label View">
-                            <rect key="frame" x="0.0" y="0.0" width="364" height="124"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-GA-diY">
+                            <rect key="frame" x="0.0" y="0.0" width="364" height="112"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-GA-diY">
-                                    <rect key="frame" x="0.0" y="0.0" width="364" height="124"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-0W-xaX">
+                                    <rect key="frame" x="0.0" y="0.0" width="364" height="75"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your breathing technique" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-Q6-liA">
                                             <rect key="frame" x="0.0" y="0.0" width="364" height="75"/>
@@ -46,37 +46,45 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your favorite default breathing method for your customised breathing experience!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-ps-kB9">
-                                            <rect key="frame" x="0.0" y="83" width="364" height="29"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="29" id="g3P-Gz-7Ee"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzC-IL-1yg" userLabel="Pemenuh">
-                                            <rect key="frame" x="0.0" y="120" width="364" height="4"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </stackView>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="leading" secondItem="kUT-0W-xaX" secondAttribute="leading" id="5Rp-lz-UYd"/>
+                                        <constraint firstAttribute="trailing" secondItem="FaK-Q6-liA" secondAttribute="trailing" id="TLy-lV-2Vl"/>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerY" secondItem="kUT-0W-xaX" secondAttribute="centerY" id="dLi-wx-gA6"/>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerX" secondItem="kUT-0W-xaX" secondAttribute="centerX" id="h9s-MW-FFq"/>
+                                        <constraint firstAttribute="height" constant="75" id="pEN-o9-dZG"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your favorite default breathing method for your customised breathing experience!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-ps-kB9">
+                                    <rect key="frame" x="0.0" y="83" width="364" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="29" id="g3P-Gz-7Ee"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="JKB-GA-diY" secondAttribute="trailing" id="4Ni-uR-XTe"/>
-                                <constraint firstItem="JKB-GA-diY" firstAttribute="leading" secondItem="5Ck-aX-NoA" secondAttribute="leading" id="78c-aO-bEN"/>
-                                <constraint firstItem="JKB-GA-diY" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="top" id="BJO-8L-yRP"/>
-                                <constraint firstAttribute="height" constant="124" id="cmF-Fj-a12"/>
-                                <constraint firstAttribute="bottom" secondItem="JKB-GA-diY" secondAttribute="bottom" id="iJR-9a-lNf"/>
-                            </constraints>
-                        </view>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JKB-GA-diY" secondAttribute="trailing" id="4Ni-uR-XTe"/>
+                        <constraint firstItem="JKB-GA-diY" firstAttribute="leading" secondItem="5Ck-aX-NoA" secondAttribute="leading" id="78c-aO-bEN"/>
+                        <constraint firstItem="JKB-GA-diY" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="top" id="BJO-8L-yRP"/>
+                        <constraint firstAttribute="bottom" secondItem="JKB-GA-diY" secondAttribute="bottom" id="iJR-9a-lNf"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-C3-RTh" userLabel="Main View">
+                    <rect key="frame" x="25" y="163" width="364" height="541"/>
+                    <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGC-Lp-BjA" userLabel="Centre View">
-                            <rect key="frame" x="0.0" y="164" width="364" height="502"/>
+                            <rect key="frame" x="0.0" y="0.0" width="364" height="453"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSu-Y7-TbJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="364" height="502"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="364" height="453"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                             </subviews>
@@ -89,9 +97,9 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FY-Yw-ero" userLabel="Bottom View">
-                            <rect key="frame" x="0.0" y="706" width="364" height="48"/>
+                            <rect key="frame" x="0.0" y="493" width="364" height="48"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EE-nU-4sl">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EE-nU-4sl" customClass="SaveButton" customModule="PanicAway" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="364" height="48"/>
                                     <color key="backgroundColor" name="Main"/>
                                     <constraints>
@@ -125,10 +133,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="kUg-C3-RTh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="9E7-Rw-Dgm"/>
                 <constraint firstItem="kUg-C3-RTh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Gpb-wL-RAn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kUg-C3-RTh" secondAttribute="trailing" constant="25" id="NTw-Bt-JwK"/>
+                <constraint firstItem="cSu-Y7-TbJ" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="bottom" constant="26" id="OwO-Po-gZj"/>
+                <constraint firstItem="5Ck-aX-NoA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="TNd-6m-yse"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kUg-C3-RTh" secondAttribute="bottom" constant="32" id="TtP-EH-Km6"/>
+                <constraint firstItem="5Ck-aX-NoA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="mi8-OI-Q0o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ck-aX-NoA" secondAttribute="trailing" constant="25" id="nyd-v0-1mW"/>
             </constraints>
             <point key="canvasLocation" x="-9" y="130"/>
         </view>
