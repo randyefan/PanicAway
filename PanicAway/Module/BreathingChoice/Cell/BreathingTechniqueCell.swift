@@ -14,6 +14,14 @@ class BreathingTechniqueCell: UITableViewCell {
     
     var indexPath: IndexPath?
     
+    var model: BreathingModel? {
+        didSet {
+            guard let model = model else { return }
+            titleLabel.text = model.breathingName
+            captionLabel.text = model.description
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setImageBackgroundUnselected()

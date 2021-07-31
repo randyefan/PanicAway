@@ -23,8 +23,9 @@ class BreathingChoiceViewController: UIViewController {
     @IBOutlet weak var buttonView: UIView!
     
     // MARK: - Variable
-    
+    private var data = BreathingLoader()
     private var entryPoint: BreathingChoiceEntryPoint?
+    private var selected: BreathingModel?
     
     // MARK: - Initializer (Required)
     init(entryPoint: BreathingChoiceEntryPoint) {
@@ -40,6 +41,7 @@ class BreathingChoiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        data.loadDataBreath()
         setupTableView()
         setupView()
     }
@@ -56,6 +58,7 @@ class BreathingChoiceViewController: UIViewController {
     }
     
     func setupView() {
+        
         switch entryPoint {
         case .settings:
             titleLabel.isHidden = true
@@ -68,6 +71,8 @@ class BreathingChoiceViewController: UIViewController {
     // MARK: - Action Triggered
     
     @IBAction func selectAction(_ sender: Any) {
+        guard let _ = selected else { return }
+        setSelectedBreathingTechnique()
         navigateToEmergencyContact()
     }
     
@@ -78,21 +83,38 @@ class BreathingChoiceViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    private func setSelectedBreathingTechnique() {
+        if let selected = selected {
+            UserDefaults.standard.setValue(selected.id, forKey: "defaultBreathId")
+        }
+    }
+    
 }
 
 // MARK: - UITABLEVIEW DATA SOURCE & UITABLEVIEW DELEGATE
 
 extension BreathingChoiceViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        data.entries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "BreathingTechniqueCell", for: indexPath) as? BreathingTechniqueCell {
+            
+            if let selected = selected, indexPath.row == selected.id {
+                cell.setSelected(true, animated: true)
+            }
+            
             cell.indexPath = indexPath
+            cell.model = data.entries[indexPath.row]
             cell.selectionStyle = .none
             return cell
+            
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selected = data.entries[indexPath.row]
     }
 }
