@@ -15,9 +15,9 @@ class ContactTableViewCell: UITableViewCell {
 
     @IBOutlet weak var contactNameLabel: UILabel!
     
-    var contactInformation : CNContact? = nil {
+    var contactInformation : EmergencyContactModel? = nil {
         didSet {
-            contactNameLabel.text = contactInformation?.givenName
+            contactNameLabel.text = contactInformation?.name
         }
     }
     

@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var appleHealthToggle: UISwitch!
 
     let data = BreathingLoader()
+    var emergencyContact: [EmergencyContactModel]?
     
     var breathingTechnique: BreathingModel? {
         didSet {
@@ -33,7 +34,6 @@ class SettingsViewController: UIViewController {
         data.loadDataBreath()
         initialSetup()
         setupNavigationBar()
-        setupViewWithData()
     }
     
     func setupNavigationBar() {
@@ -41,6 +41,7 @@ class SettingsViewController: UIViewController {
     }
     
     func setupViewWithData() {
+        getEmergencyContacts()
         let defaultBreathingId = UserDefaults.standard.integer(forKey: "defaultBreatheId")
         let defaultBreathingCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle")
         breathingCycleValue.text = "\(defaultBreathingCycle)"
@@ -50,6 +51,10 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupViewWithData()
         breathingCyclePickerView.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.setValue(Int(breathingCycleValue.text ?? "4"), forKey: "defaultBreathingCycle")
     }
 
     @IBAction func showHidePickerView(_ sender: Any) {
@@ -79,6 +84,22 @@ fileprivate extension SettingsViewController {
         title = "Preferences"
     }
     
+    func getEmergencyContacts() {
+        if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
+            do {
+                let decoder = JSONDecoder()
+                let emergencyContact = try decoder.decode([EmergencyContactModel].self, from: data)
+                self.emergencyContact = emergencyContact
+                } catch {
+                    print("Unable to Decode (\(error))")
+                }
+        }
+    }
+    
+    func setDefaultBreathingCycle() {
+        
+    }
+    
     func navigateToBreathingChoice() {
         let vc = BreathingChoiceViewController(entryPoint: .settings)
         vc.selected = breathingTechnique
@@ -87,6 +108,7 @@ fileprivate extension SettingsViewController {
     
     func navigateToEmergencyContact() {
         let vc = EmergencyContactViewController(entryPoint: .settings)
+        vc.emergencyContact = emergencyContact ?? []
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

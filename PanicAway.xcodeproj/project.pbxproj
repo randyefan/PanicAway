@@ -63,6 +63,8 @@
 		61B9B95426B3EB870092C183 /* ProductShowcaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9B94C26B3EB870092C183 /* ProductShowcaseCollectionViewCell.swift */; };
 		61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9B94D26B3EB870092C183 /* OnboardingViewController.swift */; };
 		61B9B95726B3EB870092C183 /* ProductShowcaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61B9B95026B3EB870092C183 /* ProductShowcaseViewController.xib */; };
+		61F4201826B5CF0B00362288 /* EmergencyContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */; };
+		61F4201926B5CF0B00362288 /* EmergencyContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */; };
 		6E73C16626AE8B450057142A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E73C16426AE8B450057142A /* SettingsViewController.swift */; };
 		6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E73C16526AE8B450057142A /* SettingsViewController.xib */; };
 		6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */; };
@@ -166,6 +168,7 @@
 		61B9B94C26B3EB870092C183 /* ProductShowcaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductShowcaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		61B9B94D26B3EB870092C183 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		61B9B95026B3EB870092C183 /* ProductShowcaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductShowcaseViewController.xib; sourceTree = "<group>"; };
+		61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactModel.swift; sourceTree = "<group>"; };
 		6E73C16426AE8B450057142A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6E73C16526AE8B450057142A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyMessageSettingViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				612CA53326B40151009A11B3 /* BreathingModel.swift */,
+				61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,6 +557,7 @@
 					};
 					611B86F026A9AFD300ECA8AD = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					611B86FF26A9AFD400ECA8AD = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -656,6 +661,7 @@
 				61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
 				615CCA5926AEAA97005EC6A4 /* BreathingViewController.swift in Sources */,
+				61F4201826B5CF0B00362288 /* EmergencyContactModel.swift in Sources */,
 				B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */,
 				B741993826B29BE4006B888D /* ContactTableViewCell.swift in Sources */,
 				61B9B95426B3EB870092C183 /* ProductShowcaseCollectionViewCell.swift in Sources */,
@@ -680,6 +686,7 @@
 				611B870626A9AFD400ECA8AD /* InterfaceController.swift in Sources */,
 				3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */,
 				3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */,
+				61F4201926B5CF0B00362288 /* EmergencyContactModel.swift in Sources */,
 				611B870A26A9AFD400ECA8AD /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,14 +890,21 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 7.4;
@@ -903,10 +917,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

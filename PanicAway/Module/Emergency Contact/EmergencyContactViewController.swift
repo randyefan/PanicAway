@@ -23,7 +23,7 @@ class EmergencyContactViewController: UIViewController{
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     
-    private var emergencyContact: [CNContact] = []
+    var emergencyContact: [EmergencyContactModel] = []
     private var isEdit: Bool = false
     private var editIndex: Int? = nil
     private var isEditTableView: Bool = false
@@ -44,6 +44,19 @@ class EmergencyContactViewController: UIViewController{
         contactTableView.register(ContactTableViewCell.nib(), forCellReuseIdentifier: ContactTableViewCell.reuseID)
         contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if entryPoint == .settings {
+            contactTableView.reloadData()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if entryPoint == .settings {
+            setSaveEmergencyContact()
+        }
+    }
+    
     @IBAction func saveButtonAction(_ sender: UIButton) {
         setSaveEmergencyContact()
         navigateToAuthorizeHealthKit()
@@ -87,12 +100,13 @@ fileprivate extension EmergencyContactViewController {
     
     func setSaveEmergencyContact() {
         if emergencyContact.count != 0 {
-            var contact: [String:String] = [:]
-            let _ = emergencyContact.map { contactData in
-                contact[contactData.givenName] = contactData.phoneNumbers[0].value.value(forKey: "digits") as? String
+            do {
+                let encoder = JSONEncoder()
+                let data = try encoder.encode(emergencyContact)
+                UserDefaults.standard.set(data, forKey: "defaultEmergencyContact")
+            } catch {
+                print("Unable to Encode (\(error))")
             }
-            
-            UserDefaults.standard.setValue(contact, forKey: "defaultEmergencyContact")
         }
     }
     
@@ -164,10 +178,12 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         if isEdit {
             guard let index = editIndex else { return }
-            emergencyContact[index] = contact
+            let contactFriend = EmergencyContactModel(name: contact.givenName, phoneNumber: (contact.phoneNumbers[0].value.value(forKey: "digits") as? String)!)
+            emergencyContact[index] = contactFriend
             isEdit = false
         } else {
-            emergencyContact.append(contact)
+            let contactFriend = EmergencyContactModel(name: contact.givenName, phoneNumber: (contact.phoneNumbers[0].value.value(forKey: "digits") as? String)!)
+            emergencyContact.append(contactFriend)
             checkContact()
         }
         contactTableView.reloadData()
@@ -196,7 +212,6 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             contactTableView.deleteRows(at: [indexPath], with: .none)
             checkContact()
             contactTableView.endUpdates()
-            //reload cell button heheh
             contactTableView.reloadRows(at: [IndexPath(row: emergencyContact.count, section: 0)], with: .none)
         }
     }
