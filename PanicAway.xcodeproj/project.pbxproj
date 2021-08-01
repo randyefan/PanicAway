@@ -27,6 +27,8 @@
 		611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B872226A9B50A00ECA8AD /* Extension+UIView.swift */; };
 		611B872526A9B6C500ECA8AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B872426A9B6C500ECA8AD /* Colors.xcassets */; };
 		612CA53426B40151009A11B3 /* BreathingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CA53326B40151009A11B3 /* BreathingModel.swift */; };
+		613B28A126B6825F004CB533 /* SDWebImageLottieCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 613B28A026B6825F004CB533 /* SDWebImageLottieCoder */; };
+		613B28A326B6827B004CB533 /* SDWebImageLottieCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 613B28A226B6827B004CB533 /* SDWebImageLottieCoder */; };
 		615C162726B3F21000C11249 /* ProductShowcaseSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C162626B3F21000C11249 /* ProductShowcaseSlide.swift */; };
 		615CCA5926AEAA97005EC6A4 /* BreathingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615CCA5726AEAA97005EC6A4 /* BreathingViewController.swift */; };
 		615CCA5A26AEAA97005EC6A4 /* BreathingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615CCA5826AEAA97005EC6A4 /* BreathingViewController.xib */; };
@@ -188,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61B5B9AA26A9BEE700FE700B /* Lottie in Frameworks */,
+				613B28A126B6825F004CB533 /* SDWebImageLottieCoder in Frameworks */,
 				3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BFA29D926B39A1200380825 /* HealthKit.framework in Frameworks */,
+				613B28A326B6827B004CB533 /* SDWebImageLottieCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +508,7 @@
 			name = PanicAway;
 			packageProductDependencies = (
 				61B5B9A926A9BEE700FE700B /* Lottie */,
+				613B28A026B6825F004CB533 /* SDWebImageLottieCoder */,
 			);
 			productName = PanicAway;
 			productReference = 611B86DD26A9AFD300ECA8AD /* PanicAway.app */;
@@ -539,6 +544,9 @@
 			dependencies = (
 			);
 			name = "PanicAway WatchKit Extension";
+			packageProductDependencies = (
+				613B28A226B6827B004CB533 /* SDWebImageLottieCoder */,
+			);
 			productName = "PanicAway WatchKit Extension";
 			productReference = 611B870026A9AFD400ECA8AD /* PanicAway WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -575,6 +583,7 @@
 			mainGroup = 611B86D426A9AFD200ECA8AD;
 			packageReferences = (
 				61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				613B289F26B6825F004CB533 /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */,
 			);
 			productRefGroup = 611B86DE26A9AFD300ECA8AD /* Products */;
 			projectDirPath = "";
@@ -1025,6 +1034,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		613B289F26B6825F004CB533 /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageLottieCoder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 		61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -1036,6 +1053,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		613B28A026B6825F004CB533 /* SDWebImageLottieCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 613B289F26B6825F004CB533 /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */;
+			productName = SDWebImageLottieCoder;
+		};
+		613B28A226B6827B004CB533 /* SDWebImageLottieCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 613B289F26B6825F004CB533 /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */;
+			productName = SDWebImageLottieCoder;
+		};
 		61B5B9A926A9BEE700FE700B /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */;
