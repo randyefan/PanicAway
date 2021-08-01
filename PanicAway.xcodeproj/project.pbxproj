@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */; };
 		3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BF26B1236A0032FA06 /* ContactRowController.swift */; };
+		3B392C6626B6C688009E216D /* BreathingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B392C6526B6C688009E216D /* BreathingAnimationController.swift */; };
+		3B392C6B26B6D9E3009E216D /* BreathingMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */; };
 		3B529E6E26B00FA800D4D301 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B529E6D26B00FA800D4D301 /* Colors.xcassets */; };
 		3B86DEB226B3DB9A00BC28E7 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */; };
 		3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D526B394B700380825 /* HealthKit.framework */; };
@@ -125,6 +127,8 @@
 /* Begin PBXFileReference section */
 		3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyFriendInterfaceController.swift; sourceTree = "<group>"; };
 		3B2048BF26B1236A0032FA06 /* ContactRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowController.swift; sourceTree = "<group>"; };
+		3B392C6526B6C688009E216D /* BreathingAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingAnimationController.swift; sourceTree = "<group>"; };
+		3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingMethodController.swift; sourceTree = "<group>"; };
 		3B529E6D26B00FA800D4D301 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		3BFA29D326B394B700380825 /* PanicAway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PanicAway.entitlements; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				611B870926A9AFD400ECA8AD /* ComplicationController.swift */,
 				3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */,
 				3B2048BF26B1236A0032FA06 /* ContactRowController.swift */,
+				3B392C6526B6C688009E216D /* BreathingAnimationController.swift */,
+				3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -694,9 +700,11 @@
 				611B870826A9AFD400ECA8AD /* ExtensionDelegate.swift in Sources */,
 				611B870626A9AFD400ECA8AD /* InterfaceController.swift in Sources */,
 				3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */,
+				3B392C6B26B6D9E3009E216D /* BreathingMethodController.swift in Sources */,
 				3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */,
 				61F4201926B5CF0B00362288 /* EmergencyContactModel.swift in Sources */,
 				611B870A26A9AFD400ECA8AD /* ComplicationController.swift in Sources */,
+				3B392C6626B6C688009E216D /* BreathingAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
