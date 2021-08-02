@@ -35,6 +35,9 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var leftChevronImageView: UIImageView!
     @IBOutlet weak var rightChevronView: UIView!
     @IBOutlet weak var rightChevronImageView: UIImageView!
+    @IBOutlet weak var labelBottomView: UIView!
+    @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var firstStateAnimationImageView: UIImageView!
     
     // MARK: - Variable
     var breathingId: Int = 0
@@ -61,6 +64,7 @@ class BreathingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        circularProgressBar.progress = 0.5
         data.loadDataBreath()
         setupView()
         setupObserveAction()
@@ -76,13 +80,13 @@ class BreathingViewController: UIViewController {
     private func setupView() {
         switch state {
         case .beforeBreathing:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true)
         case .breathingOn:
-            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false)
+            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false)
         case .pause:
-            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false)
+            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false)
         case .finish:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true)
         }
     }
     
@@ -133,13 +137,14 @@ class BreathingViewController: UIViewController {
     
     // MARK: - Functionality
     
-    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, safeAreaView: Bool, circularProgressBar: Bool) {
+    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, safeAreaView: Bool, circularProgressBar: Bool, labelBottomView: Bool) {
         self.topView.isHidden = topView
         self.titleLabel.isHidden = titleLabel
         self.captionLabel.isHidden = captionLabel
         self.breathingMethodStackView.isHidden = breathingMethodeStackView
         self.safeAreaView.isHidden = safeAreaView
         self.circularProgressBar.isHidden = circularProgressBar
+        self.labelBottomView.isHidden = labelBottomView
     }
     
     func navigateToSettings() {
