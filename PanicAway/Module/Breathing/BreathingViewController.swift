@@ -14,6 +14,12 @@ enum BreathingState {
     case finish
 }
 
+enum BreathingStatus: String {
+    case breatheIn = "Breathe In"
+    case breatheOut = "Breathe Out"
+    case holdBreathe = "Hold"
+}
+
 enum BreathingTechnique: Int {
     case one = 0
     case two = 1
@@ -38,11 +44,30 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var labelBottomView: UIView!
     @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var firstStateAnimationImageView: UIImageView!
+    @IBOutlet weak var centreAnimationView: UIView!
     
     // MARK: - Variable
     var breathingId: Int = 0
     var data = BreathingLoader()
-    var state: BreathingState = .beforeBreathing
+    
+    var state: BreathingState = .beforeBreathing {
+        didSet {
+            if state == .breathingOn {
+                setupView()
+                breathingStatus = .breatheIn
+            }
+        }
+    }
+    
+    var breathingStatus: BreathingStatus? {
+        didSet {
+            guard let technique = technique else { return }
+            if breathingStatus == .breatheIn {
+                breatheTime = technique.breathInCount
+                startPreparation()
+            }
+        }
+    }
     var countdownTime = 3
     var breatheTime = 0 // Handle With data from model later! (REQUIRED)
     
@@ -118,6 +143,12 @@ class BreathingViewController: UIViewController {
                 self.technique = self.data.entries[self.breathingId]
             }
         }
+        
+        if state == .beforeBreathing {
+            centreAnimationView.onTap {
+                self.state = .breathingOn
+            }
+        }
     }
     
     func setupChevronByPosition(position: BreathingTechnique) {
@@ -152,18 +183,56 @@ class BreathingViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func startPreparation() {
+        if state == .breathingOn {
+            preparation = CADisplayLink(target: self, selector: #selector(runPreparation))
+            preparation?.add(to: .main, forMode: .common)
+        }
+    }
+    
     func startBreathing() {
         if state == .breathingOn {
-            preparation = CADisplayLink(target: self, selector: #selector(runCountDown))
-            breathing = CADisplayLink(target: self, selector: #selector(runPreparation))
+            breathing = CADisplayLink(target: self, selector: #selector(runCountDown))
+            breathing?.add(to: .main, forMode: .common)
         }
     }
     
     @objc func runCountDown() {
-        // For handle progress
+        guard let breathingStat = breathingStatus else { return }
+        
+        titleLabel.isHidden = false
+        captionLabel.isHidden = false
+        titleLabel.text = breathingStat.rawValue
+        captionLabel.text = "\(breatheTime)"
+        
+        if breatheTime == 0 {
+            if breathingStatus == .breatheIn {
+                self.breathingStatus = .holdBreathe
+            }
+            
+            if breathingStatus == .holdBreathe {
+                self.breathingStatus = .breatheOut
+            }
+            
+            if breathingStatus == .breatheOut {
+                state = .finish
+                breathing?.invalidate()
+            }
+        }
+        
+        breatheTime -= 1
     }
     
     @objc func runPreparation() {
-        // For handle countdown preparation
+        titleLabel.isHidden = false
+        titleLabel.text = "\(countdownTime)"
+        
+        if countdownTime == 0 {
+            startBreathing()
+            preparation?.invalidate()
+            countdownTime = 3
+        }
+        
+        countdownTime -= 1
     }
 }
