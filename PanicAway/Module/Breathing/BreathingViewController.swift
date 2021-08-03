@@ -54,11 +54,13 @@ class BreathingViewController: UIViewController {
         didSet {
             if state == .breathingOn {
                 setupView()
+                startPreparation()
                 breathingStatus = .breatheIn
-                
             }
             
             if state == .finish {
+                minutesTimer = 0
+                secondsTimer = 0
                 setupView()
                 isRunning = false
             }
@@ -70,7 +72,6 @@ class BreathingViewController: UIViewController {
             guard let technique = technique else { return }
             if breathingStatus == .breatheIn {
                 breatheTime = technique.breathInCount
-                startPreparation()
             }
         }
     }
@@ -78,6 +79,17 @@ class BreathingViewController: UIViewController {
     var isRunning: Bool = false
     var countdownTime = 3
     var breatheTime = 0 // Handle With data from model later! (REQUIRED)
+    var breathCycle = 0
+    var progress: Float = 0.0
+    var counter = 0
+    
+    //timer
+    var secondsTimer = 0
+    var minutesTimer = 0
+    
+    //animation
+    var breatheInAnimation = [UIImage]()
+    var breatheOutAnimation = [UIImage]()
     
     // MARK: - Computed Properties
     var technique: BreathingModel? {
@@ -97,10 +109,11 @@ class BreathingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        circularProgressBar.progress = 0.5
+        circularProgressBar.progress = 0.0
         data.loadDataBreath()
         setupView()
         setupObserveAction()
+        setupAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,6 +189,12 @@ class BreathingViewController: UIViewController {
         }
     }
     
+    func setupAnimation(){
+        for frame in (0...59){
+            breatheInAnimation.append(UIImage(named: String(format: "Breathe In_%05d", frame))!)
+        }
+    }
+    
     
     // MARK: - Functionality
     
@@ -195,7 +214,11 @@ class BreathingViewController: UIViewController {
     }
     
     func startPreparation() {
+        guard let technique = technique else { return }
+        
         if state == .breathingOn {
+            breathCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle") - 1
+            progress = 1.0 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float((breathCycle + 1)))
             preparation = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runPreparation), userInfo: nil, repeats: true)
             RunLoop.current.add(preparation!, forMode: .common)
         }
@@ -203,6 +226,7 @@ class BreathingViewController: UIViewController {
     
     func startBreathing() {
         if state == .breathingOn {
+            firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: 4.0)
             breathing = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runCountDown), userInfo: nil, repeats: true)
             RunLoop.current.add(breathing!, forMode: .common)
         }
@@ -210,8 +234,23 @@ class BreathingViewController: UIViewController {
     
     @objc func runCountDown() {
         
+        //timer logic here
+        bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
+        if secondsTimer == 60 {
+            secondsTimer = 0
+            minutesTimer += 1
+        } else {
+            secondsTimer += 1
+        }
+        
+        counter += 1
+        print(counter)
+        
         guard let breathingStat = breathingStatus else { return }
         guard let technique = technique else { return }
+        
+        //print("\(circularProgressBar.progress)")
+        circularProgressBar.progress +=  CGFloat(progress)
         
         titleLabel.isHidden = false
         captionLabel.isHidden = false
@@ -235,9 +274,17 @@ class BreathingViewController: UIViewController {
             }
             
             else if breathingStatus == .breatheOut {
-                state = .finish
-                breathing?.invalidate()
-                return
+                print(" breath :\(breathCycle)")
+                //validasi breathing cycle
+                if breathCycle != 0 {
+                    breatheTime = technique.breathInCount
+                    self.breathingStatus = .breatheIn
+                    breathCycle -= 1
+                } else {
+                    state = .finish
+                    breathing?.invalidate()
+                    return
+                }
             }
         } else {
             breatheTime -= 1
