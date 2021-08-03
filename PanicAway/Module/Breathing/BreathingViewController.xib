@@ -22,6 +22,7 @@
                 <outlet property="breathingLabel" destination="cC4-hA-62X" id="kC1-cT-VxB"/>
                 <outlet property="breathingMethodStackView" destination="6vB-on-3Z9" id="9O0-VV-RSX"/>
                 <outlet property="captionLabel" destination="luj-5t-OHN" id="dr2-F4-EaR"/>
+                <outlet property="centreAnimationView" destination="6az-KT-vVi" id="EiG-W5-kwm"/>
                 <outlet property="circularProgressBar" destination="zAu-1l-mK1" id="WdH-sj-AYz"/>
                 <outlet property="firstStateAnimationImageView" destination="98O-9l-Zx6" id="MxQ-AQ-vjW"/>
                 <outlet property="labelBottomView" destination="ZHa-kT-gzB" id="G7l-fk-y3X"/>
