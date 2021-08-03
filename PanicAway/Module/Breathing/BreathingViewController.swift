@@ -55,6 +55,12 @@ class BreathingViewController: UIViewController {
             if state == .breathingOn {
                 setupView()
                 breathingStatus = .breatheIn
+                
+            }
+            
+            if state == .finish {
+                setupView()
+                isRunning = false
             }
         }
     }
@@ -68,6 +74,8 @@ class BreathingViewController: UIViewController {
             }
         }
     }
+    
+    var isRunning: Bool = false
     var countdownTime = 3
     var breatheTime = 0 // Handle With data from model later! (REQUIRED)
     
@@ -146,7 +154,10 @@ class BreathingViewController: UIViewController {
         
         if state == .beforeBreathing {
             centreAnimationView.onTap {
-                self.state = .breathingOn
+                if self.isRunning == false {
+                    self.state = .breathingOn
+                    self.isRunning = true
+                }
             }
         }
     }
@@ -164,7 +175,7 @@ class BreathingViewController: UIViewController {
             rightChevronImageView.isHidden = true
         }
     }
-
+    
     
     // MARK: - Functionality
     
@@ -198,6 +209,7 @@ class BreathingViewController: UIViewController {
     }
     
     @objc func runCountDown() {
+        
         guard let breathingStat = breathingStatus else { return }
         guard let technique = technique else { return }
         
@@ -215,7 +227,6 @@ class BreathingViewController: UIViewController {
                     breatheTime = technique.breathOutCount
                     self.breathingStatus = .breatheOut
                 }
-                
             }
             
             else if breathingStatus == .holdBreathe {
@@ -226,7 +237,6 @@ class BreathingViewController: UIViewController {
             else if breathingStatus == .breatheOut {
                 state = .finish
                 breathing?.invalidate()
-                setupView()
                 return
             }
         } else {
