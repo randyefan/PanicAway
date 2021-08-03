@@ -82,8 +82,8 @@ class BreathingViewController: UIViewController {
     
     // MARK: - Variable DisplayLink (For working with timer)
     
-    var preparation: CADisplayLink?
-    var breathing: CADisplayLink?
+    var preparation: Timer?
+    var breathing: Timer?
     
     // MARK: - ViewController LifeCycle
     
@@ -185,20 +185,21 @@ class BreathingViewController: UIViewController {
     
     func startPreparation() {
         if state == .breathingOn {
-            preparation = CADisplayLink(target: self, selector: #selector(runPreparation))
-            preparation?.add(to: .main, forMode: .common)
+            preparation = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runPreparation), userInfo: nil, repeats: true)
+            RunLoop.current.add(preparation!, forMode: .common)
         }
     }
     
     func startBreathing() {
         if state == .breathingOn {
-            breathing = CADisplayLink(target: self, selector: #selector(runCountDown))
-            breathing?.add(to: .main, forMode: .common)
+            breathing = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runCountDown), userInfo: nil, repeats: true)
+            RunLoop.current.add(breathing!, forMode: .common)
         }
     }
     
     @objc func runCountDown() {
         guard let breathingStat = breathingStatus else { return }
+        guard let technique = technique else { return }
         
         titleLabel.isHidden = false
         captionLabel.isHidden = false
@@ -207,20 +208,30 @@ class BreathingViewController: UIViewController {
         
         if breatheTime == 0 {
             if breathingStatus == .breatheIn {
-                self.breathingStatus = .holdBreathe
+                breatheTime = technique.holdOnCount
+                if breatheTime != 0 {
+                    self.breathingStatus = .holdBreathe
+                } else {
+                    breatheTime = technique.breathOutCount
+                    self.breathingStatus = .breatheOut
+                }
+                
             }
             
-            if breathingStatus == .holdBreathe {
+            else if breathingStatus == .holdBreathe {
+                breatheTime = technique.breathOutCount
                 self.breathingStatus = .breatheOut
             }
             
-            if breathingStatus == .breatheOut {
+            else if breathingStatus == .breatheOut {
                 state = .finish
                 breathing?.invalidate()
+                setupView()
+                return
             }
+        } else {
+            breatheTime -= 1
         }
-        
-        breatheTime -= 1
     }
     
     @objc func runPreparation() {
@@ -231,6 +242,7 @@ class BreathingViewController: UIViewController {
             startBreathing()
             preparation?.invalidate()
             countdownTime = 3
+            return
         }
         
         countdownTime -= 1
