@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import HealthKit
 
 class OnboardingViewController: UIViewController {
     
@@ -19,9 +18,11 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func requestAccess(_ sender: Any) {
-        healthKitManager.authorizeHealthKit {
+        healthKitManager.authorizeHealthKitForiOS {
             nextView()
         }
+        
+        
     }
     
 

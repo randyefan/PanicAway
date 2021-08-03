@@ -12,9 +12,7 @@ import HealthKit
 class HealthKitManager{
     let healthStore = HKHealthStore()
     
-    func authorizeHealthKit(completion: () -> Void){
-        
-
+    func authorizeHealthKitForiOS(completion: () -> Void){
         
         if HKHealthStore.isHealthDataAvailable(){
             
@@ -26,6 +24,21 @@ class HealthKitManager{
                 
             }
             
+        }
+        completion()
+    }
+
+    func authorizeHealthKitForWatchOS(completion: () -> Void){
+        
+        if HKHealthStore.isHealthDataAvailable(){
+            
+            let readTypes =  Set([HKObjectType.categoryType(forIdentifier: .highHeartRateEvent)!,HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, HKObjectType.quantityType(forIdentifier: .stepCount)!])
+            
+            let writeTypes =  Set([HKObjectType.categoryType(forIdentifier: .mindfulSession)!])
+            
+            healthStore.requestAuthorization(toShare: writeTypes, read: readTypes as! Set<HKObjectType>) { (success, error) -> Void  in
+                
+            }
             
         }
         completion()

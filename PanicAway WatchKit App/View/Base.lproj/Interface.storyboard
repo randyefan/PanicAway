@@ -12,24 +12,31 @@
             <objects>
                 <controller fullBounds="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PanicAway_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="1" height="75" alignment="center" text="We've detected a high heart rate " textAlignment="center" numberOfLines="0" id="SFX-GF-mFW"/>
+                        <label width="1" height="75" alignment="center" text="Get notified when you may feel a panic attack" textAlignment="center" numberOfLines="0" id="SFX-GF-mFW"/>
                         <group width="1" alignment="center" layout="vertical" radius="22" id="qkF-kJ-C6y">
                             <items>
-                                <button width="1" alignment="center" title="Help Me Calm Down" id="PEH-Ck-Tzp">
+                                <button width="1" alignment="center" title="Yes" id="PEH-Ck-Tzp">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" name="Main"/>
                                     <connections>
-                                        <segue destination="SOu-YT-M7n" kind="push" id="KYR-Uq-TwP"/>
+                                        <action selector="allowToGetNotified" destination="AgC-eL-Hgc" id="MVE-Z0-VH6"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
                         <group width="1" alignment="center" layout="vertical" radius="22" id="fhe-xX-jtd">
                             <items>
-                                <button width="1" alignment="center" title="I'm OK" id="zQU-mg-tc6"/>
+                                <button width="1" alignment="center" title="No" id="zQU-mg-tc6">
+                                    <connections>
+                                        <action selector="disallowToGetNotified" destination="AgC-eL-Hgc" id="y6q-Qg-Pij"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="textLabel" destination="SFX-GF-mFW" id="lNO-k1-o0Y"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-95" y="-98"/>
@@ -107,22 +114,34 @@
             <objects>
                 <controller identifier="BreathingAnimation" fullBounds="YES" id="klQ-kp-x1X" customClass="BreathingAnimationController" customModule="PanicAway_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="Tap to start" id="eKx-IJ-Nrz"/>
-                        <imageView width="1" height="0.69999999999999996" alignment="center" contentMode="scaleAspectFit" id="6cx-kw-RWN"/>
-                        <group width="1" alignment="center" id="cDA-IP-s18">
+                        <group width="1" height="1" alignment="center" layout="vertical" id="DOb-wW-AiI">
                             <items>
-                                <imageView alignment="center" verticalAlignment="center" image="heart" catalog="system" id="Mzg-G9-a07">
-                                    <color key="tintColor" red="0.99354439969999997" green="0.45648401979999997" blue="0.38428288700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </imageView>
-                                <label alignment="center" verticalAlignment="center" text="128 BPM" id="03X-jK-PXv">
-                                    <color key="textColor" red="0.99354439969999997" green="0.45648401979999997" blue="0.38428288700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </label>
+                                <label alignment="center" text="Tap to start" id="eKx-IJ-Nrz"/>
+                                <imageView width="1" height="0.69999999999999996" alignment="center" contentMode="scaleAspectFit" id="6cx-kw-RWN"/>
+                                <group width="1" alignment="center" id="cDA-IP-s18">
+                                    <items>
+                                        <imageView alignment="center" verticalAlignment="center" image="heart" catalog="system" id="Mzg-G9-a07">
+                                            <color key="tintColor" red="0.99354439969999997" green="0.45648401979999997" blue="0.38428288700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </imageView>
+                                        <label alignment="center" verticalAlignment="center" text="128 BPM" id="03X-jK-PXv">
+                                            <color key="textColor" red="0.99354439969999997" green="0.45648401979999997" blue="0.38428288700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </label>
+                                    </items>
+                                </group>
                             </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="b1w-j7-Hgc">
+                                    <connections>
+                                        <action selector="tapToStartClicked:" destination="klQ-kp-x1X" id="vE5-SJ-6Yf"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
                         </group>
                     </items>
                     <connections>
                         <outlet property="animationView" destination="6cx-kw-RWN" id="XWq-vX-s5O"/>
                         <outlet property="informationLabel" destination="eKx-IJ-Nrz" id="Di1-Yd-cUD"/>
+                        <outlet property="tapBreathingAnimationGesture" destination="b1w-j7-Hgc" id="gi1-zv-WEz"/>
                         <segue destination="7g6-uX-Mn7" kind="relationship" relationship="nextPage" id="Qqg-Fe-0GQ"/>
                     </connections>
                 </controller>
@@ -159,6 +178,21 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="101" y="303"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="oTx-1N-Gob">
+            <objects>
+                <notificationController id="Dsz-8d-NRd">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IfS-it-xqQ"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="i1s-Ly-fLB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IfS-it-xqQ" id="Fd2-xX-Zpr"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="-568" y="33"/>
         </scene>
     </scenes>
     <resources>

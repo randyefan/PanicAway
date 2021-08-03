@@ -8,11 +8,35 @@
 import UIKit
 import WatchKit
 import SDWebImageLottieCoder
+import HealthKit
 
 class BreathingAnimationController: WKInterfaceController {
     
     @IBOutlet weak var animationView: WKInterfaceImage!
     @IBOutlet weak var informationLabel: WKInterfaceLabel!
+    
+    @IBOutlet weak var tapBreathingAnimationGesture: WKTapGestureRecognizer!
+    
+    @IBAction func tapToStartClicked(_ sender: Any) {
+        startBreathing()
+        
+    }
+    
+    func startBreathing(){
+        tapBreathingAnimationGesture.isEnabled = false
+        playAnimation()
+        startWorkout()
+     
+        
+    }
+    
+    func startWorkout(){
+        print("workout started")
+    }
+    
+    func endWorkout(){
+        print("workout is ended")
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -46,7 +70,6 @@ class BreathingAnimationController: WKInterfaceController {
       // resets to first frame
       currentFrame = 0
       setImage(frame: currentFrame)
-      play()
     }
     
     //Set Current Animation
@@ -57,7 +80,7 @@ class BreathingAnimationController: WKInterfaceController {
     }
     
     //Start Playing Animation
-    private func play() {
+    private func playAnimation() {
       playing = true
       
       animationTimer?.invalidate()
@@ -90,13 +113,14 @@ class BreathingAnimationController: WKInterfaceController {
     }
     
     
-    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+        endWorkout()
     }
 
 
