@@ -55,7 +55,6 @@ class BreathingViewController: UIViewController {
             if state == .breathingOn {
                 setupView()
                 startPreparation()
-                breathingStatus = .breatheIn
             }
             
             if state == .finish {
@@ -70,8 +69,20 @@ class BreathingViewController: UIViewController {
     var breathingStatus: BreathingStatus? {
         didSet {
             guard let technique = technique else { return }
+            guard let breathingStat = breathingStatus else { return }
+            titleLabel.text = breathingStat.rawValue
+            captionLabel.text = "\(breatheTime)"
             if breathingStatus == .breatheIn {
+                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval(technique.breathInCount))
                 breatheTime = technique.breathInCount
+            }
+            else if breathingStatus == .breatheOut {
+                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheOutAnimation, duration: TimeInterval(technique.breathOutCount))
+                breatheTime = technique.breathOutCount
+            }
+            else if breathingStatus == .holdBreathe {
+                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHoldAnimation, duration: TimeInterval(technique.holdOnCount))
+                breatheTime = technique.holdOnCount
             }
         }
     }
@@ -90,6 +101,7 @@ class BreathingViewController: UIViewController {
     //animation
     var breatheInAnimation = [UIImage]()
     var breatheOutAnimation = [UIImage]()
+    var breatheHoldAnimation = [UIImage]()
     
     // MARK: - Computed Properties
     var technique: BreathingModel? {
@@ -133,6 +145,11 @@ class BreathingViewController: UIViewController {
             setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false)
         case .finish:
             setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true)
+            firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
+            titleLabel.text = "Tap to Start Again"
+            DispatchQueue.main.async {
+                self.captionLabel.text = "Yay, you’ve finished your breathing exercise!"
+            }
         }
     }
     
@@ -193,6 +210,14 @@ class BreathingViewController: UIViewController {
         for frame in (0...59){
             breatheInAnimation.append(UIImage(named: String(format: "Breathe In_%05d", frame))!)
         }
+        
+        for frame in (0...59).reversed(){
+            breatheOutAnimation.append(UIImage(named: String(format: "Breathe In_%05d", frame))!)
+        }
+        
+        for frame in (0...104){
+            breatheHoldAnimation.append(UIImage(named: String(format: "Hold_%05d", frame))!)
+        }
     }
     
     
@@ -225,14 +250,15 @@ class BreathingViewController: UIViewController {
     }
     
     func startBreathing() {
+        breathingStatus = .breatheIn
         if state == .breathingOn {
-            firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: 4.0)
             breathing = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runCountDown), userInfo: nil, repeats: true)
             RunLoop.current.add(breathing!, forMode: .common)
         }
     }
     
     @objc func runCountDown() {
+        print("breathe time \(breatheTime)")
         
         //timer logic here
         bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
@@ -242,42 +268,33 @@ class BreathingViewController: UIViewController {
         } else {
             secondsTimer += 1
         }
-        
         counter += 1
         print(counter)
         
-        guard let breathingStat = breathingStatus else { return }
-        guard let technique = technique else { return }
-        
-        //print("\(circularProgressBar.progress)")
+        //update circular
         circularProgressBar.progress +=  CGFloat(progress)
         
-        titleLabel.isHidden = false
-        captionLabel.isHidden = false
-        titleLabel.text = breathingStat.rawValue
-        captionLabel.text = "\(breatheTime)"
+        //titleLabel.isHidden = false
+        //captionLabel.isHidden = false
+        DispatchQueue.main.async {
+            self.captionLabel.text = "\(self.breatheTime)"
+        }
+       
         
-        if breatheTime == 0 {
+        if breatheTime == 1 {
             if breathingStatus == .breatheIn {
-                breatheTime = technique.holdOnCount
-                if breatheTime != 0 {
-                    self.breathingStatus = .holdBreathe
-                } else {
-                    breatheTime = technique.breathOutCount
+                self.breathingStatus = .holdBreathe
+                if breatheTime == 0 {
                     self.breathingStatus = .breatheOut
                 }
             }
-            
             else if breathingStatus == .holdBreathe {
-                breatheTime = technique.breathOutCount
                 self.breathingStatus = .breatheOut
             }
-            
             else if breathingStatus == .breatheOut {
                 print(" breath :\(breathCycle)")
                 //validasi breathing cycle
                 if breathCycle != 0 {
-                    breatheTime = technique.breathInCount
                     self.breathingStatus = .breatheIn
                     breathCycle -= 1
                 } else {
@@ -301,7 +318,6 @@ class BreathingViewController: UIViewController {
             countdownTime = 3
             return
         }
-        
         countdownTime -= 1
     }
 }
