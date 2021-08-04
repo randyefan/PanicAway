@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum BreathingState {
     case beforeBreathing
@@ -70,6 +71,7 @@ class BreathingViewController: UIViewController {
         didSet {
             guard let technique = technique else { return }
             guard let breathingStat = breathingStatus else { return }
+            self.playInstruction()
             titleLabel.text = breathingStat.rawValue
             captionLabel.text = "\(breatheTime)"
             if breathingStatus == .breatheIn {
@@ -102,6 +104,9 @@ class BreathingViewController: UIViewController {
     var breatheInAnimation = [UIImage]()
     var breatheOutAnimation = [UIImage]()
     var breatheHoldAnimation = [UIImage]()
+    
+    //AVFoundation
+    var player: AVAudioPlayer?
     
     // MARK: - Computed Properties
     var technique: BreathingModel? {
@@ -273,9 +278,10 @@ class BreathingViewController: UIViewController {
         
         //update circular
         circularProgressBar.progress +=  CGFloat(progress)
+        captionLabel.isHidden = false
         
-        //titleLabel.isHidden = false
-        //captionLabel.isHidden = false
+        // FIXME: EFAN PLS CHECK THIS OK
+        // i dunno why it wont update if not in main thread
         DispatchQueue.main.async {
             self.captionLabel.text = "\(self.breatheTime)"
         }
@@ -319,5 +325,27 @@ class BreathingViewController: UIViewController {
             return
         }
         countdownTime -= 1
+    }
+    
+    func playInstruction() {
+        var filename = ""
+        switch breathingStatus {
+        case .breatheIn:
+            filename = "inhale"
+        case .breatheOut:
+            filename = "exhale"
+        default:
+            filename = "hold"
+        }
+        
+        guard let path = Bundle.main.path(forResource: filename, ofType: "mp3") else { return }
+        
+        let url = URL(fileURLWithPath: path)
+        do{
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
