@@ -85,6 +85,9 @@
 		B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993726B29BE4006B888D /* ContactTableViewCell.xib */; };
 		B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */; };
 		B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993D26B29C08006B888D /* AddToContactTableViewCell.xib */; };
+		B76658F826BB1DF900F69008 /* exhale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B76658F526BB1DF800F69008 /* exhale.mp3 */; };
+		B76658F926BB1DF900F69008 /* inhale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B76658F626BB1DF800F69008 /* inhale.mp3 */; };
+		B76658FA26BB1DF900F69008 /* hold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B76658F726BB1DF900F69008 /* hold.mp3 */; };
 		B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */; };
 		B7DC15B426AE960800259CB0 /* EmergencyContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */; };
 		B7EACD5626B31FF800D32C2D /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EACD5526B31FF800D32C2D /* SaveButton.swift */; };
@@ -205,6 +208,9 @@
 		B741993726B29BE4006B888D /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToContactTableViewCell.swift; sourceTree = "<group>"; };
 		B741993D26B29C08006B888D /* AddToContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToContactTableViewCell.xib; sourceTree = "<group>"; };
+		B76658F526BB1DF800F69008 /* exhale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = exhale.mp3; sourceTree = "<group>"; };
+		B76658F626BB1DF800F69008 /* inhale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = inhale.mp3; sourceTree = "<group>"; };
+		B76658F726BB1DF900F69008 /* hold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hold.mp3; sourceTree = "<group>"; };
 		B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyContactViewController.xib; sourceTree = "<group>"; };
 		B7EACD5526B31FF800D32C2D /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
@@ -365,6 +371,7 @@
 		611B872026A9B4D000ECA8AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B76658F426BB1DE300F69008 /* Sounds */,
 				619F17DF26AE873C006F8067 /* Fonts */,
 				611B86EB26A9AFD300ECA8AD /* LaunchScreen.storyboard */,
 				611B86E926A9AFD300ECA8AD /* Assets.xcassets */,
@@ -510,6 +517,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B76658F426BB1DE300F69008 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B76658F526BB1DF800F69008 /* exhale.mp3 */,
+				B76658F726BB1DF900F69008 /* hold.mp3 */,
+				B76658F626BB1DF800F69008 /* inhale.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		B7DC15B026AE94DB00259CB0 /* Emergency Contact */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,14 +656,17 @@
 				611B86ED26A9AFD300ECA8AD /* LaunchScreen.storyboard in Resources */,
 				61B9B95326B3EB870092C183 /* ProductShowcaseCollectionViewCell.xib in Resources */,
 				619F17F926AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
+				B76658FA26BB1DF900F69008 /* hold.mp3 in Resources */,
 				B7DC15B426AE960800259CB0 /* EmergencyContactViewController.xib in Resources */,
 				619F17E726AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
 				B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */,
 				619F17F626AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				61B9B95226B3EB870092C183 /* OnboardingViewController.xib in Resources */,
+				B76658F926BB1DF900F69008 /* inhale.mp3 in Resources */,
 				6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */,
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
 				619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
+				B76658F826BB1DF900F69008 /* exhale.mp3 in Resources */,
 				3B2FD85326BB82D400D2463B /* PushNotificationPayload.apns in Resources */,
 				B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */,
 				6190F8E226AFC47900C48744 /* BreathingTechniqueCell.xib in Resources */,
