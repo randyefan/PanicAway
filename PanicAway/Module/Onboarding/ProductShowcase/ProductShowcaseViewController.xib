@@ -32,7 +32,7 @@
                     </connections>
                 </pageControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KnQ-Hn-Gs7">
-                    <rect key="frame" x="0.0" y="44" width="390" height="579.66666666666663"/>
+                    <rect key="frame" x="0.0" y="44" width="390" height="599.66666666666663"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iwj-EP-Chv">
                         <size key="itemSize" width="20" height="20"/>
@@ -78,7 +78,7 @@
             <color key="backgroundColor" name="Background"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Nt0-j5-GhH" secondAttribute="bottom" constant="22" id="1IG-V1-Qw2"/>
-                <constraint firstItem="Uyc-8r-Zyk" firstAttribute="top" secondItem="KnQ-Hn-Gs7" secondAttribute="bottom" constant="20" id="5w5-Tn-fXA"/>
+                <constraint firstItem="Uyc-8r-Zyk" firstAttribute="top" secondItem="KnQ-Hn-Gs7" secondAttribute="bottom" id="5w5-Tn-fXA"/>
                 <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DXl-45-2B7"/>
                 <constraint firstItem="Nt0-j5-GhH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="EqR-vn-Ehl"/>
                 <constraint firstItem="Nt0-j5-GhH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OIg-8N-hSP"/>

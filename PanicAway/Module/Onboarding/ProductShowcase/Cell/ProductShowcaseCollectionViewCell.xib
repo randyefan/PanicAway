@@ -11,6 +11,9 @@
         <array key="MPLUSRounded1c-Bold.ttf">
             <string>RoundedMplus1c-Bold</string>
         </array>
+        <array key="MPLUSRounded1c-Regular.ttf">
+            <string>RoundedMplus1c-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -26,38 +29,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="601"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T4y-zm-HIT">
-                                <rect key="frame" x="85" y="54" width="220" height="220"/>
+                                <rect key="frame" x="85" y="65" width="220" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="g7N-QN-ybs"/>
                                     <constraint firstAttribute="height" constant="220" id="zNQ-ub-DHL"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itf-2e-dtf">
-                                <rect key="frame" x="158" y="314" width="74.5" height="39.5"/>
+                                <rect key="frame" x="158" y="325" width="74.5" height="39.5"/>
                                 <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrF-IT-aNY">
-                                <rect key="frame" x="30" y="393.5" width="330" height="66"/>
+                                <rect key="frame" x="24" y="404.5" width="342" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="UxF-Fl-yQm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RoundedMplus1c-Regular" family="Rounded Mplus 1c" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="T4y-zm-HIT" firstAttribute="top" secondItem="EAx-b6-CWx" secondAttribute="top" constant="54" id="2zo-H6-piP"/>
-                            <constraint firstItem="XrF-IT-aNY" firstAttribute="leading" secondItem="EAx-b6-CWx" secondAttribute="leading" constant="30" id="8ej-gT-cQj"/>
+                            <constraint firstItem="T4y-zm-HIT" firstAttribute="top" secondItem="EAx-b6-CWx" secondAttribute="top" constant="65" id="2zo-H6-piP"/>
+                            <constraint firstItem="XrF-IT-aNY" firstAttribute="leading" secondItem="EAx-b6-CWx" secondAttribute="leading" constant="24" id="8ej-gT-cQj"/>
                             <constraint firstItem="itf-2e-dtf" firstAttribute="top" secondItem="T4y-zm-HIT" secondAttribute="bottom" constant="40" id="bOt-V8-yTV"/>
                             <constraint firstItem="XrF-IT-aNY" firstAttribute="top" secondItem="itf-2e-dtf" secondAttribute="bottom" constant="40" id="et5-lD-hoJ"/>
                             <constraint firstItem="itf-2e-dtf" firstAttribute="centerX" secondItem="EAx-b6-CWx" secondAttribute="centerX" id="f6Q-Ly-4sv"/>
                             <constraint firstItem="T4y-zm-HIT" firstAttribute="centerX" secondItem="EAx-b6-CWx" secondAttribute="centerX" id="pTW-gI-hgL"/>
                             <constraint firstItem="XrF-IT-aNY" firstAttribute="centerX" secondItem="EAx-b6-CWx" secondAttribute="centerX" id="w3d-vq-7G3"/>
-                            <constraint firstAttribute="trailing" secondItem="XrF-IT-aNY" secondAttribute="trailing" constant="30" id="w4o-sz-pbl"/>
+                            <constraint firstAttribute="trailing" secondItem="XrF-IT-aNY" secondAttribute="trailing" constant="24" id="w4o-sz-pbl"/>
                         </constraints>
                     </view>
                 </subviews>

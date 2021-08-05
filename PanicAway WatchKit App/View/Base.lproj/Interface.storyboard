@@ -39,7 +39,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-95" y="-98"/>
+            <point key="canvasLocation" x="-341" y="-185"/>
         </scene>
         <!--Breathing Method Controller-->
         <scene sceneID="FEJ-47-2kX">
@@ -80,7 +80,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="188" y="-83"/>
+            <point key="canvasLocation" x="-115" y="-185"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="lQt-VU-gSd">
@@ -107,7 +107,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-194" y="618"/>
+            <point key="canvasLocation" x="-115" y="99"/>
         </scene>
         <!--BreathingAnimation-->
         <scene sceneID="cDC-Se-wtd">
@@ -146,14 +146,14 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-193" y="303"/>
+            <point key="canvasLocation" x="-574" y="99"/>
         </scene>
         <!--NotifyFriend-->
         <scene sceneID="Od3-CB-rtj">
             <objects>
                 <controller identifier="NotifyFriend" fullBounds="YES" id="7g6-uX-Mn7" customClass="NotifyFriendInterfaceController" customModule="PanicAway_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="Notify My Friend" id="hwd-sD-rSc"/>
+                        <label alignment="center" text="Notify My Friends" id="hwd-sD-rSc"/>
                         <table alignment="left" id="d3A-1F-aSj">
                             <items>
                                 <tableRow identifier="ContactRowController" id="Fdc-J6-gTk" customClass="ContactRowController" customModule="PanicAway_WatchKit_Extension">
@@ -177,14 +177,14 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="101" y="303"/>
+            <point key="canvasLocation" x="-353" y="99"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="oTx-1N-Gob">
             <objects>
                 <notificationController id="Dsz-8d-NRd">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IfS-it-xqQ"/>
+                        <label alignment="left" text="You may have experience a high heart rate do you want to have a breather." numberOfLines="4" id="IfS-it-xqQ"/>
                     </items>
                     <notificationCategory key="notificationCategory" id="i1s-Ly-fLB"/>
                     <connections>
@@ -192,7 +192,7 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="-568" y="33"/>
+            <point key="canvasLocation" x="-574" y="-185"/>
         </scene>
     </scenes>
     <resources>

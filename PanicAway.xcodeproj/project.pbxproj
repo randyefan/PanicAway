@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */; };
 		3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BF26B1236A0032FA06 /* ContactRowController.swift */; };
+		3B2FD84F26BB82C200D2463B /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B2FD83E26BAF43B00D2463B /* PushNotificationPayload.apns */; };
+		3B2FD85026BB82C700D2463B /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B2FD83E26BAF43B00D2463B /* PushNotificationPayload.apns */; };
+		3B2FD85326BB82D400D2463B /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B2FD83E26BAF43B00D2463B /* PushNotificationPayload.apns */; };
+		3B2FD88F26BB8B5800D2463B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2FD88E26BB8B5800D2463B /* NotificationController.swift */; };
 		3B392C6626B6C688009E216D /* BreathingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B392C6526B6C688009E216D /* BreathingAnimationController.swift */; };
 		3B392C6B26B6D9E3009E216D /* BreathingMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */; };
 		3B529E6E26B00FA800D4D301 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B529E6D26B00FA800D4D301 /* Colors.xcassets */; };
@@ -101,6 +105,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3B2FD84E26BB7BFC00D2463B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		611B871326A9AFD500ECA8AD /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +142,8 @@
 /* Begin PBXFileReference section */
 		3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyFriendInterfaceController.swift; sourceTree = "<group>"; };
 		3B2048BF26B1236A0032FA06 /* ContactRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowController.swift; sourceTree = "<group>"; };
+		3B2FD83E26BAF43B00D2463B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		3B2FD88E26BB8B5800D2463B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3B392C6526B6C688009E216D /* BreathingAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingAnimationController.swift; sourceTree = "<group>"; };
 		3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingMethodController.swift; sourceTree = "<group>"; };
 		3B529E6D26B00FA800D4D301 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -221,6 +237,7 @@
 				3B2048BF26B1236A0032FA06 /* ContactRowController.swift */,
 				3B392C6526B6C688009E216D /* BreathingAnimationController.swift */,
 				3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */,
+				3B2FD88E26BB8B5800D2463B /* NotificationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,6 +313,7 @@
 				611B870B26A9AFD500ECA8AD /* Assets.xcassets */,
 				611B870D26A9AFD500ECA8AD /* Info.plist */,
 				3B529E6D26B00FA800D4D301 /* Colors.xcassets */,
+				3B2FD83E26BAF43B00D2463B /* PushNotificationPayload.apns */,
 			);
 			path = "PanicAway WatchKit Extension";
 			sourceTree = "<group>";
@@ -545,6 +563,7 @@
 				611B86FC26A9AFD400ECA8AD /* Sources */,
 				611B86FD26A9AFD400ECA8AD /* Frameworks */,
 				611B86FE26A9AFD400ECA8AD /* Resources */,
+				3B2FD84E26BB7BFC00D2463B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -621,6 +640,7 @@
 				6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */,
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
 				619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
+				3B2FD85326BB82D400D2463B /* PushNotificationPayload.apns in Resources */,
 				B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */,
 				6190F8E226AFC47900C48744 /* BreathingTechniqueCell.xib in Resources */,
 				6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */,
@@ -645,6 +665,7 @@
 				619F17E826AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
 				619F17F126AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */,
 				619F17FA26AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
+				3B2FD85026BB82C700D2463B /* PushNotificationPayload.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +682,7 @@
 				619F17F826AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				611B870C26A9AFD500ECA8AD /* Assets.xcassets in Resources */,
 				619F17E926AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
+				3B2FD84F26BB82C200D2463B /* PushNotificationPayload.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +720,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2FD88F26BB8B5800D2463B /* NotificationController.swift in Sources */,
 				611B870826A9AFD400ECA8AD /* ExtensionDelegate.swift in Sources */,
 				611B870626A9AFD400ECA8AD /* InterfaceController.swift in Sources */,
 				3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */,

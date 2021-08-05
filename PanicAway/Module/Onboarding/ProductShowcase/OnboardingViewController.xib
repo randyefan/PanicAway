@@ -24,14 +24,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppleHealth" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-Nv-lO0">
-                    <rect key="frame" x="145" y="204.33333333333334" width="100" height="100.00000000000003"/>
+                    <rect key="frame" x="145" y="211" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="8hs-OT-Jz4"/>
                         <constraint firstAttribute="height" constant="100" id="dGE-Dl-dPF"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9l-bU-dbb">
-                    <rect key="frame" x="107.00000000000001" y="328.33333333333331" width="176.33333333333337" height="39.333333333333314"/>
+                    <rect key="frame" x="114.33333333333333" y="335" width="161.33333333333337" height="32.666666666666686"/>
                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
