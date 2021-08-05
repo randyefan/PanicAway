@@ -28,6 +28,10 @@ class InterfaceController: WKInterfaceController {
             session.activate()
         }
         
+        // Use this code to handle haptic
+        WKInterfaceDevice.current().play(.directionUp)
+        
+        
         // Configure interface objects here.
     }
     
