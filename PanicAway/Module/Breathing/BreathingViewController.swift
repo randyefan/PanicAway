@@ -126,7 +126,7 @@ class BreathingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        circularProgressBar.progress = 0.0
+        circularProgressBar.progress = 0.2
         data.loadDataBreath()
         setupView()
         setupObserveAction()
@@ -259,7 +259,7 @@ class BreathingViewController: UIViewController {
         guard let technique = technique else { return }
         
         if state == .breathingOn {
-            progress = 1.0 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float((breathCycle + 1)))
+            progress = 0.6 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float((breathCycle + 1)))
             preparation = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runPreparation), userInfo: nil, repeats: true)
             RunLoop.current.add(preparation!, forMode: .common)
         }
@@ -290,6 +290,7 @@ class BreathingViewController: UIViewController {
         //update circular
         circularProgressBar.progress +=  CGFloat(progress)
         captionLabel.isHidden = false
+        print(circularProgressBar.progress)
         
         // FIXME: EFAN PLS CHECK THIS OK
         // i dunno why it wont update if not in main thread
