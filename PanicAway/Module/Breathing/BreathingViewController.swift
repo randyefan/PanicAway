@@ -47,6 +47,7 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var firstStateAnimationImageView: UIImageView!
     @IBOutlet weak var centreAnimationView: UIView!
+    @IBOutlet weak var closeView: UIImageView!
     
     // MARK: - Variable
     var breathingId: Int = 0
@@ -73,17 +74,18 @@ class BreathingViewController: UIViewController {
             captionLabel.text = "\(breatheTime)"
             if breathingStatus == .breatheIn {
                 firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval(technique.breathInCount))
-                firstStateAnimationImageView.animationRepeatCount = 1
                 breatheTime = technique.breathInCount
             }
             else if breathingStatus == .breatheOut {
                 firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheOutAnimation, duration: TimeInterval(technique.breathOutCount))
-                firstStateAnimationImageView.animationRepeatCount = 1
                 breatheTime = technique.breathOutCount
             }
             else if breathingStatus == .holdBreathe {
-                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHoldAnimation, duration: TimeInterval(technique.holdOnCount))
-                firstStateAnimationImageView.animationRepeatCount = 1
+                if technique.id == 0 {
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold478Animation, duration: TimeInterval(technique.holdOnCount))
+                } else {
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold444Animation, duration: TimeInterval(technique.holdOnCount))
+                }
                 breatheTime = technique.holdOnCount
             }
         }
@@ -106,6 +108,8 @@ class BreathingViewController: UIViewController {
     var breatheInAnimation = [UIImage]()
     var breatheOutAnimation = [UIImage]()
     var breatheHoldAnimation = [UIImage]()
+    var breatheHold444Animation = [UIImage]()
+    var breatheHold478Animation = [UIImage]()
     
     //AVFoundation
     var player: AVAudioPlayer?
@@ -128,7 +132,6 @@ class BreathingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        circularProgressBar.progress = 0.2
         data.loadDataBreath()
         setupView()
         setupObserveAction()
@@ -146,15 +149,16 @@ class BreathingViewController: UIViewController {
     private func setupView() {
         switch state {
         case .beforeBreathing:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true, closeView: true)
         case .breathingOn:
-            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false)
+            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false, closeView: true)
         case .pause:
-            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false, closeView: false)
             titleLabel.text = "Paused"
             firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
         case .finish:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true, closeView: true)
+            circularProgressBar.progress = 0.2
             minutesTimer = 0
             secondsTimer = 0
             bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
@@ -190,6 +194,10 @@ class BreathingViewController: UIViewController {
     private func setupObserveAction() {
         settingsView.onTap {
             self.navigateToSettings()
+        }
+        
+        closeView.onTap {
+            self.state = .finish
         }
         
         leftChevronView.onTap {
@@ -238,23 +246,29 @@ class BreathingViewController: UIViewController {
     }
     
     func setupAnimation(){
-        for frame in (0...59){
-            breatheInAnimation.append(UIImage(named: String(format: "Breathe In_%05d", frame))!)
+        circularProgressBar.progress = 0.2
+        
+        for frame in (0...95){
+            breatheInAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
         }
         
-        for frame in (0...59).reversed(){
-            breatheOutAnimation.append(UIImage(named: String(format: "Breathe In_%05d", frame))!)
+        for frame in (0...95).reversed(){
+            breatheOutAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
         }
         
-        for frame in (0...104){
-            breatheHoldAnimation.append(UIImage(named: String(format: "Hold_%05d", frame))!)
+        for frame in (0...167){
+            breatheHold478Animation.append(UIImage(named: String(format: "Hold 478_%05d", frame))!)
+        }
+        
+        for frame in (0...95){
+            breatheHold444Animation.append(UIImage(named: String(format: "Hold 444_%05d", frame))!)
         }
     }
     
     
     // MARK: - Functionality
     
-    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, safeAreaView: Bool, circularProgressBar: Bool, labelBottomView: Bool) {
+    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, safeAreaView: Bool, circularProgressBar: Bool, labelBottomView: Bool, closeView: Bool) {
         self.topView.isHidden = topView
         self.titleLabel.isHidden = titleLabel
         self.captionLabel.isHidden = captionLabel
@@ -262,6 +276,7 @@ class BreathingViewController: UIViewController {
         self.safeAreaView.isHidden = safeAreaView
         self.circularProgressBar.isHidden = circularProgressBar
         self.labelBottomView.isHidden = labelBottomView
+        self.closeView.isHidden = closeView
     }
     
     func navigateToSettings() {
