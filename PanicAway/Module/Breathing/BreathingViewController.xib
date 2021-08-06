@@ -79,13 +79,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay, you’ve finished your breathing exercise!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-5t-OHN">
-                                            <rect key="frame" x="0.0" y="51" width="306" height="47.666666666666657"/>
+                                            <rect key="frame" x="0.0" y="51" width="306" height="39.666666666666657"/>
                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEe-Oa-3Jr" userLabel="Pemenuh">
-                                            <rect key="frame" x="0.0" y="98.666666666666657" width="306" height="15.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="90.666666666666657" width="306" height="23.333333333333329"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
@@ -154,7 +154,7 @@
                                                     <rect key="frame" x="30" y="0.0" width="246" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-4-4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC4-hA-62X">
-                                                            <rect key="frame" x="82.666666666666657" y="9" width="81" height="39.333333333333336"/>
+                                                            <rect key="frame" x="88.666666666666657" y="12.333333333333371" width="68.666666666666657" height="32.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -214,7 +214,7 @@
                     <rect key="frame" x="0.0" y="738" width="414" height="128"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz9-dT-xCY">
-                            <rect key="frame" x="166.33333333333334" y="44.333333333333371" width="81.666666666666657" height="39.333333333333343"/>
+                            <rect key="frame" x="172" y="47.666666666666629" width="70.333333333333314" height="32.666666666666657"/>
                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="28"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
