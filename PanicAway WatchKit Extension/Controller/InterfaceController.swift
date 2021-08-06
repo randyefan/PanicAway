@@ -7,16 +7,11 @@
 
 import WatchKit
 import Foundation
-import HealthKit
-import UIKit
 
 class InterfaceController: WKInterfaceController {
     
+    
     @IBOutlet weak var textLabel: WKInterfaceLabel!
-    let store = HKHealthStore()
-    let healthKitManager = HealthKitManager()
-
-    typealias HKObserverQueryCompletionHandler = () -> Void
     
     @IBAction func allowToGetNotified() {
         listenForUpdates()
@@ -33,9 +28,6 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        healthKitManager.authorizeHealthKitForWatchOS {
-            
-        }
         //Mungkin disini berarti taro kalau first launch root view controllernya yang mana
         
     }

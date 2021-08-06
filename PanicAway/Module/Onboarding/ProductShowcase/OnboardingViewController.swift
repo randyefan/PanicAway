@@ -18,7 +18,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func requestAccess(_ sender: Any) {
-        healthKitManager.authorizeHealthKitForiOS {
+        healthKitManager.authorizeHealthKit() {
             nextView()
         }
         
