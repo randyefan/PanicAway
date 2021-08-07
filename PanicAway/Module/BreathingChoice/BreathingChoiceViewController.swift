@@ -85,13 +85,18 @@ class BreathingChoiceViewController: UIViewController {
         guard let _ = selected else { return }
         setSelectedBreathingTechnique()
         setDefaultBreathingCycle()
-        navigateToEmergencyContact()
+        navigateToAppleHealthAuthorize()
     }
     
     // MARK: - Functionality
     
     private func navigateToEmergencyContact() {
         let vc = EmergencyContactViewController(entryPoint: .onBoarding)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func navigateToAppleHealthAuthorize() {
+        let vc = OnboardingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
