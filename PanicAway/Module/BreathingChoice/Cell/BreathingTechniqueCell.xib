@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="MPLUSRounded1c-Medium.ttf">
-            <string>RoundedMplus1c-Medium</string>
+        <array key="MPLUSRounded1c-Bold.ttf">
+            <string>RoundedMplus1c-Bold</string>
         </array>
     </customFonts>
     <objects>
@@ -34,19 +34,19 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HIH-Wk-WZD">
-                                <rect key="frame" x="8" y="8" width="304" height="96"/>
+                                <rect key="frame" x="16" y="16" width="288" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-4-4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhv-nk-KMF">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="XCR-S0-ct9"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOy-co-RLy">
-                                        <rect key="frame" x="0.0" y="24" width="304" height="72"/>
+                                        <rect key="frame" x="0.0" y="24" width="288" height="56"/>
                                         <string key="text">Inhale for 4s, hold for 4s, then exhale for 4s
 and hold 4s before the next cycle; Aim to clear your head from distractions and reduce stress.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -59,15 +59,15 @@ and hold 4s before the next cycle; Aim to clear your head from distractions and 
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="HIH-Wk-WZD" secondAttribute="trailing" constant="8" id="KzX-bb-5qn"/>
+                            <constraint firstAttribute="trailing" secondItem="HIH-Wk-WZD" secondAttribute="trailing" constant="16" id="KzX-bb-5qn"/>
                             <constraint firstAttribute="bottom" secondItem="Ba3-Az-8Gs" secondAttribute="bottom" id="f9u-kB-st4"/>
                             <constraint firstAttribute="height" constant="112" id="fXH-te-T9y"/>
                             <constraint firstAttribute="trailing" secondItem="Ba3-Az-8Gs" secondAttribute="trailing" id="fhn-F4-A1P"/>
-                            <constraint firstItem="HIH-Wk-WZD" firstAttribute="top" secondItem="BKt-tU-iJv" secondAttribute="top" constant="8" id="fxc-LJ-JEy"/>
+                            <constraint firstItem="HIH-Wk-WZD" firstAttribute="top" secondItem="BKt-tU-iJv" secondAttribute="top" constant="16" id="fxc-LJ-JEy"/>
                             <constraint firstItem="Ba3-Az-8Gs" firstAttribute="top" secondItem="BKt-tU-iJv" secondAttribute="top" id="nLc-ru-oQx"/>
-                            <constraint firstItem="HIH-Wk-WZD" firstAttribute="leading" secondItem="BKt-tU-iJv" secondAttribute="leading" constant="8" id="oCo-Cv-8Yc"/>
+                            <constraint firstItem="HIH-Wk-WZD" firstAttribute="leading" secondItem="BKt-tU-iJv" secondAttribute="leading" constant="16" id="oCo-Cv-8Yc"/>
                             <constraint firstItem="Ba3-Az-8Gs" firstAttribute="leading" secondItem="BKt-tU-iJv" secondAttribute="leading" id="qHd-y5-gKh"/>
-                            <constraint firstAttribute="bottom" secondItem="HIH-Wk-WZD" secondAttribute="bottom" constant="8" id="yaQ-LQ-fIN"/>
+                            <constraint firstAttribute="bottom" secondItem="HIH-Wk-WZD" secondAttribute="bottom" constant="16" id="yaQ-LQ-fIN"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
