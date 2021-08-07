@@ -7,37 +7,53 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
     
-    
-    @IBOutlet weak var textLabel: WKInterfaceLabel!
-    
-    @IBAction func allowToGetNotified() {
-        listenForUpdates()
-    }
-    
-    @IBAction func disallowToGetNotified() {
-        
+    var watchSession: WCSession? {
+        didSet {
+            if let session = watchSession {
+                session.delegate = self
+                session.activate()
+            }
+        }
     }
     
     override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        
+        if let session = watchSession {
+            session.delegate = self
+            session.activate()
+        }
+        
+        // Use this code to handle haptic
+        WKInterfaceDevice.current().play(.directionUp)
+        
+        
         // Configure interface objects here.
 
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        //Mungkin disini berarti taro kalau first launch root view controllernya yang mana
-        
+        super.willActivate()
+        watchSession = WCSession.default
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+        super.didDeactivate()
     }
-    
-    func listenForUpdates(){
-        //Tadi udah coba nyerah dulu bentar coba buat heart beat session dulu pusing yang ini kayak ngajak ribut gitu
-    }
+}
 
+extension InterfaceController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        DispatchQueue.main.async {
+            print("watch received app context: ", applicationContext)
+        }
+    }
 }

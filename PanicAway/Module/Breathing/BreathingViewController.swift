@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreHaptics
 
 enum BreathingState {
     case beforeBreathing
@@ -35,6 +36,9 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var leftChevronImageView: UIImageView!
     @IBOutlet weak var rightChevronView: UIView!
     @IBOutlet weak var rightChevronImageView: UIImageView!
+    @IBOutlet weak var labelBottomView: UIView!
+    @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var firstStateAnimationImageView: UIImageView!
     
     // MARK: - Variable
     var breathingId: Int = 0
@@ -42,6 +46,7 @@ class BreathingViewController: UIViewController {
     var state: BreathingState = .beforeBreathing
     var countdownTime = 3
     var breatheTime = 0 // Handle With data from model later! (REQUIRED)
+    var engine: CHHapticEngine?
     
     // MARK: - Computed Properties
     var technique: BreathingModel? {
@@ -61,9 +66,11 @@ class BreathingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        circularProgressBar.progress = 0.5
         data.loadDataBreath()
         setupView()
         setupObserveAction()
+        setupHaptic()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,13 +83,24 @@ class BreathingViewController: UIViewController {
     private func setupView() {
         switch state {
         case .beforeBreathing:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true)
         case .breathingOn:
-            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false)
+            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false)
         case .pause:
-            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false)
+            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false)
         case .finish:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true)
+        }
+    }
+    
+    func setupHaptic() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
         }
     }
     
@@ -133,13 +151,14 @@ class BreathingViewController: UIViewController {
     
     // MARK: - Functionality
     
-    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, safeAreaView: Bool, circularProgressBar: Bool) {
+    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, safeAreaView: Bool, circularProgressBar: Bool, labelBottomView: Bool) {
         self.topView.isHidden = topView
         self.titleLabel.isHidden = titleLabel
         self.captionLabel.isHidden = captionLabel
         self.breathingMethodStackView.isHidden = breathingMethodeStackView
         self.safeAreaView.isHidden = safeAreaView
         self.circularProgressBar.isHidden = circularProgressBar
+        self.labelBottomView.isHidden = labelBottomView
     }
     
     func navigateToSettings() {
@@ -151,6 +170,32 @@ class BreathingViewController: UIViewController {
         if state == .breathingOn {
             preparation = CADisplayLink(target: self, selector: #selector(runCountDown))
             breathing = CADisplayLink(target: self, selector: #selector(runPreparation))
+        }
+    }
+    
+    func setHapticForASecond(duration: Float) {
+        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
+        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
+
+        // create a curve that fades from 1 to 0 over one second
+        let start = CHHapticParameterCurve.ControlPoint(relativeTime: 0, value: duration)
+        let end = CHHapticParameterCurve.ControlPoint(relativeTime: Double(duration), value: 0)
+
+        // use that curve to control the haptic strength
+        let parameter = CHHapticParameterCurve(parameterID: .hapticIntensityControl, controlPoints: [start, end], relativeTime: 0)
+
+        // create a continuous haptic event starting immediately and lasting one second
+        let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [sharpness, intensity], relativeTime: 0, duration: Double(duration))
+
+        // now attempt to play the haptic, with our fading parameter
+        do {
+            let pattern = try CHHapticPattern(events: [event], parameterCurves: [parameter])
+
+            let player = try self.engine?.makePlayer(with: pattern)
+            try player?.start(atTime: 0)
+        } catch {
+            // add your own meaningful error handling here!
+            print(error.localizedDescription)
         }
     }
     

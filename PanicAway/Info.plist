@@ -20,6 +20,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MPLUSRounded1c-Black.ttf</string>
+		<string>MPLUSRounded1c-Bold.ttf</string>
+		<string>MPLUSRounded1c-ExtraBold.ttf</string>
+		<string>MPLUSRounded1c-Light.ttf</string>
+		<string>MPLUSRounded1c-Medium.ttf</string>
+		<string>MPLUSRounded1c-Regular.ttf</string>
+		<string>MPLUSRounded1c-Thin.ttf</string>
+	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -41,19 +55,5 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>MPLUSRounded1c-Black.ttf</string>
-		<string>MPLUSRounded1c-Bold.ttf</string>
-		<string>MPLUSRounded1c-ExtraBold.ttf</string>
-		<string>MPLUSRounded1c-Light.ttf</string>
-		<string>MPLUSRounded1c-Medium.ttf</string>
-		<string>MPLUSRounded1c-Regular.ttf</string>
-		<string>MPLUSRounded1c-Thin.ttf</string>
-	</array>
 </dict>
 </plist>

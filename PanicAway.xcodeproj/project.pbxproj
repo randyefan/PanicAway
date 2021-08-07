@@ -72,6 +72,9 @@
 		61B9B95426B3EB870092C183 /* ProductShowcaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9B94C26B3EB870092C183 /* ProductShowcaseCollectionViewCell.swift */; };
 		61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9B94D26B3EB870092C183 /* OnboardingViewController.swift */; };
 		61B9B95726B3EB870092C183 /* ProductShowcaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61B9B95026B3EB870092C183 /* ProductShowcaseViewController.xib */; };
+		61C142FE26BA35B700DC544D /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C142FD26BA35B700DC544D /* SettingModel.swift */; };
+		61C142FF26BA35B700DC544D /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C142FD26BA35B700DC544D /* SettingModel.swift */; };
+		61C1430026BA412900DC544D /* BreathingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CA53326B40151009A11B3 /* BreathingModel.swift */; };
 		61F4201826B5CF0B00362288 /* EmergencyContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */; };
 		61F4201926B5CF0B00362288 /* EmergencyContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */; };
 		6E73C16626AE8B450057142A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E73C16426AE8B450057142A /* SettingsViewController.swift */; };
@@ -192,6 +195,7 @@
 		61B9B94C26B3EB870092C183 /* ProductShowcaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductShowcaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		61B9B94D26B3EB870092C183 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		61B9B95026B3EB870092C183 /* ProductShowcaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductShowcaseViewController.xib; sourceTree = "<group>"; };
+		61C142FD26BA35B700DC544D /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactModel.swift; sourceTree = "<group>"; };
 		6E73C16426AE8B450057142A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6E73C16526AE8B450057142A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -374,6 +378,7 @@
 			children = (
 				612CA53326B40151009A11B3 /* BreathingModel.swift */,
 				61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */,
+				61C142FD26BA35B700DC544D /* SettingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -700,6 +705,7 @@
 				611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */,
 				61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
+				61C142FE26BA35B700DC544D /* SettingModel.swift in Sources */,
 				615CCA5926AEAA97005EC6A4 /* BreathingViewController.swift in Sources */,
 				61F4201826B5CF0B00362288 /* EmergencyContactModel.swift in Sources */,
 				B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */,
@@ -728,7 +734,9 @@
 				3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */,
 				3B392C6B26B6D9E3009E216D /* BreathingMethodController.swift in Sources */,
 				3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */,
+				61C1430026BA412900DC544D /* BreathingModel.swift in Sources */,
 				61F4201926B5CF0B00362288 /* EmergencyContactModel.swift in Sources */,
+				61C142FF26BA35B700DC544D /* SettingModel.swift in Sources */,
 				611B870A26A9AFD400ECA8AD /* ComplicationController.swift in Sources */,
 				3B2FD90F26BD833B00D2463B /* HealthKitManager.swift in Sources */,
 				3B392C6626B6C688009E216D /* BreathingAnimationController.swift in Sources */,
@@ -886,21 +894,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WatchKit Extension/PanicAway WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
 			};
 			name = Debug;
 		};
@@ -909,22 +919,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WatchKit Extension/PanicAway WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
 			};
 			name = Release;
 		};
@@ -936,7 +948,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -944,14 +956,14 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
 			};
 			name = Debug;
 		};
@@ -963,7 +975,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -971,14 +983,14 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
 			};
 			name = Release;
 		};
@@ -988,16 +1000,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PanicAway/PanicAway.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1010,16 +1024,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PanicAway/PanicAway.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = randyefan.PanicAway;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

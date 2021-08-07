@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BreathingModel {
+struct BreathingModel: Codable {
     let id: Int
     let breathingName: String
     let breathInCount: Int
