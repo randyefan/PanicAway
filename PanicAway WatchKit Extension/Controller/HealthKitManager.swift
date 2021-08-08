@@ -20,21 +20,11 @@ class HealthKitManager: NSObject, ObservableObject {
     }
     
     func authorizeHealthKit(){
-        //
-        //        print("trying to authorize health kit")
-        //
-        //        let healthKitTypesRead : Set = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
-        //        healthStore.requestAuthorization(toShare: nil, read: healthKitTypesRead) { (success, error) in
-        //            if (error != nil){
-        //                print(error?.localizedDescription)
-        //            }
-        //
-        //        }
         print("trying to authorize health kit")
         let healthKitTypesShare : Set = [
             HKObjectType.workoutType()]
         
-        let healthKitTypesRead : Set = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!]
+        let healthKitTypesRead : Set = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
         healthStore.requestAuthorization(toShare: healthKitTypesShare, read: healthKitTypesRead) { (success, error) in
             if (error != nil){
                 print(error?.localizedDescription)

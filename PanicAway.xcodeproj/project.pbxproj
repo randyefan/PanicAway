@@ -896,7 +896,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WatchKit Extension/PanicAway WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,7 +921,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WatchKit Extension/PanicAway WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -948,7 +948,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -975,7 +975,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1002,7 +1002,7 @@
 				CODE_SIGN_ENTITLEMENTS = PanicAway/PanicAway.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1026,7 +1026,7 @@
 				CODE_SIGN_ENTITLEMENTS = PanicAway/PanicAway.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33Z87RYAC2;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
