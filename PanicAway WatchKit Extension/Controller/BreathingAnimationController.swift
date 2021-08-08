@@ -29,12 +29,7 @@ class BreathingAnimationController: WKInterfaceController {
     let healthKitManager = HealthKitManager()
     
     override func awake(withContext context: Any?) {
-//        super.awake(withContext: context)
-//         loadAnimation(url: URL(string: "https://assets8.lottiefiles.com/packages/lf20_Zz37yH.json")!)
-        
         heartRateLabel.setText("---")
-        
-        
     }
     
     override func willActivate() {
@@ -44,23 +39,18 @@ class BreathingAnimationController: WKInterfaceController {
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
-//        self.healthKitManager.endWorkoutSession()
     }
     
     @IBAction func tapToStartClicked(_ sender: Any) {
            if isWorkoutLive {
                informationLabel.setText("Start")
-   //            pauseBreathingAnimation()
                isWorkoutLive = false
                healthKitManager.endWorkoutSession()
                isHeartBeatAnimated = false
                stopHeartBeatAnimation()
-               
-               //invalidate timer
                timer?.invalidate()
            }else{
                informationLabel.setText("Stop")
-   //            playBreathingAnimation()
                isWorkoutLive = true
                healthKitManager.startWorkoutSession()
                isHeartBeatAnimated = true
