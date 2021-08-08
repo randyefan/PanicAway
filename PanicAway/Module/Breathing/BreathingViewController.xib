@@ -21,7 +21,7 @@
                 <outlet property="bottomLabel" destination="Iz9-dT-xCY" id="idD-zT-6TQ"/>
                 <outlet property="breathingLabel" destination="cC4-hA-62X" id="kC1-cT-VxB"/>
                 <outlet property="breathingMethodStackView" destination="6vB-on-3Z9" id="9O0-VV-RSX"/>
-                <outlet property="captionLabel" destination="luj-5t-OHN" id="dr2-F4-EaR"/>
+                <outlet property="captionLabel" destination="luj-5t-OHN" id="MIH-CH-h7e"/>
                 <outlet property="centreAnimationView" destination="6az-KT-vVi" id="EiG-W5-kwm"/>
                 <outlet property="circularProgressBar" destination="zAu-1l-mK1" id="WdH-sj-AYz"/>
                 <outlet property="closeView" destination="b3o-Rz-iSr" id="KfN-6b-D2A"/>
@@ -33,7 +33,7 @@
                 <outlet property="rightChevronView" destination="b96-cZ-V24" id="adg-Pq-rk4"/>
                 <outlet property="safeAreaView" destination="MVA-gi-6zO" id="ac0-8p-FAT"/>
                 <outlet property="settingsView" destination="KIp-Yu-JMY" id="iJp-tI-HaY"/>
-                <outlet property="titleLabel" destination="BJB-d9-kFK" id="qoe-r9-jsI"/>
+                <outlet property="titleLabel" destination="BJB-d9-kFK" id="EqL-5e-Jme"/>
                 <outlet property="topView" destination="y9K-0O-ich" id="jBT-kN-sIK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -81,7 +81,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xhq-ts-g8u">
                                     <rect key="frame" x="0.0" y="0.0" width="306" height="114"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Start Again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-d9-kFK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Start Again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-d9-kFK" customClass="EFCountingLabel" customModule="EFCountingLabel">
                                             <rect key="frame" x="0.0" y="0.0" width="306" height="51"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="51" id="FMF-ZW-X8h"/>
@@ -90,7 +90,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay, you’ve finished your breathing exercise!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-5t-OHN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay, you’ve finished your breathing exercise!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-5t-OHN" customClass="EFCountingLabel" customModule="EFCountingLabel">
                                             <rect key="frame" x="0.0" y="51" width="306" height="47.666666666666657"/>
                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="17"/>
                                             <nil key="textColor"/>

@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "EFCountingLabel",
+        "repositoryURL": "https://github.com/EFPrefix/EFCountingLabel.git",
+        "state": {
+          "branch": null,
+          "revision": "f6a47114c5024c2d1faa5b614ee6e1cb971cb35b",
+          "version": "5.1.4"
+        }
+      },
+      {
         "package": "librlottie",
         "repositoryURL": "https://github.com/SDWebImage/librlottie-Xcode.git",
         "state": {
