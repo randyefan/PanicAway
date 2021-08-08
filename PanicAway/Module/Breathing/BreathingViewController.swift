@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import EFCountingLabel
 import CoreHaptics
 
 enum BreathingState {
@@ -34,8 +35,8 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var circularProgressBar: CircularProgressBar!
     @IBOutlet weak var settingsView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var titleLabel: EFCountingLabel!
+    @IBOutlet weak var captionLabel: EFCountingLabel!
     @IBOutlet weak var breathingLabel: UILabel!
     @IBOutlet weak var safeAreaView: UIView!
     @IBOutlet weak var breathingMethodStackView: UIStackView!
@@ -60,6 +61,7 @@ class BreathingViewController: UIViewController {
                 startPreparation()
             }
             if state == .finish {
+                captionLabel.isHidden = true
                 isRunning = false
             }
         }
@@ -73,20 +75,27 @@ class BreathingViewController: UIViewController {
             titleLabel.text = breathingStat.rawValue
             captionLabel.text = "\(breatheTime)"
             if breathingStatus == .breatheIn {
-                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval(technique.breathInCount))
                 breatheTime = technique.breathInCount
+                if technique.breathingName == "4-7-8" {
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.6)))
+                } else if technique.breathingName == "7-11" {
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.3 + 0.10)))
+                } else {
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.4)))
+                }
             }
             else if breathingStatus == .breatheOut {
-                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheOutAnimation, duration: TimeInterval(technique.breathOutCount))
                 breatheTime = technique.breathOutCount
+                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheOutAnimation, duration: TimeInterval((Double(technique.breathOutCount) + 0.3 + 0.09)))
+
             }
             else if breathingStatus == .holdBreathe {
-                if technique.id == 0 {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold478Animation, duration: TimeInterval(technique.holdOnCount))
-                } else {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold444Animation, duration: TimeInterval(technique.holdOnCount))
-                }
                 breatheTime = technique.holdOnCount
+                if technique.id == 0 {
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold478Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
+                } else {
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold444Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
+                }
             }
         }
     }
@@ -285,20 +294,33 @@ class BreathingViewController: UIViewController {
     }
     
     func startPreparation() {
-        guard let technique = technique else { return }
-        
         if state == .breathingOn {
-            progress = 0.6 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float((breathCycle + 1)))
-            preparation = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runPreparation), userInfo: nil, repeats: true)
-            RunLoop.current.add(preparation!, forMode: .common)
+            titleLabel.countFrom(CGFloat(countdownTime + 1), to: 1, withDuration: 3.0)
+            titleLabel.completionBlock = {
+                self.startBreathing()
+            }
         }
     }
     
     func startBreathing() {
         breathingStatus = .breatheIn
         if state == .breathingOn {
+            captionLabel.isHidden = false
             breathing = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runCountDown), userInfo: nil, repeats: true)
             RunLoop.current.add(breathing!, forMode: .common)
+            guard let techniqueCount = technique?.breathInCount else { return }
+            captionLabel.countFrom(CGFloat(techniqueCount + 1), to: 1, withDuration: (Double(techniqueCount)))
+        }
+    }
+    
+    func updateLabelBreathing() {
+        guard let techniqueCount = technique else { return }
+        if breathingStatus == .breatheOut {
+            captionLabel.countFrom(CGFloat(techniqueCount.breathOutCount + 1), to: 1, withDuration: (Double(techniqueCount.breathOutCount)))
+        } else if breathingStatus == .breatheIn{
+            captionLabel.countFrom(CGFloat(techniqueCount.breathInCount + 1), to: 1, withDuration: (Double(techniqueCount.breathInCount)))
+        } else if breathingStatus == .holdBreathe {
+            captionLabel.countFrom(CGFloat(techniqueCount.holdOnCount + 1), to: 1, withDuration: (Double(techniqueCount.holdOnCount)))
         }
     }
     
@@ -342,27 +364,23 @@ class BreathingViewController: UIViewController {
         counter += 1
         //print(counter)
         
-        //update circular
+        // MARK: - TODO: CGFloat(progress) not counting (0,0), so the circularProgressBar still 0.2
         circularProgressBar.progress +=  CGFloat(progress)
         captionLabel.isHidden = false
         print(circularProgressBar.progress)
         
-        // FIXME: EFAN PLS CHECK THIS OK
-        // i dunno why it wont update if not in main thread
-        DispatchQueue.main.async {
-            self.captionLabel.text = "\(self.breatheTime)"
-        }
-       
-        
         if breatheTime == 1 {
             if breathingStatus == .breatheIn {
                 self.breathingStatus = .holdBreathe
+                updateLabelBreathing()
                 if breatheTime == 0 {
                     self.breathingStatus = .breatheOut
+                    updateLabelBreathing()
                 }
             }
             else if breathingStatus == .holdBreathe {
                 self.breathingStatus = .breatheOut
+                updateLabelBreathing()
             }
             else if breathingStatus == .breatheOut {
                 print(" breath :\(breathCycle)")
@@ -370,6 +388,7 @@ class BreathingViewController: UIViewController {
                 if breathCycle != 0 {
                     self.breathingStatus = .breatheIn
                     breathCycle -= 1
+                    updateLabelBreathing()
                 } else {
                     state = .finish
                     breathing?.invalidate()
@@ -379,19 +398,6 @@ class BreathingViewController: UIViewController {
         } else {
             breatheTime -= 1
         }
-    }
-    
-    @objc func runPreparation() {
-        titleLabel.isHidden = false
-        titleLabel.text = "\(countdownTime)"
-        
-        if countdownTime == 0 {
-            startBreathing()
-            preparation?.invalidate()
-            countdownTime = 3
-            return
-        }
-        countdownTime -= 1
     }
     
     func playInstruction() {

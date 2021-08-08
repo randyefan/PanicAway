@@ -81,6 +81,7 @@
 		6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E73C16526AE8B450057142A /* SettingsViewController.xib */; };
 		6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */; };
 		6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */; };
+		AACE334426BF859000FEA904 /* EFCountingLabel in Frameworks */ = {isa = PBXBuildFile; productRef = AACE334326BF859000FEA904 /* EFCountingLabel */; };
 		B741993826B29BE4006B888D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993626B29BE4006B888D /* ContactTableViewCell.swift */; };
 		B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993726B29BE4006B888D /* ContactTableViewCell.xib */; };
 		B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */; };
@@ -222,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61B5B9AA26A9BEE700FE700B /* Lottie in Frameworks */,
+				AACE334426BF859000FEA904 /* EFCountingLabel in Frameworks */,
 				613B28A126B6825F004CB533 /* SDWebImageLottieCoder in Frameworks */,
 				3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */,
 			);
@@ -558,6 +560,7 @@
 			packageProductDependencies = (
 				61B5B9A926A9BEE700FE700B /* Lottie */,
 				613B28A026B6825F004CB533 /* SDWebImageLottieCoder */,
+				AACE334326BF859000FEA904 /* EFCountingLabel */,
 			);
 			productName = PanicAway;
 			productReference = 611B86DD26A9AFD300ECA8AD /* PanicAway.app */;
@@ -634,6 +637,7 @@
 			packageReferences = (
 				61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				613B289F26B6825F004CB533 /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */,
+				AACE334226BF859000FEA904 /* XCRemoteSwiftPackageReference "EFCountingLabel" */,
 			);
 			productRefGroup = 611B86DE26A9AFD300ECA8AD /* Products */;
 			projectDirPath = "";
@@ -1121,6 +1125,14 @@
 				minimumVersion = 3.2.3;
 			};
 		};
+		AACE334226BF859000FEA904 /* XCRemoteSwiftPackageReference "EFCountingLabel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EFPrefix/EFCountingLabel.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1138,6 +1150,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		AACE334326BF859000FEA904 /* EFCountingLabel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AACE334226BF859000FEA904 /* XCRemoteSwiftPackageReference "EFCountingLabel" */;
+			productName = EFCountingLabel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
