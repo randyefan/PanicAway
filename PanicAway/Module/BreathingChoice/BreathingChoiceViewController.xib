@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,67 +24,23 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-aX-NoA" userLabel="Top Label View">
-                    <rect key="frame" x="25" y="25" width="364" height="112"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-GA-diY">
-                            <rect key="frame" x="0.0" y="0.0" width="364" height="112"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-0W-xaX">
-                                    <rect key="frame" x="0.0" y="0.0" width="364" height="75"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your breathing technique" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-Q6-liA">
-                                            <rect key="frame" x="0.0" y="0.0" width="364" height="75"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="75" id="7OP-9v-Tpu"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="26"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="leading" secondItem="kUT-0W-xaX" secondAttribute="leading" id="5Rp-lz-UYd"/>
-                                        <constraint firstAttribute="trailing" secondItem="FaK-Q6-liA" secondAttribute="trailing" id="TLy-lV-2Vl"/>
-                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerY" secondItem="kUT-0W-xaX" secondAttribute="centerY" id="dLi-wx-gA6"/>
-                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerX" secondItem="kUT-0W-xaX" secondAttribute="centerX" id="h9s-MW-FFq"/>
-                                        <constraint firstAttribute="height" constant="75" id="pEN-o9-dZG"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your favorite default breathing method for your customised breathing experience!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-ps-kB9">
-                                    <rect key="frame" x="0.0" y="83" width="364" height="29"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="29" id="g3P-Gz-7Ee"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </stackView>
-                    </subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgEmergencyContact" translatesAutoresizingMaskIntoConstraints="NO" id="MyK-XD-nSb">
+                    <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="JKB-GA-diY" secondAttribute="trailing" id="4Ni-uR-XTe"/>
-                        <constraint firstItem="JKB-GA-diY" firstAttribute="leading" secondItem="5Ck-aX-NoA" secondAttribute="leading" id="78c-aO-bEN"/>
-                        <constraint firstItem="JKB-GA-diY" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="top" id="BJO-8L-yRP"/>
-                        <constraint firstAttribute="bottom" secondItem="JKB-GA-diY" secondAttribute="bottom" id="iJR-9a-lNf"/>
-                    </constraints>
-                </view>
+                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-C3-RTh" userLabel="Main View">
-                    <rect key="frame" x="25" y="163" width="364" height="541"/>
+                    <rect key="frame" x="25" y="223" width="378" height="637"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGC-Lp-BjA" userLabel="Centre View">
-                            <rect key="frame" x="0.0" y="0.0" width="364" height="453"/>
+                            <rect key="frame" x="0.0" y="0.0" width="378" height="549"/>
                             <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSu-Y7-TbJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="364" height="453"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSu-Y7-TbJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="378" height="549"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,10 +52,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FY-Yw-ero" userLabel="Bottom View">
-                            <rect key="frame" x="0.0" y="493" width="364" height="48"/>
+                            <rect key="frame" x="0.0" y="589" width="378" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EE-nU-4sl" customClass="SaveButton" customModule="PanicAway" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="364" height="48"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="378" height="48"/>
                                     <color key="backgroundColor" name="Main"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="9GN-Es-C9i"/>
@@ -128,28 +83,81 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-aX-NoA" userLabel="Top Label View">
+                    <rect key="frame" x="25" y="69" width="378" height="128"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-GA-diY">
+                            <rect key="frame" x="0.0" y="0.0" width="378" height="128"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-0W-xaX">
+                                    <rect key="frame" x="0.0" y="0.0" width="378" height="75"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your breathing technique" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-Q6-liA">
+                                            <rect key="frame" x="0.0" y="0.0" width="378" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="75" id="7OP-9v-Tpu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="leading" secondItem="kUT-0W-xaX" secondAttribute="leading" id="5Rp-lz-UYd"/>
+                                        <constraint firstAttribute="trailing" secondItem="FaK-Q6-liA" secondAttribute="trailing" id="TLy-lV-2Vl"/>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerY" secondItem="kUT-0W-xaX" secondAttribute="centerY" id="dLi-wx-gA6"/>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerX" secondItem="kUT-0W-xaX" secondAttribute="centerX" id="h9s-MW-FFq"/>
+                                        <constraint firstAttribute="height" constant="75" id="pEN-o9-dZG"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-ps-kB9">
+                                    <rect key="frame" x="0.0" y="83" width="378" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="g3P-Gz-7Ee"/>
+                                    </constraints>
+                                    <string key="text">This will be your default breathing technique. If you feel light headed or nausea, please contact 
+your medical care number.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JKB-GA-diY" secondAttribute="trailing" id="4Ni-uR-XTe"/>
+                        <constraint firstItem="JKB-GA-diY" firstAttribute="leading" secondItem="5Ck-aX-NoA" secondAttribute="leading" id="78c-aO-bEN"/>
+                        <constraint firstItem="JKB-GA-diY" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="top" id="BJO-8L-yRP"/>
+                        <constraint firstAttribute="bottom" secondItem="JKB-GA-diY" secondAttribute="bottom" id="iJR-9a-lNf"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="MyK-XD-nSb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8FU-Bs-GMT"/>
                 <constraint firstItem="kUg-C3-RTh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Gpb-wL-RAn"/>
+                <constraint firstItem="MyK-XD-nSb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JQd-GE-gIW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kUg-C3-RTh" secondAttribute="trailing" constant="25" id="NTw-Bt-JwK"/>
                 <constraint firstItem="cSu-Y7-TbJ" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="bottom" constant="26" id="OwO-Po-gZj"/>
                 <constraint firstItem="5Ck-aX-NoA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="TNd-6m-yse"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kUg-C3-RTh" secondAttribute="bottom" constant="32" id="TtP-EH-Km6"/>
                 <constraint firstItem="5Ck-aX-NoA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="mi8-OI-Q0o"/>
+                <constraint firstAttribute="bottom" secondItem="MyK-XD-nSb" secondAttribute="bottom" id="msV-2O-v8B"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ck-aX-NoA" secondAttribute="trailing" constant="25" id="nyd-v0-1mW"/>
+                <constraint firstAttribute="trailing" secondItem="MyK-XD-nSb" secondAttribute="trailing" id="xQV-xo-bM7"/>
             </constraints>
             <point key="canvasLocation" x="-9" y="130"/>
         </view>
     </objects>
     <resources>
+        <image name="bgEmergencyContact" width="375" height="812"/>
         <namedColor name="Main">
             <color red="0.94499999284744263" green="0.6119999885559082" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
