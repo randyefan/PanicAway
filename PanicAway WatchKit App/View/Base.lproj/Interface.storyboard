@@ -118,9 +118,10 @@
                         <group width="1" height="1" alignment="center" layout="vertical" id="DOb-wW-AiI">
                             <items>
                                 <label alignment="center" text="Tap to start" id="eKx-IJ-Nrz"/>
-                                <imageView width="1" height="0.69999999999999996" alignment="center" image="ic_animation_state_no_breathing" contentMode="scaleAspectFit" id="6cx-kw-RWN"/>
-                                <imageView width="1" height="0.69999999999999996" alignment="center" contentMode="scaleAspectFit" id="5Xp-Dc-5Jc" userLabel="hold View"/>
-                                <imageView width="1" height="0.69999999999999996" alignment="center" image="ic_animation_state_no_breathing" contentMode="scaleAspectFit" id="q28-3S-lcV" userLabel="breatheOut Animation"/>
+                                <imageView width="1" height="0.69999999999999996" alignment="center" image="breathIn0" contentMode="scaleAspectFit" id="VeX-82-BpO"/>
+                                <imageView width="1" height="0.69999999999999996" alignment="center" hidden="YES" image="breathIn0" contentMode="scaleAspectFit" id="6cx-kw-RWN"/>
+                                <imageView width="1" height="0.69999999999999996" alignment="center" hidden="YES" contentMode="scaleAspectFit" id="5Xp-Dc-5Jc" userLabel="hold View"/>
+                                <imageView width="1" height="0.69999999999999996" alignment="center" hidden="YES" image="ic_animation_state_no_breathing" contentMode="scaleAspectFit" id="q28-3S-lcV" userLabel="breatheOut Animation"/>
                                 <group width="1" alignment="center" id="cDA-IP-s18">
                                     <items>
                                         <imageView alignment="center" verticalAlignment="center" image="heart" catalog="system" id="Mzg-G9-a07">
@@ -144,6 +145,7 @@
                     <connections>
                         <outlet property="breatheInView" destination="6cx-kw-RWN" id="Uc7-gX-4hj"/>
                         <outlet property="breatheOutAnimationView" destination="q28-3S-lcV" id="wIE-Du-sJy"/>
+                        <outlet property="defaultImages" destination="VeX-82-BpO" id="cJM-GR-iKr"/>
                         <outlet property="heartImage" destination="Mzg-G9-a07" id="seB-p3-Xi0"/>
                         <outlet property="heartRateLabel" destination="03X-jK-PXv" id="lBP-jD-fRW"/>
                         <outlet property="holdAnimationView" destination="5Xp-Dc-5Jc" id="ndi-Ng-Ke6"/>
@@ -202,6 +204,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="breathIn0" width="1080" height="1080"/>
         <image name="heart" catalog="system" width="128" height="105"/>
         <image name="ic_animation_state_no_breathing" width="267" height="273"/>
         <namedColor name="Main">

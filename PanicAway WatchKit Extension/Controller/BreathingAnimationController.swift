@@ -25,12 +25,19 @@ class BreathingAnimationController: WKInterfaceController {
     @IBOutlet weak var heartImage: WKInterfaceImage!
     @IBOutlet weak var heartRateLabel: WKInterfaceLabel!
     @IBOutlet weak var tapBreathingAnimationGesture: WKTapGestureRecognizer!
+    @IBOutlet weak var defaultImages: WKInterfaceImage!
     
     var isWorkoutLive = false {
         didSet {
             if !isWorkoutLive {
                 informationLabel.setText("Tap To Start")
+                heartRateLabel.setText("---")
+                defaultImages.setHidden(false)
+                holdAnimationView.setHidden(true)
+                breatheOutAnimationView.setHidden(true)
+                breatheInView.setHidden(true)
             }
+            
         }
     }
     
@@ -103,6 +110,7 @@ class BreathingAnimationController: WKInterfaceController {
         // State ketika tap start
         // Cek dulu apakah isWorkoutLive nya true atau tidak (kalau true berarti dia sedang breath -> dan harusnya dia finish breath, kalau false -> harusnya dia mulai breath)
         if isWorkoutLive {
+            defaultImages.setHidden(false)
             // Masuk kesini ketika sedang berjalan breathing tapi user tap watch
             // Update Label
             informationLabel.setText("Start")
@@ -123,6 +131,7 @@ class BreathingAnimationController: WKInterfaceController {
             // Validate Timer
             timer?.invalidate()
         } else {
+            WKInterfaceDevice.current().play(.start)
             breathingCycle = 2
             // Masuk kesini ketika sedang tidak workout tapi user tap watch
             // Update Label
@@ -150,6 +159,7 @@ class BreathingAnimationController: WKInterfaceController {
     func updateView() {
         guard let technique = breathingTechnique else { return }
         if isWorkoutLive {
+            defaultImages.setHidden(true)
             guard let breathingState = state else { return }
             switch breathingState {
             case .breatheIn:
