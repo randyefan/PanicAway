@@ -15,6 +15,8 @@ enum BreathingStateWatch: String {
     case hold = "Hold"
 }
 
+
+
 class BreathingAnimationController: WKInterfaceController {
     
     
@@ -71,7 +73,7 @@ class BreathingAnimationController: WKInterfaceController {
                 healthKitManager.endWorkoutSession()
                 stopHeartBeatAnimation()
                 
-                
+                WKExtension.shared().isAutorotating = false
                 // Validate Timer
                 timer?.invalidate()
                 return
@@ -86,17 +88,19 @@ class BreathingAnimationController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         heartRateLabel.setText("---")
+        
     }
     
     override func willActivate() {
         requestHealthKit()
         data.loadDataBreath()
         breathingTechnique = data.entries[0]
-        breathingCycle = 2
+        breathingCycle = 4
         setupAnimation()
     }
     
     override func didDeactivate() {
+        
     }
     
     func setupAnimation(){
@@ -131,8 +135,7 @@ class BreathingAnimationController: WKInterfaceController {
             // Validate Timer
             timer?.invalidate()
         } else {
-            WKInterfaceDevice.current().play(.start)
-            breathingCycle = 2
+            breathingCycle = 4
             // Masuk kesini ketika sedang tidak workout tapi user tap watch
             // Update Label
             informationLabel.setText("Stop")
@@ -151,7 +154,7 @@ class BreathingAnimationController: WKInterfaceController {
             startHeartBeatAnimation()
             
             // Timer stuff
-            
+            WKExtension.shared().isAutorotating = true
             startTimer()
         }
     }
@@ -170,7 +173,6 @@ class BreathingAnimationController: WKInterfaceController {
                 holdAnimationView.setHidden(true)
                 breatheOutAnimationView.setHidden(true)
                 breatheInView.setHidden(false)
-                
                 breatheInView.startAnimatingWithImages(in: NSRange(location: 0, length: 95), duration: TimeInterval(technique.breathInCount), repeatCount: 1)
                 
                 
@@ -209,6 +211,12 @@ class BreathingAnimationController: WKInterfaceController {
         let heartRateString = String(format: "%.0f", heartRate)
         heartRateLabel.setText("\(heartRateString) BPM")
         //----------------------------------------------------
+        
+        if state == .hold {
+            WKInterfaceDevice.current().play(.directionDown)
+        } else if state == .breatheIn {
+            WKInterfaceDevice.current().play(.retry)
+        }
         
         //print("breathe time \(breatheTimer)")
         
@@ -262,8 +270,6 @@ class BreathingAnimationController: WKInterfaceController {
                         self.heartImage.setHeight(16)
                         
                     })            }
-                
-                
             }
             
         }
