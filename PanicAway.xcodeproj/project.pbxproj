@@ -86,9 +86,9 @@
 		B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993726B29BE4006B888D /* ContactTableViewCell.xib */; };
 		B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */; };
 		B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993D26B29C08006B888D /* AddToContactTableViewCell.xib */; };
-		B76658F826BB1DF900F69008 /* exhale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B76658F526BB1DF800F69008 /* exhale.mp3 */; };
-		B76658F926BB1DF900F69008 /* inhale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B76658F626BB1DF800F69008 /* inhale.mp3 */; };
-		B76658FA26BB1DF900F69008 /* hold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B76658F726BB1DF900F69008 /* hold.mp3 */; };
+		B742E4C526C0D57900E9D46F /* VO - Hold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B742E4C226C0D57500E9D46F /* VO - Hold.mp3 */; };
+		B742E4C626C0D57900E9D46F /* VO - Breath In.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B742E4C326C0D57700E9D46F /* VO - Breath In.mp3 */; };
+		B742E4C726C0D57900E9D46F /* VO - Breath Out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B742E4C426C0D57900E9D46F /* VO - Breath Out.mp3 */; };
 		B7DC15B326AE960800259CB0 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */; };
 		B7DC15B426AE960800259CB0 /* EmergencyContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */; };
 		B7EACD5626B31FF800D32C2D /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EACD5526B31FF800D32C2D /* SaveButton.swift */; };
@@ -209,9 +209,9 @@
 		B741993726B29BE4006B888D /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToContactTableViewCell.swift; sourceTree = "<group>"; };
 		B741993D26B29C08006B888D /* AddToContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToContactTableViewCell.xib; sourceTree = "<group>"; };
-		B76658F526BB1DF800F69008 /* exhale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = exhale.mp3; sourceTree = "<group>"; };
-		B76658F626BB1DF800F69008 /* inhale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = inhale.mp3; sourceTree = "<group>"; };
-		B76658F726BB1DF900F69008 /* hold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hold.mp3; sourceTree = "<group>"; };
+		B742E4C226C0D57500E9D46F /* VO - Hold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "VO - Hold.mp3"; sourceTree = "<group>"; };
+		B742E4C326C0D57700E9D46F /* VO - Breath In.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "VO - Breath In.mp3"; sourceTree = "<group>"; };
+		B742E4C426C0D57900E9D46F /* VO - Breath Out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "VO - Breath Out.mp3"; sourceTree = "<group>"; };
 		B7DC15B126AE960800259CB0 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		B7DC15B226AE960800259CB0 /* EmergencyContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyContactViewController.xib; sourceTree = "<group>"; };
 		B7EACD5526B31FF800D32C2D /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
@@ -522,9 +522,9 @@
 		B76658F426BB1DE300F69008 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				B76658F526BB1DF800F69008 /* exhale.mp3 */,
-				B76658F726BB1DF900F69008 /* hold.mp3 */,
-				B76658F626BB1DF800F69008 /* inhale.mp3 */,
+				B742E4C326C0D57700E9D46F /* VO - Breath In.mp3 */,
+				B742E4C426C0D57900E9D46F /* VO - Breath Out.mp3 */,
+				B742E4C226C0D57500E9D46F /* VO - Hold.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -660,14 +660,13 @@
 				611B86ED26A9AFD300ECA8AD /* LaunchScreen.storyboard in Resources */,
 				61B9B95326B3EB870092C183 /* ProductShowcaseCollectionViewCell.xib in Resources */,
 				619F17F926AE87EA006F8067 /* MPLUSRounded1c-Thin.ttf in Resources */,
-				B76658FA26BB1DF900F69008 /* hold.mp3 in Resources */,
 				B7DC15B426AE960800259CB0 /* EmergencyContactViewController.xib in Resources */,
 				619F17E726AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */,
 				B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */,
 				619F17F626AE87EA006F8067 /* MPLUSRounded1c-Regular.ttf in Resources */,
 				61B9B95226B3EB870092C183 /* OnboardingViewController.xib in Resources */,
-				B76658F926BB1DF900F69008 /* inhale.mp3 in Resources */,
 				6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */,
+				B742E4C726C0D57900E9D46F /* VO - Breath Out.mp3 in Resources */,
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
 				619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
 				B76658F826BB1DF900F69008 /* exhale.mp3 in Resources */,
@@ -675,11 +674,13 @@
 				B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */,
 				6190F8E226AFC47900C48744 /* BreathingTechniqueCell.xib in Resources */,
 				6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */,
+				B742E4C626C0D57900E9D46F /* VO - Breath In.mp3 in Resources */,
 				61B9B95726B3EB870092C183 /* ProductShowcaseViewController.xib in Resources */,
 				619F17ED26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
 				619F17F026AE87EA006F8067 /* MPLUSRounded1c-Bold.ttf in Resources */,
 				615CCA5A26AEAA97005EC6A4 /* BreathingViewController.xib in Resources */,
 				6190F8DD26AFC1D100C48744 /* BreathingChoiceViewController.xib in Resources */,
+				B742E4C526C0D57900E9D46F /* VO - Hold.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
