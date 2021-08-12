@@ -108,10 +108,6 @@ class BreathingViewController: UIViewController {
     var progress: Float = 0.0
     var counter = 0
     var isPaused: Bool = false
-    var breathCycle = 0
-    var progress: Float = 0.0
-    var counter = 0
-    var isPaused: Bool = false
     
     //timer
     var secondsTimer = 0
