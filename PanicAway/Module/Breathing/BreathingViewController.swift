@@ -177,24 +177,19 @@ class BreathingViewController: UIViewController {
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
 
-        // create a curve that fades from 1 to 0 over one second
         let start = CHHapticParameterCurve.ControlPoint(relativeTime: 0, value: duration)
         let end = CHHapticParameterCurve.ControlPoint(relativeTime: Double(duration), value: 0)
 
-        // use that curve to control the haptic strength
         let parameter = CHHapticParameterCurve(parameterID: .hapticIntensityControl, controlPoints: [start, end], relativeTime: 0)
 
-        // create a continuous haptic event starting immediately and lasting one second
         let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [sharpness, intensity], relativeTime: 0, duration: Double(duration))
 
-        // now attempt to play the haptic, with our fading parameter
         do {
             let pattern = try CHHapticPattern(events: [event], parameterCurves: [parameter])
 
             let player = try self.engine?.makePlayer(with: pattern)
             try player?.start(atTime: 0)
         } catch {
-            // add your own meaningful error handling here!
             print(error.localizedDescription)
         }
     }
