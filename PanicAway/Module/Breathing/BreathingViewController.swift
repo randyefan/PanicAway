@@ -211,8 +211,10 @@ class BreathingViewController: UIViewController {
         
         if state == .beforeBreathing {
             centreAnimationView.onTap {
+                guard let technique = self.technique else { return }
                 if self.isRunning == false {
                     self.breathCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle") - 1
+                    self.progress = 0.6 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float(self.breathCycle + 1))
                     self.state = .breathingOn
                     self.isRunning = true
                 } else if self.state == .breathingOn {
@@ -241,7 +243,11 @@ class BreathingViewController: UIViewController {
     }
     
     func setupAnimation(){
+        
+        
         circularProgressBar.progress = 0.2
+        
+        
         
         for frame in (0...95){
             breatheInAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
@@ -256,7 +262,7 @@ class BreathingViewController: UIViewController {
         }
         
         for frame in (0...95){
-            breatheHold444Animation.append(UIImage(named: String(format: "Hold 444_%05d", frame))!)
+            breatheHold444Animation.append(UIImage(named: String(format: "Hold 3_%05d", frame))!)
         }
     }
     
@@ -364,11 +370,11 @@ class BreathingViewController: UIViewController {
         var filename = ""
         switch breathingStatus {
         case .breatheIn:
-            filename = "inhale"
+            filename = "VO - Breath In"
         case .breatheOut:
-            filename = "exhale"
+            filename = "VO - Breath Out"
         default:
-            filename = "hold"
+            filename = "VO - Hold"
         }
         
         guard let path = Bundle.main.path(forResource: filename, ofType: "mp3") else { return }
