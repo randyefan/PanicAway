@@ -81,6 +81,7 @@
 		6E73C16726AE8B450057142A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E73C16526AE8B450057142A /* SettingsViewController.xib */; };
 		6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */; };
 		6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */; };
+		AA94FE6026BEF20E0013D207 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94FE5F26BEF20E0013D207 /* AlertView.swift */; };
 		AACE334426BF859000FEA904 /* EFCountingLabel in Frameworks */ = {isa = PBXBuildFile; productRef = AACE334326BF859000FEA904 /* EFCountingLabel */; };
 		B741993826B29BE4006B888D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993626B29BE4006B888D /* ContactTableViewCell.swift */; };
 		B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993726B29BE4006B888D /* ContactTableViewCell.xib */; };
@@ -205,6 +206,7 @@
 		6E73C16526AE8B450057142A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyMessageSettingViewController.swift; sourceTree = "<group>"; };
 		6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyMessageSettingViewController.xib; sourceTree = "<group>"; };
+		AA94FE5F26BEF20E0013D207 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		B741993626B29BE4006B888D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		B741993726B29BE4006B888D /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			children = (
 				B7EACD5526B31FF800D32C2D /* SaveButton.swift */,
 				61908DB126AF290A00E927AC /* CircularProgressBar.swift */,
+				AA94FE5F26BEF20E0013D207 /* AlertView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 				6190F8DC26AFC1D100C48744 /* BreathingChoiceViewController.swift in Sources */,
 				6190F8E126AFC47900C48744 /* BreathingTechniqueCell.swift in Sources */,
 				611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */,
+				AA94FE6026BEF20E0013D207 /* AlertView.swift in Sources */,
 				61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
 				61C142FE26BA35B700DC544D /* SettingModel.swift in Sources */,

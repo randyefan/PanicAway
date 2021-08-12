@@ -78,12 +78,13 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func emergencyContactButon(_ sender: UITapGestureRecognizer) {
-        navigateToEmergencyContact()
+        /// TO DO: - Replace this code to navigate to emergency contact view
+        AlertView.showAlertComingSoonFeature(view: self, message: "My emergency contact feature is almost ready!")
+        
     }
 
     @IBAction func emergencyMessageButton(_ sender: UITapGestureRecognizer) {
-        let vc = EmergencyMessageSettingViewController(nibName: EmergencyMessageSettingViewController.identifier, bundle: nil)
-        navigationController?.pushViewController(vc, animated: true)
+        AlertView.showAlertComingSoonFeature(view: self, message: "My emergency message feature is almost ready!")
     }
 }
 
