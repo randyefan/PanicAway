@@ -38,10 +38,13 @@ class ProductShowcaseViewController: UIViewController{
         //Onboarding Data
         slides = [
             ProductShowcaseSlide(title: "Cope with panic attack",
-                                 description:"Guided breathing to relieve your panic attack, and a one-touch emergency contact to notify your loved ones",
+                                 description:"Guided breathing to relieve your panic attack and a one-click emergency contact.",
                                  image: #imageLiteral(resourceName: "OnboardingStress")),
-            ProductShowcaseSlide(title: "Connect to apple watch",
-                                 description: "Immediately get help anytime anywhere when you are experiencing panic attack",
+            ProductShowcaseSlide(title: "Cultural Tradition",
+                                 description:"Gringsing Batik belief to shield and protect people from danger",
+                                 image: #imageLiteral(resourceName: "BatikGringsing")),
+            ProductShowcaseSlide(title: "Quick Access",
+                                 description: "Seek assistance quickly by using Shortcut and a watchOS Complications.",
                                  image: #imageLiteral(resourceName: "OnboardingWatch")),
         ]
         

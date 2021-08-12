@@ -14,8 +14,6 @@ class HealthKitManager{
     
     func authorizeHealthKit(completion: () -> Void){
         
-
-        
         if HKHealthStore.isHealthDataAvailable(){
             
             let readTypes =  Set([HKObjectType.categoryType(forIdentifier: .highHeartRateEvent)!])
@@ -25,7 +23,6 @@ class HealthKitManager{
             healthStore.requestAuthorization(toShare: writeTypes, read: readTypes as! Set<HKObjectType>) { (success, error) -> Void  in
                 
             }
-            
             
         }
         completion()

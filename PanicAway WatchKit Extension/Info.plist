@@ -32,6 +32,10 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
