@@ -21,8 +21,10 @@
                 <outlet property="bottomLabel" destination="Iz9-dT-xCY" id="idD-zT-6TQ"/>
                 <outlet property="breathingLabel" destination="cC4-hA-62X" id="kC1-cT-VxB"/>
                 <outlet property="breathingMethodStackView" destination="6vB-on-3Z9" id="9O0-VV-RSX"/>
-                <outlet property="captionLabel" destination="luj-5t-OHN" id="dr2-F4-EaR"/>
+                <outlet property="captionLabel" destination="luj-5t-OHN" id="MIH-CH-h7e"/>
+                <outlet property="centreAnimationView" destination="6az-KT-vVi" id="EiG-W5-kwm"/>
                 <outlet property="circularProgressBar" destination="zAu-1l-mK1" id="WdH-sj-AYz"/>
+                <outlet property="closeView" destination="b3o-Rz-iSr" id="KfN-6b-D2A"/>
                 <outlet property="firstStateAnimationImageView" destination="98O-9l-Zx6" id="MxQ-AQ-vjW"/>
                 <outlet property="labelBottomView" destination="ZHa-kT-gzB" id="G7l-fk-y3X"/>
                 <outlet property="leftChevronImageView" destination="DrJ-tZ-OxA" id="I9h-pJ-UBk"/>
@@ -31,7 +33,7 @@
                 <outlet property="rightChevronView" destination="b96-cZ-V24" id="adg-Pq-rk4"/>
                 <outlet property="safeAreaView" destination="MVA-gi-6zO" id="ac0-8p-FAT"/>
                 <outlet property="settingsView" destination="KIp-Yu-JMY" id="iJp-tI-HaY"/>
-                <outlet property="titleLabel" destination="BJB-d9-kFK" id="qoe-r9-jsI"/>
+                <outlet property="titleLabel" destination="BJB-d9-kFK" id="EqL-5e-Jme"/>
                 <outlet property="topView" destination="y9K-0O-ich" id="jBT-kN-sIK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -52,12 +54,22 @@
                                 <constraint firstAttribute="width" constant="38" id="Pa6-gm-a4k"/>
                             </constraints>
                         </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b3o-Rz-iSr">
+                            <rect key="frame" x="0.0" y="2.6666666666666643" width="38" height="33"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="VYV-34-ce2"/>
+                                <constraint firstAttribute="width" constant="38" id="gMb-87-5JR"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" name="Background"/>
                     <constraints>
                         <constraint firstItem="KIp-Yu-JMY" firstAttribute="trailing" secondItem="y9K-0O-ich" secondAttribute="trailing" id="5yt-hN-7kD"/>
+                        <constraint firstItem="b3o-Rz-iSr" firstAttribute="leading" secondItem="y9K-0O-ich" secondAttribute="leading" id="JeE-cX-EBW"/>
                         <constraint firstAttribute="height" constant="38" id="rB4-JG-Li7"/>
                         <constraint firstItem="KIp-Yu-JMY" firstAttribute="centerY" secondItem="y9K-0O-ich" secondAttribute="centerY" id="tch-8p-TVF"/>
+                        <constraint firstItem="b3o-Rz-iSr" firstAttribute="centerY" secondItem="y9K-0O-ich" secondAttribute="centerY" id="tg2-NE-Uqw"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-yu-7Y0" userLabel="Main View">
@@ -69,7 +81,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xhq-ts-g8u">
                                     <rect key="frame" x="0.0" y="0.0" width="306" height="114"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Start Again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-d9-kFK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Start Again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-d9-kFK" customClass="EFCountingLabel" customModule="EFCountingLabel">
                                             <rect key="frame" x="0.0" y="0.0" width="306" height="51"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="51" id="FMF-ZW-X8h"/>
@@ -78,14 +90,14 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay, you’ve finished your breathing exercise!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-5t-OHN">
-                                            <rect key="frame" x="0.0" y="51" width="306" height="39.666666666666657"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay, you’ve finished your breathing exercise!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-5t-OHN" customClass="EFCountingLabel" customModule="EFCountingLabel">
+                                            <rect key="frame" x="0.0" y="51" width="306" height="47.666666666666657"/>
                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEe-Oa-3Jr" userLabel="Pemenuh">
-                                            <rect key="frame" x="0.0" y="90.666666666666657" width="306" height="23.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="98.666666666666657" width="306" height="15.333333333333329"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
@@ -154,7 +166,7 @@
                                                     <rect key="frame" x="30" y="0.0" width="246" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-4-4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC4-hA-62X">
-                                                            <rect key="frame" x="88.666666666666657" y="12.333333333333371" width="68.666666666666657" height="32.666666666666664"/>
+                                                            <rect key="frame" x="82.666666666666657" y="9" width="81" height="39.333333333333336"/>
                                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -213,8 +225,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHa-kT-gzB" userLabel="Label Bottom View">
                     <rect key="frame" x="0.0" y="738" width="414" height="128"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz9-dT-xCY">
-                            <rect key="frame" x="172" y="47.666666666666629" width="70.333333333333314" height="32.666666666666657"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz9-dT-xCY">
+                            <rect key="frame" x="166.33333333333334" y="44.333333333333371" width="81.666666666666657" height="39.333333333333343"/>
                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="28"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -261,6 +273,7 @@
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="ic_animation_state_no_breathing" width="267" height="273"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="Background">
             <color red="0.99599999189376831" green="0.98400002717971802" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
