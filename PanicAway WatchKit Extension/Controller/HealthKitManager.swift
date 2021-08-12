@@ -14,6 +14,7 @@ class HealthKitManager: NSObject, ObservableObject {
     let healthStore = HKHealthStore()
     var session : HKWorkoutSession!
     var builder : HKLiveWorkoutBuilder!
+    
     @Published var heartRate : Double = 0
     func getHealthKitStore() -> HKHealthStore {
         return healthStore
@@ -54,7 +55,6 @@ class HealthKitManager: NSObject, ObservableObject {
         session.pause()
         builder.beginCollection(withStart: Date()) { (success, error) in
             guard success else{
-                
                 print(error?.localizedDescription)
                 return
             }

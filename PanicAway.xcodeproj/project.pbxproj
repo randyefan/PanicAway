@@ -246,8 +246,8 @@
 		3BBF6CBE26B27C19003A73F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				611B870526A9AFD400ECA8AD /* InterfaceController.swift */,
 				611B870926A9AFD400ECA8AD /* ComplicationController.swift */,
+				611B870526A9AFD400ECA8AD /* InterfaceController.swift */,
 				3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */,
 				3B2048BF26B1236A0032FA06 /* ContactRowController.swift */,
 				3B392C6526B6C688009E216D /* BreathingAnimationController.swift */,
@@ -323,12 +323,12 @@
 		611B870426A9AFD400ECA8AD /* PanicAway WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3BFA29D726B39A1200380825 /* PanicAway WatchKit Extension.entitlements */,
+				611B870B26A9AFD500ECA8AD /* Assets.xcassets */,
+				3B529E6D26B00FA800D4D301 /* Colors.xcassets */,
 				3BBF6CBE26B27C19003A73F0 /* Controller */,
 				611B870726A9AFD400ECA8AD /* ExtensionDelegate.swift */,
-				611B870B26A9AFD500ECA8AD /* Assets.xcassets */,
 				611B870D26A9AFD500ECA8AD /* Info.plist */,
-				3B529E6D26B00FA800D4D301 /* Colors.xcassets */,
+				3BFA29D726B39A1200380825 /* PanicAway WatchKit Extension.entitlements */,
 				3B2FD83E26BAF43B00D2463B /* PushNotificationPayload.apns */,
 			);
 			path = "PanicAway WatchKit Extension";

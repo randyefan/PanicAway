@@ -17,9 +17,6 @@ class BreathingMethodController: WKInterfaceController {
     @IBAction func methodOneButtonClicked() {
         WKInterfaceController.reloadRootPageControllers(withNames: ["BreathingAnimation", "NotifyFriend"], contexts: nil, orientation: .horizontal, pageIndex: 0)
     }
-   
-    
-    
 }
 
 
