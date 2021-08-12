@@ -118,7 +118,9 @@
                         <group width="1" height="1" alignment="center" layout="vertical" id="DOb-wW-AiI">
                             <items>
                                 <label alignment="center" text="Tap to start" id="eKx-IJ-Nrz"/>
-                                <imageView width="1" height="0.69999999999999996" alignment="center" contentMode="scaleAspectFit" id="6cx-kw-RWN"/>
+                                <imageView width="1" height="0.69999999999999996" alignment="center" image="ic_animation_state_no_breathing" contentMode="scaleAspectFit" id="6cx-kw-RWN"/>
+                                <imageView width="1" height="0.69999999999999996" alignment="center" contentMode="scaleAspectFit" id="5Xp-Dc-5Jc" userLabel="hold View"/>
+                                <imageView width="1" height="0.69999999999999996" alignment="center" image="ic_animation_state_no_breathing" contentMode="scaleAspectFit" id="q28-3S-lcV" userLabel="breatheOut Animation"/>
                                 <group width="1" alignment="center" id="cDA-IP-s18">
                                     <items>
                                         <imageView alignment="center" verticalAlignment="center" image="heart" catalog="system" id="Mzg-G9-a07">
@@ -140,9 +142,11 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="animationView" destination="6cx-kw-RWN" id="XWq-vX-s5O"/>
+                        <outlet property="breatheInView" destination="6cx-kw-RWN" id="Uc7-gX-4hj"/>
+                        <outlet property="breatheOutAnimationView" destination="q28-3S-lcV" id="wIE-Du-sJy"/>
                         <outlet property="heartImage" destination="Mzg-G9-a07" id="seB-p3-Xi0"/>
                         <outlet property="heartRateLabel" destination="03X-jK-PXv" id="lBP-jD-fRW"/>
+                        <outlet property="holdAnimationView" destination="5Xp-Dc-5Jc" id="ndi-Ng-Ke6"/>
                         <outlet property="informationLabel" destination="eKx-IJ-Nrz" id="Di1-Yd-cUD"/>
                         <outlet property="tapBreathingAnimationGesture" destination="b1w-j7-Hgc" id="gi1-zv-WEz"/>
                     </connections>
@@ -199,6 +203,7 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="105"/>
+        <image name="ic_animation_state_no_breathing" width="267" height="273"/>
         <namedColor name="Main">
             <color red="0.94499999284744263" green="0.6119999885559082" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
