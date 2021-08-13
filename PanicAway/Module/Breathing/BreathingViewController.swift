@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import EFCountingLabel
 import CoreHaptics
+import HealthKit
 
 enum BreathingState {
     case beforeBreathing
@@ -53,6 +54,11 @@ class BreathingViewController: UIViewController {
     // MARK: - Variable
     var breathingId: Int = 0
     var data = BreathingLoader()
+    let healthKitManager = HealthKitManager()
+    var startDate = Date()
+    var mindfulnessMinutes: Double{
+        return Double((minutesTimer*60) + secondsTimer)
+    }
     
     var state: BreathingState = .beforeBreathing {
         didSet {
@@ -168,6 +174,7 @@ class BreathingViewController: UIViewController {
         case .finish:
             setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true, closeView: true)
             circularProgressBar.progress = 0.2
+            healthKitManager.saveMeditation(startDate: startDate, seconds: mindfulnessMinutes)
             minutesTimer = 0
             secondsTimer = 0
             bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
