@@ -15,10 +15,7 @@ enum BreathingStateWatch: String {
     case hold = "Hold"
 }
 
-
-
 class BreathingAnimationController: WKInterfaceController {
-    
     
     @IBOutlet weak var breatheInView: WKInterfaceImage!
     @IBOutlet weak var holdAnimationView: WKInterfaceImage!
@@ -39,32 +36,33 @@ class BreathingAnimationController: WKInterfaceController {
                 breatheOutAnimationView.setHidden(true)
                 breatheInView.setHidden(true)
             }
-            
         }
     }
     
-    // isFinish di set true ketika sudah satu putaran breathing (in-hold-out),
     var isFinish: Bool = false
-    
     var heartRate: Double = 120
     var isHeartBeatAnimated = false
     var duration: Double{
         return (60/heartRate)/2
     }
+    
+    //Breathing Var
     var timer:Timer?
     var breathingCycle: Int = 0
     var breatheTimer: Int = 0
     var data = BreathingLoader()
     
+    var breathingTechnique: BreathingModel?
+    let healthKitManager = HealthKitManager()
+    
     // Ini state harus diset ke nil, kalau dia ga breathing ya, soalnya di todo kita bisa balikin dia ke state awal
     var state: BreathingStateWatch? {
         didSet {
             guard let _ = state else {
-                //TODO: - Handle With State when they doesnt in breathing mode
-                // Masuk kesini ketika sedang berjalan breathing tapi user tap watch
                 // Update Label
                 informationLabel.setText("Start")
                 print("Finish")
+                
                 // Update Variable
                 isWorkoutLive = false
                 isHeartBeatAnimated = false
@@ -82,31 +80,23 @@ class BreathingAnimationController: WKInterfaceController {
         }
     }
     
-    var breathingTechnique: BreathingModel?
-    
-    let healthKitManager = HealthKitManager()
-    
     override func awake(withContext context: Any?) {
         heartRateLabel.setText("---")
-        
     }
     
     override func willActivate() {
         requestHealthKit()
         data.loadDataBreath()
-        breathingTechnique = data.entries[0]
+        breathingTechnique = data.entries[1]
         breathingCycle = 4
         setupAnimation()
     }
     
-    override func didDeactivate() {
-        
-    }
+    override func didDeactivate() { }
     
     func setupAnimation(){
-        breatheInView.setImageNamed("breathIn")
-        holdAnimationView.setImageNamed("holdTujuh")
-        breatheOutAnimationView.setImageNamed("breathIn")
+        breatheInView.setImageNamed("breatheIn")
+        breatheOutAnimationView.setImageNamed("breatheIn")
     }
     
     @IBAction func tapToStartClicked(_ sender: Any) {
@@ -136,18 +126,12 @@ class BreathingAnimationController: WKInterfaceController {
             timer?.invalidate()
         } else {
             breathingCycle = 4
-            // Masuk kesini ketika sedang tidak workout tapi user tap watch
-            // Update Label
-            informationLabel.setText("Stop")
-            
             // Update Variable
             isWorkoutLive = true
             isHeartBeatAnimated = true
             
             // Handle Breathing State & update view
             state = .breatheIn
-            
-            //updateView()
             
             // Workout stuff
             healthKitManager.startWorkoutSession()
@@ -166,39 +150,32 @@ class BreathingAnimationController: WKInterfaceController {
             guard let breathingState = state else { return }
             switch breathingState {
             case .breatheIn:
-                //TODO: - Handle Setup Animation Breathe In Here
                 print("Breathe In")
+                informationLabel.setText("Breathe In")
                 breatheTimer = technique.breathInCount
                 
                 holdAnimationView.setHidden(true)
                 breatheOutAnimationView.setHidden(true)
                 breatheInView.setHidden(false)
-                breatheInView.startAnimatingWithImages(in: NSRange(location: 0, length: 95), duration: TimeInterval(technique.breathInCount), repeatCount: 1)
-                
-                
+                breatheInView.startAnimatingWithImages(in: NSRange(location: 0, length: 119), duration: TimeInterval(technique.breathInCount), repeatCount: 1)
             case .breatheOut:
-                //TODO: - Handle Setup Animation Breathe Out Here
                 print("Breathe Out")
+                informationLabel.setText("Breathe Out")
                 breatheTimer = technique.breathOutCount
-                
                 holdAnimationView.setHidden(true)
                 breatheOutAnimationView.setHidden(false)
                 breatheInView.setHidden(true)
-                breatheOutAnimationView.startAnimatingWithImages(in: NSRange(location: 0, length: 95), duration: TimeInterval(technique.breathOutCount), repeatCount: 1)
-                
+                breatheOutAnimationView.startAnimatingWithImages(in: NSRange(location: 0, length: 119), duration: TimeInterval(-technique.breathOutCount), repeatCount: 1)
             case .hold:
-                //TODO: - Handle Animation Hold State Here
                 print("Handle Hold")
+                informationLabel.setText("Hold")
                 breatheTimer = technique.holdOnCount
-                
                 holdAnimationView.setHidden(false)
                 breatheOutAnimationView.setHidden(true)
                 breatheInView.setHidden(true)
-                holdAnimationView.startAnimatingWithImages(in: NSRange(location: 0, length: 167), duration: TimeInterval(technique.holdOnCount), repeatCount: 1)
             }
         }
     }
-    
     //Workout stuff
     func startTimer(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runCountDown), userInfo: nil, repeats: true)
@@ -217,9 +194,6 @@ class BreathingAnimationController: WKInterfaceController {
         } else if state == .breatheIn {
             WKInterfaceDevice.current().play(.retry)
         }
-        
-        //print("breathe time \(breatheTimer)")
-        
         if breatheTimer == 1 {
             if state == .breatheIn{
                 self.state = .hold
@@ -245,13 +219,11 @@ class BreathingAnimationController: WKInterfaceController {
         } else {
             breatheTimer -= 1
         }
-        
     }
     
     
     func requestHealthKit(){
         healthKitManager.authorizeHealthKit()
-        
     }
     
     func startHeartBeatAnimation(){
@@ -260,28 +232,19 @@ class BreathingAnimationController: WKInterfaceController {
                 self.heartImage.setWidth(21.375)
                 self.heartImage.setHeight(18)
             }
-            
             let when = DispatchTime.now() + Double((duration * double_t(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-            
             DispatchQueue.global(qos: .default).async {
                 DispatchQueue.main.asyncAfter(deadline: when) {
                     self.animate(withDuration: self.duration, animations: {
                         self.heartImage.setWidth(19)
                         self.heartImage.setHeight(16)
-                        
-                    })            }
+                    })
+                }
             }
-            
         }
-        
-        //Logicnya (60 / BPM) untuk tahu kecepatan 1 beat itu berapa detik kan lalu dibagi 2 utk membesar dan mengecil nya dibagi 2 -- Comment From Javier
-        
-        
-        
     }
     
     func stopHeartBeatAnimation(){
         isHeartBeatAnimated = false
     }
-    
 }
