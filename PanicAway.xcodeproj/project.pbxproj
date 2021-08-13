@@ -672,7 +672,6 @@
 				B742E4C726C0D57900E9D46F /* VO - Breath Out.mp3 in Resources */,
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
 				619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
-				B76658F826BB1DF900F69008 /* exhale.mp3 in Resources */,
 				3B2FD85326BB82D400D2463B /* PushNotificationPayload.apns in Resources */,
 				B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */,
 				6190F8E226AFC47900C48744 /* BreathingTechniqueCell.xib in Resources */,
@@ -932,7 +931,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javierfransiscus.panicaway.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -957,7 +956,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javierfransiscus.panicaway.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -985,7 +984,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javierfransiscus.panicaway.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1012,7 +1011,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javierfransiscus.panicaway.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1038,7 +1037,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javierfransiscus.panicaway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1062,7 +1061,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javierfransiscus.panicaway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;

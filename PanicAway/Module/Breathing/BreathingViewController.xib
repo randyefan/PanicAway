@@ -81,7 +81,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xhq-ts-g8u">
                                     <rect key="frame" x="0.0" y="0.0" width="306" height="114"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Start Again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-d9-kFK" customClass="EFCountingLabel" customModule="EFCountingLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Start" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-d9-kFK" customClass="EFCountingLabel" customModule="EFCountingLabel">
                                             <rect key="frame" x="0.0" y="0.0" width="306" height="51"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="51" id="FMF-ZW-X8h"/>
