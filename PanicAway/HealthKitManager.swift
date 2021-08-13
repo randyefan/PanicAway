@@ -16,11 +16,9 @@ class HealthKitManager{
         
         if HKHealthStore.isHealthDataAvailable(){
             
-            let readTypes =  Set([HKObjectType.categoryType(forIdentifier: .highHeartRateEvent)!])
-            
             let writeTypes =  Set([HKObjectType.categoryType(forIdentifier: .mindfulSession)!])
             
-            healthStore.requestAuthorization(toShare: writeTypes, read: readTypes as! Set<HKObjectType>) { (success, error) -> Void  in
+            healthStore.requestAuthorization(toShare: writeTypes, read: nil) { (success, error) -> Void  in
                 
             }
             
@@ -28,9 +26,9 @@ class HealthKitManager{
         completion()
     }
     
-    func saveMeditation(startDate:Date, minutes:UInt){
+    func saveMeditation(startDate:Date, seconds:Double){
         let mindfulType = HKCategoryType.categoryType(forIdentifier: .mindfulSession)
-               let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: Date.init(timeIntervalSinceNow: -(15*60)), end: Date())
+        let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: startDate, end: startDate.addingTimeInterval(seconds))
         healthStore.save(mindfulSample) { success, error in
                    if(error != nil) {
                        abort()
