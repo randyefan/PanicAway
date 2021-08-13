@@ -38,7 +38,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssp-9N-5hI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="661"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="463"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRn-az-GM1" userLabel="Breathing Title">
                                     <rect key="frame" x="16" y="24" width="95" height="26"/>
@@ -47,10 +47,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1i0-3E-9g7" userLabel="Breathing Setting">
-                                    <rect key="frame" x="16" y="66" width="382" height="265"/>
+                                    <rect key="frame" x="16" y="66" width="382" height="133"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-7p-A3T" userLabel="Container Stack">
-                                            <rect key="frame" x="16" y="0.0" width="350" height="265"/>
+                                            <rect key="frame" x="16" y="0.0" width="350" height="133"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oL2-dU-kqg" userLabel="Method Cell">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="66"/>
@@ -156,7 +156,7 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="aWD-xB-nxr"/>
                                                     </constraints>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-WM-jbi" userLabel="Guided Audio Cell">
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-WM-jbi" userLabel="Guided Audio Cell">
                                                     <rect key="frame" x="0.0" y="133" width="350" height="66"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-Sj-Jwd" userLabel="Detail Cell">
@@ -186,8 +186,8 @@
                                                         <constraint firstAttribute="height" constant="66" id="Pj6-Ow-45h"/>
                                                     </constraints>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="16Q-pJ-oAZ" userLabel="Haptic Cell">
-                                                    <rect key="frame" x="0.0" y="199" width="350" height="66"/>
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="16Q-pJ-oAZ" userLabel="Haptic Cell">
+                                                    <rect key="frame" x="0.0" y="133" width="350" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haptic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuc-o5-UMx">
                                                             <rect key="frame" x="0.0" y="23" width="50" height="20"/>
@@ -227,16 +227,16 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency and Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym9-MF-0gu">
-                                    <rect key="frame" x="24" y="371" width="223.5" height="26"/>
+                                    <rect key="frame" x="24" y="239" width="223.5" height="26"/>
                                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="22"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZM-xa-dwf" userLabel="Emergency and Health Setting">
-                                    <rect key="frame" x="16" y="413" width="382" height="198"/>
+                                    <rect key="frame" x="16" y="281" width="382" height="132"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8HZ-9v-URO" userLabel="Container Stack">
-                                            <rect key="frame" x="16" y="0.0" width="350" height="198"/>
+                                            <rect key="frame" x="16" y="0.0" width="350" height="132"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ELj-KL-Srs" userLabel="Contact Cell">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="66"/>
@@ -306,7 +306,7 @@
                                                         <constraint firstAttribute="height" constant="66" id="3eO-6I-JO0"/>
                                                     </constraints>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-gi-sWT">
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-gi-sWT">
                                                     <rect key="frame" x="0.0" y="132" width="350" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr6-Py-uC7">

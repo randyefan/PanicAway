@@ -27,12 +27,14 @@ class HealthKitManager{
     }
     
     func saveMeditation(startDate:Date, seconds:Double){
-        let mindfulType = HKCategoryType.categoryType(forIdentifier: .mindfulSession)
-        let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: startDate, end: startDate.addingTimeInterval(seconds))
-        healthStore.save(mindfulSample) { success, error in
-                   if(error != nil) {
-                       abort()
+        if HKHealthStore.isHealthDataAvailable(){
+            let mindfulType = HKCategoryType.categoryType(forIdentifier: .mindfulSession)
+            let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: startDate, end: startDate.addingTimeInterval(seconds))
+            healthStore.save(mindfulSample) { success, error in
+                       if(error != nil) {
+                        print(error?.localizedDescription)
+                       }
                    }
-               }
+        }
     }
 }
