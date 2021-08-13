@@ -45,6 +45,8 @@ class BreathingAnimationController: WKInterfaceController {
     var duration: Double{
         return (60/heartRate)/2
     }
+    var mindfulnessMinutes = 0
+    var startDate = Date()
     
     //Breathing Var
     var timer:Timer?
@@ -71,6 +73,10 @@ class BreathingAnimationController: WKInterfaceController {
                 healthKitManager.endWorkoutSession()
                 stopHeartBeatAnimation()
                 
+                //Save mindfulness minutes
+                healthKitManager.saveMeditation(startDate: startDate, seconds: Double(mindfulnessMinutes))
+                mindfulnessMinutes = 0
+                
                 WKExtension.shared().isAutorotating = false
                 // Validate Timer
                 timer?.invalidate()
@@ -92,7 +98,9 @@ class BreathingAnimationController: WKInterfaceController {
         setupAnimation()
     }
     
-    override func didDeactivate() { }
+    override func didDeactivate() {
+        
+    }
     
     func setupAnimation(){
         breatheInView.setImageNamed("breatheIn")
@@ -121,6 +129,7 @@ class BreathingAnimationController: WKInterfaceController {
             holdAnimationView.stopAnimating()
             breatheOutAnimationView.stopAnimating()
             breatheInView.stopAnimating()
+
             
             // Validate Timer
             timer?.invalidate()
@@ -136,6 +145,9 @@ class BreathingAnimationController: WKInterfaceController {
             // Workout stuff
             healthKitManager.startWorkoutSession()
             startHeartBeatAnimation()
+            
+            //Set Date to now
+            startDate = Date()
             
             // Timer stuff
             WKExtension.shared().isAutorotating = true
@@ -182,11 +194,12 @@ class BreathingAnimationController: WKInterfaceController {
     }
     
     @objc func runCountDown(){
+        mindfulnessMinutes += 1
         
         //heart rate nya javier
         self.heartRate = healthKitManager.heartRate
         let heartRateString = String(format: "%.0f", heartRate)
-        heartRateLabel.setText("\(heartRateString) BPM")
+        heartRateLabel.setText(heartRateString == "0" ? "---" : "\(heartRateString) BPM")
         //----------------------------------------------------
         
         if state == .hold {

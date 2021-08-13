@@ -23,9 +23,10 @@ class HealthKitManager: NSObject, ObservableObject {
     func authorizeHealthKit(){
         print("trying to authorize health kit")
         let healthKitTypesShare : Set = [
-            HKObjectType.workoutType()]
+            HKObjectType.workoutType(),HKObjectType.categoryType(forIdentifier: .mindfulSession)!]
         
         let healthKitTypesRead : Set = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
+        
         healthStore.requestAuthorization(toShare: healthKitTypesShare, read: healthKitTypesRead) { (success, error) in
             if (error != nil){
                 print(error?.localizedDescription)
@@ -68,7 +69,17 @@ class HealthKitManager: NSObject, ObservableObject {
         
     }
     
-    
+    func saveMeditation(startDate:Date, seconds:Double){
+        if HKHealthStore.isHealthDataAvailable(){
+            let mindfulType = HKCategoryType.categoryType(forIdentifier: .mindfulSession)
+            let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: startDate, end: startDate.addingTimeInterval(seconds))
+            healthStore.save(mindfulSample) { success, error in
+                       if(error != nil) {
+                        print(error?.localizedDescription)
+                       }
+                   }
+        }
+    }
 }
 
 
@@ -121,16 +132,6 @@ extension HealthKitManager : HKWorkoutSessionDelegate, HKLiveWorkoutBuilderDeleg
     }
     func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
         
-    }
-    
-    func saveMeditation(startDate:Date, seconds:Double){
-        let mindfulType = HKCategoryType.categoryType(forIdentifier: .mindfulSession)
-        let mindfulSample = HKCategorySample(type: mindfulType!, value: 0, start: startDate, end: startDate.addingTimeInterval(seconds))
-        healthStore.save(mindfulSample) { success, error in
-                   if(error != nil) {
-                       abort()
-                   }
-               }
     }
     
 }
