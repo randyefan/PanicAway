@@ -56,9 +56,7 @@ class BreathingViewController: UIViewController {
     var data = BreathingLoader()
     let healthKitManager = HealthKitManager()
     var startDate = Date()
-    var mindfulnessMinutes: Double{
-        return Double((minutesTimer*60) + secondsTimer)
-    }
+    var mindfulnessMinutes: Double = 0
     
     var state: BreathingState = .beforeBreathing {
         didSet {
@@ -81,6 +79,7 @@ class BreathingViewController: UIViewController {
             titleLabel.text = breathingStat.rawValue
             captionLabel.text = "\(breatheTime)"
             if breathingStatus == .breatheIn {
+                pauseCounter = 0
                 breatheTime = technique.breathInCount
                 if technique.breathingName == "4-7-8" {
                     firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.6)))
@@ -112,11 +111,18 @@ class BreathingViewController: UIViewController {
     var engine: CHHapticEngine?
     var breathCycle = 0
     var progress: Float = 0.0
-    var counter = 0
     var isPaused: Bool = false
+    var pauseCounter: Int = 0
     
     //timer
-    var secondsTimer = 0
+    var secondsTimer = 0 {
+        didSet {
+            if secondsTimer >= 60 {
+                minutesTimer += 1
+                secondsTimer = secondsTimer - 60
+            }
+        }
+    }
     var minutesTimer = 0
     
     //animation
@@ -174,7 +180,7 @@ class BreathingViewController: UIViewController {
         case .finish:
             setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true, closeView: true)
             circularProgressBar.progress = 0.2
-            healthKitManager.saveMeditation(startDate: startDate, seconds: mindfulnessMinutes)
+            //healthKitManager.saveMeditation(startDate: startDate, seconds: mindfulnessMinutes)
             minutesTimer = 0
             secondsTimer = 0
             bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
@@ -235,6 +241,8 @@ class BreathingViewController: UIViewController {
                 guard let technique = self.technique else { return }
                 if self.isRunning == false {
                     self.breathCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle") - 1
+                    self.secondsTimer = Int((Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float(self.breathCycle + 1)))
+                    self.mindfulnessMinutes = Double(self.secondsTimer)
                     self.progress = 0.6 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float(self.breathCycle + 1))
                     self.state = .breathingOn
                     self.isRunning = true
@@ -243,6 +251,9 @@ class BreathingViewController: UIViewController {
                     self.preparation?.invalidate()
                     self.breathing?.invalidate()
                 } else if self.state == .pause{
+                    self.secondsTimer += self.pauseCounter
+                    self.circularProgressBar.progress -= CGFloat(self.progress) * CGFloat(self.pauseCounter)
+                    self.pauseCounter = 0
                     self.state = .breathingOn
                 }
             }
@@ -307,6 +318,7 @@ class BreathingViewController: UIViewController {
     }
     
     func startPreparation() {
+        bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
         if state == .breathingOn {
             titleLabel.countFrom(CGFloat(countdownTime + 1), to: 1, withDuration: 3.0)
             titleLabel.completionBlock = {
@@ -359,23 +371,23 @@ class BreathingViewController: UIViewController {
     }
     
     @objc func runCountDown() {
-       // print("breathe time \(breatheTime)")
         
         //timer logic here
-        bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
-        if secondsTimer == 60 {
-            secondsTimer = 0
-            minutesTimer += 1
+        if secondsTimer == 0 {
+            if minutesTimer > 0 {
+                minutesTimer -= 1
+                secondsTimer += 59
+            }
         } else {
-            secondsTimer += 1
+            secondsTimer -= 1
         }
-        counter += 1
-        //print(counter)
         
-        // MARK: - TODO: CGFloat(progress) not counting (0,0), so the circularProgressBar still 0.2
+        bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
+        
         circularProgressBar.progress +=  CGFloat(progress)
         captionLabel.isHidden = false
-        print(circularProgressBar.progress)
+        //print(circularProgressBar.progress)
+        print(pauseCounter)
         
         if breatheTime == 1 {
             if breathingStatus == .breatheIn {
@@ -406,6 +418,7 @@ class BreathingViewController: UIViewController {
         } else {
             breatheTime -= 1
         }
+        pauseCounter += 1
     }
     
     func playInstruction() {
