@@ -931,7 +931,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.mc3.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -956,7 +956,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.mc3.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -984,7 +984,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.mc3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1011,7 +1011,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.mc3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1037,7 +1037,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.mc3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1061,7 +1061,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan.panicaway.mc3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;

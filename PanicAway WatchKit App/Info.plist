@@ -20,6 +20,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
 	<key>NSHealthUpdateUsageDescription</key>
@@ -30,9 +32,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.randyefan.panicaway.mc3</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string>com.rmputraminang.panicaway.mc3</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
