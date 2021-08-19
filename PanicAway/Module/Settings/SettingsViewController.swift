@@ -36,6 +36,14 @@ class SettingsViewController: UIViewController {
         initialSetup()
         setupNavigationBar()
         setupWCSession()
+        NetworkingManager.shared.postMessage(phoneNumber: "082222214905", message: "Hai Tolong Aku") { result in
+            switch result {
+            case .success(_):
+                print("SUKSES")
+            case .failure(_):
+                print("Error")
+            }
+        }
     }
     
     func setupNavigationBar() {
