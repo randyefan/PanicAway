@@ -86,7 +86,9 @@ class BreathingChoiceViewController: UIViewController {
         guard let _ = selected else { return }
         setSelectedBreathingTechnique()
         setDefaultBreathingCycle()
+        saveToUserDefault()
         navigateToAppleHealthAuthorize()
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     // MARK: - Functionality
@@ -111,11 +113,17 @@ class BreathingChoiceViewController: UIViewController {
         UserDefaults.standard.setValue(4, forKey: "defaultBreathingCycle")
     }
     
+    private func saveToUserDefault() {
+        if let userDefaults = UserDefaults(suiteName: "group.com.panicaway.javier.mc3") {
+            userDefaults.setValue(selected?.id, forKey: "defaultBreatheId")
+        }
+    }
+    
     @objc func saveChanges() {
         setSelectedBreathingTechnique()
+        saveToUserDefault()
         self.navigationController?.popViewController(animated: true)
         WidgetCenter.shared.reloadAllTimelines()
-        print("masuk cok")
     }
     
 }

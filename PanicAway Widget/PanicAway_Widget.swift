@@ -11,36 +11,39 @@ import Intents
 
 struct Provider: TimelineProvider {
     func getSnapshot(in context: Context, completion: @escaping (BreathingModel) -> Void) {
-        let data = BreathingLoader()
-        data.loadDataBreath()
-        let entry = data.entries[2]
-        completion(entry)
+        if let entry = getDefaultBreathing() {
+            completion(entry)
+        }
+        
+        fatalError("cant get default breathing")
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<BreathingModel>) -> Void) {
-        let data = BreathingLoader()
-        data.loadDataBreath()
-        let entry = data.entries[2]
+        if let entry = getDefaultBreathing() {
+            let timeline = Timeline(entries: [entry], policy: .never)
+            completion(timeline)
+        }
         
-        let timeline = Timeline(entries: [entry], policy: .never)
-        completion(timeline)
+        fatalError("cant get default breathing")
     }
     
     func placeholder(in context: Context) -> BreathingModel {
-        let data = BreathingLoader()
-        data.loadDataBreath()
-        return data.entries[2]
+        if let entry = getDefaultBreathing() {
+            return entry
+        }
+        
+        fatalError("cant get default breathing")
     }
 
-    func getDefaultBreathing() -> BreathingModel{
+    func getDefaultBreathing() -> BreathingModel? {
         let data = BreathingLoader()
         data.loadDataBreath()
-        if let userDefault = UserDefaults(suiteName: "group.com.panicaway.javier") {
-            
+        if let userDefault = UserDefaults(suiteName: "group.com.panicaway.javier.mc3") {
+            let breathingId = userDefault.integer(forKey: "defaultBreatheId")
+            return data.entries[breathingId]
         }
-//        print(breathingCycle)
         
-//        return data.entries[breathingCycle]
+        return nil
     }
 }
 
@@ -77,10 +80,7 @@ struct PanicAway_WidgetEntryView : View {
             
         }
     }
-    
 }
-
-
 
 @main
 struct PanicAway_Widget: Widget {

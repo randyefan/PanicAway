@@ -27,10 +27,7 @@ struct BreathingModel: Codable {
     let description: String
     var date: Date = Date()
 }
-
 #endif
-
-
 
 class BreathingLoader {
     var entries: [BreathingModel] = []
