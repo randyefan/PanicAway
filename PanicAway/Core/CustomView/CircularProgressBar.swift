@@ -58,18 +58,13 @@ class CircularProgressBar: UIView {
     }
 
     override func draw(_ rect: CGRect) {
-        let arcCenter = CGPoint(x: rect.width / 2, y: (rect.height) * 2)
-        let circleRadius = (rect.size.width + 100) / 2
-        let circlePath = UIBezierPath(arcCenter: arcCenter, radius: circleRadius, startAngle: CGFloat.pi, endAngle: CGFloat.pi * 2, clockwise: true)
+        let circlePath = UIBezierPath(roundedRect: CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.width, height: rect.height), cornerRadius: 0)
+        let progressPath = UIBezierPath(roundedRect: CGRect(x: 0, y: rect.origin.y, width: rect.width * progress, height: rect.height), byRoundingCorners: [.topRight, .bottomRight], cornerRadii: CGSize(width: 16, height: 16))
         
         backgroundMask.path = circlePath.cgPath
-        
-        progressLayer.path = circlePath.cgPath
-        progressLayer.lineCap = .round
-        progressLayer.strokeStart = 0
-        progressLayer.fillColor = UIColor.clear.cgColor
-        progressLayer.strokeEnd = progress
-        progressLayer.strokeColor = UIColor(named: "Main")?.cgColor
+        progressLayer.path = progressPath.cgPath
+        progressLayer.backgroundColor = UIColor.clear.cgColor
+        progressLayer.fillColor = UIColor(named: "Main")?.cgColor
         
         layer.addSublayer(progressLayer)
     }

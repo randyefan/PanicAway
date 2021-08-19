@@ -39,14 +39,11 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var titleLabel: EFCountingLabel!
     @IBOutlet weak var captionLabel: EFCountingLabel!
     @IBOutlet weak var breathingLabel: UILabel!
-    @IBOutlet weak var safeAreaView: UIView!
     @IBOutlet weak var breathingMethodStackView: UIStackView!
     @IBOutlet weak var leftChevronView: UIView!
     @IBOutlet weak var leftChevronImageView: UIImageView!
     @IBOutlet weak var rightChevronView: UIView!
     @IBOutlet weak var rightChevronImageView: UIImageView!
-    @IBOutlet weak var labelBottomView: UIView!
-    @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var firstStateAnimationImageView: UIImageView!
     @IBOutlet weak var centreAnimationView: UIView!
     @IBOutlet weak var closeView: UIImageView!
@@ -104,6 +101,10 @@ class BreathingViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
     }
     
     var isRunning: Bool = false
@@ -164,20 +165,19 @@ class BreathingViewController: UIViewController {
     private func setupView() {
         switch state {
         case .beforeBreathing:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true, closeView: true)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: false, circularProgressBar: true, closeView: true)
         case .breathingOn:
-            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false, closeView: true)
+            setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, closeView: true)
         case .pause:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, safeAreaView: false, circularProgressBar: false, labelBottomView: false, closeView: false)
+            setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, closeView: false)
             titleLabel.text = "Paused"
             firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
         case .finish:
-            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, safeAreaView: true, circularProgressBar: true, labelBottomView: true, closeView: true)
-            circularProgressBar.progress = 0.2
+            setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, circularProgressBar: true, closeView: true)
+            circularProgressBar.progress = 0
             healthKitManager.saveMeditation(startDate: startDate, seconds: mindfulnessMinutes)
             minutesTimer = 0
             secondsTimer = 0
-            bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
             firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
             titleLabel.text = "Tap to Start Again"
             DispatchQueue.main.async {
@@ -235,7 +235,7 @@ class BreathingViewController: UIViewController {
                 guard let technique = self.technique else { return }
                 if self.isRunning == false {
                     self.breathCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle") - 1
-                    self.progress = 0.6 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float(self.breathCycle + 1))
+                    self.progress = 1.0 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float(self.breathCycle + 1))
                     self.state = .breathingOn
                     self.isRunning = true
                 } else if self.state == .breathingOn {
@@ -266,7 +266,7 @@ class BreathingViewController: UIViewController {
     func setupAnimation(){
         
         
-        circularProgressBar.progress = 0.2
+        circularProgressBar.progress = 0
         
         
         
@@ -290,14 +290,12 @@ class BreathingViewController: UIViewController {
     
     // MARK: - Functionality
     
-    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, safeAreaView: Bool, circularProgressBar: Bool, labelBottomView: Bool, closeView: Bool) {
+    func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, circularProgressBar: Bool, closeView: Bool) {
         self.topView.isHidden = topView
         self.titleLabel.isHidden = titleLabel
         self.captionLabel.isHidden = captionLabel
         self.breathingMethodStackView.isHidden = breathingMethodeStackView
-        self.safeAreaView.isHidden = safeAreaView
         self.circularProgressBar.isHidden = circularProgressBar
-        self.labelBottomView.isHidden = labelBottomView
         self.closeView.isHidden = closeView
     }
     
@@ -362,7 +360,6 @@ class BreathingViewController: UIViewController {
        // print("breathe time \(breatheTime)")
         
         //timer logic here
-        bottomLabel.text = String(format: "%02d:%02d", minutesTimer,secondsTimer)
         if secondsTimer == 60 {
             secondsTimer = 0
             minutesTimer += 1
@@ -398,6 +395,7 @@ class BreathingViewController: UIViewController {
                     breathCycle -= 1
                     updateLabelBreathing()
                 } else {
+                    print("FINISH")
                     state = .finish
                     breathing?.invalidate()
                     return
