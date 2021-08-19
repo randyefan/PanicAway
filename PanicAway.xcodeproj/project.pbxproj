@@ -93,6 +93,8 @@
 		6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */; };
 		AA94FE6026BEF20E0013D207 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94FE5F26BEF20E0013D207 /* AlertView.swift */; };
 		AACE334426BF859000FEA904 /* EFCountingLabel in Frameworks */ = {isa = PBXBuildFile; productRef = AACE334326BF859000FEA904 /* EFCountingLabel */; };
+		B711940326CEDA4C0030506D /* BreatheFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B711940126CEDA4C0030506D /* BreatheFinishedViewController.swift */; };
+		B711940426CEDA4C0030506D /* BreatheFinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B711940226CEDA4C0030506D /* BreatheFinishedViewController.xib */; };
 		B741993826B29BE4006B888D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993626B29BE4006B888D /* ContactTableViewCell.swift */; };
 		B741993926B29BE4006B888D /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741993726B29BE4006B888D /* ContactTableViewCell.xib */; };
 		B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */; };
@@ -244,6 +246,8 @@
 		6EB3103126AEF13B0051191A /* EmergencyMessageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyMessageSettingViewController.swift; sourceTree = "<group>"; };
 		6EB3103226AEF13B0051191A /* EmergencyMessageSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmergencyMessageSettingViewController.xib; sourceTree = "<group>"; };
 		AA94FE5F26BEF20E0013D207 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		B711940126CEDA4C0030506D /* BreatheFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheFinishedViewController.swift; sourceTree = "<group>"; };
+		B711940226CEDA4C0030506D /* BreatheFinishedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreatheFinishedViewController.xib; sourceTree = "<group>"; };
 		B741993626B29BE4006B888D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		B741993726B29BE4006B888D /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		B741993C26B29C08006B888D /* AddToContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -471,6 +475,8 @@
 			children = (
 				615CCA5726AEAA97005EC6A4 /* BreathingViewController.swift */,
 				615CCA5826AEAA97005EC6A4 /* BreathingViewController.xib */,
+				B711940126CEDA4C0030506D /* BreatheFinishedViewController.swift */,
+				B711940226CEDA4C0030506D /* BreatheFinishedViewController.xib */,
 			);
 			path = Breathing;
 			sourceTree = "<group>";
@@ -772,6 +778,7 @@
 				B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */,
 				6190F8E226AFC47900C48744 /* BreathingTechniqueCell.xib in Resources */,
 				6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */,
+				B711940426CEDA4C0030506D /* BreatheFinishedViewController.xib in Resources */,
 				B742E4C626C0D57900E9D46F /* VO - Breath In.mp3 in Resources */,
 				61B9B95726B3EB870092C183 /* ProductShowcaseViewController.xib in Resources */,
 				619F17ED26AE87EA006F8067 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
@@ -856,6 +863,7 @@
 				615C162726B3F21000C11249 /* ProductShowcaseSlide.swift in Sources */,
 				612CA53426B40151009A11B3 /* BreathingModel.swift in Sources */,
 				6EB3103326AEF13B0051191A /* EmergencyMessageSettingViewController.swift in Sources */,
+				B711940326CEDA4C0030506D /* BreatheFinishedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

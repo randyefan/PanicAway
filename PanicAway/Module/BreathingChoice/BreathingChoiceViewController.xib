@@ -17,8 +17,9 @@
             <connections>
                 <outlet property="buttonSelect" destination="2EE-nU-4sl" id="fl4-HY-MT2"/>
                 <outlet property="buttonView" destination="0FY-Yw-ero" id="YSJ-en-HG6"/>
+                <outlet property="captionLabel" destination="j5c-ps-kB9" id="JJN-4M-E7c"/>
                 <outlet property="tableView" destination="cSu-Y7-TbJ" id="hZF-ng-aEd"/>
-                <outlet property="titleView" destination="kUT-0W-xaX" id="Edy-qh-WYg"/>
+                <outlet property="titleLabel" destination="FaK-Q6-liA" id="nIl-e4-l53"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -94,7 +95,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-0W-xaX">
                                     <rect key="frame" x="0.0" y="0.0" width="378" height="75"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your breathing technique" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-Q6-liA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathing Methods" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-Q6-liA">
                                             <rect key="frame" x="0.0" y="0.0" width="378" height="75"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="75" id="7OP-9v-Tpu"/>

@@ -1,4 +1,4 @@
-//
+ //
 //  BreathingTechniqueCell.swift
 //  PanicAway
 //
@@ -11,6 +11,7 @@ class BreathingTechniqueCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var breatheGoalLabel: UILabel!
     
     var indexPath: IndexPath?
     
@@ -19,6 +20,7 @@ class BreathingTechniqueCell: UITableViewCell {
             guard let model = model else { return }
             titleLabel.text = model.breathingName
             captionLabel.text = model.description
+            breatheGoalLabel.text = model.breathGoal
         }
     }
     
@@ -39,22 +41,22 @@ class BreathingTechniqueCell: UITableViewCell {
     private func setImageBackgroundUnselected() {
         guard let indexPath = indexPath else { return }
         if indexPath.row == 0 {
-            background.image = UIImage(named: "bg_breathing_unselected_top")
+            background.image = UIImage(named: "card_bg_unselected")
         } else if indexPath.row == 1 {
-            background.image = UIImage(named: "bg_breathing_unselected_center")
+            background.image = UIImage(named: "card_bg_unselected")
         } else {
-            background.image = UIImage(named: "bg_breathing_unselected_bottom")
+            background.image = UIImage(named: "card_bg_unselected")
         }
     }
     
     private func setImageBackgroundSelected() {
         guard let indexPath = indexPath else { return }
         if indexPath.row == 0 {
-            background.image = UIImage(named: "bg_breathing_selected_top")
+            background.image = UIImage(named: "card_bg_selected")
         } else if indexPath.row == 1 {
-            background.image = UIImage(named: "bg_breathing_selected_center")
+            background.image = UIImage(named: "card_bg_selected")
         } else {
-            background.image = UIImage(named: "bg_breathing_selected_bottom")
+            background.image = UIImage(named: "card_bg_selected")
         }
     }
 }

@@ -13,12 +13,15 @@ import WidgetKit
 enum BreathingChoiceEntryPoint {
     case onBoarding
     case settings
+    case homePage
 }
 
 class BreathingChoiceViewController: UIViewController {
     // MARK: - IBOutlet
     
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonSelect: UIButton!
@@ -69,10 +72,15 @@ class BreathingChoiceViewController: UIViewController {
     func setupView() {
         switch entryPoint {
         case .settings:
-            title = "Breathing Method"
+            title = "Breathing Methods"
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveChanges))
             navigationItem.rightBarButtonItem?.isEnabled = false
-            titleView.isHidden = true
+            titleLabel.isHidden = true
+            captionLabel.isHidden = false
+            buttonView.isHidden = true
+        case .homePage:
+            titleLabel.isHidden = false
+            captionLabel.isHidden = true
             buttonView.isHidden = true
         default:
             buttonSelect.isEnabled = false

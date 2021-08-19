@@ -18,12 +18,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BreathingViewController" customModule="PanicAway" customModuleProvider="target">
             <connections>
+                <outlet property="breatheTechniqueGoalLabel" destination="gVT-0A-NK1" id="M6p-U2-epM"/>
+                <outlet property="breathingChoiceView" destination="D7g-hd-LJv" id="6FY-w3-yzb"/>
                 <outlet property="breathingLabel" destination="cC4-hA-62X" id="kC1-cT-VxB"/>
                 <outlet property="breathingMethodStackView" destination="6vB-on-3Z9" id="9O0-VV-RSX"/>
                 <outlet property="captionLabel" destination="luj-5t-OHN" id="MIH-CH-h7e"/>
                 <outlet property="centreAnimationView" destination="6az-KT-vVi" id="EiG-W5-kwm"/>
                 <outlet property="circularProgressBar" destination="zAu-1l-mK1" id="WdH-sj-AYz"/>
                 <outlet property="closeView" destination="b3o-Rz-iSr" id="KfN-6b-D2A"/>
+                <outlet property="endBreathingButton" destination="bPi-aK-ZYI" id="Ptk-cf-JZP"/>
                 <outlet property="firstStateAnimationImageView" destination="98O-9l-Zx6" id="MxQ-AQ-vjW"/>
                 <outlet property="leftChevronImageView" destination="DrJ-tZ-OxA" id="I9h-pJ-UBk"/>
                 <outlet property="leftChevronView" destination="T1I-p5-CxJ" id="hQv-z2-aNp"/>
@@ -31,6 +34,7 @@
                 <outlet property="rightChevronView" destination="b96-cZ-V24" id="adg-Pq-rk4"/>
                 <outlet property="settingsView" destination="KIp-Yu-JMY" id="iJp-tI-HaY"/>
                 <outlet property="titleLabel" destination="BJB-d9-kFK" id="EqL-5e-Jme"/>
+                <outlet property="topChevronView" destination="3SL-X0-sR1" id="cPe-UY-Kdp"/>
                 <outlet property="topView" destination="y9K-0O-ich" id="jBT-kN-sIK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -212,6 +216,75 @@
                         </view>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8L4-ac-FC9" userLabel="breathing choice view">
+                    <rect key="frame" x="54" y="792" width="306" height="70"/>
+                    <subviews>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-aK-ZYI" userLabel="end button">
+                            <rect key="frame" x="99" y="11" width="108" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="108" id="Dst-Mf-bVV"/>
+                                <constraint firstAttribute="height" constant="48" id="hF1-Qu-E8K"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <state key="normal" title="End">
+                                <color key="titleColor" name="Main"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="Main"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D7g-hd-LJv" userLabel="breathing choice stack">
+                            <rect key="frame" x="0.0" y="0.0" width="306" height="70"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SL-X0-sR1" userLabel="Chevron up view">
+                                    <rect key="frame" x="0.0" y="0.0" width="306" height="24"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-o8-GKg">
+                                            <rect key="frame" x="141" y="4.6666666666666634" width="24" height="14"/>
+                                            <color key="tintColor" name="Main"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="H2q-Rr-63g"/>
+                                                <constraint firstAttribute="height" constant="24" id="Qi9-Xl-mYZ"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Dmw-o8-GKg" secondAttribute="bottom" id="5iC-ur-Z2l"/>
+                                        <constraint firstItem="Dmw-o8-GKg" firstAttribute="top" secondItem="3SL-X0-sR1" secondAttribute="top" id="5xT-cj-8HQ"/>
+                                        <constraint firstItem="Dmw-o8-GKg" firstAttribute="centerY" secondItem="3SL-X0-sR1" secondAttribute="centerY" id="eDA-rH-nZk"/>
+                                        <constraint firstItem="Dmw-o8-GKg" firstAttribute="centerX" secondItem="3SL-X0-sR1" secondAttribute="centerX" id="tCk-Uo-C9Y"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVT-0A-NK1">
+                                    <rect key="frame" x="0.0" y="24" width="306" height="46"/>
+                                    <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="bPi-aK-ZYI" firstAttribute="centerY" secondItem="8L4-ac-FC9" secondAttribute="centerY" id="3sA-q4-Go3"/>
+                        <constraint firstAttribute="trailing" secondItem="D7g-hd-LJv" secondAttribute="trailing" id="BFc-fy-c40"/>
+                        <constraint firstAttribute="height" constant="70" id="BUZ-u3-lBK"/>
+                        <constraint firstItem="D7g-hd-LJv" firstAttribute="leading" secondItem="8L4-ac-FC9" secondAttribute="leading" id="Xhi-Xh-90B"/>
+                        <constraint firstItem="D7g-hd-LJv" firstAttribute="top" secondItem="8L4-ac-FC9" secondAttribute="top" id="bQC-i1-AHw"/>
+                        <constraint firstItem="bPi-aK-ZYI" firstAttribute="centerX" secondItem="8L4-ac-FC9" secondAttribute="centerX" id="p3q-PG-ulu"/>
+                        <constraint firstAttribute="bottom" secondItem="D7g-hd-LJv" secondAttribute="bottom" id="yKP-Lj-pO7"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAu-1l-mK1" customClass="CircularProgressBar" customModule="PanicAway" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="862" width="414" height="34"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -224,8 +297,11 @@
             <color key="backgroundColor" name="Background"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h0o-yu-7Y0" secondAttribute="trailing" constant="54" id="7sf-rR-nmA"/>
+                <constraint firstItem="8L4-ac-FC9" firstAttribute="trailing" secondItem="h0o-yu-7Y0" secondAttribute="trailing" id="BZr-Vd-vOH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y9K-0O-ich" secondAttribute="trailing" constant="16" id="HKw-4R-naP"/>
                 <constraint firstItem="h0o-yu-7Y0" firstAttribute="top" secondItem="y9K-0O-ich" secondAttribute="bottom" constant="18" id="KkT-l0-aak"/>
+                <constraint firstItem="8L4-ac-FC9" firstAttribute="leading" secondItem="h0o-yu-7Y0" secondAttribute="leading" id="PJb-Wj-WdC"/>
+                <constraint firstItem="zAu-1l-mK1" firstAttribute="top" secondItem="8L4-ac-FC9" secondAttribute="bottom" id="Pcj-90-VRt"/>
                 <constraint firstItem="h0o-yu-7Y0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="54" id="Qha-gX-MZN"/>
                 <constraint firstItem="zAu-1l-mK1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Sf3-bK-NIU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h0o-yu-7Y0" secondAttribute="bottom" constant="90" id="hpQ-Zh-Ajf"/>
@@ -240,6 +316,7 @@
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="chevron.up" catalog="system" width="128" height="72"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="ic_animation_state_no_breathing" width="267" height="273"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
