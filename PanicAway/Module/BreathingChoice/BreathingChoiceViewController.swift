@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 // MARK: - ENUM For Entry Point
 
@@ -113,6 +114,8 @@ class BreathingChoiceViewController: UIViewController {
     @objc func saveChanges() {
         setSelectedBreathingTechnique()
         self.navigationController?.popViewController(animated: true)
+        WidgetCenter.shared.reloadAllTimelines()
+        print("masuk cok")
     }
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1D8FA126CE28CF0047FF44 /* BreathingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612CA53326B40151009A11B3 /* BreathingModel.swift */; };
+		3B1D8FA626CE40D80047FF44 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1D8FA526CE40D80047FF44 /* AuthenticationServices.framework */; };
 		3B2048BE26B122AA0032FA06 /* NotifyFriendInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */; };
 		3B2048C026B1236A0032FA06 /* ContactRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2048BF26B1236A0032FA06 /* ContactRowController.swift */; };
 		3B2FD84F26BB82C200D2463B /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 3B2FD83E26BAF43B00D2463B /* PushNotificationPayload.apns */; };
@@ -18,6 +20,14 @@
 		3B392C6B26B6D9E3009E216D /* BreathingMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */; };
 		3B529E6E26B00FA800D4D301 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B529E6D26B00FA800D4D301 /* Colors.xcassets */; };
 		3B86DEB226B3DB9A00BC28E7 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */; };
+		3B9A942E26CE1DB300D15AE9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B872426A9B6C500ECA8AD /* Colors.xcassets */; };
+		3BA4308B26CDE5350086744B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA4308A26CDE5350086744B /* WidgetKit.framework */; };
+		3BA4308D26CDE5350086744B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA4308C26CDE5350086744B /* SwiftUI.framework */; };
+		3BA4309026CDE5350086744B /* PanicAway_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4308F26CDE5350086744B /* PanicAway_Widget.swift */; };
+		3BA4309326CDE5360086744B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA4309226CDE5360086744B /* Assets.xcassets */; };
+		3BA4309526CDE5360086744B /* PanicAway_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4309126CDE5350086744B /* PanicAway_Widget.intentdefinition */; };
+		3BA4309626CDE5360086744B /* PanicAway_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4309126CDE5350086744B /* PanicAway_Widget.intentdefinition */; };
+		3BA4309926CDE5360086744B /* PanicAway WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3BA4308926CDE5350086744B /* PanicAway WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D526B394B700380825 /* HealthKit.framework */; };
 		3BFA29D926B39A1200380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D826B39A1200380825 /* HealthKit.framework */; };
 		611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B86E026A9AFD300ECA8AD /* AppDelegate.swift */; };
@@ -96,6 +106,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3BA4309726CDE5360086744B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 611B86D526A9AFD200ECA8AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BA4308826CDE5350086744B;
+			remoteInfo = "PanicAway WidgetExtension";
+		};
 		611B86F326A9AFD300ECA8AD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 611B86D526A9AFD200ECA8AD /* Project object */;
@@ -119,6 +136,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BA4309A26CDE5360086744B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3BA4309926CDE5360086744B /* PanicAway WidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +176,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B1D8FA526CE40D80047FF44 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
+		3B1D8FA726CE421E0047FF44 /* PanicAway WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PanicAway WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		3B2048BD26B122AA0032FA06 /* NotifyFriendInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyFriendInterfaceController.swift; sourceTree = "<group>"; };
 		3B2048BF26B1236A0032FA06 /* ContactRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowController.swift; sourceTree = "<group>"; };
 		3B2FD83E26BAF43B00D2463B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -157,6 +187,13 @@
 		3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingMethodController.swift; sourceTree = "<group>"; };
 		3B529E6D26B00FA800D4D301 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		3BA4308926CDE5350086744B /* PanicAway WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PanicAway WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BA4308A26CDE5350086744B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3BA4308C26CDE5350086744B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3BA4308F26CDE5350086744B /* PanicAway_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicAway_Widget.swift; sourceTree = "<group>"; };
+		3BA4309126CDE5350086744B /* PanicAway_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PanicAway_Widget.intentdefinition; sourceTree = "<group>"; };
+		3BA4309226CDE5360086744B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BA4309426CDE5360086744B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BFA29D326B394B700380825 /* PanicAway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PanicAway.entitlements; sourceTree = "<group>"; };
 		3BFA29D526B394B700380825 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		3BFA29D726B39A1200380825 /* PanicAway WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PanicAway WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -220,11 +257,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3BA4308626CDE5350086744B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA4308D26CDE5350086744B /* SwiftUI.framework in Frameworks */,
+				3BA4308B26CDE5350086744B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		611B86DA26A9AFD300ECA8AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				61B5B9AA26A9BEE700FE700B /* Lottie in Frameworks */,
+				3B1D8FA626CE40D80047FF44 /* AuthenticationServices.framework in Frameworks */,
 				AACE334426BF859000FEA904 /* EFCountingLabel in Frameworks */,
 				613B28A126B6825F004CB533 /* SDWebImageLottieCoder in Frameworks */,
 				3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */,
@@ -243,6 +290,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BA4308E26CDE5350086744B /* PanicAway Widget */ = {
+			isa = PBXGroup;
+			children = (
+				3BA4308F26CDE5350086744B /* PanicAway_Widget.swift */,
+				3BA4309126CDE5350086744B /* PanicAway_Widget.intentdefinition */,
+				3BA4309226CDE5360086744B /* Assets.xcassets */,
+				3BA4309426CDE5360086744B /* Info.plist */,
+			);
+			path = "PanicAway Widget";
+			sourceTree = "<group>";
+		};
 		3BBF6CBE26B27C19003A73F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,8 +327,11 @@
 		3BFA29D426B394B700380825 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B1D8FA526CE40D80047FF44 /* AuthenticationServices.framework */,
 				3BFA29D826B39A1200380825 /* HealthKit.framework */,
 				3BFA29D526B394B700380825 /* HealthKit.framework */,
+				3BA4308A26CDE5350086744B /* WidgetKit.framework */,
+				3BA4308C26CDE5350086744B /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,10 +339,12 @@
 		611B86D426A9AFD200ECA8AD = {
 			isa = PBXGroup;
 			children = (
+				3B1D8FA726CE421E0047FF44 /* PanicAway WidgetExtension.entitlements */,
 				6173291326AAA0B2009991DD /* Shared */,
 				611B86DF26A9AFD300ECA8AD /* PanicAway */,
 				611B86F526A9AFD300ECA8AD /* PanicAway WatchKit App */,
 				611B870426A9AFD400ECA8AD /* PanicAway WatchKit Extension */,
+				3BA4308E26CDE5350086744B /* PanicAway Widget */,
 				611B86DE26A9AFD300ECA8AD /* Products */,
 				3BFA29D426B394B700380825 /* Frameworks */,
 			);
@@ -293,6 +356,7 @@
 				611B86DD26A9AFD300ECA8AD /* PanicAway.app */,
 				611B86F126A9AFD300ECA8AD /* PanicAway WatchKit App.app */,
 				611B870026A9AFD400ECA8AD /* PanicAway WatchKit Extension.appex */,
+				3BA4308926CDE5350086744B /* PanicAway WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -545,6 +609,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3BA4308826CDE5350086744B /* PanicAway WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BA4309D26CDE5360086744B /* Build configuration list for PBXNativeTarget "PanicAway WidgetExtension" */;
+			buildPhases = (
+				3BA4308526CDE5350086744B /* Sources */,
+				3BA4308626CDE5350086744B /* Frameworks */,
+				3BA4308726CDE5350086744B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PanicAway WidgetExtension";
+			productName = "PanicAway WidgetExtension";
+			productReference = 3BA4308926CDE5350086744B /* PanicAway WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		611B86DC26A9AFD300ECA8AD /* PanicAway */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 611B871826A9AFD500ECA8AD /* Build configuration list for PBXNativeTarget "PanicAway" */;
@@ -553,11 +634,13 @@
 				611B86DA26A9AFD300ECA8AD /* Frameworks */,
 				611B86DB26A9AFD300ECA8AD /* Resources */,
 				611B871726A9AFD500ECA8AD /* Embed Watch Content */,
+				3BA4309A26CDE5360086744B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				611B86F426A9AFD300ECA8AD /* PBXTargetDependency */,
+				3BA4309826CDE5360086744B /* PBXTargetDependency */,
 			);
 			name = PanicAway;
 			packageProductDependencies = (
@@ -616,6 +699,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					3BA4308826CDE5350086744B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					611B86DC26A9AFD300ECA8AD = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -649,11 +735,21 @@
 				611B86DC26A9AFD300ECA8AD /* PanicAway */,
 				611B86F026A9AFD300ECA8AD /* PanicAway WatchKit App */,
 				611B86FF26A9AFD400ECA8AD /* PanicAway WatchKit Extension */,
+				3BA4308826CDE5350086744B /* PanicAway WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3BA4308726CDE5350086744B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA4309326CDE5360086744B /* Assets.xcassets in Resources */,
+				3B9A942E26CE1DB300D15AE9 /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		611B86DB26A9AFD300ECA8AD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -723,6 +819,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3BA4308526CDE5350086744B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA4309526CDE5360086744B /* PanicAway_Widget.intentdefinition in Sources */,
+				3B1D8FA126CE28CF0047FF44 /* BreathingModel.swift in Sources */,
+				3BA4309026CDE5350086744B /* PanicAway_Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		611B86D926A9AFD300ECA8AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -730,6 +836,7 @@
 				6190F8DC26AFC1D100C48744 /* BreathingChoiceViewController.swift in Sources */,
 				6190F8E126AFC47900C48744 /* BreathingTechniqueCell.swift in Sources */,
 				611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */,
+				3BA4309626CDE5360086744B /* PanicAway_Widget.intentdefinition in Sources */,
 				AA94FE6026BEF20E0013D207 /* AlertView.swift in Sources */,
 				61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
@@ -774,6 +881,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3BA4309826CDE5360086744B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BA4308826CDE5350086744B /* PanicAway WidgetExtension */;
+			targetProxy = 3BA4309726CDE5360086744B /* PBXContainerItemProxy */;
+		};
 		611B86F426A9AFD300ECA8AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 611B86F026A9AFD300ECA8AD /* PanicAway WatchKit App */;
@@ -806,6 +918,57 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3BA4309B26CDE5360086744B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "PanicAway WidgetExtension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				INFOPLIST_FILE = "PanicAway Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.javier.panicaway.mc3.PanicAway-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BA4309C26CDE5360086744B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "PanicAway WidgetExtension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				INFOPLIST_FILE = "PanicAway Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.javier.panicaway.mc3.PanicAway-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		611B870E26A9AFD500ECA8AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -924,14 +1087,14 @@
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WatchKit Extension/PanicAway WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94RH8K67DD;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -949,14 +1112,14 @@
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WatchKit Extension/PanicAway WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94RH8K67DD;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -976,7 +1139,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94RH8K67DD;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -984,7 +1147,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1003,7 +1166,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94RH8K67DD;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1011,7 +1174,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1025,19 +1188,20 @@
 		611B871926A9AFD500ECA8AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PanicAway/PanicAway.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94RH8K67DD;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1049,19 +1213,20 @@
 		611B871A26A9AFD500ECA8AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PanicAway/PanicAway.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94RH8K67DD;
+				DEVELOPMENT_TEAM = J3RR7Q3QN2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1074,6 +1239,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3BA4309D26CDE5360086744B /* Build configuration list for PBXNativeTarget "PanicAway WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA4309B26CDE5360086744B /* Debug */,
+				3BA4309C26CDE5360086744B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		611B86D826A9AFD200ECA8AD /* Build configuration list for PBXProject "PanicAway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

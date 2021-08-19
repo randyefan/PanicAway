@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>PanicAway WatchKit App</string>
+	<string>PanicAway Widget</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,20 +20,12 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Allow access to apple health so that we can give an immediate help tailored to your experience</string>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-	</array>
-	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.javier.panicaway.mc3</string>
-	<key>WKWatchKitApp</key>
-	<true/>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.widgetkit-extension</string>
+	</dict>
 </dict>
 </plist>
