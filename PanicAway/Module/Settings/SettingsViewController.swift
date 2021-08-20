@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
     let data = BreathingLoader()
     var emergencyContact: [EmergencyContactModel]?
     var wcSession = WCSession.default
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate // This One Variable to get func sendMessages
     
     var breathingTechnique: BreathingModel? {
         didSet {
@@ -36,14 +37,8 @@ class SettingsViewController: UIViewController {
         initialSetup()
         setupNavigationBar()
         setupWCSession()
-        NetworkingManager.shared.postMessage(phoneNumber: "082222214905", message: "Hai Tolong Aku") { result in
-            switch result {
-            case .success(_):
-                print("SUKSES")
-            case .failure(_):
-                print("Error")
-            }
-        }
+        // BELOW IS: - Function that send messages using app delegate
+        // appDelegate.sendMessage()
     }
     
     func setupNavigationBar() {
@@ -87,8 +82,7 @@ class SettingsViewController: UIViewController {
 
     @IBAction func emergencyContactButon(_ sender: UITapGestureRecognizer) {
         /// TO DO: - Replace this code to navigate to emergency contact view
-        AlertView.showAlertComingSoonFeature(view: self, message: "My emergency contact feature is almost ready!")
-        
+        navigateToEmergencyContact()
     }
 
     @IBAction func emergencyMessageButton(_ sender: UITapGestureRecognizer) {

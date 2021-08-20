@@ -8,28 +8,29 @@
 import Foundation
 
 protocol NetworkRequest {
-    func postMessage(phoneNumber: String, message: String, completion: @escaping (Result<Data?, Error>) -> ())
+    func postMessage(phoneNumber: String, message: String, completion: ((Result<SendMessagesResponses?, Error>) -> ())?)
 }
 
 class NetworkingManager: NetworkRequest {
     static let shared = NetworkingManager()
     private init() { }
     
-    func postMessage(phoneNumber: String, message: String, completion: @escaping (Result<Data?, Error>) -> ()) {
+    func postMessage(phoneNumber: String, message: String, completion: ((Result<SendMessagesResponses?, Error>) -> ())? = nil) {
         let urlString = "https://api.kirimwa.id/v1/messages"
         self.post(url: urlString, phoneNumber: phoneNumber, message: message, completion: completion)
     }
 }
 
 fileprivate extension NetworkingManager {
-    func post(url: String, phoneNumber: String, message: String, completion: @escaping (Result<Data?, Error>) -> ()) {
+    func post(url: String, phoneNumber: String, message: String, completion: ((Result<SendMessagesResponses?, Error>) -> ())?) {
         guard let urlService = URL(string: url) else { fatalError("Cannot convert from url string") }
+        let decoder = JSONDecoder()
         let headers: [String:String] = [
-            "Authorization": "Bearer 1234567891011123456677", // Change to token later
+            "Authorization": "Bearer M}D4jhn2SW@wQBVCcOFAXUskG/|D@uCSqLdXyiY2}PfeJk=1-darindra",
             "Content-Type": "application/json",
         ]
         
-        let deviceId: String = "" // Change to device id later
+        let deviceId: String = "panicaway"
         let messageType: String = "text"
         
         var parameters: [String:Any] {
@@ -48,18 +49,21 @@ fileprivate extension NetworkingManager {
         do {
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
         } catch {
-            fatalError("Error convert param to json")
+            print("Error convert param to json")
         }
         
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            if error != nil { return completion(.failure(error!)) }
+            if error != nil { print("Ada Error") }
+        
+            guard let data = data else { return print("gagal get data") }
             
-            guard let response = response as? HTTPURLResponse, 200..<300 ~= response.statusCode else {
-                print("Status Code Response not success")
-                return completion(.success(data))
+            do {
+                let people = try decoder.decode(SendMessagesResponses.self, from: data)
+                print("Status API Whatsapp: \(String(describing: people.message))")
+                print("Meta Location: \(String(describing: people.meta?.location))")
+            } catch {
+                print(error.localizedDescription)
             }
-            
-            return completion(.success(data))
         }.resume()
     }
 }
