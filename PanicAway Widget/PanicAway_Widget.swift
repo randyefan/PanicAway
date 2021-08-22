@@ -78,7 +78,7 @@ struct PanicAway_WidgetEntryView : View {
             }.padding()
             
             
-        }
+        }.widgetURL(URL(string: "panicaway://open"))
     }
 }
 
