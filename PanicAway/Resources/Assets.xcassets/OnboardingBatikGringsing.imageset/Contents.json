@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "batik.png",
+      "filename" : "App background ver 2-6.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "batik@2x.png",
+      "filename" : "App background ver 2-06@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "batik@3x.png",
+      "filename" : "App background ver 2-06@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -23,16 +23,8 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="Uyc-8r-Zyk">
-                    <rect key="frame" x="144" y="643.66666666666663" width="102.33333333333331" height="26.333333333333371"/>
-                    <color key="pageIndicatorTintColor" name="GreySoft"/>
-                    <color key="currentPageIndicatorTintColor" name="Main"/>
-                    <connections>
-                        <action selector="pageControlSwiped:" destination="-1" eventType="valueChanged" id="gPL-eP-qX4"/>
-                    </connections>
-                </pageControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KnQ-Hn-Gs7">
-                    <rect key="frame" x="0.0" y="44" width="390" height="599.66666666666663"/>
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iwj-EP-Chv">
                         <size key="itemSize" width="20" height="20"/>
@@ -41,6 +33,14 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Uyc-8r-Zyk">
+                    <rect key="frame" x="135" y="657.66666666666663" width="120.33333333333331" height="26.333333333333371"/>
+                    <color key="pageIndicatorTintColor" name="GreySoft"/>
+                    <color key="currentPageIndicatorTintColor" name="Main"/>
+                    <connections>
+                        <action selector="pageControlSwiped:" destination="-1" eventType="valueChanged" id="gPL-eP-qX4"/>
+                    </connections>
+                </pageControl>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nt0-j5-GhH">
                     <rect key="frame" x="24" y="694" width="342" height="94"/>
                     <subviews>
@@ -78,14 +78,14 @@
             <color key="backgroundColor" name="Background"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Nt0-j5-GhH" secondAttribute="bottom" constant="22" id="1IG-V1-Qw2"/>
-                <constraint firstItem="Uyc-8r-Zyk" firstAttribute="top" secondItem="KnQ-Hn-Gs7" secondAttribute="bottom" id="5w5-Tn-fXA"/>
+                <constraint firstAttribute="bottom" secondItem="KnQ-Hn-Gs7" secondAttribute="bottom" id="5w5-Tn-fXA"/>
                 <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DXl-45-2B7"/>
                 <constraint firstItem="Nt0-j5-GhH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="EqR-vn-Ehl"/>
                 <constraint firstItem="Nt0-j5-GhH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OIg-8N-hSP"/>
-                <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Phr-kB-Agu"/>
+                <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Phr-kB-Agu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nt0-j5-GhH" secondAttribute="trailing" constant="24" id="eiW-Yn-MQn"/>
                 <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="h79-GM-gnQ"/>
-                <constraint firstItem="Nt0-j5-GhH" firstAttribute="top" secondItem="Uyc-8r-Zyk" secondAttribute="bottom" constant="24" id="laa-zG-rg4"/>
+                <constraint firstItem="Nt0-j5-GhH" firstAttribute="top" secondItem="Uyc-8r-Zyk" secondAttribute="bottom" constant="10" id="laa-zG-rg4"/>
                 <constraint firstItem="Uyc-8r-Zyk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nFd-Tw-07s"/>
             </constraints>
             <point key="canvasLocation" x="136.92307692307691" y="145.73459715639811"/>

@@ -39,13 +39,17 @@ class ProductShowcaseViewController: UIViewController{
         slides = [
             ProductShowcaseSlide(title: "Cope with panic attack",
                                  description:"Guided breathing to relieve your panic attack and a one-click emergency contact.",
-                                 image: #imageLiteral(resourceName: "OnboardingStress")),
+                                 image: UIImage(named: "OnboardingStress") ?? #imageLiteral(resourceName: "OnboardingBatikGringsing")),
+        
             ProductShowcaseSlide(title: "Cultural Tradition",
                                  description:"Gringsing Batik belief to shield and protect people from danger",
-                                 image: #imageLiteral(resourceName: "BatikGringsing")),
+                                 image: UIImage(named: "OnboardingBatikGringsing") ?? #imageLiteral(resourceName: "hold4")),
             ProductShowcaseSlide(title: "Quick Access",
                                  description: "Seek assistance quickly by using Shortcut and a watchOS Complications.",
-                                 image: #imageLiteral(resourceName: "OnboardingWatch")),
+                                 image: UIImage(named: "OnboardingWatch") ?? #imageLiteral(resourceName: "breatheIn59")),
+            ProductShowcaseSlide(title: "Widget",
+                                 description: "Seek assistance quickly by using widget, Shortcut and a watchOS Complications.",
+                                 image: UIImage(named: "OnboardingWidget") ?? #imageLiteral(resourceName: "Hold 3_00050")),
         ]
         
         productShowcaseCollectionView.backgroundColor = UIColor(named: "Background")
