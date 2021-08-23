@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,8 +31,8 @@ breathing exercise. </string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uae-ac-hgG">
-                    <rect key="frame" x="25" y="766" width="364" height="96"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Uae-ac-hgG">
+                    <rect key="frame" x="25" y="751" width="364" height="111"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLc-a8-Xxd">
                             <rect key="frame" x="0.0" y="0.0" width="364" height="48"/>
@@ -55,9 +54,12 @@ breathing exercise. </string>
                                     <real key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="repeatButtonAction:" destination="-1" eventType="touchUpInside" id="QVo-M9-9Sw"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSy-aU-XCF">
-                            <rect key="frame" x="0.0" y="48" width="364" height="48"/>
+                            <rect key="frame" x="0.0" y="63" width="364" height="48"/>
                             <color key="backgroundColor" name="Main"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="bqs-Zt-xci"/>
@@ -71,12 +73,18 @@ breathing exercise. </string>
                                     <real key="value" value="14"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="finishButtonAction:" destination="-1" eventType="touchUpInside" id="foq-vn-e1g"/>
+                            </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="gSy-aU-XCF" firstAttribute="top" secondItem="zLc-a8-Xxd" secondAttribute="bottom" constant="15" id="ZHx-6b-NhQ"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="Background"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="F89-6C-2Nk" secondAttribute="trailing" constant="25" id="4R2-sW-aaC"/>
                 <constraint firstItem="Uae-ac-hgG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="cXJ-hh-az1"/>
@@ -89,14 +97,14 @@ breathing exercise. </string>
         </view>
     </objects>
     <resources>
+        <namedColor name="Background">
+            <color red="0.99599999189376831" green="0.98400002717971802" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Main">
             <color red="0.94499999284744263" green="0.6119999885559082" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WhiteApp">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

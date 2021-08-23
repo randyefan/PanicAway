@@ -38,6 +38,7 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var settingsView: UIImageView!
     @IBOutlet weak var titleLabel: EFCountingLabel!
     @IBOutlet weak var captionLabel: EFCountingLabel!
+    @IBOutlet weak var prepareLabel: UILabel!
     @IBOutlet weak var breathingLabel: UILabel!
     @IBOutlet weak var breathingMethodStackView: UIStackView!
     @IBOutlet weak var leftChevronView: UIView!
@@ -66,11 +67,16 @@ class BreathingViewController: UIViewController {
         didSet {
             setupView()
             if state == .breathingOn {
+                guard let technique = self.technique else { return }
+                self.breathCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle") - 1
+                self.progress = 1.0 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float(self.breathCycle + 1))
+                self.isRunning = true
                 startPreparation()
             }
             if state == .finish {
                 captionLabel.isHidden = true
                 isRunning = false
+                showFinishedBreathingPage()
             }
         }
     }
@@ -249,18 +255,15 @@ class BreathingViewController: UIViewController {
         
         if state == .beforeBreathing {
             centreAnimationView.onTap {
-                guard let technique = self.technique else { return }
                 if self.isRunning == false {
-                    self.breathCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle") - 1
-                    self.progress = 1.0 / (Float(technique.breathInCount + technique.breathOutCount + technique.holdOnCount) * Float(self.breathCycle + 1))
-                    self.state = .breathingOn
-                    self.isRunning = true
-                } else if self.state == .breathingOn {
-                    self.breathing?.invalidate()
-                    self.state = .pause
-                } else if self.state == .pause{
                     self.state = .breathingOn
                 }
+//                else if self.state == .breathingOn {
+//                    self.breathing?.invalidate()
+//                    self.state = .pause
+//                } else if self.state == .pause{
+//                    self.state = .breathingOn
+//                }
             }
         }
     }
@@ -324,20 +327,43 @@ class BreathingViewController: UIViewController {
     
     func showBreathingChoiceModal() {
         let vc = BreathingChoiceViewController(entryPoint: .homePage)
+        
+        vc.selected = self.technique
+        
+        vc.changeBreathingTechnieque = { newBreathingTechnique in
+            self.technique = newBreathingTechnique
+        }
+        
         self.navigationController?.present(vc, animated: true, completion: nil)
-        guard let newSelectedTechnique = vc.selected else { return }
-        self.technique = newSelectedTechnique
     }
+    
+    func showFinishedBreathingPage() {
+        let vc = BreatheFinishedViewController()
+        
+        vc.finishBreathing = {
+            self.state = .beforeBreathing
+        }
+        
+        vc.repeatBreathing = {
+            self.state = .breathingOn
+        }
+        
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present(nav, animated: true, completion: nil)
+    }
+    
     
     func startPreparation() {
         if state == .breathingOn {
-            captionLabel.isHidden = false
-            captionLabel.text = "Be still, and bring your attention to your breath."
+            prepareLabel.isHidden = false
             endBreathingButton.isHidden = true
             titleLabel.countFrom(CGFloat(countdownTime + 1), to: 1, withDuration: 3.0)
             titleLabel.completionBlock = {
                 self.startBreathing()
                 self.endBreathingButton.isHidden = false
+                self.prepareLabel.isHidden = true
             }
         }
     }

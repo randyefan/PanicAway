@@ -18,6 +18,8 @@
                 <outlet property="buttonSelect" destination="2EE-nU-4sl" id="fl4-HY-MT2"/>
                 <outlet property="buttonView" destination="0FY-Yw-ero" id="YSJ-en-HG6"/>
                 <outlet property="captionLabel" destination="j5c-ps-kB9" id="JJN-4M-E7c"/>
+                <outlet property="closeButton" destination="Agd-NL-Sze" id="O3F-tw-dQh"/>
+                <outlet property="closeButtonView" destination="sHj-zz-gRW" id="h8t-g7-f09"/>
                 <outlet property="tableView" destination="cSu-Y7-TbJ" id="hZF-ng-aEd"/>
                 <outlet property="titleLabel" destination="FaK-Q6-liA" id="nIl-e4-l53"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,14 +34,85 @@
                     <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-aX-NoA" userLabel="Top Label View">
+                    <rect key="frame" x="25" y="69" width="378" height="150"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-GA-diY">
+                            <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHj-zz-gRW" userLabel="close view">
+                                    <rect key="frame" x="0.0" y="0.0" width="378" height="30"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-NL-Sze">
+                                            <rect key="frame" x="348" y="2.6666666666666643" width="30" height="25"/>
+                                            <color key="tintColor" red="0.68078190090000001" green="0.4363079071" blue="0.38822141290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="MLT-CG-Dsp"/>
+                                            </constraints>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Agd-NL-Sze" firstAttribute="top" secondItem="sHj-zz-gRW" secondAttribute="top" id="1kV-Mp-f2R"/>
+                                        <constraint firstAttribute="trailing" secondItem="Agd-NL-Sze" secondAttribute="trailing" id="8IP-I7-zf7"/>
+                                        <constraint firstAttribute="height" constant="30" id="RBm-hJ-HUc"/>
+                                        <constraint firstAttribute="bottom" secondItem="Agd-NL-Sze" secondAttribute="bottom" id="bZ9-zB-yL8"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-0W-xaX" userLabel="title view">
+                                    <rect key="frame" x="0.0" y="30" width="378" height="75"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathing Methods" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-Q6-liA">
+                                            <rect key="frame" x="0.0" y="17" width="378" height="41"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="41" id="7OP-9v-Tpu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="leading" secondItem="kUT-0W-xaX" secondAttribute="leading" id="5Rp-lz-UYd"/>
+                                        <constraint firstAttribute="trailing" secondItem="FaK-Q6-liA" secondAttribute="trailing" id="TLy-lV-2Vl"/>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerY" secondItem="kUT-0W-xaX" secondAttribute="centerY" id="dLi-wx-gA6"/>
+                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerX" secondItem="kUT-0W-xaX" secondAttribute="centerX" id="h9s-MW-FFq"/>
+                                        <constraint firstAttribute="height" constant="75" id="pEN-o9-dZG"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-ps-kB9">
+                                    <rect key="frame" x="0.0" y="105" width="378" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="g3P-Gz-7Ee"/>
+                                    </constraints>
+                                    <string key="text">This will be your default breathing technique. If you feel light headed or nausea, please contact 
+your medical care number.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JKB-GA-diY" secondAttribute="trailing" id="4Ni-uR-XTe"/>
+                        <constraint firstItem="JKB-GA-diY" firstAttribute="leading" secondItem="5Ck-aX-NoA" secondAttribute="leading" id="78c-aO-bEN"/>
+                        <constraint firstItem="JKB-GA-diY" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="top" id="BJO-8L-yRP"/>
+                        <constraint firstAttribute="bottom" secondItem="JKB-GA-diY" secondAttribute="bottom" id="iJR-9a-lNf"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-C3-RTh" userLabel="Main View">
-                    <rect key="frame" x="25" y="223" width="378" height="637"/>
+                    <rect key="frame" x="25" y="243" width="378" height="629"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGC-Lp-BjA" userLabel="Centre View">
-                            <rect key="frame" x="0.0" y="0.0" width="378" height="549"/>
+                            <rect key="frame" x="0.0" y="0.0" width="378" height="541"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSu-Y7-TbJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="378" height="549"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="378" height="541"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
@@ -53,7 +126,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FY-Yw-ero" userLabel="Bottom View">
-                            <rect key="frame" x="0.0" y="589" width="378" height="48"/>
+                            <rect key="frame" x="0.0" y="581" width="378" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EE-nU-4sl" customClass="SaveButton" customModule="PanicAway" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="378" height="48"/>
@@ -86,57 +159,6 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ck-aX-NoA" userLabel="Top Label View">
-                    <rect key="frame" x="25" y="69" width="378" height="128"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JKB-GA-diY">
-                            <rect key="frame" x="0.0" y="0.0" width="378" height="128"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-0W-xaX">
-                                    <rect key="frame" x="0.0" y="0.0" width="378" height="75"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathing Methods" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-Q6-liA">
-                                            <rect key="frame" x="0.0" y="0.0" width="378" height="75"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="75" id="7OP-9v-Tpu"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="26"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="leading" secondItem="kUT-0W-xaX" secondAttribute="leading" id="5Rp-lz-UYd"/>
-                                        <constraint firstAttribute="trailing" secondItem="FaK-Q6-liA" secondAttribute="trailing" id="TLy-lV-2Vl"/>
-                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerY" secondItem="kUT-0W-xaX" secondAttribute="centerY" id="dLi-wx-gA6"/>
-                                        <constraint firstItem="FaK-Q6-liA" firstAttribute="centerX" secondItem="kUT-0W-xaX" secondAttribute="centerX" id="h9s-MW-FFq"/>
-                                        <constraint firstAttribute="height" constant="75" id="pEN-o9-dZG"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-ps-kB9">
-                                    <rect key="frame" x="0.0" y="83" width="378" height="45"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="45" id="g3P-Gz-7Ee"/>
-                                    </constraints>
-                                    <string key="text">This will be your default breathing technique. If you feel light headed or nausea, please contact 
-your medical care number.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="JKB-GA-diY" secondAttribute="trailing" id="4Ni-uR-XTe"/>
-                        <constraint firstItem="JKB-GA-diY" firstAttribute="leading" secondItem="5Ck-aX-NoA" secondAttribute="leading" id="78c-aO-bEN"/>
-                        <constraint firstItem="JKB-GA-diY" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="top" id="BJO-8L-yRP"/>
-                        <constraint firstAttribute="bottom" secondItem="JKB-GA-diY" secondAttribute="bottom" id="iJR-9a-lNf"/>
-                    </constraints>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <constraints>
@@ -144,19 +166,20 @@ your medical care number.</string>
                 <constraint firstItem="kUg-C3-RTh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Gpb-wL-RAn"/>
                 <constraint firstItem="MyK-XD-nSb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JQd-GE-gIW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kUg-C3-RTh" secondAttribute="trailing" constant="25" id="NTw-Bt-JwK"/>
-                <constraint firstItem="cSu-Y7-TbJ" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="bottom" constant="26" id="OwO-Po-gZj"/>
+                <constraint firstItem="cSu-Y7-TbJ" firstAttribute="top" secondItem="5Ck-aX-NoA" secondAttribute="bottom" constant="24" id="OwO-Po-gZj"/>
                 <constraint firstItem="5Ck-aX-NoA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="TNd-6m-yse"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kUg-C3-RTh" secondAttribute="bottom" constant="32" id="TtP-EH-Km6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kUg-C3-RTh" secondAttribute="bottom" constant="20" id="TtP-EH-Km6"/>
                 <constraint firstItem="5Ck-aX-NoA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="mi8-OI-Q0o"/>
                 <constraint firstAttribute="bottom" secondItem="MyK-XD-nSb" secondAttribute="bottom" id="msV-2O-v8B"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ck-aX-NoA" secondAttribute="trailing" constant="25" id="nyd-v0-1mW"/>
                 <constraint firstAttribute="trailing" secondItem="MyK-XD-nSb" secondAttribute="trailing" id="xQV-xo-bM7"/>
             </constraints>
-            <point key="canvasLocation" x="-9" y="130"/>
+            <point key="canvasLocation" x="-9.8130841121495322" y="129.58963282937367"/>
         </view>
     </objects>
     <resources>
         <image name="bgEmergencyContact" width="375" height="812"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="Main">
             <color red="0.94499999284744263" green="0.6119999885559082" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

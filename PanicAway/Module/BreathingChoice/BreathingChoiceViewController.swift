@@ -26,11 +26,14 @@ class BreathingChoiceViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonSelect: UIButton!
     @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var closeButtonView: UIView!
+    @IBOutlet weak var closeButton: UIImageView!
     
     // MARK: - Variable
     private var data = BreathingLoader()
     private var entryPoint: BreathingChoiceEntryPoint?
     var selected: BreathingModel?
+    var changeBreathingTechnieque: ((BreathingModel?) -> ())?
     
     // MARK: - Initializer (Required)
     init(entryPoint: BreathingChoiceEntryPoint) {
@@ -50,9 +53,16 @@ class BreathingChoiceViewController: UIViewController {
         setupTableView()
         setupView()
         setupSelectedCell()
+        setupObserverAction()
     }
     
     // MARK: - Setup Function for ViewController
+    
+    func setupObserverAction(){
+        closeButton.onTap {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     func setupSelectedCell() {
         if let selected = selected {
@@ -78,10 +88,12 @@ class BreathingChoiceViewController: UIViewController {
             titleLabel.isHidden = true
             captionLabel.isHidden = false
             buttonView.isHidden = true
+            closeButtonView.isHidden = true
         case .homePage:
             titleLabel.isHidden = false
             captionLabel.isHidden = true
             buttonView.isHidden = true
+            closeButtonView.isHidden = false
         default:
             buttonSelect.isEnabled = false
             self.navigationController?.navigationBar.isHidden = true
@@ -134,6 +146,10 @@ class BreathingChoiceViewController: UIViewController {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
+    @objc func closePage() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - UITABLEVIEW DATA SOURCE & UITABLEVIEW DELEGATE
@@ -165,5 +181,6 @@ extension BreathingChoiceViewController: UITableViewDelegate, UITableViewDataSou
         
         buttonSelect.isEnabled = true
         selected = data.entries[indexPath.row]
+        changeBreathingTechnieque?(selected)
     }
 }
