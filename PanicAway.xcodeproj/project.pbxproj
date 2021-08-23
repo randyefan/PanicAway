@@ -55,6 +55,8 @@
 		6190F8DD26AFC1D100C48744 /* BreathingChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6190F8DB26AFC1D100C48744 /* BreathingChoiceViewController.xib */; };
 		6190F8E126AFC47900C48744 /* BreathingTechniqueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190F8DF26AFC47900C48744 /* BreathingTechniqueCell.swift */; };
 		6190F8E226AFC47900C48744 /* BreathingTechniqueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6190F8E026AFC47900C48744 /* BreathingTechniqueCell.xib */; };
+		619A6A5426D4206C0027A4C0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A6A5326D4206C0027A4C0 /* Response.swift */; };
+		619A6A5626D4211D0027A4C0 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A6A5526D4211D0027A4C0 /* Extension+String.swift */; };
 		619F17E726AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */; };
 		619F17E826AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */; };
 		619F17E926AE87E9006F8067 /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */; };
@@ -228,6 +230,8 @@
 		6190F8DB26AFC1D100C48744 /* BreathingChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreathingChoiceViewController.xib; sourceTree = "<group>"; };
 		6190F8DF26AFC47900C48744 /* BreathingTechniqueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingTechniqueCell.swift; sourceTree = "<group>"; };
 		6190F8E026AFC47900C48744 /* BreathingTechniqueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreathingTechniqueCell.xib; sourceTree = "<group>"; };
+		619A6A5326D4206C0027A4C0 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		619A6A5526D4211D0027A4C0 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		619F17E026AE87E8006F8067 /* MPLUSRounded1c-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Light.ttf"; sourceTree = "<group>"; };
 		619F17E126AE87E8006F8067 /* MPLUSRounded1c-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Black.ttf"; sourceTree = "<group>"; };
 		619F17E226AE87E9006F8067 /* MPLUSRounded1c-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -345,6 +349,7 @@
 		611451D726CD769700C4A44F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				619A6A5326D4206C0027A4C0 /* Response.swift */,
 				611451D826CD76A800C4A44F /* Networking.swift */,
 			);
 			path = Networking;
@@ -426,6 +431,7 @@
 		611B871C26A9B0CA00ECA8AD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				619A6A5526D4211D0027A4C0 /* Extension+String.swift */,
 				611B872226A9B50A00ECA8AD /* Extension+UIView.swift */,
 			);
 			path = Extension;
@@ -856,7 +862,9 @@
 				611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */,
 				3BA4309626CDE5360086744B /* PanicAway_Widget.intentdefinition in Sources */,
 				AA94FE6026BEF20E0013D207 /* AlertView.swift in Sources */,
+				619A6A5626D4211D0027A4C0 /* Extension+String.swift in Sources */,
 				61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */,
+				619A6A5426D4206C0027A4C0 /* Response.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
 				61C142FE26BA35B700DC544D /* SettingModel.swift in Sources */,
 				611451D926CD76A800C4A44F /* Networking.swift in Sources */,
@@ -954,7 +962,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.javier.panicaway.mc3.PanicAway-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rmputraminang.panicaway.mc3.PanicAway-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -979,7 +987,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.javier.panicaway.mc3.PanicAway-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rmputraminang.panicaway.mc3.PanicAway-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1114,7 +1122,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1139,7 +1147,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1167,7 +1175,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1194,7 +1202,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1214,14 +1222,14 @@
 				CODE_SIGN_ENTITLEMENTS = PanicAway/PanicAway.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1239,14 +1247,14 @@
 				CODE_SIGN_ENTITLEMENTS = PanicAway/PanicAway.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = PanicAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.javier.panicaway.mc3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;

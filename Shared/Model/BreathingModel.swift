@@ -11,6 +11,7 @@ import WidgetKit
 struct BreathingModel: Codable, TimelineEntry {
     let id: Int
     let breathingName: String
+    let breathGoal: String
     let breathInCount: Int
     let holdOnCount: Int
     let breathOutCount: Int
