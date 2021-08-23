@@ -30,6 +30,7 @@
 		3BA4309926CDE5360086744B /* PanicAway WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3BA4308926CDE5350086744B /* PanicAway WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D526B394B700380825 /* HealthKit.framework */; };
 		3BFA29D926B39A1200380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D826B39A1200380825 /* HealthKit.framework */; };
+		611451D926CD76A800C4A44F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611451D826CD76A800C4A44F /* Networking.swift */; };
 		611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B86E026A9AFD300ECA8AD /* AppDelegate.swift */; };
 		611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B86E926A9AFD300ECA8AD /* Assets.xcassets */; };
 		611B86ED26A9AFD300ECA8AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611B86EB26A9AFD300ECA8AD /* LaunchScreen.storyboard */; };
@@ -198,6 +199,7 @@
 		3BFA29D526B394B700380825 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		3BFA29D726B39A1200380825 /* PanicAway WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PanicAway WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		3BFA29D826B39A1200380825 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		611451D826CD76A800C4A44F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		611B86DD26A9AFD300ECA8AD /* PanicAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanicAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		611B86E026A9AFD300ECA8AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		611B86E926A9AFD300ECA8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -336,6 +338,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		611451D726CD769700C4A44F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				611451D826CD76A800C4A44F /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		611B86D426A9AFD200ECA8AD = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +411,7 @@
 		611B871B26A9B0C600ECA8AD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				611451D726CD769700C4A44F /* Networking */,
 				61908DB026AF28ED00E927AC /* CustomView */,
 				611B871D26A9B1DC00ECA8AD /* App */,
 				611B871C26A9B0CA00ECA8AD /* Extension */,
@@ -841,6 +852,7 @@
 				61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
 				61C142FE26BA35B700DC544D /* SettingModel.swift in Sources */,
+				611451D926CD76A800C4A44F /* Networking.swift in Sources */,
 				615CCA5926AEAA97005EC6A4 /* BreathingViewController.swift in Sources */,
 				61F4201826B5CF0B00362288 /* EmergencyContactModel.swift in Sources */,
 				B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */,

@@ -62,6 +62,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
     }
+    
+    func sendMessage() {
+        // Variable for Emergency Contact Number
+        var number = [String]()
+        let message = "Test API \(getFullName()) 1... 2... 3..." // Handle With Default Message
+        let emergencyContact = getEmergencyContact()
+        
+        guard let contact = emergencyContact, contact.count != 0 else {
+            // TODO: - Handle With Poptip Error Belum menambahkan contact
+            print("Anda belum menambahkan contact")
+            return
+        }
+        
+        number.append(contentsOf: contact.map { $0.phoneNumber.toPhoneNumber() })
+        
+        for i in number {
+            print("Phone Number: \(i)")
+            NetworkingManager.shared.postMessage(phoneNumber: i, message: message)
+        }
+    }
 }
 
 fileprivate extension AppDelegate {
@@ -81,5 +101,29 @@ fileprivate extension AppDelegate {
             UINavigationBar.appearance().barTintColor = UIColor(named: "Background")
             UINavigationBar.appearance().tintColor = UIColor(named: "MainHard")
         }
+    }
+    
+    private func getEmergencyContact() -> [EmergencyContactModel]? {
+        // Get Emergency Contact Number in userDefaults
+        if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
+            do {
+                let decoder = JSONDecoder()
+                let emergencyContact = try decoder.decode([EmergencyContactModel].self, from: data)
+                return emergencyContact
+            } catch {
+                print("Unable to Decode (\(error))")
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
+    private func getFullName() -> String {
+        if let fullName = UserDefaults.standard.string(forKey: "fullName") {
+            return fullName
+        }
+        
+        return "No Name"
     }
 }
