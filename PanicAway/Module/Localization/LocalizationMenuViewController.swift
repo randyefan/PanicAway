@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-private let userLanguangeKey = "applicationKey"
+private let userLanguageKey = "applicationKey"
 class LocalizationMenuViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
@@ -25,7 +25,7 @@ class LocalizationMenuViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       setLanguange(language: pickerData[row])
+        setLanguange(language: pickerData[row])
         print(pickerData[row])
     }
     
@@ -46,34 +46,39 @@ class LocalizationMenuViewController: UIViewController, UIPickerViewDelegate, UI
         
         pickerView.dataSource = self
         pickerView.delegate = self
-
+        
         // Do any additional setup after loading the view.
         pickerData = ["en","id"]
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    func setLanguange(language: String) {
+        print(UserDefaults.standard.string(forKey: userLanguageKey))
         
-        UserDefaults.standard.set(language, forKey: userLanguangeKey)
+        
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    func setLanguange(language: String) {
+        //Ini jangan lupa di ganti
+        UserDefaults.standard.set(language, forKey: userLanguageKey)
+        print("setting languange with this langunage \(language)")
     }
 }
 
 extension String{
     func localized() ->String {
-        let selectedLanguage = UserDefaults.standard.string(forKey: userLanguangeKey)
-
+        let selectedLanguage = UserDefaults.standard.string(forKey: userLanguageKey)
         let path = Bundle.main.path(forResource: selectedLanguage, ofType: "lproj")
         let bundle = Bundle(path: path!)
-
+        
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+        
     }
 }

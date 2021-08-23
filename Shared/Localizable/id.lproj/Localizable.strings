@@ -3,8 +3,34 @@
 "Guided breathing to relieve your panic attack and a one-click emergency contact." = "Latihan pernafasan dengan panduan untuk menenangkan serangan panik";
 "Next" = "Selanjutnya";
 "Skip" = "Lewati";
+
 //Product Showcase 2
 "Cultural Tradition" = "Tradisi Budaya";
 "Gringsing Batik belief to shield and protect people from danger." = "Batik Gringsing dipercaya dapat melindungi orang dari bahaya.";
+
+//Product Showcase 3
+"Quick Access" = "Akses Cepat";
+"Seek assistance quickly by using Shortcut and a watchOS Complications." = "Mendapatkan bantuan secara cepat dengan menggunakan Shortcut dan Complication watchOS";
+
+//Product Showcase 4
+"Widget" = "Widget";
+//Masih kurang beberapa di product showcase 4
+
+//Choose languange yang ini karena semuanya by code berarti harus object id nya yang di localized mari kita coba
+"language_1" = "Pilih bahasa pilihan anda";
+"Please select your language" = "Silahkan pilih bahasa anda";
+"English" = "Inggris";
+"Bahasa Indonesia" = "Bahasa Indonesia";
+"Select" = "Pilih";
+
+//Breathe - Tap to start
+"Tap to start" = "Ketuk untuk memulai"; //Ini seharusnya untuk dia pas mulai awal berarti nanti XIB nya harus di localized juga
+"Breathing methods" = "Metode Pernafasan";
+
+//Breathe - Modal
+
+//Breathe in
+
+//This one is for the localisation in the storyboard where the string is already inputted on the xib instead of by code.
 
 
