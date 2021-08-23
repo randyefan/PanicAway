@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.scheme == "panicaway" {
+            openBreathingFromScheme()
+        }
+        
+        return true
+    }
+    
     func checkUserFirstLaunch() {
         if UserDefaults.standard.bool(forKey: "isNotFirstLaunch") {
             rootBreathingPage()
@@ -41,6 +49,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.clear
         let viewController = ProductShowcaseViewController()
         let navigationBar = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationBar
+        window?.makeKeyAndVisible()
+    }
+    
+    func openBreathingFromScheme() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.clear
+        let viewController = BreathingViewController()
+        let navigationBar = UINavigationController(rootViewController: viewController)
+        viewController.openUsingScheme()
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
     }

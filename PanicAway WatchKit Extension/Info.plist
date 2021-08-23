@@ -27,7 +27,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.rmputraminang.panicaway.mc3.watchkitapp</string>
+			<string>com.javier.panicaway.mc3.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>

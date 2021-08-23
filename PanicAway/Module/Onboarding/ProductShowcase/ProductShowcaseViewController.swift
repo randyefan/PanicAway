@@ -75,11 +75,15 @@ class ProductShowcaseViewController: UIViewController{
     }
     
     @IBAction func skipButtonPressed(_ sender: Any) {
-        navigateToChooseBreathingTechnique()
+        setDefaultBreathingTechnique()
+        setDefaultBreathingCycle()
+        navigateToAppleHealthAuthorize()
     }
     
     func nextView(){
-        navigateToChooseBreathingTechnique()
+        setDefaultBreathingTechnique()
+        setDefaultBreathingCycle()
+        navigateToAppleHealthAuthorize()
     }
     
     
@@ -93,6 +97,20 @@ class ProductShowcaseViewController: UIViewController{
     private func navigateToChooseBreathingTechnique() {
         let vc = BreathingChoiceViewController(entryPoint: .onBoarding)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func navigateToAppleHealthAuthorize() {
+        let vc = OnboardingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK: - TODO: Handle With Save User Default With Group
+    private func setDefaultBreathingTechnique() {
+        UserDefaults.standard.setValue(0, forKey: "defaultBreatheId")
+    }
+    
+    private func setDefaultBreathingCycle() {
+        UserDefaults.standard.setValue(4, forKey: "defaultBreathingCycle")
     }
     
 }
