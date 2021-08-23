@@ -258,12 +258,6 @@ class BreathingViewController: UIViewController {
                 if self.isRunning == false {
                     self.state = .breathingOn
                 }
-//                else if self.state == .breathingOn {
-//                    self.breathing?.invalidate()
-//                    self.state = .pause
-//                } else if self.state == .pause{
-//                    self.state = .breathingOn
-//                }
             }
         }
     }
