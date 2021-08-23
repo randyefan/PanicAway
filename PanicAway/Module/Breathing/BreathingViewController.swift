@@ -428,3 +428,10 @@ class BreathingViewController: UIViewController {
         }
     }
 }
+
+extension BreathingViewController {
+    func openUsingScheme() {
+        // TODO: Handle Send Message Whatsapp Here
+        print("opening from scheme")
+    }
+}

@@ -6,7 +6,18 @@
 //
 
 import Foundation
-
+#if !os(watchOS)
+import WidgetKit
+struct BreathingModel: Codable, TimelineEntry {
+    let id: Int
+    let breathingName: String
+    let breathInCount: Int
+    let holdOnCount: Int
+    let breathOutCount: Int
+    let description: String
+    var date: Date = Date()
+}
+#else
 struct BreathingModel: Codable {
     let id: Int
     let breathingName: String
@@ -14,7 +25,9 @@ struct BreathingModel: Codable {
     let holdOnCount: Int
     let breathOutCount: Int
     let description: String
+    var date: Date = Date()
 }
+#endif
 
 class BreathingLoader {
     var entries: [BreathingModel] = []
