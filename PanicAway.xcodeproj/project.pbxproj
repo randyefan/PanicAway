@@ -19,6 +19,9 @@
 		3B2FD90F26BD833B00D2463B /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2FD90E26BD833B00D2463B /* HealthKitManager.swift */; };
 		3B392C6626B6C688009E216D /* BreathingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B392C6526B6C688009E216D /* BreathingAnimationController.swift */; };
 		3B392C6B26B6D9E3009E216D /* BreathingMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */; };
+		3B3A262F26D4F6F0006FD180 /* LocalizationMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A262D26D4F6F0006FD180 /* LocalizationMenuTableViewCell.swift */; };
+		3B3A263026D4F6F0006FD180 /* LocalizationMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A262E26D4F6F0006FD180 /* LocalizationMenuTableViewCell.xib */; };
+		3B3A263226D4FEA3006FD180 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A263126D4FEA3006FD180 /* LanguageModel.swift */; };
 		3B529E6E26B00FA800D4D301 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B529E6D26B00FA800D4D301 /* Colors.xcassets */; };
 		3B86DEB226B3DB9A00BC28E7 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */; };
 		3BD03EBB26D3DF66000BFFCC /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD03EBA26D3DF66000BFFCC /* LocalizedLabel.swift */; };
@@ -165,6 +168,9 @@
 		3B2FD90E26BD833B00D2463B /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		3B392C6526B6C688009E216D /* BreathingAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingAnimationController.swift; sourceTree = "<group>"; };
 		3B392C6A26B6D9E3009E216D /* BreathingMethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingMethodController.swift; sourceTree = "<group>"; };
+		3B3A262D26D4F6F0006FD180 /* LocalizationMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMenuTableViewCell.swift; sourceTree = "<group>"; };
+		3B3A262E26D4F6F0006FD180 /* LocalizationMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalizationMenuTableViewCell.xib; sourceTree = "<group>"; };
+		3B3A263126D4FEA3006FD180 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		3B529E6D26B00FA800D4D301 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		3BD03EBA26D3DF66000BFFCC /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
@@ -257,6 +263,7 @@
 		3B04035726D392AB002ADBE5 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				3B3A262C26D4F6D8006FD180 /* Cell */,
 				3B04035826D392E2002ADBE5 /* LocalizationMenuViewController.swift */,
 				3B04035926D392E2002ADBE5 /* LocalizationMenuViewController.xib */,
 			);
@@ -270,6 +277,15 @@
 				3BD03EBA26D3DF66000BFFCC /* LocalizedLabel.swift */,
 			);
 			path = Localizable;
+			sourceTree = "<group>";
+		};
+		3B3A262C26D4F6D8006FD180 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3B3A262D26D4F6F0006FD180 /* LocalizationMenuTableViewCell.swift */,
+				3B3A262E26D4F6F0006FD180 /* LocalizationMenuTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3BBF6CBE26B27C19003A73F0 /* Controller */ = {
@@ -420,6 +436,7 @@
 				612CA53326B40151009A11B3 /* BreathingModel.swift */,
 				61F4201726B5CF0B00362288 /* EmergencyContactModel.swift */,
 				61C142FD26BA35B700DC544D /* SettingModel.swift */,
+				3B3A263126D4FEA3006FD180 /* LanguageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -707,6 +724,7 @@
 				611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */,
 				619F17F326AE87EA006F8067 /* MPLUSRounded1c-Medium.ttf in Resources */,
 				3B2FD85326BB82D400D2463B /* PushNotificationPayload.apns in Resources */,
+				3B3A263026D4F6F0006FD180 /* LocalizationMenuTableViewCell.xib in Resources */,
 				B741993F26B29C08006B888D /* AddToContactTableViewCell.xib in Resources */,
 				6190F8E226AFC47900C48744 /* BreathingTechniqueCell.xib in Resources */,
 				6EB3103426AEF13B0051191A /* EmergencyMessageSettingViewController.xib in Resources */,
@@ -766,11 +784,13 @@
 				611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */,
 				AA94FE6026BEF20E0013D207 /* AlertView.swift in Sources */,
 				61B9B95526B3EB870092C183 /* OnboardingViewController.swift in Sources */,
+				3B3A263226D4FEA3006FD180 /* LanguageModel.swift in Sources */,
 				611B872326A9B50A00ECA8AD /* Extension+UIView.swift in Sources */,
 				3BD03EBB26D3DF66000BFFCC /* LocalizedLabel.swift in Sources */,
 				61C142FE26BA35B700DC544D /* SettingModel.swift in Sources */,
 				615CCA5926AEAA97005EC6A4 /* BreathingViewController.swift in Sources */,
 				61F4201826B5CF0B00362288 /* EmergencyContactModel.swift in Sources */,
+				3B3A262F26D4F6F0006FD180 /* LocalizationMenuTableViewCell.swift in Sources */,
 				B741993E26B29C08006B888D /* AddToContactTableViewCell.swift in Sources */,
 				B741993826B29BE4006B888D /* ContactTableViewCell.swift in Sources */,
 				3B04035A26D392E2002ADBE5 /* LocalizationMenuViewController.swift in Sources */,
