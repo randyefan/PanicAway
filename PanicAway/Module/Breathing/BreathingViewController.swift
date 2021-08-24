@@ -52,11 +52,13 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var breatheTechniqueGoalLabel: UILabel!
     @IBOutlet weak var endBreathingButton: UIButton!
     @IBOutlet weak var breathingChoiceView: UIStackView!
+    @IBOutlet weak var overlayImageView: UIImageView!
     
     
     // MARK: - Variable
     var breathingId: Int = 0
     var data = BreathingLoader()
+    var isFirstBreathingScreen = true
     let healthKitManager = HealthKitManager()
     var startDate = Date()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -170,6 +172,7 @@ class BreathingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar()
+        setupFirstBreathingScreen()
         setupToDefaultBreathingTechnique()
     }
     
@@ -196,6 +199,16 @@ class BreathingViewController: UIViewController {
             DispatchQueue.main.async {
                 self.captionLabel.text = "Yay, you’ve finished your breathing exercise!"
             }
+        }
+    }
+    
+    func setupFirstBreathingScreen() {
+        if UserDefaults.standard.bool(forKey: "isNotFirstBreathingScreen") {
+            isFirstBreathingScreen = false
+            overlayImageView.isHidden = true
+        } else {
+            isFirstBreathingScreen = true
+            overlayImageView.isHidden = false
         }
     }
     
@@ -252,6 +265,12 @@ class BreathingViewController: UIViewController {
         
         topChevronView.onTap {
             self.showBreathingChoiceModal()
+        }
+        
+        overlayImageView.onTap {
+            self.overlayImageView.isHidden = true
+            self.isFirstBreathingScreen = false
+            UserDefaults.standard.setValue(true, forKey: "isNotFirstBreathingScreen")
         }
         
         if state == .beforeBreathing {
