@@ -59,6 +59,7 @@ class BreathingViewController: UIViewController {
     var data = BreathingLoader()
     let healthKitManager = HealthKitManager()
     var startDate = Date()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var mindfulnessMinutes: Double{
         return Double((minutesTimer*60) + secondsTimer)
     }
@@ -480,7 +481,7 @@ class BreathingViewController: UIViewController {
 
 extension BreathingViewController {
     func openUsingScheme() {
-        // TODO: Handle Send Message Whatsapp Here
+        appDelegate.sendMessage()
         print("opening from scheme")
     }
 }

@@ -38,7 +38,7 @@ class ProfileNameOnBoardingViewController: UIViewController {
     // MARK: - Action Triggered
     @IBAction func saveButtonAction(_ sender: UIButton) {
         guard let name = nameTextField.text else { return }
-        //TODO: handle user default here
+        UserDefaults.standard.setValue(name, forKey: "fullName")
         navigateToEmergencyContact()
     }
     // MARK: - Functionality
