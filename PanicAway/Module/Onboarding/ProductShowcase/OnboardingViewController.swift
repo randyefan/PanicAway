@@ -21,8 +21,6 @@ class OnboardingViewController: UIViewController {
         healthKitManager.authorizeHealthKit() {
             nextView()
         }
-        
-        
     }
     
 

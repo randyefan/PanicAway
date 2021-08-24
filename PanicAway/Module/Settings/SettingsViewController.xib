@@ -38,7 +38,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssp-9N-5hI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="407"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRn-az-GM1" userLabel="Breathing Title">
                                     <rect key="frame" x="16" y="24" width="106" height="31"/>
@@ -47,13 +47,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1i0-3E-9g7" userLabel="Breathing Setting">
-                                    <rect key="frame" x="16" y="71" width="382" height="67"/>
+                                    <rect key="frame" x="16" y="71" width="382" height="133"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-7p-A3T" userLabel="Container Stack">
-                                            <rect key="frame" x="16" y="0.0" width="350" height="67"/>
+                                            <rect key="frame" x="16" y="0.0" width="350" height="133"/>
                                             <subviews>
                                                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oL2-dU-kqg" userLabel="Method Cell">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="66"/>
+                                                    <rect key="frame" x="0.0" y="-66" width="350" height="66"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="avw-d0-Nsp">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="65"/>
@@ -156,8 +156,8 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="aWD-xB-nxr"/>
                                                     </constraints>
                                                 </stackView>
-                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-WM-jbi" userLabel="Guided Audio Cell">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="66"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-WM-jbi" userLabel="Guided Audio Cell">
+                                                    <rect key="frame" x="0.0" y="67" width="350" height="66"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-Sj-Jwd" userLabel="Detail Cell">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="65"/>
@@ -171,6 +171,9 @@
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eY5-nX-grA" userLabel="Right Detail">
                                                                     <rect key="frame" x="301" y="17" width="51" height="31"/>
                                                                     <color key="onTintColor" name="Main"/>
+                                                                    <connections>
+                                                                        <action selector="audioSwitch:" destination="-1" eventType="valueChanged" id="MdV-lC-Whx"/>
+                                                                    </connections>
                                                                 </switch>
                                                             </subviews>
                                                         </stackView>
@@ -187,7 +190,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="16Q-pJ-oAZ" userLabel="Haptic Cell">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="66"/>
+                                                    <rect key="frame" x="0.0" y="133" width="350" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haptic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuc-o5-UMx">
                                                             <rect key="frame" x="0.0" y="21" width="52.5" height="24"/>
@@ -227,13 +230,13 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency and Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym9-MF-0gu">
-                                    <rect key="frame" x="24" y="178" width="238" height="31"/>
+                                    <rect key="frame" x="24" y="244" width="238" height="31"/>
                                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="22"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZM-xa-dwf" userLabel="Emergency and Health Setting">
-                                    <rect key="frame" x="16" y="225" width="382" height="132"/>
+                                    <rect key="frame" x="16" y="291" width="382" height="132"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8HZ-9v-URO" userLabel="Container Stack">
                                             <rect key="frame" x="16" y="0.0" width="350" height="132"/>

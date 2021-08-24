@@ -21,14 +21,14 @@ class SettingsViewController: UIViewController {
     var emergencyContact: [EmergencyContactModel]?
     var wcSession = WCSession.default
     let appDelegate = UIApplication.shared.delegate as! AppDelegate // This One Variable to get func sendMessages
-    
+
     var breathingTechnique: BreathingModel? {
         didSet {
             guard let breathing = breathingTechnique else { return }
             breathingMethodValue.text = breathing.breathingName
         }
     }
-    
+
     private let cycleOption = Array(4...100)
 
     override func viewDidLoad() {
@@ -40,16 +40,16 @@ class SettingsViewController: UIViewController {
         // BELOW IS: - Function that send messages using app delegate
         // appDelegate.sendMessage()
     }
-    
+
     func setupNavigationBar() {
         self.navigationController?.navigationBar.isHidden = false
     }
-    
+
     func setupWCSession() {
         wcSession.delegate = self
         wcSession.activate()
     }
-    
+
     func setupViewWithData() {
         getEmergencyContacts()
         let defaultBreathingId = UserDefaults.standard.integer(forKey: "defaultBreatheId")
@@ -62,10 +62,18 @@ class SettingsViewController: UIViewController {
         setupViewWithData()
         breathingCyclePickerView.isHidden = true
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         UserDefaults.standard.setValue(Int(breathingCycleValue.text ?? "4"), forKey: "defaultBreathingCycle")
         sendDataToWatch()
+    }
+
+    @IBAction func audioSwitch(_ sender: UISwitch) {
+        if guidedAudioToggle.isOn {
+            UserDefaults.standard.setValue(true, forKey: "defaultAudioState")
+        } else {
+            UserDefaults.standard.setValue(false, forKey: "defaultAudioState")
+        }
     }
 
     @IBAction func showHidePickerView(_ sender: Any) {
@@ -93,8 +101,9 @@ class SettingsViewController: UIViewController {
 fileprivate extension SettingsViewController {
     func initialSetup() {
         title = "Preferences"
+        guidedAudioToggle.isOn = UserDefaults.standard.bool(forKey: "defaultAudioState")
     }
-    
+
     func getEmergencyContacts() {
         if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
             do {
@@ -106,40 +115,40 @@ fileprivate extension SettingsViewController {
             }
         }
     }
-    
+
     func getSettingsModel() -> SettingModel {
         let breathingCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle")
         let isUsingHaptic = true // Handle Later
-        
+
         return SettingModel(defaultBreath: self.breathingTechnique, emergencyContact: self.emergencyContact, breathingCycle: breathingCycle, isUsingHaptic: isUsingHaptic)
     }
-    
+
     func sendDataToWatch() {
         let model = getSettingsModel()
-        
-        var settings: [String:Any] = [:]
+
+        var settings: [String: Any] = [:]
         settings["defaultBreathingCycle"] = model.breathingCycle ?? 4
         settings["defaultEmergencyContact"] = UserDefaults.standard.data(forKey: "defaultEmergencyContact") ?? Data()
         settings["defaultBreatheId"] = model.defaultBreath?.id
         settings["date"] = Date()
-        
+
         do {
             try wcSession.updateApplicationContext(settings)
         } catch {
             print("error: \(error.localizedDescription)")
         }
     }
-    
+
     func setDefaultBreathingCycle() {
-        
+
     }
-    
+
     func navigateToBreathingChoice() {
         let vc = BreathingChoiceViewController(entryPoint: .settings)
         vc.selected = breathingTechnique
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     func navigateToEmergencyContact() {
         let vc = EmergencyContactViewController(entryPoint: .settings)
         vc.emergencyContact = emergencyContact ?? []
@@ -169,11 +178,11 @@ extension SettingsViewController: WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         return
     }
-    
+
     func sessionDidBecomeInactive(_ session: WCSession) {
         return
     }
-    
+
     func sessionDidDeactivate(_ session: WCSession) {
         return
     }

@@ -27,16 +27,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="wew-dn-ZzV" userLabel="stack view tengah">
-                    <rect key="frame" x="30" y="338" width="330" height="113.33333333333331"/>
+                    <rect key="frame" x="30" y="338" width="330" height="120"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9l-bU-dbb">
-                            <rect key="frame" x="0.0" y="0.0" width="330" height="32.666666666666664"/>
+                            <rect key="frame" x="0.0" y="0.0" width="330" height="39.333333333333336"/>
                             <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Allow access to apple health for record  mindfulness and monitor your heart rate. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csR-hr-av1">
-                            <rect key="frame" x="0.0" y="72.666666666666686" width="330" height="40.666666666666657"/>
+                            <rect key="frame" x="0.0" y="79.333333333333314" width="330" height="40.666666666666657"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
