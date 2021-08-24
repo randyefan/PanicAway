@@ -20,6 +20,9 @@ class ProfileNameOnBoardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        view.onTap {
+            self.view.endEditing(true)
+        }
     }
     
     // MARK: - Setup Function for ViewController

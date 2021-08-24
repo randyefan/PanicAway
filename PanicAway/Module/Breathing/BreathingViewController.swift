@@ -10,6 +10,7 @@ import AVFoundation
 import EFCountingLabel
 import CoreHaptics
 import HealthKit
+import SwiftMessages
 
 enum BreathingState {
     case beforeBreathing
@@ -496,10 +497,53 @@ class BreathingViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    func getSentMessagePopUp() {
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.configureTheme(.success)
+        view.configureTheme(backgroundColor: UIColor(named: "Main")!, foregroundColor: .white)
+        view.button?.isHidden = true
+        view.configureContent(title: nil, body: "Whatsapp message has been sent", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
+        view.configureDropShadow()
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        SwiftMessages.show(view: view)
+    }
+    
+    func getNoContactPopUp() {
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.configureTheme(.error)
+        view.button?.isHidden = true
+        view.configureContent(title: nil, body: "You haven't added an emergency contact yet", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
+        view.configureDropShadow()
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        SwiftMessages.show(view: view)
+    }
+    
+    private func getEmergencyContact() -> [EmergencyContactModel]? {
+        // Get Emergency Contact Number in userDefaults
+        if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
+            do {
+                let decoder = JSONDecoder()
+                let emergencyContact = try decoder.decode([EmergencyContactModel].self, from: data)
+                return emergencyContact
+            } catch {
+                print("Unable to Decode (\(error))")
+                return nil
+            }
+        }
+        
+        return nil
+    }
 }
 
 extension BreathingViewController {
     func openUsingScheme() {
+        let emergencyContact = getEmergencyContact()
+        guard let contact = emergencyContact, contact.count != 0 else {
+            getNoContactPopUp()
+            return
+        }
+        getSentMessagePopUp()
         appDelegate.sendMessage()
         print("opening from scheme")
     }
