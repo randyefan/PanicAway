@@ -145,6 +145,13 @@ fileprivate extension SettingsViewController {
         vc.emergencyContact = emergencyContact ?? []
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func navigateToProfileName() {
+        let vc = ProfileNameFromSettingViewController()
+        //lempar nama disini
+        //vc.name = blablabla
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {

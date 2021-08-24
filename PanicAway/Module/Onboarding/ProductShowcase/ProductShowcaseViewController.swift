@@ -81,13 +81,15 @@ class ProductShowcaseViewController: UIViewController{
     @IBAction func skipButtonPressed(_ sender: Any) {
         setDefaultBreathingTechnique()
         setDefaultBreathingCycle()
-        navigateToAppleHealthAuthorize()
+        navigateToProfileName()
+        
     }
     
     func nextView(){
         setDefaultBreathingTechnique()
         setDefaultBreathingCycle()
-        navigateToAppleHealthAuthorize()
+        navigateToProfileName()
+        
     }
     
     
@@ -105,6 +107,11 @@ class ProductShowcaseViewController: UIViewController{
     
     private func navigateToAppleHealthAuthorize() {
         let vc = OnboardingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func navigateToProfileName(){
+        let vc = ProfileNameOnBoardingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
