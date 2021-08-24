@@ -54,7 +54,16 @@ class EmergencyContactViewController: UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         if entryPoint == .settings {
             setSaveEmergencyContact()
+            if emergencyContact.count == 0 {
+                UserDefaults.standard.removeObject(forKey: "defaultEmergencyContact")
+            }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emergencyContact = getEmergencyContact() ?? []
+        contactTableView.reloadData()
     }
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
@@ -113,6 +122,22 @@ fileprivate extension EmergencyContactViewController {
     func navigateToAuthorizeHealthKit() {
         let vc = OnboardingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func getEmergencyContact() -> [EmergencyContactModel]? {
+        // Get Emergency Contact Number in userDefaults
+        if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
+            do {
+                let decoder = JSONDecoder()
+                let emergencyContact = try decoder.decode([EmergencyContactModel].self, from: data)
+                return emergencyContact
+            } catch {
+                print("Unable to Decode (\(error))")
+                return nil
+            }
+        }
+        
+        return nil
     }
 }
 

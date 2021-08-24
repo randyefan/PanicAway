@@ -138,7 +138,6 @@ fileprivate extension SettingsViewController {
     
     func navigateToEmergencyContact() {
         let vc = EmergencyContactViewController(entryPoint: .settings)
-        vc.emergencyContact = emergencyContact ?? []
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
