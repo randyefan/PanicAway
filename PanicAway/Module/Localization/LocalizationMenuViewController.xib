@@ -16,7 +16,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocalizationMenuViewController" customModule="PanicAway" customModuleProvider="target">
             <connections>
-                <outlet property="pickerView" destination="dfQ-tm-Jg7" id="5AZ-MU-rCJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +27,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgEmergencyContact" translatesAutoresizingMaskIntoConstraints="NO" id="DOq-kO-dW5">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-uv-PS7">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-uv-PS7">
                     <rect key="frame" x="24" y="223" width="366" height="433"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
@@ -75,22 +74,16 @@
                         </button>
                     </subviews>
                 </stackView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfQ-tm-Jg7">
-                    <rect key="frame" x="24" y="192" width="366" height="216"/>
-                </pickerView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="dfQ-tm-Jg7" firstAttribute="top" secondItem="9ao-EM-QuL" secondAttribute="bottom" constant="8" symbolic="YES" id="4Bd-X8-2gP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9ao-EM-QuL" secondAttribute="trailing" constant="24" id="6XH-Ud-y15"/>
-                <constraint firstItem="dfQ-tm-Jg7" firstAttribute="trailing" secondItem="9ao-EM-QuL" secondAttribute="trailing" id="6hC-4L-mQt"/>
                 <constraint firstItem="9ao-EM-QuL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="8sx-ch-ODV"/>
                 <constraint firstItem="9ao-EM-QuL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="9Oh-Fl-wsY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ep8-BV-8Au" secondAttribute="bottom" constant="119" id="GKu-lV-MlQ"/>
                 <constraint firstItem="Ep8-BV-8Au" firstAttribute="leading" secondItem="9ao-EM-QuL" secondAttribute="leading" id="QbD-LT-kQx"/>
                 <constraint firstItem="u2P-uv-PS7" firstAttribute="top" secondItem="9ao-EM-QuL" secondAttribute="bottom" constant="39" id="XHI-gh-kd3"/>
-                <constraint firstItem="dfQ-tm-Jg7" firstAttribute="leading" secondItem="9ao-EM-QuL" secondAttribute="leading" id="Y5l-8P-XCN"/>
                 <constraint firstItem="DOq-kO-dW5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b2E-fB-RQD"/>
                 <constraint firstItem="u2P-uv-PS7" firstAttribute="leading" secondItem="9ao-EM-QuL" secondAttribute="leading" id="gyC-1w-47T"/>
                 <constraint firstAttribute="bottom" secondItem="DOq-kO-dW5" secondAttribute="bottom" id="jAa-Ao-mFg"/>
