@@ -33,7 +33,6 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
             setLanguange(language: languageChosed)
         }else{
             setLanguange(language: "en")
-            print("languange is set to default")
         }
         selectButton.isEnabled = true
        
@@ -49,8 +48,6 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
         // Do any additional setup after loading the view.
         languageOptions = [LanguageModel(flag: "🇬🇧", name: "English", id: "en"),
                             LanguageModel(flag: "🇮🇩", name: "Bahasa Indonesia", id: "id")]
-        
-        print(UserDefaults.standard.string(forKey: userLanguageKey))
         
         languageTableView.register(LocalizationMenuTableViewCell.nib(), forCellReuseIdentifier: LocalizationMenuTableViewCell.identifier)
         
@@ -75,7 +72,6 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
     
     func setLanguange(language: String) {
         UserDefaults.standard.set(language, forKey: userLanguageKey)
-        print("setting languange with this langunage \(language)")
     }
 }
 
