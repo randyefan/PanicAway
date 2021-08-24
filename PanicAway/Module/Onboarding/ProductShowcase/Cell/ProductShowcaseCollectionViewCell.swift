@@ -12,13 +12,19 @@ class ProductShowcaseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var cellTitle: UILabel!
     @IBOutlet weak var cellDescription: UILabel!
+    @IBOutlet weak var cellDescriptionBottomConstraint: NSLayoutConstraint!
     
     static let identifier = "ProductShowcaseCollectionViewCell"
+    var pageControlHeigtBottomConstraint: CGFloat = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
+    }
+    
+    override func layoutSubviews() {
+        cellDescriptionBottomConstraint.constant = pageControlHeigtBottomConstraint + 50
     }
     
     static func nib()-> UINib{

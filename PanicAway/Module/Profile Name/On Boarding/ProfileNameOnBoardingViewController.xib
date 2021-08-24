@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MPLUSRounded1c-Medium.ttf">
+            <string>RoundedMplus1c-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileNameOnBoardingViewController" customModule="PanicAway" customModuleProvider="target">
+            <connections>
+                <outlet property="nameTextField" destination="3r9-db-BRA" id="xuw-1l-hbb"/>
+                <outlet property="saveButton" destination="4gC-x0-ZtE" id="hGo-Er-0iO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgEmergencyContact" translatesAutoresizingMaskIntoConstraints="NO" id="Z0D-rt-58k" userLabel="bg_layer">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Klv-rR-ddC">
+                    <rect key="frame" x="30" y="332" width="354" height="145.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us your Fullname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-sO-GlO">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="39.5"/>
+                            <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3r9-db-BRA">
+                            <rect key="frame" x="0.0" y="79.5" width="354" height="66"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="66" id="90C-py-aaf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.90013664959999995" green="0.62855571509999997" blue="0.576456368" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_name" translatesAutoresizingMaskIntoConstraints="NO" id="gRa-ho-sKB">
+                    <rect key="frame" x="30" y="90" width="354" height="202"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="202" id="JBR-zS-CFx"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nRt-42-5g5">
+                    <rect key="frame" x="30" y="736" width="354" height="104"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-x0-ZtE" customClass="SaveButton" customModule="PanicAway" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
+                            <color key="backgroundColor" name="Main"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="hjj-yS-jZt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <state key="normal" title="Save">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="14"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="saveButtonAction:" destination="-1" eventType="touchUpInside" id="5yz-Mh-Leg"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmj-8j-4VM">
+                            <rect key="frame" x="0.0" y="58" width="354" height="46"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="zyy-me-rbc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="Background"/>
+            <constraints>
+                <constraint firstItem="nRt-42-5g5" firstAttribute="leading" secondItem="Klv-rR-ddC" secondAttribute="leading" id="19P-2C-L7o"/>
+                <constraint firstItem="Klv-rR-ddC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="5oa-ll-hgh"/>
+                <constraint firstItem="nRt-42-5g5" firstAttribute="trailing" secondItem="Klv-rR-ddC" secondAttribute="trailing" id="8IX-PE-qiS"/>
+                <constraint firstItem="Z0D-rt-58k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ISc-ta-uot"/>
+                <constraint firstItem="gRa-ho-sKB" firstAttribute="leading" secondItem="Klv-rR-ddC" secondAttribute="leading" id="P3k-kp-TI9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z0D-rt-58k" secondAttribute="trailing" id="ZEa-EO-8oJ"/>
+                <constraint firstItem="Klv-rR-ddC" firstAttribute="top" secondItem="gRa-ho-sKB" secondAttribute="bottom" constant="40" id="d2j-Sw-bEJ"/>
+                <constraint firstItem="gRa-ho-sKB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="46" id="eSU-Yy-5vS"/>
+                <constraint firstAttribute="bottom" secondItem="Z0D-rt-58k" secondAttribute="bottom" id="ewB-iX-voX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Klv-rR-ddC" secondAttribute="trailing" constant="30" id="hC7-ei-vBn"/>
+                <constraint firstItem="Z0D-rt-58k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mRs-BE-IIp"/>
+                <constraint firstItem="gRa-ho-sKB" firstAttribute="trailing" secondItem="Klv-rR-ddC" secondAttribute="trailing" id="pb4-ri-Sbe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nRt-42-5g5" secondAttribute="bottom" constant="22" id="tLp-hX-3VX"/>
+            </constraints>
+            <point key="canvasLocation" x="49" y="81"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bgEmergencyContact" width="375" height="812"/>
+        <image name="profile_name" width="181" height="175"/>
+        <namedColor name="Background">
+            <color red="0.99599999189376831" green="0.98400002717971802" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Main">
+            <color red="0.94499999284744263" green="0.6119999885559082" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
