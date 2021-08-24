@@ -39,13 +39,17 @@ class ProductShowcaseViewController: UIViewController{
         slides = [
             ProductShowcaseSlide(title: "Cope with panic attack",
                                  description:"Guided breathing to relieve your panic attack and a one-click emergency contact.",
-                                 image: #imageLiteral(resourceName: "OnboardingStress")),
+                                 image: UIImage(named: "OnboardingStress") ?? #imageLiteral(resourceName: "OnboardingBatikGringsing")),
+        
             ProductShowcaseSlide(title: "Cultural Tradition",
                                  description:"Gringsing Batik belief to shield and protect people from danger",
-                                 image: #imageLiteral(resourceName: "BatikGringsing")),
+                                 image: UIImage(named: "OnboardingBatikGringsing") ?? #imageLiteral(resourceName: "hold4")),
             ProductShowcaseSlide(title: "Quick Access",
                                  description: "Seek assistance quickly by using Shortcut and a watchOS Complications.",
-                                 image: #imageLiteral(resourceName: "OnboardingWatch")),
+                                 image: UIImage(named: "OnboardingWatch") ?? #imageLiteral(resourceName: "breatheIn59")),
+            ProductShowcaseSlide(title: "Widget",
+                                 description: "Seek assistance quickly by using widget, Shortcut and a watchOS Complications.",
+                                 image: UIImage(named: "OnboardingWidget") ?? #imageLiteral(resourceName: "Hold 3_00050")),
         ]
         
         productShowcaseCollectionView.backgroundColor = UIColor(named: "Background")
@@ -124,6 +128,7 @@ extension ProductShowcaseViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductShowcaseCollectionViewCell.identifier, for: indexPath) as! ProductShowcaseCollectionViewCell
         
         cell.setCellData(with: slides[indexPath.row])
+        cell.pageControlHeigtBottomConstraint = countPageControlBottomConstraint()
         return cell
     }
     
@@ -139,6 +144,11 @@ extension ProductShowcaseViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func countPageControlBottomConstraint() -> CGFloat{
+        return self.view.frame.height - productShowcasePageControl.frame.maxY
+        
     }
     
 }
