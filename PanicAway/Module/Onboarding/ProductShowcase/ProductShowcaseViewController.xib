@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KnQ-Hn-Gs7">
-                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                    <rect key="frame" x="0.0" y="-25" width="390" height="869"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iwj-EP-Chv">
                         <size key="itemSize" width="20" height="20"/>
@@ -82,7 +82,7 @@
                 <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DXl-45-2B7"/>
                 <constraint firstItem="Nt0-j5-GhH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="EqR-vn-Ehl"/>
                 <constraint firstItem="Nt0-j5-GhH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OIg-8N-hSP"/>
-                <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Phr-kB-Agu"/>
+                <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-25" id="Phr-kB-Agu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nt0-j5-GhH" secondAttribute="trailing" constant="24" id="eiW-Yn-MQn"/>
                 <constraint firstItem="KnQ-Hn-Gs7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="h79-GM-gnQ"/>
                 <constraint firstItem="Nt0-j5-GhH" firstAttribute="top" secondItem="Uyc-8r-Zyk" secondAttribute="bottom" constant="10" id="laa-zG-rg4"/>

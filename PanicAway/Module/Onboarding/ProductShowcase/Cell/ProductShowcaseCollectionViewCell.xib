@@ -19,20 +19,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductShowcaseCollectionViewCell" customModule="PanicAway" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="766"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="390" height="766"/>
+                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAx-b6-CWx">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="766"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnboardingWatch" translatesAutoresizingMaskIntoConstraints="NO" id="T4y-zm-HIT">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="766"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnboardingBatikGringsing" translatesAutoresizingMaskIntoConstraints="NO" id="T4y-zm-HIT">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrF-IT-aNY">
-                                <rect key="frame" x="24" y="516" width="342" height="80"/>
+                                <rect key="frame" x="24" y="594" width="342" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="UxF-Fl-yQm"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itf-2e-dtf">
-                                <rect key="frame" x="158" y="471.5" width="74.5" height="39.5"/>
+                                <rect key="frame" x="158" y="549.5" width="74.5" height="39.5"/>
                                 <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -73,6 +73,7 @@
             <size key="customSize" width="503" height="349"/>
             <connections>
                 <outlet property="cellDescription" destination="XrF-IT-aNY" id="ra8-Q2-Lhk"/>
+                <outlet property="cellDescriptionBottomConstraint" destination="4ay-W7-naz" id="ksQ-Fq-fFn"/>
                 <outlet property="cellImageView" destination="T4y-zm-HIT" id="79e-jS-2wO"/>
                 <outlet property="cellTitle" destination="itf-2e-dtf" id="kQY-gP-Ee4"/>
             </connections>
@@ -80,7 +81,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="OnboardingWatch" width="375" height="787"/>
+        <image name="OnboardingBatikGringsing" width="750" height="1334"/>
         <namedColor name="Background">
             <color red="0.99599999189376831" green="0.98400002717971802" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

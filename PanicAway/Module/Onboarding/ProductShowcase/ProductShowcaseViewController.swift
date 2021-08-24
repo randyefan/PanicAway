@@ -128,6 +128,7 @@ extension ProductShowcaseViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductShowcaseCollectionViewCell.identifier, for: indexPath) as! ProductShowcaseCollectionViewCell
         
         cell.setCellData(with: slides[indexPath.row])
+        cell.pageControlHeigtBottomConstraint = countPageControlBottomConstraint()
         return cell
     }
     
@@ -143,6 +144,11 @@ extension ProductShowcaseViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func countPageControlBottomConstraint() -> CGFloat{
+        return self.view.frame.height - productShowcasePageControl.frame.maxY
+        
     }
     
 }
