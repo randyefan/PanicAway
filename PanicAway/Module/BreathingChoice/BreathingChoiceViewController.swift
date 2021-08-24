@@ -18,8 +18,6 @@ enum BreathingChoiceEntryPoint {
 
 class BreathingChoiceViewController: UIViewController {
     // MARK: - IBOutlet
-    
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var titleView: UIView!
