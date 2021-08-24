@@ -12,6 +12,7 @@ private let userLanguageKey = "applicationKey"
 class LocalizationMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var languageTableView: UITableView!
+    @IBOutlet weak var selectButton: UIButton!
     
     var languageOptions: [LanguageModel] = []
     
@@ -34,6 +35,7 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
             setLanguange(language: "en")
             print("languange is set to default")
         }
+        selectButton.isEnabled = true
        
     }
     
@@ -54,9 +56,8 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
         
         languageTableView.dataSource = self
         languageTableView.delegate = self
-        //Data source and delegate self jangan lupa masukin dulu table nya kesini
         
-        
+        selectButton.isEnabled = false
         
         
         self.navigationController?.navigationBar.isHidden = true
