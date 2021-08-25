@@ -33,7 +33,7 @@ enum BreathingTechnique: Int {
 
 class BreathingViewController: UIViewController {
     // MARK: - IBOutlet
-    
+
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var circularProgressBar: CircularProgressBar!
     @IBOutlet weak var settingsView: UIImageView!
@@ -66,7 +66,7 @@ class BreathingViewController: UIViewController {
     var mindfulnessMinutes: Double{
         return Double((minutesTimer*60) + secondsTimer)
     }
-    
+
     var state: BreathingState = .beforeBreathing {
         didSet {
             setupView()
@@ -84,7 +84,7 @@ class BreathingViewController: UIViewController {
             }
         }
     }
-    
+
     var breathingStatus: BreathingStatus? {
         didSet {
             guard let technique = technique else { return }
@@ -117,11 +117,11 @@ class BreathingViewController: UIViewController {
             }
         }
     }
-    
+
     override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
-    
+
     var isRunning: Bool = false
     var countdownTime = 3
     var breatheTime = 0 // Handle With data from model later! (REQUIRED)
@@ -130,21 +130,21 @@ class BreathingViewController: UIViewController {
     var progress: Float = 0.0
     var counter = 0
     var isPaused: Bool = false
-    
+
     //timer
     var secondsTimer = 0
     var minutesTimer = 0
-    
+
     //animation
     var breatheInAnimation = [UIImage]()
     var breatheOutAnimation = [UIImage]()
     var breatheHoldAnimation = [UIImage]()
     var breatheHold444Animation = [UIImage]()
     var breatheHold478Animation = [UIImage]()
-    
+
     //AVFoundation
     var player: AVAudioPlayer?
-    
+
     // MARK: - Computed Properties
     var technique: BreathingModel? {
         didSet {
@@ -154,14 +154,14 @@ class BreathingViewController: UIViewController {
             setupChevronByPosition(position: BreathingTechnique(rawValue: technique.id)!)
         }
     }
-    
+
     // MARK: - Variable DisplayLink (For working with timer)
-    
+
     var preparation: Timer?
     var breathing: Timer?
-    
+
     // MARK: - ViewController LifeCycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         data.loadDataBreath()
@@ -170,15 +170,15 @@ class BreathingViewController: UIViewController {
         setupHaptic()
         setupAnimation()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar()
         setupFirstBreathingScreen()
         setupToDefaultBreathingTechnique()
     }
-    
+
     // MARK: - Setup View for ViewController
-    
+
     private func setupView() {
         switch state {
         case .beforeBreathing:
@@ -223,47 +223,47 @@ class BreathingViewController: UIViewController {
             print("There was an error creating the engine: \(error.localizedDescription)")
         }
     }
-    
+
     func setupToDefaultBreathingTechnique() {
         let idBreath = UserDefaults.standard.integer(forKey: "defaultBreatheId")
         breathingId = idBreath
         technique = data.entries[idBreath]
     }
-    
+
     func setupNavigationBar() {
         self.navigationController?.navigationBar.isHidden = true
     }
-    
+
     private func setupObserveAction() {
         settingsView.onTap {
             self.navigateToSettings()
         }
-        
+
         closeView.onTap {
             self.preparation?.invalidate()
             self.breathing?.invalidate()
             self.state = .finish
         }
-        
+
         endBreathingButton.onTap {
             self.breathing?.invalidate()
             self.state = .finish
         }
-        
+
         leftChevronView.onTap {
             if !self.leftChevronImageView.isHidden {
                 self.breathingId -= 1
                 self.technique = self.data.entries[self.breathingId]
             }
         }
-        
+
         rightChevronView.onTap {
             if !self.rightChevronImageView.isHidden {
                 self.breathingId += 1
                 self.technique = self.data.entries[self.breathingId]
             }
         }
-        
+
         topChevronView.onTap {
             self.showBreathingChoiceModal()
         }
@@ -282,7 +282,7 @@ class BreathingViewController: UIViewController {
             }
         }
     }
-    
+
     func setupChevronByPosition(position: BreathingTechnique) {
         switch position {
         case .one:
@@ -296,34 +296,34 @@ class BreathingViewController: UIViewController {
             rightChevronImageView.isHidden = true
         }
     }
-    
-    func setupAnimation(){
-        
-        
+
+    func setupAnimation() {
+
+
         circularProgressBar.progress = 0
-        
-        
-        
-        for frame in (0...95){
+
+
+
+        for frame in (0...95) {
             breatheInAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
         }
-        
-        for frame in (0...95).reversed(){
+
+        for frame in (0...95).reversed() {
             breatheOutAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
         }
-        
-        for frame in (0...167){
+
+        for frame in (0...167) {
             breatheHold478Animation.append(UIImage(named: String(format: "Hold 478_%05d", frame))!)
         }
-        
-        for frame in (0...95){
+
+        for frame in (0...95) {
             breatheHold444Animation.append(UIImage(named: String(format: "Hold 3_%05d", frame))!)
         }
     }
-    
-    
+
+
     // MARK: - Functionality
-    
+
     func setupViewForState(topView: Bool, titleLabel: Bool, captionLabel: Bool, breathingMethodeStackView: Bool, circularProgressBar: Bool, endButton: Bool, breathingChoiceView: Bool) {
         self.topView.isHidden = topView
         self.titleLabel.isHidden = titleLabel
@@ -334,42 +334,42 @@ class BreathingViewController: UIViewController {
         self.endBreathingButton.isHidden = endButton
         self.breathingChoiceView.isHidden = breathingChoiceView
     }
-    
+
     func navigateToSettings() {
         let vc = SettingsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     func showBreathingChoiceModal() {
         let vc = BreathingChoiceViewController(entryPoint: .homePage)
-        
+
         vc.selected = self.technique
-        
+
         vc.changeBreathingTechnieque = { newBreathingTechnique in
             self.technique = newBreathingTechnique
         }
-        
+
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
-    
+
     func showFinishedBreathingPage() {
         let vc = BreatheFinishedViewController()
-        
+
         vc.finishBreathing = {
             self.state = .beforeBreathing
         }
-        
+
         vc.repeatBreathing = {
             self.state = .breathingOn
         }
-        
-        
+
+
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overCurrentContext
         self.navigationController?.present(nav, animated: true, completion: nil)
     }
-    
-    
+
+
     func startPreparation() {
         if state == .breathingOn {
             prepareLabel.isHidden = false
@@ -382,7 +382,7 @@ class BreathingViewController: UIViewController {
             }
         }
     }
-    
+
     func startBreathing() {
         breathingStatus = .breatheIn
         if state == .breathingOn {
@@ -393,18 +393,18 @@ class BreathingViewController: UIViewController {
             captionLabel.countFrom(CGFloat(techniqueCount + 1), to: 1, withDuration: (Double(techniqueCount)))
         }
     }
-    
+
     func updateLabelBreathing() {
         guard let techniqueCount = technique else { return }
         if breathingStatus == .breatheOut {
             captionLabel.countFrom(CGFloat(techniqueCount.breathOutCount + 1), to: 1, withDuration: (Double(techniqueCount.breathOutCount)))
-        } else if breathingStatus == .breatheIn{
+        } else if breathingStatus == .breatheIn {
             captionLabel.countFrom(CGFloat(techniqueCount.breathInCount + 1), to: 1, withDuration: (Double(techniqueCount.breathInCount)))
         } else if breathingStatus == .holdBreathe {
             captionLabel.countFrom(CGFloat(techniqueCount.holdOnCount + 1), to: 1, withDuration: (Double(techniqueCount.holdOnCount)))
         }
     }
-    
+
     func setHapticForASecond(duration: Float) {
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
@@ -425,10 +425,10 @@ class BreathingViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    
+
     @objc func runCountDown() {
-       // print("breathe time \(breatheTime)")
-        
+        // print("breathe time \(breatheTime)")
+
         //timer logic here
         if secondsTimer == 60 {
             secondsTimer = 0
@@ -438,12 +438,12 @@ class BreathingViewController: UIViewController {
         }
         counter += 1
         //print(counter)
-        
+
         // MARK: - TODO: CGFloat(progress) not counting (0,0), so the circularProgressBar still 0.2
-        circularProgressBar.progress +=  CGFloat(progress)
+        circularProgressBar.progress += CGFloat(progress)
         captionLabel.isHidden = false
         print(circularProgressBar.progress)
-        
+
         if breatheTime == 1 {
             if breathingStatus == .breatheIn {
                 self.breathingStatus = .holdBreathe
@@ -475,26 +475,28 @@ class BreathingViewController: UIViewController {
             breatheTime -= 1
         }
     }
-    
+
     func playInstruction() {
-        var filename = ""
-        switch breathingStatus {
-        case .breatheIn:
-            filename = "VO - Breath In"
-        case .breatheOut:
-            filename = "VO - Breath Out"
-        default:
-            filename = "VO - Hold"
-        }
-        
-        guard let path = Bundle.main.path(forResource: filename, ofType: "mp3") else { return }
-        
-        let url = URL(fileURLWithPath: path)
-        do{
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-        } catch let error {
-            print(error.localizedDescription)
+        if UserDefaults.standard.bool(forKey: "defaultAudioState") {
+            var filename = ""
+            switch breathingStatus {
+            case .breatheIn:
+                filename = "VO - Breath In"
+            case .breatheOut:
+                filename = "VO - Breath Out"
+            default:
+                filename = "VO - Hold"
+            }
+
+            guard let path = Bundle.main.path(forResource: filename, ofType: "mp3") else { return }
+
+            let url = URL(fileURLWithPath: path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player?.play()
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
     }
     

@@ -12,10 +12,10 @@ class ProfileNameOnBoardingViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var saveButton: SaveButton!
     @IBOutlet weak var nameTextField: UITextField!
-    
+
     // MARK: - Variable
     private var name: String?
-    
+
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,20 +24,20 @@ class ProfileNameOnBoardingViewController: UIViewController {
             self.view.endEditing(true)
         }
     }
-    
+
     // MARK: - Setup Function for ViewController
-    func setupView(){
+    func setupView() {
         saveButton.isEnabled = false
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
-    
+
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard nameTextField.text != nil else {
             return
         }
         saveButton.isEnabled = true
     }
-    
+
     // MARK: - Action Triggered
     @IBAction func saveButtonAction(_ sender: UIButton) {
         guard let name = nameTextField.text else { return }
@@ -49,10 +49,9 @@ class ProfileNameOnBoardingViewController: UIViewController {
         let vc = EmergencyContactViewController(entryPoint: .onBoarding)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     private func navigateToAppleHealthAuthorize() {
         let vc = OnboardingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
