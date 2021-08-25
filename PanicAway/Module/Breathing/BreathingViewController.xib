@@ -30,6 +30,7 @@
                 <outlet property="firstStateAnimationImageView" destination="98O-9l-Zx6" id="MxQ-AQ-vjW"/>
                 <outlet property="leftChevronImageView" destination="DrJ-tZ-OxA" id="I9h-pJ-UBk"/>
                 <outlet property="leftChevronView" destination="T1I-p5-CxJ" id="hQv-z2-aNp"/>
+                <outlet property="overlayImageView" destination="VqD-Bs-qV2" id="LTU-Xr-q6K"/>
                 <outlet property="prepareLabel" destination="ri2-qF-B7h" id="7mF-Mk-e6a"/>
                 <outlet property="rightChevronImageView" destination="5Zf-QJ-Yc5" id="1E8-P8-UhF"/>
                 <outlet property="rightChevronView" destination="b96-cZ-V24" id="adg-Pq-rk4"/>
@@ -299,7 +300,7 @@
                         <constraint firstAttribute="height" constant="34" id="Nuf-Sa-aTI"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="VqD-Bs-qV2">
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="VqD-Bs-qV2">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
             </subviews>

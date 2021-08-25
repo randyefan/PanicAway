@@ -10,6 +10,7 @@ import AVFoundation
 import EFCountingLabel
 import CoreHaptics
 import HealthKit
+import SwiftMessages
 
 enum BreathingState {
     case beforeBreathing
@@ -52,13 +53,16 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var breatheTechniqueGoalLabel: UILabel!
     @IBOutlet weak var endBreathingButton: UIButton!
     @IBOutlet weak var breathingChoiceView: UIStackView!
+    @IBOutlet weak var overlayImageView: UIImageView!
     
     
     // MARK: - Variable
     var breathingId: Int = 0
     var data = BreathingLoader()
+    var isFirstBreathingScreen = true
     let healthKitManager = HealthKitManager()
     var startDate = Date()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var mindfulnessMinutes: Double{
         return Double((minutesTimer*60) + secondsTimer)
     }
@@ -169,6 +173,7 @@ class BreathingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar()
+        setupFirstBreathingScreen()
         setupToDefaultBreathingTechnique()
     }
     
@@ -195,6 +200,16 @@ class BreathingViewController: UIViewController {
             DispatchQueue.main.async {
                 self.captionLabel.text = "Yay, you’ve finished your breathing exercise!"
             }
+        }
+    }
+    
+    func setupFirstBreathingScreen() {
+        if UserDefaults.standard.bool(forKey: "isNotFirstBreathingScreen") {
+            isFirstBreathingScreen = false
+            overlayImageView.isHidden = true
+        } else {
+            isFirstBreathingScreen = true
+            overlayImageView.isHidden = false
         }
     }
     
@@ -251,6 +266,12 @@ class BreathingViewController: UIViewController {
         
         topChevronView.onTap {
             self.showBreathingChoiceModal()
+        }
+        
+        overlayImageView.onTap {
+            self.overlayImageView.isHidden = true
+            self.isFirstBreathingScreen = false
+            UserDefaults.standard.setValue(true, forKey: "isNotFirstBreathingScreen")
         }
         
         if state == .beforeBreathing {
@@ -476,11 +497,54 @@ class BreathingViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    func getSentMessagePopUp() {
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.configureTheme(.success)
+        view.configureTheme(backgroundColor: UIColor(named: "Main")!, foregroundColor: .white)
+        view.button?.isHidden = true
+        view.configureContent(title: nil, body: "Whatsapp message has been sent", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
+        view.configureDropShadow()
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        SwiftMessages.show(view: view)
+    }
+    
+    func getNoContactPopUp() {
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.configureTheme(.error)
+        view.button?.isHidden = true
+        view.configureContent(title: nil, body: "You haven't added an emergency contact yet", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
+        view.configureDropShadow()
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        SwiftMessages.show(view: view)
+    }
+    
+    private func getEmergencyContact() -> [EmergencyContactModel]? {
+        // Get Emergency Contact Number in userDefaults
+        if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
+            do {
+                let decoder = JSONDecoder()
+                let emergencyContact = try decoder.decode([EmergencyContactModel].self, from: data)
+                return emergencyContact
+            } catch {
+                print("Unable to Decode (\(error))")
+                return nil
+            }
+        }
+        
+        return nil
+    }
 }
 
 extension BreathingViewController {
     func openUsingScheme() {
-        // TODO: Handle Send Message Whatsapp Here
+        let emergencyContact = getEmergencyContact()
+        guard let contact = emergencyContact, contact.count != 0 else {
+            getNoContactPopUp()
+            return
+        }
+        getSentMessagePopUp()
+        appDelegate.sendMessage()
         print("opening from scheme")
     }
 }

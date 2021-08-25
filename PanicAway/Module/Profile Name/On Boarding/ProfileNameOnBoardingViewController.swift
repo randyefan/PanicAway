@@ -20,6 +20,9 @@ class ProfileNameOnBoardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        view.onTap {
+            self.view.endEditing(true)
+        }
     }
     
     // MARK: - Setup Function for ViewController
@@ -38,7 +41,7 @@ class ProfileNameOnBoardingViewController: UIViewController {
     // MARK: - Action Triggered
     @IBAction func saveButtonAction(_ sender: UIButton) {
         guard let name = nameTextField.text else { return }
-        //TODO: handle user default here
+        UserDefaults.standard.setValue(name, forKey: "fullName")
         navigateToEmergencyContact()
     }
     // MARK: - Functionality
