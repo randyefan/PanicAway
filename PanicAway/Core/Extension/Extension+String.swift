@@ -16,7 +16,8 @@ extension String {
         } else if firstString == "0" {
             let newText = self.replacingCharacters(in: ...self.startIndex, with: "62")
             return newText
+        } else {
+            return self
         }
-        return ""
     }
 }

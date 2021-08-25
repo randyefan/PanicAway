@@ -30,6 +30,7 @@
 		3BA4309926CDE5360086744B /* PanicAway WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3BA4308926CDE5350086744B /* PanicAway WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D526B394B700380825 /* HealthKit.framework */; };
 		3BFA29D926B39A1200380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D826B39A1200380825 /* HealthKit.framework */; };
+		6105045F26D547C200BE3D3A /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 6105045E26D547C200BE3D3A /* SwiftMessages */; };
 		611451D926CD76A800C4A44F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611451D826CD76A800C4A44F /* Networking.swift */; };
 		611B86E126A9AFD300ECA8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B86E026A9AFD300ECA8AD /* AppDelegate.swift */; };
 		611B86EA26A9AFD300ECA8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B86E926A9AFD300ECA8AD /* Assets.xcassets */; };
@@ -292,6 +293,7 @@
 				3B1D8FA626CE40D80047FF44 /* AuthenticationServices.framework in Frameworks */,
 				AACE334426BF859000FEA904 /* EFCountingLabel in Frameworks */,
 				613B28A126B6825F004CB533 /* SDWebImageLottieCoder in Frameworks */,
+				6105045F26D547C200BE3D3A /* SwiftMessages in Frameworks */,
 				3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,6 +708,7 @@
 				61B5B9A926A9BEE700FE700B /* Lottie */,
 				613B28A026B6825F004CB533 /* SDWebImageLottieCoder */,
 				AACE334326BF859000FEA904 /* EFCountingLabel */,
+				6105045E26D547C200BE3D3A /* SwiftMessages */,
 			);
 			productName = PanicAway;
 			productReference = 611B86DD26A9AFD300ECA8AD /* PanicAway.app */;
@@ -786,6 +789,7 @@
 				61B5B9A826A9BEE700FE700B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				613B289F26B6825F004CB533 /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */,
 				AACE334226BF859000FEA904 /* XCRemoteSwiftPackageReference "EFCountingLabel" */,
+				6105045D26D547C200BE3D3A /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 			);
 			productRefGroup = 611B86DE26A9AFD300ECA8AD /* Products */;
 			projectDirPath = "";
@@ -994,7 +998,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WidgetExtension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = "PanicAway Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1002,7 +1006,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rmputraminang.panicaway.mc3.PanicAway-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.randyefan8.panicaway.mc3.PanicAway-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1019,7 +1023,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WidgetExtension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = "PanicAway Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1027,7 +1031,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rmputraminang.panicaway.mc3.PanicAway-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.randyefan8.panicaway.mc3.PanicAway-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1155,14 +1159,14 @@
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WatchKit Extension/PanicAway WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan8.panicaway.mc3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1180,14 +1184,14 @@
 				CODE_SIGN_ENTITLEMENTS = "PanicAway WatchKit Extension/PanicAway WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				INFOPLIST_FILE = "PanicAway WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan8.panicaway.mc3.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1207,7 +1211,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1215,7 +1219,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan8.panicaway.mc3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1234,7 +1238,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3RR7Q3QN2;
+				DEVELOPMENT_TEAM = 33Z87RYAC2;
 				IBSC_MODULE = PanicAway_WatchKit_Extension;
 				INFOPLIST_FILE = "PanicAway WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1242,7 +1246,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan8.panicaway.mc3.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1269,7 +1273,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan8.panicaway.mc3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1294,7 +1298,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmputraminang.panicaway.mc3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.randyefan8.panicaway.mc3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1355,6 +1359,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6105045D26D547C200BE3D3A /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.3;
+			};
+		};
 		613B289F26B6825F004CB533 /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageLottieCoder";
@@ -1382,6 +1394,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6105045E26D547C200BE3D3A /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6105045D26D547C200BE3D3A /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
 		613B28A026B6825F004CB533 /* SDWebImageLottieCoder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 613B289F26B6825F004CB533 /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */;

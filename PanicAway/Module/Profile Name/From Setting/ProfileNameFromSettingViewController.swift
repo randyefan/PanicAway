@@ -51,7 +51,7 @@ class ProfileNameFromSettingViewController: UIViewController {
     @objc func saveName() {
         print("save nama")
         guard let name = nameTextfield.text else { return }
-        //TODO: handle user default here
+        UserDefaults.standard.setValue(name, forKey: "fullName")
         self.navigationController?.popViewController(animated: true)
     }
 }
