@@ -91,25 +91,26 @@ class BreathingViewController: UIViewController {
             if breathingStatus == .breatheIn {
                 breatheTime = technique.breathInCount
                 if technique.breathingName == "4-7-8" {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.6)))
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: TimeInterval((Double(technique.breathInCount) + 0.6)))
                 } else if technique.breathingName == "7-11" {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.3 + 0.10)))
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: TimeInterval((Double(technique.breathInCount) + 0.3 + 0.10)))
                 } else {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.4)))
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: 11 + 0.4)
                 }
             }
             else if breathingStatus == .breatheOut {
                 breatheTime = technique.breathOutCount
-                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheOutAnimation, duration: TimeInterval((Double(technique.breathOutCount) + 0.3 + 0.09)))
+                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathOutCount) + 0.3 + 0.09)))
 
             }
             else if breathingStatus == .holdBreathe {
                 breatheTime = technique.holdOnCount
-                if technique.id == 0 {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold478Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
-                } else {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold444Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
-                }
+                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHoldAnimation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
+//                if technique.id == 0 {
+//                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold478Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
+//                } else {
+//                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold444Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
+//                }
             }
         }
     }
@@ -277,27 +278,28 @@ class BreathingViewController: UIViewController {
     }
     
     func setupAnimation(){
-        
-        
         circularProgressBar.progress = 0
         
-        
-        
-        for frame in (0...95){
-            breatheInAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
+        for frame in (0...489){
+            breatheInAnimation.append(UIImage(named: String(format: "breatheOut%d", frame))!)
+            
         }
         
-        for frame in (0...95).reversed(){
-            breatheOutAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
+//        for frame in (0...489){
+//            breatheOutAnimation.append(UIImage(named: String(format: "breatheOut%d", frame))!)
+//
+//        }
+        
+//        for frame in (0...167){
+//            breatheHold478Animation.append(UIImage(named: String(format: "Hold 478_%05d", frame))!)
+//        }
+        for frame in (0...349){
+            breatheHoldAnimation.append(UIImage(named: String(format: "Hold%d", frame))!)
         }
         
-        for frame in (0...167){
-            breatheHold478Animation.append(UIImage(named: String(format: "Hold 478_%05d", frame))!)
-        }
-        
-        for frame in (0...95){
-            breatheHold444Animation.append(UIImage(named: String(format: "Hold 3_%05d", frame))!)
-        }
+//        for frame in (0...95){
+//            breatheHold444Animation.append(UIImage(named: String(format: "Hold 3_%05d", frame))!)
+//        }
     }
     
     
@@ -421,7 +423,6 @@ class BreathingViewController: UIViewController {
         // MARK: - TODO: CGFloat(progress) not counting (0,0), so the circularProgressBar still 0.2
         circularProgressBar.progress +=  CGFloat(progress)
         captionLabel.isHidden = false
-        print(circularProgressBar.progress)
         
         if breatheTime == 1 {
             if breathingStatus == .breatheIn {
