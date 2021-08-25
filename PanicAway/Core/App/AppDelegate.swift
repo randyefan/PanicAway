@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func rootOnBoarding() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.clear
-        let viewController = ProductShowcaseViewController()
+        let viewController = LocalizationMenuViewController()
         let navigationBar = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()
@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func sendMessage() {
         // Variable for Emergency Contact Number
         var number = [String]()
-        let message = "Test API \(getFullName()) 1... 2... 3..." // Handle With Default Message
+        let message = "Hey, your friend \(getFullName()) might be experiencing panic attack right now. Please check on him/her :)" 
         let emergencyContact = getEmergencyContact()
         
         guard let contact = emergencyContact, contact.count != 0 else {

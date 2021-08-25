@@ -44,8 +44,8 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-pt-uV2">
-                    <rect key="frame" x="30" y="682" width="330" height="106"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-pt-uV2">
+                    <rect key="frame" x="30" y="694" width="330" height="94"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5G-Qw-0FB">
                             <rect key="frame" x="0.0" y="0.0" width="330" height="48"/>
@@ -53,6 +53,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="pTh-wP-KRp"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                             <state key="normal" title="Allow Access">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -70,6 +71,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="YOk-Xz-dJN"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                             <state key="normal" title="Skip">
                                 <color key="titleColor" name="Main"/>
                             </state>

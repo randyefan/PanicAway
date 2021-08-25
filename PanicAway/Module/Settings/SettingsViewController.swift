@@ -20,8 +20,7 @@ class SettingsViewController: UIViewController {
     let data = BreathingLoader()
     var emergencyContact: [EmergencyContactModel]?
     var wcSession = WCSession.default
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate // This One Variable to get func sendMessages
-
+    
     var breathingTechnique: BreathingModel? {
         didSet {
             guard let breathing = breathingTechnique else { return }
@@ -37,8 +36,6 @@ class SettingsViewController: UIViewController {
         initialSetup()
         setupNavigationBar()
         setupWCSession()
-        // BELOW IS: - Function that send messages using app delegate
-        // appDelegate.sendMessage()
     }
 
     func setupNavigationBar() {
@@ -89,12 +86,11 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func emergencyContactButon(_ sender: UITapGestureRecognizer) {
-        /// TO DO: - Replace this code to navigate to emergency contact view
         navigateToEmergencyContact()
     }
 
     @IBAction func emergencyMessageButton(_ sender: UITapGestureRecognizer) {
-        AlertView.showAlertComingSoonFeature(view: self, message: "My emergency message feature is almost ready!")
+        navigateToProfileName()
     }
 }
 
@@ -151,7 +147,14 @@ fileprivate extension SettingsViewController {
 
     func navigateToEmergencyContact() {
         let vc = EmergencyContactViewController(entryPoint: .settings)
-        vc.emergencyContact = emergencyContact ?? []
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToProfileName() {
+        let vc = ProfileNameFromSettingViewController()
+        if let fullName = UserDefaults.standard.string(forKey: "fullName") {
+            vc.name = fullName
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
