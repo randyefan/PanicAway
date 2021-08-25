@@ -18,6 +18,7 @@
                 <outlet property="contactTableView" destination="q0U-hx-CZR" id="TNs-l7-LUu"/>
                 <outlet property="mainTitle" destination="RLR-sn-WBb" id="kxo-45-xqN"/>
                 <outlet property="saveButton" destination="ERp-k9-cZR" id="vXd-IO-duF"/>
+                <outlet property="skipButton" destination="qU1-Cv-wUg" id="ib8-7h-0rp"/>
                 <outlet property="stackButton" destination="7sY-02-ley" id="nyr-Nu-whD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,22 +34,28 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rFi-DE-V74" userLabel="Top Title Stack">
                     <rect key="frame" x="24" y="76" width="342" height="94.666666666666686"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your emergency contact." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLR-sn-WBb">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your emergency contact." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLR-sn-WBb" customClass="LocalizedLabel" customModule="PanicAway" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="342" height="65.333333333333329"/>
                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="28"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="keyValue" value="Contact_1"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact your support system through message." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2V-nV-akT">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact your support system through message." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2V-nV-akT" customClass="LocalizedLabel" customModule="PanicAway" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="80.333333333333343" width="342" height="14.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="keyValue" value="Contact_2"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7sY-02-ley" userLabel="Bottom Button Stack">
-                    <rect key="frame" x="24" y="677" width="342" height="111"/>
+                    <rect key="frame" x="24" y="692" width="342" height="96"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERp-k9-cZR" customClass="SaveButton" customModule="PanicAway" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="342" height="48"/>
@@ -69,10 +76,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU1-Cv-wUg">
-                            <rect key="frame" x="0.0" y="63" width="342" height="48"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="48" id="Wq7-PV-jGz"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="63" width="342" height="33"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <state key="normal" title="Skip">
                                 <color key="titleColor" name="Main"/>
@@ -84,7 +88,7 @@
                     </subviews>
                 </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q0U-hx-CZR">
-                    <rect key="frame" x="24" y="210.66666666666666" width="342" height="426.33333333333337"/>
+                    <rect key="frame" x="24" y="210.66666666666666" width="342" height="441.33333333333337"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="s2r-88-9bs"/>

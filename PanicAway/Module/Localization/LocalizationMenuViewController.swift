@@ -45,8 +45,8 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        languageOptions = [LanguageModel(flag: "🇬🇧", name: "English", id: "en"),
-                            LanguageModel(flag: "🇮🇩", name: "Bahasa Indonesia", id: "id")]
+        languageOptions = [LanguageModel(flag: "🇬🇧", name: "English".localized(), id: "en"),
+                           LanguageModel(flag: "🇮🇩", name: "Bahasa Indonesia".localized(), id: "id")]
         
         languageTableView.register(LocalizationMenuTableViewCell.nib(), forCellReuseIdentifier: LocalizationMenuTableViewCell.identifier)
         
@@ -54,7 +54,7 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
         languageTableView.delegate = self
         
         selectButton.isEnabled = false
-        
+        selectButton.setTitle("Select".localized(), for: .normal)
         
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -75,16 +75,5 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
     
     func setLanguange(language: String) {
         UserDefaults.standard.set(language, forKey: userLanguageKey)
-    }
-}
-
-extension String{
-    func localized() ->String {
-        let selectedLanguage = UserDefaults.standard.string(forKey: userLanguageKey)
-        let path = Bundle.main.path(forResource: selectedLanguage, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
-        
     }
 }

@@ -34,15 +34,15 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Uyc-8r-Zyk">
-                    <rect key="frame" x="135" y="657.66666666666663" width="120.33333333333331" height="26.333333333333371"/>
+                    <rect key="frame" x="135" y="658.66666666666663" width="120.33333333333331" height="26.333333333333371"/>
                     <color key="pageIndicatorTintColor" name="GreySoft"/>
                     <color key="currentPageIndicatorTintColor" name="Main"/>
                     <connections>
                         <action selector="pageControlSwiped:" destination="-1" eventType="valueChanged" id="gPL-eP-qX4"/>
                     </connections>
                 </pageControl>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nt0-j5-GhH">
-                    <rect key="frame" x="24" y="694" width="342" height="94"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Nt0-j5-GhH">
+                    <rect key="frame" x="24" y="695" width="342" height="93"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQF-wR-DOw">
                             <rect key="frame" x="0.0" y="0.0" width="342" height="48"/>
@@ -50,6 +50,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="vye-jy-Uiw"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                             <state key="normal" title="Next">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -63,7 +64,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ut7-UH-7qe">
-                            <rect key="frame" x="0.0" y="64" width="342" height="30"/>
+                            <rect key="frame" x="0.0" y="63" width="342" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                             <state key="normal" title="Skip">
                                 <color key="titleColor" name="Main"/>
                             </state>

@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F89-6C-2Nk">
-                    <rect key="frame" x="25" y="114" width="364" height="51.5"/>
+                    <rect key="frame" x="25" y="114" width="364" height="61.5"/>
                     <string key="text">Yey, you’ve finished your
 breathing exercise. </string>
                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="22"/>
@@ -83,7 +83,7 @@ breathing exercise. </string>
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breathe_finished" translatesAutoresizingMaskIntoConstraints="NO" id="JBq-of-Awd">
-                    <rect key="frame" x="25" y="223.5" width="364" height="300"/>
+                    <rect key="frame" x="25" y="233.5" width="364" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="mLW-Pi-Y45"/>
                     </constraints>

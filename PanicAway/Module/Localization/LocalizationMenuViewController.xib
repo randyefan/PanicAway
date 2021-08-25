@@ -30,8 +30,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u2P-uv-PS7">
-                    <rect key="frame" x="24" y="211.5" width="366" height="444.5"/>
+                    <rect key="frame" x="24" y="211.5" width="366" height="300"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="iKS-eh-KL6"/>
+                    </constraints>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="9ao-EM-QuL" userLabel="Top Title Stack">
                     <rect key="frame" x="24" y="76" width="366" height="96.5"/>
@@ -45,18 +48,21 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="keyValue" value="language_1"/>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your language." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCB-ow-Pvh">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your language." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCB-ow-Pvh" customClass="LocalizedLabel" customModule="PanicAway" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="80.5" width="366" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="keyValue" value="language_2"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ep8-BV-8Au" userLabel="Bottom Button Stack">
-                    <rect key="frame" x="24" y="695" width="366" height="48"/>
+                    <rect key="frame" x="24" y="746" width="366" height="48"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upa-e7-WwJ" customClass="SaveButton" customModule="PanicAway" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upa-e7-WwJ">
                             <rect key="frame" x="0.0" y="0.0" width="366" height="48"/>
                             <color key="backgroundColor" name="Main"/>
                             <constraints>
@@ -83,15 +89,14 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9ao-EM-QuL" secondAttribute="trailing" constant="24" id="6XH-Ud-y15"/>
                 <constraint firstItem="9ao-EM-QuL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="8sx-ch-ODV"/>
                 <constraint firstItem="9ao-EM-QuL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="9Oh-Fl-wsY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ep8-BV-8Au" secondAttribute="bottom" constant="119" id="GKu-lV-MlQ"/>
                 <constraint firstItem="Ep8-BV-8Au" firstAttribute="leading" secondItem="9ao-EM-QuL" secondAttribute="leading" id="QbD-LT-kQx"/>
                 <constraint firstItem="u2P-uv-PS7" firstAttribute="top" secondItem="9ao-EM-QuL" secondAttribute="bottom" constant="39" id="XHI-gh-kd3"/>
                 <constraint firstItem="DOq-kO-dW5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b2E-fB-RQD"/>
                 <constraint firstItem="u2P-uv-PS7" firstAttribute="leading" secondItem="9ao-EM-QuL" secondAttribute="leading" id="gyC-1w-47T"/>
                 <constraint firstAttribute="bottom" secondItem="DOq-kO-dW5" secondAttribute="bottom" id="jAa-Ao-mFg"/>
                 <constraint firstItem="Ep8-BV-8Au" firstAttribute="trailing" secondItem="9ao-EM-QuL" secondAttribute="trailing" id="k30-xe-xMR"/>
-                <constraint firstItem="Ep8-BV-8Au" firstAttribute="top" secondItem="u2P-uv-PS7" secondAttribute="bottom" constant="39" id="qOg-XC-AdW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DOq-kO-dW5" secondAttribute="trailing" id="xtb-DB-QwA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ep8-BV-8Au" secondAttribute="bottom" constant="68" id="xxh-GW-dnZ"/>
                 <constraint firstItem="DOq-kO-dW5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yMl-ih-Za2"/>
                 <constraint firstItem="u2P-uv-PS7" firstAttribute="trailing" secondItem="9ao-EM-QuL" secondAttribute="trailing" id="z49-RA-9JS"/>
             </constraints>

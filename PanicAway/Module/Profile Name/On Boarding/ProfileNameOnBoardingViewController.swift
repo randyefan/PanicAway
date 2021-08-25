@@ -27,7 +27,9 @@ class ProfileNameOnBoardingViewController: UIViewController {
 
     // MARK: - Setup Function for ViewController
     func setupView() {
+        nameTextField.placeholder = "Your Name".localized()
         saveButton.isEnabled = false
+        saveButton.setTitle("Save".localized(), for: .normal)
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
 

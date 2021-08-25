@@ -20,11 +20,11 @@ class ProductShowcaseViewController: UIViewController {
         didSet {
             productShowcasePageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
-                nextButton.setTitle("Get Started", for: .normal)
+                nextButton.setTitle("Get Started".localized(), for: .normal)
                 skipButton.isEnabled = false
                 skipButton.setTitleColor(.clear, for: .normal)
             } else {
-                nextButton.setTitle("Next", for: .normal)
+                nextButton.setTitle("Next".localized(), for: .normal)
                 skipButton.isEnabled = true
                 skipButton.setTitleColor(UIColor(named: "Main"), for: .normal)
 
@@ -37,18 +37,18 @@ class ProductShowcaseViewController: UIViewController {
 
         //Onboarding Data
         slides = [
-            ProductShowcaseSlide(title: "Cope with panic attack",
-                                 description:"Guided breathing to relieve your panic attack and a one-click emergency contact.",
+            ProductShowcaseSlide(title: "Cope with panic attack".localized(),
+                                 description:"Guided breathing to relieve your panic attack and a one-click emergency contact.".localized(),
                                  image: UIImage(named: "OnboardingStress") ?? #imageLiteral(resourceName: "OnboardingBatikGringsing")),
         
-            ProductShowcaseSlide(title: "Cultural Tradition",
-                                 description:"Gringsing Batik belief to shield and protect people from danger",
+            ProductShowcaseSlide(title: "Cultural Tradition".localized(),
+                                 description:"Gringsing Batik belief to shield and protect people from danger.".localized(),
                                  image: UIImage(named: "OnboardingBatikGringsing") ?? #imageLiteral(resourceName: "hold4")),
-            ProductShowcaseSlide(title: "Quick Access",
-                                 description: "Seek assistance quickly by using Shortcut and a watchOS Complications.",
+            ProductShowcaseSlide(title: "Quick Access".localized(),
+                                 description: "Seek assistance quickly by using Shortcut and a watchOS Complications.".localized(),
                                  image: UIImage(named: "OnboardingWatch") ?? #imageLiteral(resourceName: "breatheIn59")),
-            ProductShowcaseSlide(title: "Widget",
-                                 description: "Seek assistance quickly by using widget, Shortcut and a watchOS Complications.",
+            ProductShowcaseSlide(title: "Widget".localized(),
+                                 description: "Contact your support system and get relaxed in one click.".localized(),
                                  image: UIImage(named: "OnboardingWidget") ?? #imageLiteral(resourceName: "Hold 3_00050")),
         ]
 
@@ -59,7 +59,8 @@ class ProductShowcaseViewController: UIViewController {
         productShowcaseCollectionView.register(ProductShowcaseCollectionViewCell.nib(), forCellWithReuseIdentifier: ProductShowcaseCollectionViewCell.identifier)
         productShowcaseCollectionView.delegate = self
         productShowcaseCollectionView.dataSource = self
-
+        currentPage = 0
+        skipButton.setTitle("Skip".localized(), for: .normal)
         navigationController?.isNavigationBarHidden = true
     }
 

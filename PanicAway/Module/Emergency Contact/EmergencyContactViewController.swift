@@ -22,7 +22,8 @@ class EmergencyContactViewController: UIViewController {
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
-
+    @IBOutlet weak var skipButton: UIButton!
+    
     var emergencyContact: [EmergencyContactModel] = []
     private var isEdit: Bool = false
     private var editIndex: Int? = nil
@@ -79,6 +80,9 @@ class EmergencyContactViewController: UIViewController {
 
 fileprivate extension EmergencyContactViewController {
     func initialSetup() {
+        saveButton.setTitle("Save".localized(), for: .normal)
+        skipButton.setTitle("Skip".localized(), for: .normal)
+        
         checkContact()
         switch entryPoint {
         case .settings:

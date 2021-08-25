@@ -7,3 +7,13 @@
 */
 
 "language_1" = "Choose your preferred language";
+"language_2" = "Please select your language";
+
+"Name_1" = "Tell us your fullname";
+"Name_2" = "Your Name";
+
+"Contact_1" = "Set your emergency contact.";
+"Contact_2" = "Contact your support system through WhatsApp.";
+"Contact_3" = "Add Contact";
+
+"Health_1" = "Allow access to apple health for record mindfulness and monitor your heart rate.";

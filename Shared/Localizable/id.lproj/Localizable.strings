@@ -14,23 +14,84 @@
 
 //Product Showcase 4
 "Widget" = "Widget";
-//Masih kurang beberapa di product showcase 4
+"Contact your support system and get relaxed in one click." = "Kontak teman anda dan menjadi tenang dalam satu klik.";
 
 //Choose languange yang ini karena semuanya by code berarti harus object id nya yang di localized mari kita coba
-"language_1" = "Pilih bahasa pilihan anda";
+"Choose your preferred language" = "Pilih bahasa pilihan anda";
 "Please select your language" = "Silahkan pilih bahasa anda";
-"English" = "Inggris";
+"English" = "Bahasa Inggris";
 "Bahasa Indonesia" = "Bahasa Indonesia";
 "Select" = "Pilih";
+"Get Started" = "Mulai";
+
+"language_1" = "Pilih bahasa pilihan anda";
+"language_2" = "Silahkan pilih bahasa anda";
+
+//Apple Health
+"Allow Access" = "Izinkan Akses";
+"Health_1" = "Izinkan akses ke Apple Health untuk menyimpan mindfullnes dan memonitor detak jantung anda";
 
 //Breathe - Tap to start
 "Tap to start" = "Ketuk untuk memulai"; //Ini seharusnya untuk dia pas mulai awal berarti nanti XIB nya harus di localized juga
 "Breathing methods" = "Metode Pernafasan";
 
-//Breathe - Modal
+"Anxiety Away" = "Hilangkan Kecemasan";
+"4-7-8 Method" = "Metode 4-7-8";
+"Inhale 4s, hold 7s, and exhale 8s. Aims to reduce anxiety or help to get sleep." = "Tarik napas 4s, tahan napas 7s, dan buang napas 8s. Bertujuan untuk mengurangi kecemasan dan membantu tidur";
+
+"Calm" = "Tenang";
+"4-4-4 Method" = "Metode 4-4-4";
+"Inhale 4s, hold 4s, exhale 4s, and hold 4s. Aim to reduce tension and clear mind from distractions." = "Tarik napas 4s, tahan napas 4s, dan buang napas 4s. Bertujuan untuk mengurangi tegangan dan menjernihkan pikiran.";
+
+"Relax" = "Santai";
+"7-11 Method" = "Metode 7-11";
+"Inhale 7s and exhale 11s. Repeat this cycle or until you feel relaxed." = "Tarik napas 7s dan buang napas 11s. Ulangi siklus ini atau sampai Anda merasa rileks.";
 
 //Breathe in
+"Breathe In" = "Tarik Napas";
+"End" = "Selesai";
+
+"Hold" = "Tahan Napas";
+
+"Yey, you’ve finished your breathing exercise." = "Yay, Anda telah menyelesaikan letihan pernafasan Anda.";
+"Repeat" = "Ulangi";
+"Finish" = "Selesai";
+
+//Contact
+"Contact_1" = "Pilih kontak darurat.";
+"Contact_2" = "Hubungi teman anda melalui WhatsApp.";
+"Contact_3" = "Tambahkan Kontak";
 
 //This one is for the localisation in the storyboard where the string is already inputted on the xib instead of by code.
+
+"Back" = "Kembali";
+"Preferences" = "Preferensi";
+"Breathing Technique" = "Teknik Pernafasan";
+"Breathing Cycle" = "Siklus Pernafasan";
+"Language" = "Bahasa";
+"Guided Audio" = "Panduan Suara";
+"Haptic" = "Haptik";
+"Emergency and Health" = "Keadaan Darurat";
+"Emergency Contact" = "Kontak Darurat";
+"Profile Name" = "Nama Profil";
+"Apple Health" = "Apple Health";
+
+"Back" = "Kembali";
+"Save" = "Simpan";
+"Breathing Methods" = "Metode Pernafasan";
+"Select your default breathing technique. If you feel unwell, light-headed or nausea, please contact your medical care number." = "Pilih teknik pernafasan default anda. Jika anda merasa tidak sehat, pusing, atau mual, hubungi perawat medis.";
+
+"Emergency Contact" = "Kontak Darurat";
+"This person will be contacted when use widget shortcut. Make sure your reliable contact use Whatsapp." = "Kontak ini akan dihubungi ketika Anda mengakses dari shortcut. Pastikan kontak menggunakan Whatsapp";
+"Add Contact" = "Tambah Kontak";
+
+//Settings - Name
+"Add your name so your support system can easily recognize you." = "Tambahkan nama Anda agar kontak darurat Anda dapat mengenali Anda.";
+"Tell us your Fullname" = "Masukkan Nama Anda";
+"Name_1" = "Masukkan Nama Anda";
+"Your Name" = "Nama Anda";
+
+"Add Emergency Contacts" = "Tambah Kontak Darurat";
+"This person will be contacted when use widget shortcut. Make sure your reliable contact use Whatsapp." = "Kontak ini akan dihubungi ketika Anda mengakses dari shortcut. Pastikan kontak menggunakan Whatsapp";
 
 
