@@ -26,7 +26,7 @@ class LocalizationMenuTableViewCell: UITableViewCell {
         // Configure the view for the selected state
         if selected{
             contentViewCell.backgroundColor = UIColor(named: "Main")
-            nameLabel.font = .boldSystemFont(ofSize: 17)
+            nameLabel.font = .systemFont(ofSize: 17)
             contentViewCell.borderWidth = 0
         }else{
             contentViewCell.backgroundColor = UIColor(displayP3Red: 255, green: 242, blue: 240, alpha: 1)

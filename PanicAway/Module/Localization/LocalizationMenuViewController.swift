@@ -15,6 +15,7 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var selectButton: UIButton!
     
     var languageOptions: [LanguageModel] = []
+    var selectedLanguage: String? = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return languageOptions.count
@@ -30,9 +31,7 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let languageChosed = languageOptions[indexPath.row].id{
-            setLanguange(language: languageChosed)
-        }else{
-            setLanguange(language: "en")
+            selectedLanguage = languageChosed
         }
         selectButton.isEnabled = true
        
@@ -62,6 +61,10 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
     
     
     @IBAction func confirmSelectedLanguange(_ sender: Any) {
+        if let languageChosed = selectedLanguage {
+        setLanguange(language: languageChosed)
+            print("success change language to \(languageChosed)")
+        }
         navigateToProductShowcase()
     }
     
