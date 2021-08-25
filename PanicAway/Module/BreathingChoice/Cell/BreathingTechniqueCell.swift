@@ -41,22 +41,22 @@ class BreathingTechniqueCell: UITableViewCell {
     private func setImageBackgroundUnselected() {
         guard let indexPath = indexPath else { return }
         if indexPath.row == 0 {
-            background.image = UIImage(named: "card_bg_unselected")
+            background.image = UIImage(named: "unselected_478")
         } else if indexPath.row == 1 {
-            background.image = UIImage(named: "card_bg_unselected")
+            background.image = UIImage(named: "unselected_444")
         } else {
-            background.image = UIImage(named: "card_bg_unselected")
+            background.image = UIImage(named: "unselected_711")
         }
     }
     
     private func setImageBackgroundSelected() {
         guard let indexPath = indexPath else { return }
         if indexPath.row == 0 {
-            background.image = UIImage(named: "card_bg_selected")
+            background.image = UIImage(named: "selected_478")
         } else if indexPath.row == 1 {
-            background.image = UIImage(named: "card_bg_selected")
+            background.image = UIImage(named: "selected_444")
         } else {
-            background.image = UIImage(named: "card_bg_selected")
+            background.image = UIImage(named: "selected_711")
         }
     }
 }

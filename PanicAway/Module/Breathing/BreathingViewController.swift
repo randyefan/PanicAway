@@ -31,6 +31,11 @@ enum BreathingTechnique: Int {
     case three = 2
 }
 
+enum Localization: String {
+    case en = "Overlay"
+    case id = "Overlay-Indo"
+}
+
 class BreathingViewController: UIViewController {
     // MARK: - IBOutlet
 
@@ -57,6 +62,7 @@ class BreathingViewController: UIViewController {
     
     
     // MARK: - Variable
+    var defaultLanguage: Localization = .en
     var breathingId: Int = 0
     var data = BreathingLoader()
     var isFirstBreathingScreen = true
@@ -209,6 +215,15 @@ class BreathingViewController: UIViewController {
             overlayImageView.isHidden = true
         } else {
             isFirstBreathingScreen = true
+            if defaultLanguage == .en {
+                overlayImageView.image = UIImage(named: "Overlay")
+            }
+            switch defaultLanguage {
+            case .en:
+                overlayImageView.image = UIImage(named: defaultLanguage.rawValue)
+            default:
+                overlayImageView.image = UIImage(named: defaultLanguage.rawValue)
+            }
             overlayImageView.isHidden = false
         }
     }
@@ -505,7 +520,7 @@ class BreathingViewController: UIViewController {
         view.configureTheme(.success)
         view.configureTheme(backgroundColor: UIColor(named: "Main")!, foregroundColor: .white)
         view.button?.isHidden = true
-        view.configureContent(title: nil, body: "Whatsapp message has been sent", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
+        view.configureContent(title: nil, body: "Whatsapp message to your emergency contact has been sent", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
         view.configureDropShadow()
         view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         SwiftMessages.show(view: view)
@@ -515,7 +530,7 @@ class BreathingViewController: UIViewController {
         let view = MessageView.viewFromNib(layout: .cardView)
         view.configureTheme(.error)
         view.button?.isHidden = true
-        view.configureContent(title: nil, body: "You haven't added an emergency contact yet", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
+        view.configureContent(title: nil, body: "You haven't added your emergency contact yet", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
         view.configureDropShadow()
         view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         SwiftMessages.show(view: view)

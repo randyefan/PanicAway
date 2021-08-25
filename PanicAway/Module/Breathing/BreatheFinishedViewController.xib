@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F89-6C-2Nk">
-                    <rect key="frame" x="25" y="114" width="364" height="61.5"/>
+                    <rect key="frame" x="25" y="114" width="364" height="51.5"/>
                     <string key="text">Yey, you’ve finished your
 breathing exercise. </string>
                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="22"/>
@@ -82,12 +82,21 @@ breathing exercise. </string>
                         <constraint firstItem="gSy-aU-XCF" firstAttribute="top" secondItem="zLc-a8-Xxd" secondAttribute="bottom" constant="15" id="ZHx-6b-NhQ"/>
                     </constraints>
                 </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breathe_finished" translatesAutoresizingMaskIntoConstraints="NO" id="JBq-of-Awd">
+                    <rect key="frame" x="25" y="223.5" width="364" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="mLW-Pi-Y45"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Background"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="F89-6C-2Nk" secondAttribute="trailing" constant="25" id="4R2-sW-aaC"/>
+                <constraint firstItem="JBq-of-Awd" firstAttribute="leading" secondItem="F89-6C-2Nk" secondAttribute="leading" id="CxN-eD-Dwr"/>
+                <constraint firstItem="JBq-of-Awd" firstAttribute="top" secondItem="F89-6C-2Nk" secondAttribute="bottom" constant="58" id="P36-SE-jl8"/>
                 <constraint firstItem="Uae-ac-hgG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="cXJ-hh-az1"/>
+                <constraint firstItem="JBq-of-Awd" firstAttribute="trailing" secondItem="F89-6C-2Nk" secondAttribute="trailing" id="os0-At-PkG"/>
                 <constraint firstItem="Uae-ac-hgG" firstAttribute="trailing" secondItem="F89-6C-2Nk" secondAttribute="trailing" id="pLP-OV-Uob"/>
                 <constraint firstItem="Uae-ac-hgG" firstAttribute="leading" secondItem="F89-6C-2Nk" secondAttribute="leading" id="qZq-K2-4yO"/>
                 <constraint firstItem="F89-6C-2Nk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="vet-of-oUM"/>
@@ -97,6 +106,7 @@ breathing exercise. </string>
         </view>
     </objects>
     <resources>
+        <image name="breathe_finished" width="270" height="300.5"/>
         <namedColor name="Background">
             <color red="0.99599999189376831" green="0.98400002717971802" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
