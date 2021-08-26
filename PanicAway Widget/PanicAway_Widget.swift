@@ -11,39 +11,30 @@ import Intents
 
 struct Provider: TimelineProvider {
     func getSnapshot(in context: Context, completion: @escaping (BreathingModel) -> Void) {
-        if let entry = getDefaultBreathing() {
-            completion(entry)
-        }
-        
-        fatalError("cant get default breathing")
+        let entry = getDefaultBreathing()
+        completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<BreathingModel>) -> Void) {
-        if let entry = getDefaultBreathing() {
-            let timeline = Timeline(entries: [entry], policy: .never)
-            completion(timeline)
-        }
-        
-        fatalError("cant get default breathing")
+        let entry = getDefaultBreathing()
+        let timeline = Timeline(entries: [entry], policy: .never)
+        completion(timeline)
     }
     
     func placeholder(in context: Context) -> BreathingModel {
-        if let entry = getDefaultBreathing() {
-            return entry
-        }
-        
-        fatalError("cant get default breathing")
+        let entry = getDefaultBreathing()
+        return entry
     }
-
-    func getDefaultBreathing() -> BreathingModel? {
+    
+    func getDefaultBreathing() -> BreathingModel {
         let data = BreathingLoader()
         data.loadDataBreath()
-        if let userDefault = UserDefaults(suiteName: "group.com.panicaway.javier.mc3") {
+        if let userDefault = UserDefaults(suiteName: "group.martin.panicaway") {
             let breathingId = userDefault.integer(forKey: "defaultBreatheId")
             return data.entries[breathingId]
         }
         
-        return nil
+        return data.entries[0]
     }
 }
 
