@@ -28,7 +28,6 @@ class OnboardingViewController: UIViewController {
         }
     }
     
-
     @IBAction func skipAppleHealthSetup(_ sender: Any) {
         nextView()
     }

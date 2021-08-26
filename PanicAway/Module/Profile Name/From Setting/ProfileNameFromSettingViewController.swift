@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileNameFromSettingViewController: UIViewController {
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var nameTextfield: UITextField!
     
@@ -18,8 +18,8 @@ class ProfileNameFromSettingViewController: UIViewController {
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setupView()
+        
+        setupView()
         isNameExist()
     }
     

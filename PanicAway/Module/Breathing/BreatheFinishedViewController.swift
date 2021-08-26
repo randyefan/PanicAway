@@ -23,12 +23,9 @@ class BreatheFinishedViewController: UIViewController {
     }
     
     @IBAction func finishButtonAction(_ sender: Any) {
-        
         self.dismiss(animated: true) {
             self.finishBreathing?()
         }
-        
-        
     }
     
     @IBAction func repeatButtonAction(_ sender: Any) {
