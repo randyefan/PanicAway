@@ -55,7 +55,7 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var centreAnimationView: UIView!
     @IBOutlet weak var closeView: UIImageView!
     @IBOutlet weak var topChevronView: UIView!
-    @IBOutlet weak var breatheTechniqueGoalLabel: UILabel!
+    @IBOutlet weak var breatheTechniqueGoalLabel: LocalizedLabel!
     @IBOutlet weak var endBreathingButton: UIButton!
     @IBOutlet weak var breathingChoiceView: UIStackView!
     @IBOutlet weak var overlayImageView: UIImageView!
@@ -182,6 +182,7 @@ class BreathingViewController: UIViewController {
         setupNavigationBar()
         setupFirstBreathingScreen()
         setupToDefaultBreathingTechnique()
+        setupLocalization()
     }
 
     // MARK: - Setup View for ViewController
@@ -234,6 +235,7 @@ class BreathingViewController: UIViewController {
         prepareLabel.text = "Be still, and bring your attention to your breath.".localized()
         captionLabel.text = "Yay, you’ve finished your breathing exercise!".localized()
         endBreathingButton.setTitle("End".localized(), for: .normal)
+        breatheTechniqueGoalLabel.reloadText()
     }
     
     func setupHaptic() {

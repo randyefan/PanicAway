@@ -25,6 +25,7 @@ class LocalizedLabel : UILabel {
     }
     
     func reloadText(){
+        print(self.text)
         let textLocalized = self.text
         self.text = textLocalized?.localized()
     }

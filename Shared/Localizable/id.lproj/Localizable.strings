@@ -79,13 +79,11 @@
 "Emergency and Health" = "Keadaan Darurat";
 "Emergency Contact" = "Kontak Darurat";
 "Profile Name" = "Nama Profil";
-"Apple Health" = "Apple Health";
 
 "Save" = "Simpan";
 "Breathing Methods" = "Metode Pernafasan";
 "Select your default breathing technique. If you feel unwell, light-headed or nausea, please contact your medical care number." = "Pilih teknik pernafasan default Anda. Jika Anda merasa tidak sehat, pusing, atau mual, hubungi perawat medis.";
 
-"Emergency Contact" = "Kontak Darurat";
 "This person will be contacted when use widget shortcut. Make sure your reliable contact use Whatsapp." = "Kontak ini akan dihubungi ketika Anda mengakses dari shortcut. Pastikan kontak menggunakan Whatsapp";
 "Add Contact" = "Tambah Kontak";
 
@@ -101,3 +99,4 @@
 
 //Settings
 "Select Language" = "Pilih Bahasa";
+"Kembali" = "Back"

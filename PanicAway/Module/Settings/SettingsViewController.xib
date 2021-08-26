@@ -20,13 +20,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="PanicAway" customModuleProvider="target">
             <connections>
                 <outlet property="appleHealthToggle" destination="Jc6-Ry-Kf6" id="Xly-fF-Fvr"/>
+                <outlet property="breathingCycleLabel" destination="t54-7B-bkC" id="TRZ-zj-9g9"/>
                 <outlet property="breathingCyclePickerView" destination="CqB-BV-cZ4" id="mW5-9c-E1r"/>
                 <outlet property="breathingCycleValue" destination="iFw-Bg-C0o" id="cQS-4l-e4u"/>
                 <outlet property="breathingMethodCell" destination="avw-d0-Nsp" id="Ux2-6j-hDy"/>
                 <outlet property="breathingMethodValue" destination="jBP-Y5-y2Q" id="7ma-dB-QXk"/>
                 <outlet property="breathingTItleLabel" destination="mRn-az-GM1" id="zDG-VJ-Qnq"/>
+                <outlet property="emergencyContactLabel" destination="1cY-3a-J5r" id="cpw-Wj-mMc"/>
+                <outlet property="emergencyTitleLabel" destination="ym9-MF-0gu" id="bKp-ls-Vli"/>
+                <outlet property="guidedAudioLabel" destination="ZhS-Wm-eze" id="eTU-lh-V9e"/>
                 <outlet property="guidedAudioToggle" destination="eY5-nX-grA" id="7xe-Jx-xBy"/>
                 <outlet property="hapticToggle" destination="M2s-ou-j0s" id="xYa-4B-b6U"/>
+                <outlet property="languageTitleLabel" destination="ifV-gF-swI" id="Cb9-X3-khe"/>
+                <outlet property="profileNameLabel" destination="gCz-UW-bf5" id="4Ip-Lf-eIw"/>
+                <outlet property="selectLanguageLabel" destination="uCk-pD-paT" id="IlI-Le-e4X"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

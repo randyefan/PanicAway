@@ -17,6 +17,13 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var hapticToggle: UISwitch!
     @IBOutlet weak var appleHealthToggle: UISwitch!
     @IBOutlet weak var breathingTItleLabel: LocalizedLabel!
+    @IBOutlet weak var breathingCycleLabel: LocalizedLabel!
+    @IBOutlet weak var guidedAudioLabel: LocalizedLabel!
+    @IBOutlet weak var emergencyTitleLabel: LocalizedLabel!
+    @IBOutlet weak var profileNameLabel: LocalizedLabel!
+    @IBOutlet weak var emergencyContactLabel: LocalizedLabel!
+    @IBOutlet weak var languageTitleLabel: LocalizedLabel!
+    @IBOutlet weak var selectLanguageLabel: LocalizedLabel!
     
     let data = BreathingLoader()
     var emergencyContact: [EmergencyContactModel]?
@@ -61,6 +68,7 @@ class SettingsViewController: UIViewController {
         setupViewWithData()
         breathingCyclePickerView.isHidden = true
         reloadLocalization()
+        title = "Preferences".localized()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -108,7 +116,14 @@ fileprivate extension SettingsViewController {
     
     func reloadLocalization(){
         breathingTItleLabel.reloadText()
+        breathingCycleLabel.reloadText()
+        guidedAudioLabel.reloadText()
+        emergencyTitleLabel.reloadText()
+        profileNameLabel.reloadText()
+        emergencyContactLabel.reloadText()
+        languageTitleLabel.reloadText()
         
+        selectLanguageLabel.reloadText()
         
     }
 

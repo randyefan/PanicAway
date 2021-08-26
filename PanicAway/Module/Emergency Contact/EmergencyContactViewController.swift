@@ -44,12 +44,19 @@ class EmergencyContactViewController: UIViewController {
         initialSetup()
         contactTableView.register(ContactTableViewCell.nib(), forCellReuseIdentifier: ContactTableViewCell.reuseID)
         contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
+        let backItem = UIBarButtonItem()
+        backItem.title = "Preferences".localized()
+        navigationItem.backBarButtonItem = backItem
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if entryPoint == .settings {
             contactTableView.reloadData()
+            let backItem = UIBarButtonItem()
+            backItem.title = "Preferences".localized()
+            navigationItem.backBarButtonItem = backItem
         }
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -87,9 +94,10 @@ fileprivate extension EmergencyContactViewController {
         switch entryPoint {
         case .settings:
             title = "Emergency Contact".localized()
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit".localized(), style: .plain, target: self,  action: #selector(edit))
             mainTitle.isHidden = true
             stackButton.isHidden = true
+        
         default:
             self.navigationController?.navigationBar.isHidden = true
         }
@@ -99,12 +107,12 @@ fileprivate extension EmergencyContactViewController {
         
         if isEditTableView {
             contactTableView.isEditing = false
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized(), style: .done, target: self,  action: #selector(edit))
             
             isEditTableView = false
         } else {
             contactTableView.isEditing = true
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(edit))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit".localized(), style: .plain, target: self,  action: #selector(edit))
             
             isEditTableView = true
         }
