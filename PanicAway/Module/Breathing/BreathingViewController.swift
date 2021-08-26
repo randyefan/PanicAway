@@ -95,7 +95,7 @@ class BreathingViewController: UIViewController {
                 } else if technique.breathingName == "7-11" {
                     firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: TimeInterval((Double(technique.breathInCount) + 0.3 + 0.10)))
                 } else {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: 11 + 0.4)
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: Double(technique.breathInCount) + 0.4)
                 }
             }
             else if breathingStatus == .breatheOut {
@@ -280,8 +280,9 @@ class BreathingViewController: UIViewController {
     func setupAnimation(){
         circularProgressBar.progress = 0
         
-        for frame in (0...489){
+        for frame in (0...329){
             breatheInAnimation.append(UIImage(named: String(format: "breatheOut%d", frame))!)
+            print(frame)
             
         }
         
