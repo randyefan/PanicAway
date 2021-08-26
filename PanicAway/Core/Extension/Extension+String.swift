@@ -22,7 +22,7 @@ extension String {
     }
     
     func localized() ->String {
-        let selectedLanguage = UserDefaults.standard.string(forKey: "applicationKey")
+        let selectedLanguage = UserDefaults.standard.string(forKey: "applicationLocalizationKey")
         let path = Bundle.main.path(forResource: selectedLanguage, ofType: "lproj")
         let bundle = Bundle(path: path!)
         

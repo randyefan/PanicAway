@@ -96,7 +96,7 @@ class BreathingViewController: UIViewController {
             guard let technique = technique else { return }
             guard let breathingStat = breathingStatus else { return }
             self.playInstruction()
-            titleLabel.text = breathingStat.rawValue
+            titleLabel.text = breathingStat.rawValue.localized()
             captionLabel.text = "\(breatheTime)"
             if breathingStatus == .breatheIn {
                 breatheTime = technique.breathInCount
@@ -175,6 +175,7 @@ class BreathingViewController: UIViewController {
         setupObserveAction()
         setupHaptic()
         setupAnimation()
+        setupLocalization()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -193,7 +194,7 @@ class BreathingViewController: UIViewController {
             setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, endButton: false, breathingChoiceView: true)
         case .pause:
             setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, endButton: false, breathingChoiceView: true)
-            titleLabel.text = "Paused"
+            titleLabel.text = "Paused".localized()
             firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
         case .finish:
             setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, circularProgressBar: true, endButton: true, breathingChoiceView: false)
@@ -202,9 +203,9 @@ class BreathingViewController: UIViewController {
             minutesTimer = 0
             secondsTimer = 0
             firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
-            titleLabel.text = "Tap to Start Again"
+            titleLabel.text = "Tap to start again".localized()
             DispatchQueue.main.async {
-                self.captionLabel.text = "Yay, you’ve finished your breathing exercise!"
+                self.captionLabel.text = "Yay, you’ve finished your breathing exercise!".localized()
             }
         }
     }
@@ -226,6 +227,13 @@ class BreathingViewController: UIViewController {
             }
             overlayImageView.isHidden = false
         }
+    }
+    
+    func setupLocalization(){
+        titleLabel.text = "Tap to start".localized()
+        prepareLabel.text = "Be still, and bring your attention to your breath.".localized()
+        captionLabel.text = "Yay, you’ve finished your breathing exercise!".localized()
+        endBreathingButton.setTitle("End".localized(), for: .normal)
     }
     
     func setupHaptic() {

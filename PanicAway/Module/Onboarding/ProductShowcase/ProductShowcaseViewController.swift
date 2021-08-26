@@ -80,10 +80,7 @@ class ProductShowcaseViewController: UIViewController {
     }
 
     @IBAction func skipButtonPressed(_ sender: Any) {
-        setDefaultBreathingTechnique()
-        setDefaultBreathingCycle()
-        setDefaultAudio()
-        navigateToProfileName()
+        nextView()
         
     }
 

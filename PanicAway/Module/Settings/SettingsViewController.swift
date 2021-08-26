@@ -16,7 +16,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var guidedAudioToggle: UISwitch!
     @IBOutlet weak var hapticToggle: UISwitch!
     @IBOutlet weak var appleHealthToggle: UISwitch!
-
+    @IBOutlet weak var breathingTItleLabel: LocalizedLabel!
+    
     let data = BreathingLoader()
     var emergencyContact: [EmergencyContactModel]?
     var wcSession = WCSession.default
@@ -56,8 +57,10 @@ class SettingsViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupViewWithData()
         breathingCyclePickerView.isHidden = true
+        reloadLocalization()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -92,12 +95,21 @@ class SettingsViewController: UIViewController {
     @IBAction func emergencyMessageButton(_ sender: UITapGestureRecognizer) {
         navigateToProfileName()
     }
+    @IBAction func selectLanguageButton(_ sender: UITapGestureRecognizer) {
+        navigateToLocalizationView()
+    }
 }
 
 fileprivate extension SettingsViewController {
     func initialSetup() {
-        title = "Preferences"
+        title = "Preferences".localized()
         guidedAudioToggle.isOn = UserDefaults.standard.bool(forKey: "defaultAudioState")
+    }
+    
+    func reloadLocalization(){
+        breathingTItleLabel.reloadText()
+        
+        
     }
 
     func getEmergencyContacts() {
@@ -155,6 +167,11 @@ fileprivate extension SettingsViewController {
         if let fullName = UserDefaults.standard.string(forKey: "fullName") {
             vc.name = fullName
         }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToLocalizationView(){
+        let vc = LocalizationMenuViewController(entryPoint: .settings)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
