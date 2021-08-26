@@ -43,33 +43,33 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = languageTableView.dequeueReusableCell(withIdentifier: LocalizationMenuTableViewCell.identifier, for: indexPath) as! LocalizationMenuTableViewCell
-
+        
         cell.setupCell(with: languageOptions[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("\(currentlySelected) \(languageOptions[indexPath.row].id)")
-//        if currentlySelected != languageOptions[indexPath.row].id {
-//            self.navigationItem.rightBarButtonItem?.isEnabled = true
-//        }else{
-//            self.navigationItem.rightBarButtonItem?.isEnabled = false
-//        }
-//
-//
-//
-//
-//        selectButton.isEnabled = true
-//        guard let temporarySelectedLanguageVariable = languageOptions[indexPath.row].id else{
-//            print("gak bisa")
-//            return
-//        }
-//        currentlySelected = temporarySelectedLanguageVariable
-//        selectedLanguage = currentlySelected
+        //        print("\(currentlySelected) \(languageOptions[indexPath.row].id)")
+        //        if currentlySelected != languageOptions[indexPath.row].id {
+        //            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        //        }else{
+        //            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        //        }
+        //
+        //
+        //
+        //
+        //        selectButton.isEnabled = true
+        //        guard let temporarySelectedLanguageVariable = languageOptions[indexPath.row].id else{
+        //            print("gak bisa")
+        //            return
+        //        }
+        //        currentlySelected = temporarySelectedLanguageVariable
+        //        selectedLanguage = currentlySelected
         
         if let languageChosed = languageOptions[indexPath.row].id {
-             selectedLanguage = languageChosed
+            selectedLanguage = languageChosed
         }
         selectButton.isEnabled = true
         self.navigationItem.rightBarButtonItem?.isEnabled = true
@@ -87,14 +87,19 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
         
         languageTableView.dataSource = self
         languageTableView.delegate = self
-        
+        setupBackBarButtonItem()
         initialSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBackBarButtonItem()
     }
     
     
     @IBAction func confirmSelectedLanguage(_ sender: Any) {
         if let languageChosed = selectedLanguage {
-        setLanguage(language: languageChosed)
+            setLanguage(language: languageChosed)
             print("success change language to \(languageChosed)")
         }
         navigateToProductShowcase()
@@ -132,13 +137,19 @@ class LocalizationMenuViewController: UIViewController, UITableViewDataSource, U
         }
     }
     
- 
+    
     @objc func edit() {
         if let languageChosed = selectedLanguage {
-        setLanguage(language: languageChosed)
+            setLanguage(language: languageChosed)
         }
         self.navigationController?.popViewController(animated: true)
-
         
+        
+    }
+    
+    private func setupBackBarButtonItem() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Preferences".localized()
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
     }
 }

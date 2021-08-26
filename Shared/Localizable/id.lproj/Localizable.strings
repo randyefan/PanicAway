@@ -68,7 +68,6 @@
 //
 "Be still, and bring your attention to your breath." = "Diamlah, dan alihkan perhatianmu pada napasmu.";
 
-"Back" = "Kembali";
 "Preferences" = "Preferensi";
 "Breathing" = "Pernafasan";
 "Breathing Technique" = "Teknik Pernafasan";
@@ -99,4 +98,4 @@
 
 //Settings
 "Select Language" = "Pilih Bahasa";
-"Kembali" = "Back"
+"Back" = "Kembali";

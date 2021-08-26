@@ -15,13 +15,13 @@ class BreatheFinishedViewController: UIViewController {
     
     var repeatBreathing: (() -> ())?
     var finishBreathing: (() -> ())?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         setupLocalization()
     }
-
+    
     @IBAction func finishButtonAction(_ sender: Any) {
         
         self.dismiss(animated: true) {

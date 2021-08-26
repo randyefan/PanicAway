@@ -44,19 +44,15 @@ class EmergencyContactViewController: UIViewController {
         initialSetup()
         contactTableView.register(ContactTableViewCell.nib(), forCellReuseIdentifier: ContactTableViewCell.reuseID)
         contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
-        let backItem = UIBarButtonItem()
-        backItem.title = "Preferences".localized()
-        navigationItem.backBarButtonItem = backItem
+        setupBackBarButtonItem()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if entryPoint == .settings {
             contactTableView.reloadData()
-            let backItem = UIBarButtonItem()
-            backItem.title = "Preferences".localized()
-            navigationItem.backBarButtonItem = backItem
+            setupBackBarButtonItem()
         }
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -97,7 +93,7 @@ fileprivate extension EmergencyContactViewController {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit".localized(), style: .plain, target: self,  action: #selector(edit))
             mainTitle.isHidden = true
             stackButton.isHidden = true
-        
+            
         default:
             self.navigationController?.navigationBar.isHidden = true
         }
@@ -150,6 +146,12 @@ fileprivate extension EmergencyContactViewController {
         }
         
         return nil
+    }
+    
+    private func setupBackBarButtonItem() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Preferences".localized()
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
     }
 }
 
