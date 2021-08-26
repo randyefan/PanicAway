@@ -8,7 +8,7 @@
 import UIKit
 
 class LocalizationMenuTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var contentViewCell: UIView!
@@ -19,10 +19,10 @@ class LocalizationMenuTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
         if selected{
             contentViewCell.backgroundColor = UIColor(named: "Main")

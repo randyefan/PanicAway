@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func rootOnBoarding() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.clear
-        let viewController = LocalizationMenuViewController()
+        let viewController = LocalizationMenuViewController(entryPoint: .onBoarding)
         let navigationBar = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationBar
         window?.makeKeyAndVisible()

@@ -31,11 +31,14 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Klv-rR-ddC">
                     <rect key="frame" x="30" y="332" width="354" height="139"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us your name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-sO-GlO">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us your name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-sO-GlO" customClass="LocalizedLabel" customModule="PanicAway" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="33"/>
                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="28"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="keyValue" value="Name_1"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3r9-db-BRA">
                             <rect key="frame" x="0.0" y="73" width="354" height="66"/>
@@ -65,7 +68,7 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nRt-42-5g5">
-                    <rect key="frame" x="30" y="736" width="354" height="104"/>
+                    <rect key="frame" x="30" y="746" width="354" height="48"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-x0-ZtE" customClass="SaveButton" customModule="PanicAway" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
@@ -86,13 +89,6 @@
                                 <action selector="saveButtonAction:" destination="-1" eventType="touchUpInside" id="5yz-Mh-Leg"/>
                             </connections>
                         </button>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmj-8j-4VM">
-                            <rect key="frame" x="0.0" y="58" width="354" height="46"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="46" id="zyy-me-rbc"/>
-                            </constraints>
-                        </view>
                     </subviews>
                 </stackView>
             </subviews>
@@ -111,7 +107,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Klv-rR-ddC" secondAttribute="trailing" constant="30" id="hC7-ei-vBn"/>
                 <constraint firstItem="Z0D-rt-58k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mRs-BE-IIp"/>
                 <constraint firstItem="gRa-ho-sKB" firstAttribute="trailing" secondItem="Klv-rR-ddC" secondAttribute="trailing" id="pb4-ri-Sbe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nRt-42-5g5" secondAttribute="bottom" constant="22" id="tLp-hX-3VX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nRt-42-5g5" secondAttribute="bottom" constant="68" id="tLp-hX-3VX"/>
             </constraints>
             <point key="canvasLocation" x="49" y="81"/>
         </view>

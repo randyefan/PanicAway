@@ -7,3 +7,38 @@
 */
 
 "language_1" = "Choose your preferred language";
+"language_2" = "Please select your language";
+
+"Name_1" = "Tell us your fullname";
+"Name_2" = "Your Name";
+
+"Contact_1" = "Set your emergency contact.";
+"Contact_2" = "Contact your support system through WhatsApp.";
+"Contact_3" = "Add Contact";
+
+"Health_1" = "Allow access to apple health for record mindfulness and monitor your heart rate.";
+
+"Language" = "Language";
+
+"Finish_1" = "Yay, you’ve finished your breathing exercise!";
+
+"Profile_1" = "Add your name so your support system can easily recognize you.";
+"Pernafasan" = "Breathing";
+
+"Pernafasan" = "Breathing";
+"Siklus Pernafasan" = "Breathing Cycle";
+"Panduan Suara" = "Guided Audio";
+"Nama Profil" = "Profile Name";
+"Keadaan Darurat" = "Emergency and Health";
+"Nama Profil" = "Profile Name";
+"Bahasa" = "Language";
+"Pilih Bahasa" = "Select Language";
+"Kontak Darurat" = "Emergency Contact";
+
+
+"Hilangkan Kecemasan" = "Anxiety Away";
+"Santai" = "Relax";
+"Tenang" = "Calm";
+"Preferensi" = "Preferences";
+
+"Kembali" = "Back";

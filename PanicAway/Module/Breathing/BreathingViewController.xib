@@ -18,7 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BreathingViewController" customModule="PanicAway" customModuleProvider="target">
             <connections>
-                <outlet property="breatheTechniqueGoalLabel" destination="gVT-0A-NK1" id="M6p-U2-epM"/>
+                <outlet property="breatheTechniqueGoalLabel" destination="gVT-0A-NK1" id="YSB-Bk-UcI"/>
                 <outlet property="breathingChoiceView" destination="D7g-hd-LJv" id="6FY-w3-yzb"/>
                 <outlet property="breathingLabel" destination="cC4-hA-62X" id="kC1-cT-VxB"/>
                 <outlet property="breathingMethodStackView" destination="6vB-on-3Z9" id="9O0-VV-RSX"/>
@@ -94,19 +94,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yay, you’ve finished your breathing exercise!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-5t-OHN" customClass="EFCountingLabel" customModule="EFCountingLabel">
-                                            <rect key="frame" x="0.0" y="51" width="282" height="47.666666666666657"/>
+                                            <rect key="frame" x="0.0" y="51" width="282" height="39.666666666666657"/>
                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be still, and bring your attention to your breath." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri2-qF-B7h">
-                                            <rect key="frame" x="0.0" y="98.666666666666657" width="282" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="90.666666666666657" width="282" height="0.0"/>
                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Medium" family="Rounded Mplus 1c" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEe-Oa-3Jr" userLabel="Pemenuh">
-                                            <rect key="frame" x="0.0" y="98.666666666666657" width="282" height="15.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="90.666666666666657" width="282" height="23.333333333333329"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
@@ -175,7 +175,7 @@
                                                     <rect key="frame" x="30" y="0.0" width="222" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-4-4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC4-hA-62X">
-                                                            <rect key="frame" x="70.666666666666657" y="9" width="81" height="39.333333333333336"/>
+                                                            <rect key="frame" x="76.666666666666657" y="12.333333333333371" width="68.666666666666657" height="32.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -225,10 +225,10 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8L4-ac-FC9" userLabel="breathing choice view">
-                    <rect key="frame" x="54" y="740" width="282" height="70"/>
+                    <rect key="frame" x="24" y="740" width="342" height="70"/>
                     <subviews>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-aK-ZYI" userLabel="end button">
-                            <rect key="frame" x="87" y="11" width="108" height="48"/>
+                            <rect key="frame" x="117" y="11" width="108" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="108" id="Dst-Mf-bVV"/>
                                 <constraint firstAttribute="height" constant="48" id="hF1-Qu-E8K"/>
@@ -250,13 +250,13 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D7g-hd-LJv" userLabel="breathing choice stack">
-                            <rect key="frame" x="0.0" y="0.0" width="282" height="70"/>
+                            <rect key="frame" x="0.0" y="0.0" width="342" height="70"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SL-X0-sR1" userLabel="Chevron up view">
-                                    <rect key="frame" x="0.0" y="0.0" width="282" height="24"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="24"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-o8-GKg">
-                                            <rect key="frame" x="129" y="4.6666666666666634" width="24" height="14"/>
+                                            <rect key="frame" x="159" y="4.6666666666666634" width="24" height="14"/>
                                             <color key="tintColor" name="Main"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="H2q-Rr-63g"/>
@@ -272,8 +272,8 @@
                                         <constraint firstItem="Dmw-o8-GKg" firstAttribute="centerX" secondItem="3SL-X0-sR1" secondAttribute="centerX" id="tCk-Uo-C9Y"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVT-0A-NK1">
-                                    <rect key="frame" x="0.0" y="24" width="282" height="46"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVT-0A-NK1" customClass="LocalizedLabel" customModule="PanicAway" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="24" width="342" height="46"/>
                                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="28"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -285,10 +285,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="bPi-aK-ZYI" firstAttribute="centerY" secondItem="8L4-ac-FC9" secondAttribute="centerY" id="3sA-q4-Go3"/>
-                        <constraint firstAttribute="trailing" secondItem="D7g-hd-LJv" secondAttribute="trailing" id="BFc-fy-c40"/>
                         <constraint firstAttribute="height" constant="70" id="BUZ-u3-lBK"/>
-                        <constraint firstItem="D7g-hd-LJv" firstAttribute="leading" secondItem="8L4-ac-FC9" secondAttribute="leading" id="Xhi-Xh-90B"/>
+                        <constraint firstAttribute="trailing" secondItem="D7g-hd-LJv" secondAttribute="trailing" id="WKR-Az-UV2"/>
                         <constraint firstItem="D7g-hd-LJv" firstAttribute="top" secondItem="8L4-ac-FC9" secondAttribute="top" id="bQC-i1-AHw"/>
+                        <constraint firstItem="D7g-hd-LJv" firstAttribute="leading" secondItem="8L4-ac-FC9" secondAttribute="leading" id="mfS-vA-0y0"/>
                         <constraint firstItem="bPi-aK-ZYI" firstAttribute="centerX" secondItem="8L4-ac-FC9" secondAttribute="centerX" id="p3q-PG-ulu"/>
                         <constraint firstAttribute="bottom" secondItem="D7g-hd-LJv" secondAttribute="bottom" id="yKP-Lj-pO7"/>
                     </constraints>
@@ -309,10 +309,9 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VqD-Bs-qV2" secondAttribute="trailing" id="5hM-tE-MRy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h0o-yu-7Y0" secondAttribute="trailing" constant="54" id="7sf-rR-nmA"/>
-                <constraint firstItem="8L4-ac-FC9" firstAttribute="trailing" secondItem="h0o-yu-7Y0" secondAttribute="trailing" id="BZr-Vd-vOH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y9K-0O-ich" secondAttribute="trailing" constant="16" id="HKw-4R-naP"/>
+                <constraint firstItem="8L4-ac-FC9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Htw-0l-6fN"/>
                 <constraint firstItem="h0o-yu-7Y0" firstAttribute="top" secondItem="y9K-0O-ich" secondAttribute="bottom" constant="18" id="KkT-l0-aak"/>
-                <constraint firstItem="8L4-ac-FC9" firstAttribute="leading" secondItem="h0o-yu-7Y0" secondAttribute="leading" id="PJb-Wj-WdC"/>
                 <constraint firstItem="zAu-1l-mK1" firstAttribute="top" secondItem="8L4-ac-FC9" secondAttribute="bottom" id="Pcj-90-VRt"/>
                 <constraint firstItem="h0o-yu-7Y0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="54" id="Qha-gX-MZN"/>
                 <constraint firstItem="zAu-1l-mK1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Sf3-bK-NIU"/>
@@ -324,6 +323,7 @@
                 <constraint firstAttribute="bottom" secondItem="zAu-1l-mK1" secondAttribute="bottom" id="rXC-4o-xGB"/>
                 <constraint firstItem="VqD-Bs-qV2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sT2-1a-ev2"/>
                 <constraint firstItem="y9K-0O-ich" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="w12-Ex-PYp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8L4-ac-FC9" secondAttribute="trailing" constant="24" id="wIU-lV-6ZX"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="129.91071428571428"/>
         </view>

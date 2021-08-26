@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LanguageModel{
+struct LanguageModel {
     let flag: String?
     let name: String?
     let id: String?

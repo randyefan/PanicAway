@@ -25,8 +25,9 @@
 		3B3A263026D4F6F0006FD180 /* LocalizationMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A262E26D4F6F0006FD180 /* LocalizationMenuTableViewCell.xib */; };
 		3B3A263226D4FEA3006FD180 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A263126D4FEA3006FD180 /* LanguageModel.swift */; };
 		3B529E6E26B00FA800D4D301 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B529E6D26B00FA800D4D301 /* Colors.xcassets */; };
+		3B83A4E326D6AD85005E636A /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A6A5526D4211D0027A4C0 /* Extension+String.swift */; };
+		3B83A4E426D6AD85005E636A /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A6A5526D4211D0027A4C0 /* Extension+String.swift */; };
 		3B86DEB226B3DB9A00BC28E7 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */; };
-		3BD03EBB26D3DF66000BFFCC /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD03EBA26D3DF66000BFFCC /* LocalizedLabel.swift */; };
 		3B9A942E26CE1DB300D15AE9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611B872426A9B6C500ECA8AD /* Colors.xcassets */; };
 		3BA4308B26CDE5350086744B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA4308A26CDE5350086744B /* WidgetKit.framework */; };
 		3BA4308D26CDE5350086744B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA4308C26CDE5350086744B /* SwiftUI.framework */; };
@@ -35,6 +36,7 @@
 		3BA4309526CDE5360086744B /* PanicAway_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4309126CDE5350086744B /* PanicAway_Widget.intentdefinition */; };
 		3BA4309626CDE5360086744B /* PanicAway_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4309126CDE5350086744B /* PanicAway_Widget.intentdefinition */; };
 		3BA4309926CDE5360086744B /* PanicAway WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3BA4308926CDE5350086744B /* PanicAway WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3BD03EBB26D3DF66000BFFCC /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD03EBA26D3DF66000BFFCC /* LocalizedLabel.swift */; };
 		3BFA29D626B394B700380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D526B394B700380825 /* HealthKit.framework */; };
 		3BFA29D926B39A1200380825 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFA29D826B39A1200380825 /* HealthKit.framework */; };
 		6105045F26D547C200BE3D3A /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 6105045E26D547C200BE3D3A /* SwiftMessages */; };
@@ -213,7 +215,6 @@
 		3B3A263126D4FEA3006FD180 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		3B529E6D26B00FA800D4D301 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3B86DEB126B3DB9A00BC28E7 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
-		3BD03EBA26D3DF66000BFFCC /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
 		3BA4308926CDE5350086744B /* PanicAway WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PanicAway WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA4308A26CDE5350086744B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		3BA4308C26CDE5350086744B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -221,6 +222,7 @@
 		3BA4309126CDE5350086744B /* PanicAway_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PanicAway_Widget.intentdefinition; sourceTree = "<group>"; };
 		3BA4309226CDE5360086744B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BA4309426CDE5360086744B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BD03EBA26D3DF66000BFFCC /* LocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLabel.swift; sourceTree = "<group>"; };
 		3BFA29D326B394B700380825 /* PanicAway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PanicAway.entitlements; sourceTree = "<group>"; };
 		3BFA29D526B394B700380825 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		3BFA29D726B39A1200380825 /* PanicAway WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PanicAway WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -941,6 +943,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B83A4E426D6AD85005E636A /* Extension+String.swift in Sources */,
 				3BA4309526CDE5360086744B /* PanicAway_Widget.intentdefinition in Sources */,
 				3B1D8FA126CE28CF0047FF44 /* BreathingModel.swift in Sources */,
 				3BA4309026CDE5350086744B /* PanicAway_Widget.swift in Sources */,
@@ -991,6 +994,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B83A4E326D6AD85005E636A /* Extension+String.swift in Sources */,
 				3B2FD88F26BB8B5800D2463B /* NotificationController.swift in Sources */,
 				611B870826A9AFD400ECA8AD /* ExtensionDelegate.swift in Sources */,
 				611B870626A9AFD400ECA8AD /* InterfaceController.swift in Sources */,

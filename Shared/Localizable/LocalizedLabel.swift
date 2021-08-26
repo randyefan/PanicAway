@@ -15,7 +15,7 @@ class LocalizedLabel : UILabel {
             return self.text!
         }
         set(value) {
-            if let selectedLanguage = UserDefaults.standard.string(forKey: "applicationKey"){
+            if let selectedLanguage = UserDefaults.standard.string(forKey: "applicationLocalizationKey"){
                 let path = Bundle.main.path(forResource: selectedLanguage, ofType: "lproj")
                 let bundle = Bundle(path: path!)
                 
@@ -23,4 +23,11 @@ class LocalizedLabel : UILabel {
             }
         }
     }
+    
+    func reloadText(){
+        print(self.text)
+        let textLocalized = self.text
+        self.text = textLocalized?.localized()
+    }
 }
+

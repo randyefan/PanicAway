@@ -17,40 +17,44 @@ enum EmergencyContactEntryPoint {
 }
 
 class EmergencyContactViewController: UIViewController {
-
+    
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
-
+    @IBOutlet weak var skipButton: UIButton!
+    
     var emergencyContact: [EmergencyContactModel] = []
     private var isEdit: Bool = false
     private var editIndex: Int? = nil
     private var isEditTableView: Bool = false
     private var entryPoint: EmergencyContactEntryPoint?
-
+    
     init(entryPoint: EmergencyContactEntryPoint) {
         super.init(nibName: "EmergencyContactViewController", bundle: nil)
         self.entryPoint = entryPoint
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
         contactTableView.register(ContactTableViewCell.nib(), forCellReuseIdentifier: ContactTableViewCell.reuseID)
         contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
+        setupBackBarButtonItem()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         if entryPoint == .settings {
             contactTableView.reloadData()
+            setupBackBarButtonItem()
         }
+        
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         if entryPoint == .settings {
             setSaveEmergencyContact()
@@ -70,8 +74,8 @@ class EmergencyContactViewController: UIViewController {
         setSaveEmergencyContact()
         navigateToAuthorizeHealthKit()
     }
-
-
+    
+    
     @IBAction func skipButtonAction(_ sender: UIButton) {
         navigateToAuthorizeHealthKit()
     }
@@ -79,34 +83,38 @@ class EmergencyContactViewController: UIViewController {
 
 fileprivate extension EmergencyContactViewController {
     func initialSetup() {
+        saveButton.setTitle("Save".localized(), for: .normal)
+        skipButton.setTitle("Skip".localized(), for: .normal)
+        
         checkContact()
         switch entryPoint {
         case .settings:
-            title = "Emergency Contact"
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+            title = "Emergency Contact".localized()
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit".localized(), style: .plain, target: self,  action: #selector(edit))
             mainTitle.isHidden = true
             stackButton.isHidden = true
+            
         default:
             self.navigationController?.navigationBar.isHidden = true
         }
     }
-
+    
     @objc func edit() { //insert logic save here
-
+        
         if isEditTableView {
             contactTableView.isEditing = false
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
-
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized(), style: .done, target: self,  action: #selector(edit))
+            
             isEditTableView = false
         } else {
             contactTableView.isEditing = true
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(edit))
-
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit".localized(), style: .plain, target: self,  action: #selector(edit))
+            
             isEditTableView = true
         }
-
+        
     }
-
+    
     func setSaveEmergencyContact() {
         if emergencyContact.count != 0 {
             do {
@@ -118,7 +126,7 @@ fileprivate extension EmergencyContactViewController {
             }
         }
     }
-
+    
     private func navigateToAuthorizeHealthKit() {
         let vc = OnboardingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -139,11 +147,17 @@ fileprivate extension EmergencyContactViewController {
         
         return nil
     }
+    
+    private func setupBackBarButtonItem() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Preferences".localized()
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
+    }
 }
 
 //MARK: CollectionView Configuration
 extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDelegate, UITableViewDataSource {
-
+    
     //check if emergency contact data is exist to set save button state
     private func checkContact () {
         if emergencyContact.count == 0 {
@@ -152,33 +166,33 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             saveButton.isEnabled = true
         }
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emergencyContact.count + 1
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row <= emergencyContact.count - 1 {
             let cell = contactTableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.reuseID, for: indexPath) as! ContactTableViewCell
             cell.contactInformation = emergencyContact[indexPath.row]
             cell.selectionStyle = .none
-
+            
             return cell
-
+            
         } else {
             let cell = contactTableView.dequeueReusableCell(withIdentifier: AddToContactTableViewCell.reuseID, for: indexPath) as! AddToContactTableViewCell
-
+            
             if emergencyContact.count == 3 {
                 cell.setInactive()
             } else {
                 cell.setActive()
             }
             cell.selectionStyle = .none
-
+            
             return cell
         }
     }
-
+    
     //handle button AddContact Action
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row <= emergencyContact.count - 1 {
@@ -188,7 +202,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             let contactPickerVC = CNContactPickerViewController()
             contactPickerVC.delegate = self
             present(contactPickerVC, animated: true)
-
+            
         } else {
             if emergencyContact.count == 3 {
                 return
@@ -198,7 +212,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             present(contactPickerVC, animated: true)
         }
     }
-
+    
     //handle contact selection
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         if isEdit {
@@ -213,7 +227,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
         }
         contactTableView.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if indexPath.row <= emergencyContact.count - 1 {
             return true
@@ -221,7 +235,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             return false
         }
     }
-
+    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if indexPath.row <= emergencyContact.count - 1 {
             return .delete
@@ -229,7 +243,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             return .none
         }
     }
-
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             contactTableView.beginUpdates()
@@ -240,7 +254,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             contactTableView.reloadRows(at: [IndexPath(row: emergencyContact.count, section: 0)], with: .none)
         }
     }
-
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         if destinationIndexPath.row > emergencyContact.count - 1 {
             contactTableView.reloadData()

@@ -1,13 +1,13 @@
  //
-//  BreathingTechniqueCell.swift
-//  PanicAway
-//
-//  Created by Randy Efan Jayaputra on 27/07/21.
-//
-
-import UIKit
-
-class BreathingTechniqueCell: UITableViewCell {
+ //  BreathingTechniqueCell.swift
+ //  PanicAway
+ //
+ //  Created by Randy Efan Jayaputra on 27/07/21.
+ //
+ 
+ import UIKit
+ 
+ class BreathingTechniqueCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var background: UIImageView!
@@ -28,7 +28,7 @@ class BreathingTechniqueCell: UITableViewCell {
         super.awakeFromNib()
         setImageBackgroundUnselected()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
@@ -59,4 +59,4 @@ class BreathingTechniqueCell: UITableViewCell {
             background.image = UIImage(named: "selected_711")
         }
     }
-}
+ }

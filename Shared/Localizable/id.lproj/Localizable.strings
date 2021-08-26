@@ -14,23 +14,88 @@
 
 //Product Showcase 4
 "Widget" = "Widget";
-//Masih kurang beberapa di product showcase 4
+"Contact your support system and get relaxed in one click." = "Kontak teman Anda dan menjadi tenang dalam satu klik.";
 
-//Choose languange yang ini karena semuanya by code berarti harus object id nya yang di localized mari kita coba
-"language_1" = "Pilih bahasa pilihan anda";
-"Please select your language" = "Silahkan pilih bahasa anda";
-"English" = "Inggris";
+//Choose language yang ini karena semuanya by code berarti harus object id nya yang di localized mari kita coba
+"Choose your preferred language" = "Pilih bahasa pilihan Anda";
+"Please select your language" = "Silahkan pilih bahasa Anda";
+"English" = "Bahasa Inggris";
 "Bahasa Indonesia" = "Bahasa Indonesia";
 "Select" = "Pilih";
+"Get Started" = "Mulai";
+
+"language_1" = "Pilih bahasa pilihan Anda";
+"language_2" = "Silahkan pilih bahasa Anda";
+
+//Apple Health
+"Allow Access" = "Izinkan Akses";
+"Health_1" = "Izinkan akses ke Apple Health untuk menyimpan mindfullnes dan memonitor detak jantung Anda";
 
 //Breathe - Tap to start
 "Tap to start" = "Ketuk untuk memulai"; //Ini seharusnya untuk dia pas mulai awal berarti nanti XIB nya harus di localized juga
 "Breathing methods" = "Metode Pernafasan";
+"Tap to start again" = "Ketuk untuk memulai";
 
-//Breathe - Modal
+"Anxiety Away" = "Hilangkan Kecemasan";
+"4-7-8 Method" = "Metode 4-7-8";
+"Inhale 4s, hold 7s, and exhale 8s. Aims to reduce anxiety or help to get sleep." = "Tarik napas 4s, tahan napas 7s, dan buang napas 8s. Bertujuan untuk mengurangi kecemasan dan membantu tidur";
+
+"Calm" = "Tenang";
+"4-4-4 Method" = "Metode 4-4-4";
+"Inhale 4s, hold 4s, exhale 4s, and hold 4s. Aim to reduce tension and clear mind from distractions." = "Tarik napas 4s, tahan napas 4s, dan buang napas 4s. Bertujuan untuk mengurangi tegangan dan menjernihkan pikiran.";
+
+"Relax" = "Santai";
+"7-11 Method" = "Metode 7-11";
+"Inhale 7s and exhale 11s. Repeat this cycle or until you feel relaxed." = "Tarik napas 7s dan buang napas 11s. Ulangi siklus ini atau sampai Anda merasa rileks.";
 
 //Breathe in
+"Breathe In" = "Tarik Napas";
+"End" = "Selesai";
+"Breathe Out" = "Buang Napas";
 
-//This one is for the localisation in the storyboard where the string is already inputted on the xib instead of by code.
+"Hold" = "Tahan Napas";
+
+"Yay, you’ve finished your breathing exercise!" = "Yay, Anda telah menyelesaikan letihan pernafasan Anda!";
+"Repeat" = "Ulangi";
+"Finish" = "Selesai";
+"Finish_1" = "Yay, Anda telah menyelesaikan letihan pernafasan Anda!";
+
+//Contact
+"Contact_1" = "Pilih kontak darurat.";
+"Contact_2" = "Hubungi teman anda melalui WhatsApp.";
+"Contact_3" = "Tambahkan Kontak";
+
+//
+"Be still, and bring your attention to your breath." = "Diamlah, dan alihkan perhatianmu pada napasmu.";
+
+"Preferences" = "Preferensi";
+"Breathing" = "Pernafasan";
+"Breathing Technique" = "Teknik Pernafasan";
+"Breathing Cycle" = "Siklus Pernafasan";
+"Language" = "Bahasa";
+"Guided Audio" = "Panduan Suara";
+"Haptic" = "Haptik";
+"Emergency and Health" = "Keadaan Darurat";
+"Emergency Contact" = "Kontak Darurat";
+"Profile Name" = "Nama Profil";
+
+"Save" = "Simpan";
+"Breathing Methods" = "Metode Pernafasan";
+"Select your default breathing technique. If you feel unwell, light-headed or nausea, please contact your medical care number." = "Pilih teknik pernafasan default Anda. Jika Anda merasa tidak sehat, pusing, atau mual, hubungi perawat medis.";
+
+"This person will be contacted when use widget shortcut. Make sure your reliable contact use Whatsapp." = "Kontak ini akan dihubungi ketika Anda mengakses dari shortcut. Pastikan kontak menggunakan Whatsapp";
+"Add Contact" = "Tambah Kontak";
+
+//Settings - Name
+"Profile_1" = "Tambahkan nama Anda agar kontak darurat Anda dapat mengenali Anda.";
+"Tell us your Fullname" = "Masukkan Nama Anda";
+"Name_1" = "Masukkan Nama Anda";
+"Your Name" = "Nama Anda";
+
+"Add Emergency Contacts" = "Tambah Kontak Darurat";
+"This person will be contacted when use widget shortcut. Make sure your reliable contact use Whatsapp." = "Kontak ini akan dihubungi ketika Anda mengakses dari shortcut. Pastikan kontak menggunakan Whatsapp";
 
 
+//Settings
+"Select Language" = "Pilih Bahasa";
+"Back" = "Kembali";
