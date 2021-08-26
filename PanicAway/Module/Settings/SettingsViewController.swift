@@ -115,16 +115,7 @@ fileprivate extension SettingsViewController {
     }
     
     func reloadLocalization(){
-        breathingTItleLabel.reloadText()
-        breathingCycleLabel.reloadText()
-        guidedAudioLabel.reloadText()
-        emergencyTitleLabel.reloadText()
-        profileNameLabel.reloadText()
-        emergencyContactLabel.reloadText()
-        languageTitleLabel.reloadText()
-        
         selectLanguageLabel.reloadText()
-        
     }
 
     func getEmergencyContacts() {
