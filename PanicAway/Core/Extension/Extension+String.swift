@@ -24,7 +24,8 @@ extension String {
     func localized() ->String {
         let selectedLanguage = UserDefaults.standard.string(forKey: "applicationLocalizationKey")
         let path = Bundle.main.path(forResource: selectedLanguage, ofType: "lproj")
-        let bundle = Bundle(path: path!)
+        guard let path = path else { return self }
+        let bundle = Bundle(path: path)
         
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
         

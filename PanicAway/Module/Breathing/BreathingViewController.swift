@@ -102,10 +102,13 @@ class BreathingViewController: UIViewController {
                 breatheTime = technique.breathInCount
                 if technique.breathingName == "4-7-8" {
                     firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.6)))
+                    setHapticForASecond(duration: Float(technique.breathInCount))
                 } else if technique.breathingName == "7-11" {
                     firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.3 + 0.10)))
+                    setHapticForASecond(duration: Float(technique.breathInCount))
                 } else {
                     firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.4)))
+                    setHapticForASecond(duration: Float(technique.breathInCount))
                 }
             }
             else if breathingStatus == .breatheOut {
@@ -176,6 +179,7 @@ class BreathingViewController: UIViewController {
         setupHaptic()
         setupAnimation()
         setupLocalization()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -183,6 +187,7 @@ class BreathingViewController: UIViewController {
         setupFirstBreathingScreen()
         setupToDefaultBreathingTechnique()
         setupLocalization()
+        
     }
     
     // MARK: - Setup View for ViewController
@@ -261,6 +266,7 @@ class BreathingViewController: UIViewController {
     
     private func setupObserveAction() {
         settingsView.onTap {
+            //self.setHapticForASecond(duration: 10)
             self.navigateToSettings()
         }
         
@@ -431,6 +437,7 @@ class BreathingViewController: UIViewController {
     }
     
     func setHapticForASecond(duration: Float) {
+        print(duration)
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
         
@@ -453,21 +460,17 @@ class BreathingViewController: UIViewController {
     
     @objc func runCountDown() {
         // print("breathe time \(breatheTime)")
-        
-        //timer logic here
-        if secondsTimer == 60 {
-            secondsTimer = 0
-            minutesTimer += 1
-        } else {
-            secondsTimer += 1
+        if breathingStatus == .holdBreathe{
+            setHapticForASecond(duration: 1.0)
         }
+        
+        
         counter += 1
         //print(counter)
         
         // MARK: - TODO: CGFloat(progress) not counting (0,0), so the circularProgressBar still 0.2
         circularProgressBar.progress += CGFloat(progress)
         captionLabel.isHidden = false
-        print(circularProgressBar.progress)
         
         if breatheTime == 1 {
             if breathingStatus == .breatheIn {
