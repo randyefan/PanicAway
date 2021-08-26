@@ -107,9 +107,7 @@ fileprivate extension SettingsViewController {
     }
     
     func reloadLocalization(){
-        breathingTItleLabel.reloadText()
-        
-        
+        breathingTItleLabel.text = breathingTItleLabel.text?.localized()
     }
 
     func getEmergencyContacts() {
