@@ -9,9 +9,9 @@ import UIKit
 
 class EmergencyMessageSettingViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
-
+    
     static let identifier = "EmergencyMessageSettingViewController"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -23,8 +23,8 @@ fileprivate extension EmergencyMessageSettingViewController {
         title = "Emergency Message"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
     }
-
+    
     @objc func save() {
-
+        
     }
 }

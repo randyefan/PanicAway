@@ -54,6 +54,10 @@ class BreathingChoiceViewController: UIViewController {
         setupObserverAction()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        saveToUserDefault()
+    }
+    
     // MARK: - Setup Function for ViewController
     
     func setupObserverAction(){
@@ -132,7 +136,7 @@ class BreathingChoiceViewController: UIViewController {
     }
     
     private func saveToUserDefault() {
-        if let userDefaults = UserDefaults(suiteName: "group.com.panicaway.javier.mc3") {
+        if let userDefaults = UserDefaults(suiteName: "group.martin.panicaway") {
             userDefaults.setValue(selected?.id, forKey: "defaultBreatheId")
         }
     }

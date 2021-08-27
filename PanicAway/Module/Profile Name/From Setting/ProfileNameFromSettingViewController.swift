@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileNameFromSettingViewController: UIViewController {
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var nameTextfield: UITextField!
     
@@ -18,8 +18,8 @@ class ProfileNameFromSettingViewController: UIViewController {
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setupView()
+        
+        setupView()
         isNameExist()
     }
     
@@ -28,8 +28,8 @@ class ProfileNameFromSettingViewController: UIViewController {
         let padding = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: nameTextfield.frame.height))
         nameTextfield.leftView = padding
         nameTextfield.leftViewMode = .always
-        title = "Profile Name"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveName))
+        title = "Profile Name".localized()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized(), style: .done, target: self, action: #selector(saveName))
         navigationItem.rightBarButtonItem?.isEnabled = false
         nameTextfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
@@ -51,7 +51,7 @@ class ProfileNameFromSettingViewController: UIViewController {
     @objc func saveName() {
         print("save nama")
         guard let name = nameTextfield.text else { return }
-        //TODO: handle user default here
+        UserDefaults.standard.setValue(name, forKey: "fullName")
         self.navigationController?.popViewController(animated: true)
     }
 }

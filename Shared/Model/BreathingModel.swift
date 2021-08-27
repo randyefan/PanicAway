@@ -37,26 +37,26 @@ class BreathingLoader {
     func loadDataBreath() {
         let entries = [
             BreathingModel(id: 0,
-                           breathingName: "4-7-8 Method",
-                           breathGoal: "Anxiety Away",
+                           breathingName: "4-7-8 Method".localized(),
+                           breathGoal: "Anxiety Away".localized(),
                            breathInCount: 4,
                            holdOnCount: 7,
                            breathOutCount: 8,
-                           description: "Inhale for 4s, holding for 7s, and exhale for 8s. Aims to reduce anxiety or help to get sleep."),
+                           description: "Inhale 4s, hold 7s, and exhale 8s. Aims to reduce anxiety or help to get sleep.".localized()),
             BreathingModel(id: 1,
-                           breathingName: "4-4-4 Method",
-                           breathGoal: "Calm",
+                           breathingName: "4-4-4 Method".localized(),
+                           breathGoal: "Calm".localized(),
                            breathInCount: 4,
                            holdOnCount: 4,
                            breathOutCount: 4,
-                           description: "Inhale for 4s, hold for 4s, then exhale for 4s, and hold 4s before the next cycle; Aim to clear your head from distractions and reduce stress."),
+                           description: "Inhale 4s, hold 4s, exhale 4s, and hold 4s. Aim to reduce tension and clear mind from distractions.".localized()),
             BreathingModel(id: 2,
-                           breathingName: "7-11 Method",
-                           breathGoal: "Relax",
+                           breathingName: "7-11 Method".localized(),
+                           breathGoal: "Relax".localized(),
                            breathInCount: 7,
                            holdOnCount: 0,
                            breathOutCount: 11,
-                           description: "Inhale for 7s and exhale 11s. Breathe from your belly for this one.")
+                           description: "Inhale 7s and exhale 11s. Repeat this cycle or until you feel relaxed.".localized())
         ]
         self.entries = entries
     }

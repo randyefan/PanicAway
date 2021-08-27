@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductShowcaseViewController: UIViewController{
+class ProductShowcaseViewController: UIViewController {
     
     @IBOutlet weak var productShowcaseCollectionView: UICollectionView!
     @IBOutlet weak var productShowcasePageControl: UIPageControl!
@@ -16,15 +16,15 @@ class ProductShowcaseViewController: UIViewController{
     
     var slides: [ProductShowcaseSlide] = []
     
-    var currentPage = 0  {
-        didSet{
+    var currentPage = 0 {
+        didSet {
             productShowcasePageControl.currentPage = currentPage
-            if currentPage == slides.count - 1{
-                nextButton.setTitle("Get Started", for: .normal)
+            if currentPage == slides.count - 1 {
+                nextButton.setTitle("Get Started".localized(), for: .normal)
                 skipButton.isEnabled = false
                 skipButton.setTitleColor(.clear, for: .normal)
             } else {
-                nextButton.setTitle("Next", for: .normal)
+                nextButton.setTitle("Next".localized(), for: .normal)
                 skipButton.isEnabled = true
                 skipButton.setTitleColor(UIColor(named: "Main"), for: .normal)
                 
@@ -37,18 +37,18 @@ class ProductShowcaseViewController: UIViewController{
         
         //Onboarding Data
         slides = [
-            ProductShowcaseSlide(title: "Cope with panic attack",
-                                 description:"Guided breathing to relieve your panic attack and a one-click emergency contact.",
+            ProductShowcaseSlide(title: "Cope with panic attack".localized(),
+                                 description:"Guided breathing to relieve your panic attack and a one-click emergency contact.".localized(),
                                  image: UIImage(named: "OnboardingStress") ?? #imageLiteral(resourceName: "OnboardingBatikGringsing")),
-        
-            ProductShowcaseSlide(title: "Cultural Tradition",
-                                 description:"Gringsing Batik belief to shield and protect people from danger",
+            
+            ProductShowcaseSlide(title: "Cultural Tradition".localized(),
+                                 description:"Gringsing Batik belief to shield and protect people from danger.".localized(),
                                  image: UIImage(named: "OnboardingBatikGringsing") ?? #imageLiteral(resourceName: "hold4")),
-            ProductShowcaseSlide(title: "Quick Access",
-                                 description: "Seek assistance quickly by using Shortcut and a watchOS Complications.",
+            ProductShowcaseSlide(title: "Quick Access".localized(),
+                                 description: "Seek assistance quickly by using Shortcut and a watchOS Complications.".localized(),
                                  image: UIImage(named: "OnboardingWatch") ?? #imageLiteral(resourceName: "breatheIn59")),
-            ProductShowcaseSlide(title: "Widget",
-                                 description: "Seek assistance quickly by using widget, Shortcut and a watchOS Complications.",
+            ProductShowcaseSlide(title: "Widget".localized(),
+                                 description: "Contact your support system and get relaxed in one click.".localized(),
                                  image: UIImage(named: "OnboardingWidget") ?? #imageLiteral(resourceName: "Hold 3_00050")),
         ]
         
@@ -59,7 +59,8 @@ class ProductShowcaseViewController: UIViewController{
         productShowcaseCollectionView.register(ProductShowcaseCollectionViewCell.nib(), forCellWithReuseIdentifier: ProductShowcaseCollectionViewCell.identifier)
         productShowcaseCollectionView.delegate = self
         productShowcaseCollectionView.dataSource = self
-        
+        currentPage = 0
+        skipButton.setTitle("Skip".localized(), for: .normal)
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -71,29 +72,28 @@ class ProductShowcaseViewController: UIViewController{
     @IBAction func nextButtonClick(_ sender: Any) {
         if currentPage == slides.count - 1 {
             nextView()
-        }else{
-        currentPage += 1
-        swipeTo(page: currentPage)
-           
+        } else {
+            currentPage += 1
+            swipeTo(page: currentPage)
+            
         }
     }
     
     @IBAction func skipButtonPressed(_ sender: Any) {
+        nextView()
+        
+    }
+    
+    func nextView() {
         setDefaultBreathingTechnique()
         setDefaultBreathingCycle()
+        setDefaultAudio()
         navigateToProfileName()
         
     }
     
-    func nextView(){
-        setDefaultBreathingTechnique()
-        setDefaultBreathingCycle()
-        navigateToProfileName()
-        
-    }
     
-    
-    func swipeTo(page current:Int){
+    func swipeTo(page current: Int) {
         let index = IndexPath(item: current, section: 0)
         productShowcaseCollectionView.isPagingEnabled = false
         productShowcaseCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
@@ -105,8 +105,9 @@ class ProductShowcaseViewController: UIViewController{
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func navigateToAppleHealthAuthorize() {
-        let vc = OnboardingViewController()
+    
+    private func navigateToEmergencyContact() {
+        let vc = EmergencyContactViewController(entryPoint: .onBoarding)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -124,9 +125,13 @@ class ProductShowcaseViewController: UIViewController{
         UserDefaults.standard.setValue(4, forKey: "defaultBreathingCycle")
     }
     
+    private func setDefaultAudio() {
+        UserDefaults.standard.setValue(true, forKey: "defaultAudioState")
+    }
+    
 }
 
-extension ProductShowcaseViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension ProductShowcaseViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return slides.count
     }

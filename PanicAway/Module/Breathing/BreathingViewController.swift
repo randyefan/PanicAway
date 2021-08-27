@@ -10,6 +10,7 @@ import AVFoundation
 import EFCountingLabel
 import CoreHaptics
 import HealthKit
+import SwiftMessages
 
 enum BreathingState {
     case beforeBreathing
@@ -28,6 +29,11 @@ enum BreathingTechnique: Int {
     case one = 0
     case two = 1
     case three = 2
+}
+
+enum Localization: String {
+    case en = "Overlay"
+    case id = "Overlay-Indo"
 }
 
 class BreathingViewController: UIViewController {
@@ -49,16 +55,20 @@ class BreathingViewController: UIViewController {
     @IBOutlet weak var centreAnimationView: UIView!
     @IBOutlet weak var closeView: UIImageView!
     @IBOutlet weak var topChevronView: UIView!
-    @IBOutlet weak var breatheTechniqueGoalLabel: UILabel!
+    @IBOutlet weak var breatheTechniqueGoalLabel: LocalizedLabel!
     @IBOutlet weak var endBreathingButton: UIButton!
     @IBOutlet weak var breathingChoiceView: UIStackView!
+    @IBOutlet weak var overlayImageView: UIImageView!
     
     
     // MARK: - Variable
+    var defaultLanguage: Localization = .en
     var breathingId: Int = 0
     var data = BreathingLoader()
+    var isFirstBreathingScreen = true
     let healthKitManager = HealthKitManager()
     var startDate = Date()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var mindfulnessMinutes: Double{
         return Double((minutesTimer*60) + secondsTimer)
     }
@@ -86,15 +96,18 @@ class BreathingViewController: UIViewController {
             guard let technique = technique else { return }
             guard let breathingStat = breathingStatus else { return }
             self.playInstruction()
-            titleLabel.text = breathingStat.rawValue
+            titleLabel.text = breathingStat.rawValue.localized()
             captionLabel.text = "\(breatheTime)"
             if breathingStatus == .breatheIn {
                 breatheTime = technique.breathInCount
                 if technique.breathingName == "4-7-8" {
+                    setHapticForASecond(duration: Float(technique.breathInCount))
                     firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: TimeInterval((Double(technique.breathInCount) + 0.6)))
                 } else if technique.breathingName == "7-11" {
+                    setHapticForASecond(duration: Float(technique.breathInCount))
                     firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: TimeInterval((Double(technique.breathInCount) + 0.3 + 0.10)))
                 } else {
+                    setHapticForASecond(duration: Float(technique.breathInCount))
                     firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: Double(technique.breathInCount) + 0.4)
                 }
             }
@@ -161,11 +174,16 @@ class BreathingViewController: UIViewController {
         setupObserveAction()
         setupHaptic()
         setupAnimation()
+        setupLocalization()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar()
+        setupFirstBreathingScreen()
         setupToDefaultBreathingTechnique()
+        setupLocalization()
+        
     }
     
     // MARK: - Setup View for ViewController
@@ -178,8 +196,8 @@ class BreathingViewController: UIViewController {
             setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, endButton: false, breathingChoiceView: true)
         case .pause:
             setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, endButton: false, breathingChoiceView: true)
-            titleLabel.text = "Paused"
             firstStateAnimationImageView.image = UIImage(named: "breatheOut329")
+            titleLabel.text = "Paused".localized()
         case .finish:
             setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, circularProgressBar: true, endButton: true, breathingChoiceView: false)
             circularProgressBar.progress = 0
@@ -187,11 +205,38 @@ class BreathingViewController: UIViewController {
             minutesTimer = 0
             secondsTimer = 0
             firstStateAnimationImageView.image = UIImage(named: "breatheOut329")
-            titleLabel.text = "Tap to Start Again"
+            titleLabel.text = "Tap to start again".localized()
             DispatchQueue.main.async {
-                self.captionLabel.text = "Yay, you’ve finished your breathing exercise!"
+                self.captionLabel.text = "Yay, you’ve finished your breathing exercise!".localized()
             }
         }
+    }
+    
+    func setupFirstBreathingScreen() {
+        if UserDefaults.standard.bool(forKey: "isNotFirstBreathingScreen") {
+            isFirstBreathingScreen = false
+            overlayImageView.isHidden = true
+        } else {
+            isFirstBreathingScreen = true
+            if defaultLanguage == .en {
+                overlayImageView.image = UIImage(named: "Overlay")
+            }
+            switch defaultLanguage {
+            case .en:
+                overlayImageView.image = UIImage(named: defaultLanguage.rawValue)
+            default:
+                overlayImageView.image = UIImage(named: defaultLanguage.rawValue)
+            }
+            overlayImageView.isHidden = false
+        }
+    }
+    
+    func setupLocalization(){
+        titleLabel.text = "Tap to start".localized()
+        prepareLabel.text = "Be still, and bring your attention to your breath.".localized()
+        captionLabel.text = "Yay, you’ve finished your breathing exercise!".localized()
+        endBreathingButton.setTitle("End".localized(), for: .normal)
+        breatheTechniqueGoalLabel.reloadText()
     }
     
     func setupHaptic() {
@@ -217,6 +262,7 @@ class BreathingViewController: UIViewController {
     
     private func setupObserveAction() {
         settingsView.onTap {
+            //self.setHapticForASecond(duration: 10)
             self.navigateToSettings()
         }
         
@@ -247,6 +293,12 @@ class BreathingViewController: UIViewController {
         
         topChevronView.onTap {
             self.showBreathingChoiceModal()
+        }
+        
+        overlayImageView.onTap {
+            self.overlayImageView.isHidden = true
+            self.isFirstBreathingScreen = false
+            UserDefaults.standard.setValue(true, forKey: "isNotFirstBreathingScreen")
         }
         
         if state == .beforeBreathing {
@@ -360,7 +412,7 @@ class BreathingViewController: UIViewController {
         guard let techniqueCount = technique else { return }
         if breathingStatus == .breatheOut {
             captionLabel.countFrom(CGFloat(techniqueCount.breathOutCount + 1), to: 1, withDuration: (Double(techniqueCount.breathOutCount)))
-        } else if breathingStatus == .breatheIn{
+        } else if breathingStatus == .breatheIn {
             captionLabel.countFrom(CGFloat(techniqueCount.breathInCount + 1), to: 1, withDuration: (Double(techniqueCount.breathInCount)))
         } else if breathingStatus == .holdBreathe {
             captionLabel.countFrom(CGFloat(techniqueCount.holdOnCount + 1), to: 1, withDuration: (Double(techniqueCount.holdOnCount)))
@@ -368,6 +420,7 @@ class BreathingViewController: UIViewController {
     }
     
     func setHapticForASecond(duration: Float) {
+        print(duration)
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
         
@@ -390,19 +443,16 @@ class BreathingViewController: UIViewController {
     
     @objc func runCountDown() {
         // print("breathe time \(breatheTime)")
-        
-        //timer logic here
-        if secondsTimer == 60 {
-            secondsTimer = 0
-            minutesTimer += 1
-        } else {
-            secondsTimer += 1
+        if breathingStatus == .holdBreathe{
+            setHapticForASecond(duration: 1.0)
         }
+        
+        
         counter += 1
         //print(counter)
         
         // MARK: - TODO: CGFloat(progress) not counting (0,0), so the circularProgressBar still 0.2
-        circularProgressBar.progress +=  CGFloat(progress)
+        circularProgressBar.progress += CGFloat(progress)
         captionLabel.isHidden = false
         
         if breatheTime == 1 {
@@ -438,31 +488,76 @@ class BreathingViewController: UIViewController {
     }
     
     func playInstruction() {
-        var filename = ""
-        switch breathingStatus {
-        case .breatheIn:
-            filename = "VO - Breath In"
-        case .breatheOut:
-            filename = "VO - Breath Out"
-        default:
-            filename = "VO - Hold"
+        if UserDefaults.standard.bool(forKey: "defaultAudioState") {
+            var filename = ""
+            switch breathingStatus {
+            case .breatheIn:
+                filename = "VO - Breath In"
+            case .breatheOut:
+                filename = "VO - Breath Out"
+            default:
+                filename = "VO - Hold"
+            }
+            
+            guard let path = Bundle.main.path(forResource: filename, ofType: "mp3") else { return }
+            
+            let url = URL(fileURLWithPath: path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player?.play()
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getSentMessagePopUp() {
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.configureTheme(.success)
+        view.configureTheme(backgroundColor: UIColor(named: "Main")!, foregroundColor: .white)
+        view.button?.isHidden = true
+        view.configureContent(title: nil, body: "Whatsapp message to your emergency contact has been sent", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
+        view.configureDropShadow()
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        SwiftMessages.show(view: view)
+    }
+    
+    func getNoContactPopUp() {
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.configureTheme(.error)
+        view.button?.isHidden = true
+        view.configureContent(title: nil, body: "You haven't added your emergency contact yet", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: nil, buttonTapHandler: nil)
+        view.configureDropShadow()
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        SwiftMessages.show(view: view)
+    }
+    
+    private func getEmergencyContact() -> [EmergencyContactModel]? {
+        // Get Emergency Contact Number in userDefaults
+        if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
+            do {
+                let decoder = JSONDecoder()
+                let emergencyContact = try decoder.decode([EmergencyContactModel].self, from: data)
+                return emergencyContact
+            } catch {
+                print("Unable to Decode (\(error))")
+                return nil
+            }
         }
         
-        guard let path = Bundle.main.path(forResource: filename, ofType: "mp3") else { return }
-        
-        let url = URL(fileURLWithPath: path)
-        do{
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        return nil
     }
 }
 
 extension BreathingViewController {
     func openUsingScheme() {
-        // TODO: Handle Send Message Whatsapp Here
+        let emergencyContact = getEmergencyContact()
+        guard let contact = emergencyContact, contact.count != 0 else {
+            getNoContactPopUp()
+            return
+        }
+        getSentMessagePopUp()
+        appDelegate.sendMessage()
         print("opening from scheme")
     }
 }

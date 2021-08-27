@@ -16,11 +16,18 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var guidedAudioToggle: UISwitch!
     @IBOutlet weak var hapticToggle: UISwitch!
     @IBOutlet weak var appleHealthToggle: UISwitch!
-
+    @IBOutlet weak var breathingTItleLabel: LocalizedLabel!
+    @IBOutlet weak var breathingCycleLabel: LocalizedLabel!
+    @IBOutlet weak var guidedAudioLabel: LocalizedLabel!
+    @IBOutlet weak var emergencyTitleLabel: LocalizedLabel!
+    @IBOutlet weak var profileNameLabel: LocalizedLabel!
+    @IBOutlet weak var emergencyContactLabel: LocalizedLabel!
+    @IBOutlet weak var languageTitleLabel: LocalizedLabel!
+    @IBOutlet weak var selectLanguageLabel: LocalizedLabel!
+    
     let data = BreathingLoader()
     var emergencyContact: [EmergencyContactModel]?
     var wcSession = WCSession.default
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate // This One Variable to get func sendMessages
     
     var breathingTechnique: BreathingModel? {
         didSet {
@@ -30,15 +37,14 @@ class SettingsViewController: UIViewController {
     }
     
     private let cycleOption = Array(4...100)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         data.loadDataBreath()
         initialSetup()
         setupNavigationBar()
         setupWCSession()
-        // BELOW IS: - Function that send messages using app delegate
-        // appDelegate.sendMessage()
+        setupBackBarButtonItem()
     }
     
     func setupNavigationBar() {
@@ -57,42 +63,87 @@ class SettingsViewController: UIViewController {
         breathingCycleValue.text = "\(defaultBreathingCycle)"
         breathingTechnique = data.entries[defaultBreathingId]
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupViewWithData()
         breathingCyclePickerView.isHidden = true
+        reloadLocalization()
+        title = "Preferences".localized()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupBackBarButtonItem()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         UserDefaults.standard.setValue(Int(breathingCycleValue.text ?? "4"), forKey: "defaultBreathingCycle")
         sendDataToWatch()
     }
-
+    
+    @IBAction func audioSwitch(_ sender: UISwitch) {
+        if guidedAudioToggle.isOn {
+            UserDefaults.standard.setValue(true, forKey: "defaultAudioState")
+        } else {
+            UserDefaults.standard.setValue(false, forKey: "defaultAudioState")
+        }
+    }
+    
     @IBAction func showHidePickerView(_ sender: Any) {
         breathingCyclePickerView.isHidden = !breathingCyclePickerView.isHidden
     }
-
+    
     @IBAction func hidePickerViewAnywhere(_ sender: UITapGestureRecognizer) {
         breathingCyclePickerView.isHidden = true
     }
-
+    
     @IBAction func breathingMethodButton(_ sender: UITapGestureRecognizer) {
         navigateToBreathingChoice()
     }
-
+    
     @IBAction func emergencyContactButon(_ sender: UITapGestureRecognizer) {
-        /// TO DO: - Replace this code to navigate to emergency contact view
         navigateToEmergencyContact()
     }
-
+    
     @IBAction func emergencyMessageButton(_ sender: UITapGestureRecognizer) {
-        AlertView.showAlertComingSoonFeature(view: self, message: "My emergency message feature is almost ready!")
+        navigateToProfileName()
+    }
+    @IBAction func selectLanguageButton(_ sender: UITapGestureRecognizer) {
+        navigateToLocalizationView()
     }
 }
 
 fileprivate extension SettingsViewController {
     func initialSetup() {
-        title = "Preferences"
+        title = "Preferences".localized()
+        guidedAudioToggle.isOn = UserDefaults.standard.bool(forKey: "defaultAudioState")
+    }
+    
+    func reloadLocalization(){
+        breathingTItleLabel.reloadText()
+        breathingCycleLabel.reloadText()
+        guidedAudioLabel.reloadText()
+        emergencyTitleLabel.reloadText()
+        profileNameLabel.reloadText()
+        emergencyContactLabel.reloadText()
+        languageTitleLabel.reloadText()
+        selectLanguageLabel.reloadText()
+    }
+    
+    
+    private func setupBackBarButtonItem() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back".localized()
+        self.navigationController?.navigationBar.backItem?.backBarButtonItem = backItem
+        
+        guard let navigation = navigationController,
+              !(navigation.topViewController === self) else {
+            return
+        }
+        let bar = navigation.navigationBar
+        bar.setNeedsLayout()
+        bar.layoutIfNeeded()
+        bar.setNeedsDisplay()
     }
     
     func getEmergencyContacts() {
@@ -117,7 +168,7 @@ fileprivate extension SettingsViewController {
     func sendDataToWatch() {
         let model = getSettingsModel()
         
-        var settings: [String:Any] = [:]
+        var settings: [String: Any] = [:]
         settings["defaultBreathingCycle"] = model.breathingCycle ?? 4
         settings["defaultEmergencyContact"] = UserDefaults.standard.data(forKey: "defaultEmergencyContact") ?? Data()
         settings["defaultBreatheId"] = model.defaultBreath?.id
@@ -142,14 +193,19 @@ fileprivate extension SettingsViewController {
     
     func navigateToEmergencyContact() {
         let vc = EmergencyContactViewController(entryPoint: .settings)
-        vc.emergencyContact = emergencyContact ?? []
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func navigateToProfileName() {
         let vc = ProfileNameFromSettingViewController()
-        //lempar nama disini
-        //vc.name = blablabla
+        if let fullName = UserDefaults.standard.string(forKey: "fullName") {
+            vc.name = fullName
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToLocalizationView(){
+        let vc = LocalizationMenuViewController(entryPoint: .settings)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -158,15 +214,15 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return cycleOption.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "\(cycleOption[row])"
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         breathingCycleValue.text = "\(cycleOption[row])"
     }

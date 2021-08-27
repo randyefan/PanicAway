@@ -16,12 +16,13 @@ enum EmergencyContactEntryPoint {
     case settings
 }
 
-class EmergencyContactViewController: UIViewController{
+class EmergencyContactViewController: UIViewController {
     
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var stackButton: UIStackView!
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
     
     var emergencyContact: [EmergencyContactModel] = []
     private var isEdit: Bool = false
@@ -43,18 +44,30 @@ class EmergencyContactViewController: UIViewController{
         initialSetup()
         contactTableView.register(ContactTableViewCell.nib(), forCellReuseIdentifier: ContactTableViewCell.reuseID)
         contactTableView.register(AddToContactTableViewCell.nib(), forCellReuseIdentifier: AddToContactTableViewCell.reuseID)
+        setupBackBarButtonItem()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if entryPoint == .settings {
             contactTableView.reloadData()
+            setupBackBarButtonItem()
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         if entryPoint == .settings {
             setSaveEmergencyContact()
+            if emergencyContact.count == 0 {
+                UserDefaults.standard.removeObject(forKey: "defaultEmergencyContact")
+            }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emergencyContact = getEmergencyContact() ?? []
+        contactTableView.reloadData()
     }
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
@@ -69,14 +82,18 @@ class EmergencyContactViewController: UIViewController{
 }
 
 fileprivate extension EmergencyContactViewController {
-    func initialSetup(){
+    func initialSetup() {
+        saveButton.setTitle("Save".localized(), for: .normal)
+        skipButton.setTitle("Skip".localized(), for: .normal)
+        
         checkContact()
         switch entryPoint {
         case .settings:
-            title = "Emergency Contact"
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+            title = "Emergency Contact".localized()
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit".localized(), style: .plain, target: self,  action: #selector(edit))
             mainTitle.isHidden = true
             stackButton.isHidden = true
+            
         default:
             self.navigationController?.navigationBar.isHidden = true
         }
@@ -86,12 +103,12 @@ fileprivate extension EmergencyContactViewController {
         
         if isEditTableView {
             contactTableView.isEditing = false
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(edit))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized(), style: .done, target: self,  action: #selector(edit))
             
             isEditTableView = false
         } else {
             contactTableView.isEditing = true
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(edit))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit".localized(), style: .plain, target: self,  action: #selector(edit))
             
             isEditTableView = true
         }
@@ -110,14 +127,36 @@ fileprivate extension EmergencyContactViewController {
         }
     }
     
-    func navigateToAuthorizeHealthKit() {
+    private func navigateToAuthorizeHealthKit() {
         let vc = OnboardingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func getEmergencyContact() -> [EmergencyContactModel]? {
+        // Get Emergency Contact Number in userDefaults
+        if let data = UserDefaults.standard.data(forKey: "defaultEmergencyContact") {
+            do {
+                let decoder = JSONDecoder()
+                let emergencyContact = try decoder.decode([EmergencyContactModel].self, from: data)
+                return emergencyContact
+            } catch {
+                print("Unable to Decode (\(error))")
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
+    private func setupBackBarButtonItem() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Preferences".localized()
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
     }
 }
 
 //MARK: CollectionView Configuration
-extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDelegate, UITableViewDataSource{
+extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     //check if emergency contact data is exist to set save button state
     private func checkContact () {
@@ -145,7 +184,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
             
             if emergencyContact.count == 3 {
                 cell.setInactive()
-            }else{
+            } else {
                 cell.setActive()
             }
             cell.selectionStyle = .none
@@ -206,7 +245,7 @@ extension EmergencyContactViewController: CNContactPickerDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
+        if editingStyle == .delete {
             contactTableView.beginUpdates()
             emergencyContact.remove(at: indexPath.row)
             contactTableView.deleteRows(at: [indexPath], with: .none)

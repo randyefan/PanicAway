@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileNameOnBoardingViewController: UIViewController {
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var saveButton: SaveButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -20,11 +20,16 @@ class ProfileNameOnBoardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        view.onTap {
+            self.view.endEditing(true)
+        }
     }
     
     // MARK: - Setup Function for ViewController
-    func setupView(){
+    func setupView() {
+        nameTextField.placeholder = "Your Name".localized()
         saveButton.isEnabled = false
+        saveButton.setTitle("Save".localized(), for: .normal)
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
@@ -38,7 +43,7 @@ class ProfileNameOnBoardingViewController: UIViewController {
     // MARK: - Action Triggered
     @IBAction func saveButtonAction(_ sender: UIButton) {
         guard let name = nameTextField.text else { return }
-        //TODO: handle user default here
+        UserDefaults.standard.setValue(name, forKey: "fullName")
         navigateToEmergencyContact()
     }
     // MARK: - Functionality
@@ -51,5 +56,4 @@ class ProfileNameOnBoardingViewController: UIViewController {
         let vc = OnboardingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }

@@ -1,0 +1,45 @@
+
+/* Class = "WKInterfaceLabel"; text = "128 BPM"; ObjectID = "03X-jK-PXv"; */
+"03X-jK-PXv.text" = "128 BPM";
+
+/* Class = "WKInterfaceButton"; title = "4-7-8"; ObjectID = "5x3-LH-XSm"; */
+"5x3-LH-XSm.title" = "4-7-8";
+
+/* Class = "WKInterfaceLabel"; text = "Are you feeling better ?"; ObjectID = "EXZ-W0-L4i"; */
+"EXZ-W0-L4i.text" = "Are you feeling better ?";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "Gx9-Ee-rge"; */
+"Gx9-Ee-rge.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "You may have experience a high heart rate do you want to have a breather."; ObjectID = "IfS-it-xqQ"; */
+"IfS-it-xqQ.text" = "You may have experience a high heart rate do you want to have a breather.";
+
+/* Class = "WKInterfaceButton"; title = "Yes"; ObjectID = "PEH-Ck-Tzp"; */
+"PEH-Ck-Tzp.title" = "Yes";
+
+/* Class = "WKInterfaceButton"; title = "4-4-4"; ObjectID = "Pne-Jh-EUs"; */
+"Pne-Jh-EUs.title" = "4-4-4";
+
+/* Class = "WKInterfaceButton"; title = "7-11"; ObjectID = "QLc-zA-dMs"; */
+"QLc-zA-dMs.title" = "7-11";
+
+/* Class = "WKInterfaceLabel"; text = "Get notified when you may feel a panic attack"; ObjectID = "SFX-GF-mFW"; */
+"SFX-GF-mFW.text" = "Get notified when you may feel a panic attack";
+
+/* Class = "WKInterfaceButton"; title = "Yes"; ObjectID = "TEA-rJ-a73"; */
+"TEA-rJ-a73.title" = "Yes";
+
+/* Class = "WKInterfaceLabel"; text = "Breathing Methods"; ObjectID = "a3n-0p-thI"; */
+"a3n-0p-thI.text" = "Breathing Methods";
+
+/* Class = "WKInterfaceButton"; title = "Continue breathing"; ObjectID = "aJb-OO-cvH"; */
+"aJb-OO-cvH.title" = "Continue breathing";
+
+/* Class = "WKInterfaceLabel"; text = "Tap to start"; ObjectID = "eKx-IJ-Nrz"; */
+"eKx-IJ-Nrz.text" = "Tap to start";
+
+/* Class = "WKInterfaceLabel"; text = "Notify My Friends"; ObjectID = "hwd-sD-rSc"; */
+"hwd-sD-rSc.text" = "Notify My Friends";
+
+/* Class = "WKInterfaceButton"; title = "No"; ObjectID = "zQU-mg-tc6"; */
+"zQU-mg-tc6.title" = "No";
