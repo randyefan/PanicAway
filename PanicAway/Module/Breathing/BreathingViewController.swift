@@ -101,16 +101,11 @@ class BreathingViewController: UIViewController {
             else if breathingStatus == .breatheOut {
                 breatheTime = technique.breathOutCount
                 firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathOutCount) + 0.3 + 0.09)))
-
+                
             }
             else if breathingStatus == .holdBreathe {
                 breatheTime = technique.holdOnCount
                 firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHoldAnimation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
-//                if technique.id == 0 {
-//                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold478Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
-//                } else {
-//                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold444Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
-//                }
             }
         }
     }
@@ -142,7 +137,7 @@ class BreathingViewController: UIViewController {
     //AVFoundation
     var player: AVAudioPlayer?
     
-    // MARK: - Computed Properties
+    // MARK: - Computed Propertiesa
     var technique: BreathingModel? {
         didSet {
             guard let technique = technique else { return }
@@ -201,7 +196,7 @@ class BreathingViewController: UIViewController {
     
     func setupHaptic() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
-
+        
         do {
             engine = try CHHapticEngine()
             try engine?.start()
@@ -282,25 +277,10 @@ class BreathingViewController: UIViewController {
         
         for frame in (0...329){
             breatheInAnimation.append(UIImage(named: String(format: "breatheOut%d", frame))!)
-            print(frame)
-            
         }
-        
-//        for frame in (0...489){
-//            breatheOutAnimation.append(UIImage(named: String(format: "breatheOut%d", frame))!)
-//
-//        }
-        
-//        for frame in (0...167){
-//            breatheHold478Animation.append(UIImage(named: String(format: "Hold 478_%05d", frame))!)
-//        }
         for frame in (0...349){
             breatheHoldAnimation.append(UIImage(named: String(format: "Hold%d", frame))!)
         }
-        
-//        for frame in (0...95){
-//            breatheHold444Animation.append(UIImage(named: String(format: "Hold 3_%05d", frame))!)
-//        }
     }
     
     
@@ -390,17 +370,17 @@ class BreathingViewController: UIViewController {
     func setHapticForASecond(duration: Float) {
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
-
+        
         let start = CHHapticParameterCurve.ControlPoint(relativeTime: 0, value: duration)
         let end = CHHapticParameterCurve.ControlPoint(relativeTime: Double(duration), value: 0)
-
+        
         let parameter = CHHapticParameterCurve(parameterID: .hapticIntensityControl, controlPoints: [start, end], relativeTime: 0)
-
+        
         let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [sharpness, intensity], relativeTime: 0, duration: Double(duration))
-
+        
         do {
             let pattern = try CHHapticPattern(events: [event], parameterCurves: [parameter])
-
+            
             let player = try self.engine?.makePlayer(with: pattern)
             try player?.start(atTime: 0)
         } catch {
@@ -409,7 +389,7 @@ class BreathingViewController: UIViewController {
     }
     
     @objc func runCountDown() {
-       // print("breathe time \(breatheTime)")
+        // print("breathe time \(breatheTime)")
         
         //timer logic here
         if secondsTimer == 60 {
