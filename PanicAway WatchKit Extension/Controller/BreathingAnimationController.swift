@@ -105,6 +105,7 @@ class BreathingAnimationController: WKInterfaceController {
     func setupAnimation(){
         breatheInView.setImageNamed("breatheIn")
         breatheOutAnimationView.setImageNamed("breatheIn")
+        holdAnimationView.setImageNamed("hold")
     }
     
     @IBAction func tapToStartClicked(_ sender: Any) {
@@ -185,6 +186,7 @@ class BreathingAnimationController: WKInterfaceController {
                 holdAnimationView.setHidden(false)
                 breatheOutAnimationView.setHidden(true)
                 breatheInView.setHidden(true)
+                holdAnimationView.startAnimatingWithImages(in: NSRange(location: 0, length: 119), duration: TimeInterval(technique.breathOutCount), repeatCount: 1)
             }
         }
     }
