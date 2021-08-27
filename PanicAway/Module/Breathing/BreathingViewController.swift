@@ -420,7 +420,6 @@ class BreathingViewController: UIViewController {
     }
     
     func setHapticForASecond(duration: Float) {
-        print(duration)
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
         
