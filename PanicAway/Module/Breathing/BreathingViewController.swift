@@ -184,14 +184,14 @@ class BreathingViewController: UIViewController {
         case .pause:
             setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, endButton: false, breathingChoiceView: true)
             titleLabel.text = "Paused"
-            firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
+            firstStateAnimationImageView.image = UIImage(named: "breatheOut329")
         case .finish:
             setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, circularProgressBar: true, endButton: true, breathingChoiceView: false)
             circularProgressBar.progress = 0
             healthKitManager.saveMeditation(startDate: startDate, seconds: mindfulnessMinutes)
             minutesTimer = 0
             secondsTimer = 0
-            firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
+            firstStateAnimationImageView.image = UIImage(named: "breatheOut329")
             titleLabel.text = "Tap to Start Again"
             DispatchQueue.main.async {
                 self.captionLabel.text = "Yay, you’ve finished your breathing exercise!"
