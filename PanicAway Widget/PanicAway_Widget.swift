@@ -29,7 +29,7 @@ struct Provider: TimelineProvider {
     func getDefaultBreathing() -> BreathingModel {
         let data = BreathingLoader()
         data.loadDataBreath()
-        if let userDefault = UserDefaults(suiteName: "group.martin.panicaway") {
+        if let userDefault = UserDefaults(suiteName: "group.com.randyefan.panicaway") {
             let breathingId = userDefault.integer(forKey: "defaultBreatheId")
             return data.entries[breathingId]
         }

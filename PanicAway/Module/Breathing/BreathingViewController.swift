@@ -251,9 +251,15 @@ class BreathingViewController: UIViewController {
     }
     
     func setupToDefaultBreathingTechnique() {
-        let idBreath = UserDefaults.standard.integer(forKey: "defaultBreatheId")
-        breathingId = idBreath
-        technique = data.entries[idBreath]
+        let data = BreathingLoader()
+        data.loadDataBreath()
+        if let userDefault = UserDefaults(suiteName: "group.com.randyefan.panicaway") {
+            let breathingId = userDefault.integer(forKey: "defaultBreatheId")
+            technique = data.entries[breathingId]
+            return
+        }
+        
+        technique = data.entries[0]
     }
     
     func setupNavigationBar() {
