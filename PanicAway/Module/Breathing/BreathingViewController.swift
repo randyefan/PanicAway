@@ -101,28 +101,24 @@ class BreathingViewController: UIViewController {
             if breathingStatus == .breatheIn {
                 breatheTime = technique.breathInCount
                 if technique.breathingName == "4-7-8" {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.6)))
                     setHapticForASecond(duration: Float(technique.breathInCount))
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: TimeInterval((Double(technique.breathInCount) + 0.6)))
                 } else if technique.breathingName == "7-11" {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.3 + 0.10)))
                     setHapticForASecond(duration: Float(technique.breathInCount))
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: TimeInterval((Double(technique.breathInCount) + 0.3 + 0.10)))
                 } else {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathInCount) + 0.4)))
                     setHapticForASecond(duration: Float(technique.breathInCount))
+                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation.reversed(), duration: Double(technique.breathInCount) + 0.4)
                 }
             }
             else if breathingStatus == .breatheOut {
                 breatheTime = technique.breathOutCount
-                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheOutAnimation, duration: TimeInterval((Double(technique.breathOutCount) + 0.3 + 0.09)))
+                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheInAnimation, duration: TimeInterval((Double(technique.breathOutCount) + 0.3 + 0.09)))
                 
             }
             else if breathingStatus == .holdBreathe {
                 breatheTime = technique.holdOnCount
-                if technique.id == 0 {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold478Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
-                } else {
-                    firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHold444Animation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
-                }
+                firstStateAnimationImageView.image = UIImage.animatedImage(with: breatheHoldAnimation, duration: TimeInterval((Double(technique.holdOnCount) + 0.3 + 0.09)))
             }
         }
     }
@@ -154,7 +150,7 @@ class BreathingViewController: UIViewController {
     //AVFoundation
     var player: AVAudioPlayer?
     
-    // MARK: - Computed Properties
+    // MARK: - Computed Propertiesa
     var technique: BreathingModel? {
         didSet {
             guard let technique = technique else { return }
@@ -200,15 +196,15 @@ class BreathingViewController: UIViewController {
             setupViewForState(topView: true, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, endButton: false, breathingChoiceView: true)
         case .pause:
             setupViewForState(topView: false, titleLabel: false, captionLabel: true, breathingMethodeStackView: true, circularProgressBar: false, endButton: false, breathingChoiceView: true)
+            firstStateAnimationImageView.image = UIImage(named: "breatheOut329")
             titleLabel.text = "Paused".localized()
-            firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
         case .finish:
             setupViewForState(topView: false, titleLabel: false, captionLabel: false, breathingMethodeStackView: false, circularProgressBar: true, endButton: true, breathingChoiceView: false)
             circularProgressBar.progress = 0
             healthKitManager.saveMeditation(startDate: startDate, seconds: mindfulnessMinutes)
             minutesTimer = 0
             secondsTimer = 0
-            firstStateAnimationImageView.image = UIImage(named: "ic_animation_state_no_breathing")
+            firstStateAnimationImageView.image = UIImage(named: "breatheOut329")
             titleLabel.text = "Tap to start again".localized()
             DispatchQueue.main.async {
                 self.captionLabel.text = "Yay, you’ve finished your breathing exercise!".localized()
@@ -328,27 +324,14 @@ class BreathingViewController: UIViewController {
         }
     }
     
-    func setupAnimation() {
-        
-        
+    func setupAnimation(){
         circularProgressBar.progress = 0
         
-        
-        
-        for frame in (0...95) {
-            breatheInAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
+        for frame in (0...329){
+            breatheInAnimation.append(UIImage(named: String(format: "breatheOut%d", frame))!)
         }
-        
-        for frame in (0...95).reversed() {
-            breatheOutAnimation.append(UIImage(named: String(format: "Breathe In 3_%05d", frame))!)
-        }
-        
-        for frame in (0...167) {
-            breatheHold478Animation.append(UIImage(named: String(format: "Hold 478_%05d", frame))!)
-        }
-        
-        for frame in (0...95) {
-            breatheHold444Animation.append(UIImage(named: String(format: "Hold 3_%05d", frame))!)
+        for frame in (0...349){
+            breatheHoldAnimation.append(UIImage(named: String(format: "Hold%d", frame))!)
         }
     }
     
@@ -437,7 +420,6 @@ class BreathingViewController: UIViewController {
     }
     
     func setHapticForASecond(duration: Float) {
-        print(duration)
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
         
