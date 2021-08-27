@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "breatheIn35@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "breatheIn35@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
