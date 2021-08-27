@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WidgetKit
 
 class OnboardingViewController: UIViewController {
     
@@ -22,6 +23,11 @@ class OnboardingViewController: UIViewController {
         skipButton.setTitle("Skip".localized(), for: .normal)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        setupDefaultBreathing()
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
     @IBAction func requestAccess(_ sender: Any) {
         healthKitManager.authorizeHealthKit() {
             nextView()
@@ -35,5 +41,11 @@ class OnboardingViewController: UIViewController {
     func nextView(){
         UserDefaults.standard.setValue(true, forKey: "isNotFirstLaunch")
         appDelegate.rootBreathingPage()
+    }
+    
+    func setupDefaultBreathing() {
+        if let userDefaults = UserDefaults(suiteName: "group.com.randyefan.panicaway") {
+            userDefaults.setValue(0, forKey: "defaultBreatheId")
+        }
     }
 }

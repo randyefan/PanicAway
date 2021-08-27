@@ -56,6 +56,7 @@ class BreathingChoiceViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         saveToUserDefault()
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     // MARK: - Setup Function for ViewController
@@ -136,7 +137,7 @@ class BreathingChoiceViewController: UIViewController {
     }
     
     private func saveToUserDefault() {
-        if let userDefaults = UserDefaults(suiteName: "group.martin.panicaway") {
+        if let userDefaults = UserDefaults(suiteName: "group.com.randyefan.panicaway") {
             userDefaults.setValue(selected?.id, forKey: "defaultBreatheId")
         }
     }
