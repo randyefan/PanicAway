@@ -58,10 +58,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1i0-3E-9g7" userLabel="Breathing Setting">
-                                    <rect key="frame" x="16" y="71" width="382" height="133"/>
+                                    <rect key="frame" x="16" y="71" width="382" height="199"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-7p-A3T" userLabel="Container Stack">
-                                            <rect key="frame" x="16" y="0.0" width="350" height="133"/>
+                                            <rect key="frame" x="16" y="0.0" width="350" height="199"/>
                                             <subviews>
                                                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oL2-dU-kqg" userLabel="Method Cell">
                                                     <rect key="frame" x="0.0" y="-66" width="350" height="66"/>
@@ -206,7 +206,7 @@
                                                         <constraint firstAttribute="height" constant="66" id="Pj6-Ow-45h"/>
                                                     </constraints>
                                                 </stackView>
-                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="16Q-pJ-oAZ" userLabel="Haptic Cell">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="16Q-pJ-oAZ" userLabel="Haptic Cell">
                                                     <rect key="frame" x="0.0" y="133" width="350" height="66"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haptic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuc-o5-UMx">
@@ -247,7 +247,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency and Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym9-MF-0gu" customClass="LocalizedLabel" customModule="PanicAway" customModuleProvider="target">
-                                    <rect key="frame" x="24" y="244" width="238" height="31"/>
+                                    <rect key="frame" x="24" y="310" width="238" height="31"/>
                                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="22"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -256,7 +256,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZM-xa-dwf" userLabel="Emergency and Health Setting">
-                                    <rect key="frame" x="16" y="291" width="382" height="198"/>
+                                    <rect key="frame" x="16" y="357" width="382" height="198"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8HZ-9v-URO" userLabel="Container Stack">
                                             <rect key="frame" x="16" y="0.0" width="350" height="198"/>
@@ -376,7 +376,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifV-gF-swI" customClass="LocalizedLabel" customModule="PanicAway" customModuleProvider="target">
-                                    <rect key="frame" x="24" y="529" width="102" height="31"/>
+                                    <rect key="frame" x="24" y="595" width="102" height="31"/>
                                     <fontDescription key="fontDescription" name="RoundedMplus1c-Bold" family="Rounded Mplus 1c Bold" pointSize="22"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -385,7 +385,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4th-rz-Cl0" userLabel="Language Setting">
-                                    <rect key="frame" x="16" y="576" width="382" height="66"/>
+                                    <rect key="frame" x="16" y="642" width="382" height="66"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qyR-yx-HcZ" userLabel="Cycle Cell">
                                             <rect key="frame" x="16" y="0.0" width="350" height="67"/>
