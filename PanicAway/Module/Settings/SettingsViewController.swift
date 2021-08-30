@@ -62,6 +62,9 @@ class SettingsViewController: UIViewController {
         let defaultBreathingCycle = UserDefaults.standard.integer(forKey: "defaultBreathingCycle")
         breathingCycleValue.text = "\(defaultBreathingCycle)"
         breathingTechnique = data.entries[defaultBreathingId]
+        
+        let defaultHaptic = UserDefaults.standard.bool(forKey: "defaultHapticState")
+        hapticToggle.isOn = defaultHaptic
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +91,15 @@ class SettingsViewController: UIViewController {
             UserDefaults.standard.setValue(false, forKey: "defaultAudioState")
         }
     }
+    
+    @IBAction func hapticSwitch(_ sender: UISwitch) {
+        if hapticToggle.isOn {
+            UserDefaults.standard.setValue(true, forKey: "defaultHapticState")
+        } else {
+            UserDefaults.standard.setValue(false, forKey: "defaultHapticState")
+        }
+    }
+    
     
     @IBAction func showHidePickerView(_ sender: Any) {
         breathingCyclePickerView.isHidden = !breathingCyclePickerView.isHidden

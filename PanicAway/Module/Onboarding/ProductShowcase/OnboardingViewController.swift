@@ -47,5 +47,6 @@ class OnboardingViewController: UIViewController {
         if let userDefaults = UserDefaults(suiteName: "group.com.randyefan.panicaway") {
             userDefaults.setValue(0, forKey: "defaultBreatheId")
         }
+        UserDefaults.standard.setValue(true, forKey: "defaultHapticState")
     }
 }

@@ -62,6 +62,7 @@ class BreathingViewController: UIViewController {
     
     
     // MARK: - Variable
+    var defaultHaptic: Bool = true
     var defaultLanguage: Localization = .en
     var breathingId: Int = 0
     var data = BreathingLoader()
@@ -184,6 +185,7 @@ class BreathingViewController: UIViewController {
         setupToDefaultBreathingTechnique()
         setupLocalization()
         
+        
     }
     
     // MARK: - Setup View for ViewController
@@ -253,12 +255,13 @@ class BreathingViewController: UIViewController {
     func setupToDefaultBreathingTechnique() {
         let data = BreathingLoader()
         data.loadDataBreath()
+        let userHaptic = UserDefaults.standard.bool(forKey: "defaultHapticState")
+        defaultHaptic = userHaptic
         if let userDefault = UserDefaults(suiteName: "group.com.randyefan.panicaway") {
             let breathingId = userDefault.integer(forKey: "defaultBreatheId")
             technique = data.entries[breathingId]
             return
         }
-        
         technique = data.entries[0]
     }
     
@@ -268,7 +271,6 @@ class BreathingViewController: UIViewController {
     
     private func setupObserveAction() {
         settingsView.onTap {
-            //self.setHapticForASecond(duration: 10)
             self.navigateToSettings()
         }
         
@@ -426,23 +428,25 @@ class BreathingViewController: UIViewController {
     }
     
     func setHapticForASecond(duration: Float) {
-        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
-        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
-        
-        let start = CHHapticParameterCurve.ControlPoint(relativeTime: 0, value: duration)
-        let end = CHHapticParameterCurve.ControlPoint(relativeTime: Double(duration), value: 0)
-        
-        let parameter = CHHapticParameterCurve(parameterID: .hapticIntensityControl, controlPoints: [start, end], relativeTime: 0)
-        
-        let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [sharpness, intensity], relativeTime: 0, duration: Double(duration))
-        
-        do {
-            let pattern = try CHHapticPattern(events: [event], parameterCurves: [parameter])
+        if defaultHaptic {
+            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
+            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
             
-            let player = try self.engine?.makePlayer(with: pattern)
-            try player?.start(atTime: 0)
-        } catch {
-            print(error.localizedDescription)
+            let start = CHHapticParameterCurve.ControlPoint(relativeTime: 0, value: duration)
+            let end = CHHapticParameterCurve.ControlPoint(relativeTime: Double(duration), value: 0)
+            
+            let parameter = CHHapticParameterCurve(parameterID: .hapticIntensityControl, controlPoints: [start, end], relativeTime: 0)
+            
+            let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [sharpness, intensity], relativeTime: 0, duration: Double(duration))
+            
+            do {
+                let pattern = try CHHapticPattern(events: [event], parameterCurves: [parameter])
+                
+                let player = try self.engine?.makePlayer(with: pattern)
+                try player?.start(atTime: 0)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     
