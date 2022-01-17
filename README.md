@@ -2,10 +2,10 @@
 # Panic Away
 
 
-Uploading Panic Away Application Short Video - Apple Academy Cohort 4 Project.mp4…
+Uploading Panic Away.mp4…
 
 
-## Demo
+## Application Demo
 
 
 https://user-images.githubusercontent.com/53168317/149819021-34b6fb8a-57c9-4ff3-b29d-e08ce9520d12.mp4
